@@ -1,0 +1,49 @@
+<?php 
+
+$lang['cal_su'] = "Dje";
+$lang['cal_mo'] = "He";
+$lang['cal_tu'] = "Ma";
+$lang['cal_we'] = "Me";
+$lang['cal_th'] = "Enj";
+$lang['cal_fr'] = "Pr";
+$lang['cal_sa'] = "Sht";
+$lang['cal_sun'] = "Dje";
+$lang['cal_mon'] = "Hen";
+$lang['cal_tue'] = "Mar";
+$lang['cal_wed'] = "Mer";
+$lang['cal_thu'] = "Enj";
+$lang['cal_fri'] = "Pre";
+$lang['cal_sat'] = "Sht";
+$lang['cal_sunday'] = "E dielë";
+$lang['cal_monday'] = "E hënë";
+$lang['cal_tuesday'] = "E martë";
+$lang['cal_wednesday'] = "E mërkurë";
+$lang['cal_thursday'] = "E enjte";
+$lang['cal_friday'] = "E premte";
+$lang['cal_saturday'] = "E shtunë";
+$lang['cal_jan'] = "Jan";
+$lang['cal_feb'] = "Shk";
+$lang['cal_mar'] = "Mar";
+$lang['cal_apr'] = "Pri";
+$lang['cal_may'] = "Maj";
+$lang['cal_jun'] = "Qer";
+$lang['cal_jul'] = "Kor";
+$lang['cal_aug'] = "Gush";
+$lang['cal_sep'] = "Sht";
+$lang['cal_oct'] = "Tet";
+$lang['cal_nov'] = "Nëntor";
+$lang['cal_dec'] = "Dhj";
+$lang['cal_january'] = "janar";
+$lang['cal_february'] = "Shkurt";
+$lang['cal_march'] = "Mars";
+$lang['cal_april'] = "Prill";
+$lang['cal_mayl'] = "Maj";
+$lang['cal_june'] = "Qershor";
+$lang['cal_july'] = "Korrik";
+$lang['cal_august'] = "Gusht";
+$lang['cal_september'] = "Shtator";
+$lang['cal_october'] = "Tetor";
+$lang['cal_november'] = "Nentor";
+$lang['cal_december'] = "Dhjetor";
+
+?>

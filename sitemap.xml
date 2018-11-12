@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  	xmlns:xhtml="http://www.w3.org/1999/xhtml"
+  	xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+			    http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<url>
+	<loc>http://localhost/PikatTuristike/index.php/sq/6/harta</loc>
+	<lastmod>2013-12-29T12:06:05+01:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+    <xhtml:link
+        rel="alternate"
+        hreflang="en"
+        href="http://localhost/PikatTuristike/index.php/en/6/harta"
+    />
+</url>
+<url>
+	<loc>http://localhost/PikatTuristike/index.php/en/6/map</loc>
+	<lastmod>2013-12-29T12:06:05+01:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+    <xhtml:link
+        rel="alternate"
+        hreflang="sq"
+        href="http://localhost/PikatTuristike/index.php/sq/6/map"
+    />
+</url>
+<url>
+	<loc>http://localhost/PikatTuristike/index.php/en/152</loc>
+	<lastmod>2014-04-06T16:21:32+02:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+    <xhtml:link
+        rel="alternate"
+        hreflang="sq"
+        href="http://localhost/PikatTuristike/index.php/sq/152"
+    />
+</url>
+<url>
+	<loc>http://localhost/PikatTuristike/index.php/sq/152</loc>
+	<lastmod>2014-04-06T16:21:32+02:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+    <xhtml:link
+        rel="alternate"
+        hreflang="en"
+        href="http://localhost/PikatTuristike/index.php/en/152"
+    />
+</url>
+<url>
+	<loc>http://localhost/PikatTuristike/index.php/en/155/test_news_category</loc>
+	<lastmod>2014-04-06T20:13:51+02:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+    <xhtml:link
+        rel="alternate"
+        hreflang="sq"
+        href="http://localhost/PikatTuristike/index.php/sq/155/test_news_category"
+    />
+</url>
+<url>
+	<loc>http://localhost/PikatTuristike/index.php/sq/155/test_news_category</loc>
+	<lastmod>2014-04-06T20:13:51+02:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+    <xhtml:link
+        rel="alternate"
+        hreflang="en"
+        href="http://localhost/PikatTuristike/index.php/en/155/test_news_category"
+    />
+</url>
+<url>
+	<loc>http://localhost/PikatTuristike/index.php/en/159/test_news_category_2</loc>
+	<lastmod>2014-04-15T18:37:33+02:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+    <xhtml:link
+        rel="alternate"
+        hreflang="sq"
+        href="http://localhost/PikatTuristike/index.php/sq/159/test_news_category_2"
+    />
+</url>
+<url>
+	<loc>http://localhost/PikatTuristike/index.php/sq/159/test_news_category_2</loc>
+	<lastmod>2014-04-15T18:37:33+02:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+    <xhtml:link
+        rel="alternate"
+        hreflang="en"
+        href="http://localhost/PikatTuristike/index.php/en/159/test_news_category_2"
+    />
+</url>
+<url>
+	<loc>http://localhost/PikatTuristike/index.php/sq/1/kategorite</loc>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+    <xhtml:link
+        rel="alternate"
+        hreflang="en"
+        href="http://localhost/PikatTuristike/index.php/en/1/kategorite"
+    />
+</url>
+<url>
+	<loc>http://localhost/PikatTuristike/index.php/en/1/categories</loc>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+    <xhtml:link
+        rel="alternate"
+        hreflang="sq"
+        href="http://localhost/PikatTuristike/index.php/sq/1/categories"
+    />
+</url>
+<url>
+	<loc>http://localhost/PikatTuristike/index.php/en/151</loc>
+	<lastmod>2014-04-06T16:07:03+02:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+    <xhtml:link
+        rel="alternate"
+        hreflang="sq"
+        href="http://localhost/PikatTuristike/index.php/sq/151"
+    />
+</url>
+<url>
+	<loc>http://localhost/PikatTuristike/index.php/sq/151</loc>
+	<lastmod>2014-04-06T16:07:03+02:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+    <xhtml:link
+        rel="alternate"
+        hreflang="en"
+        href="http://localhost/PikatTuristike/index.php/en/151"
+    />
+</url>
+<url>
+	<loc>http://localhost/PikatTuristike/index.php/en/145/full</loc>
+	<lastmod>2014-03-02T11:55:40+01:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+    <xhtml:link
+        rel="alternate"
+        hreflang="sq"
+        href="http://localhost/PikatTuristike/index.php/sq/145/full"
+    />
+</url>
+<url>
+	<loc>http://localhost/PikatTuristike/index.php/sq/145/plot</loc>
+	<lastmod>2014-03-02T11:55:40+01:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+    <xhtml:link
+        rel="alternate"
+        hreflang="en"
+        href="http://localhost/PikatTuristike/index.php/en/145/plot"
+    />
+</url>
+<url>
+	<loc>http://localhost/PikatTuristike/index.php/en/147/featured</loc>
+	<lastmod>2014-04-05T10:33:02+02:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+    <xhtml:link
+        rel="alternate"
+        hreflang="sq"
+        href="http://localhost/PikatTuristike/index.php/sq/147/featured"
+    />
+</url>
+<url>
+	<loc>http://localhost/PikatTuristike/index.php/sq/147/rekomanduar</loc>
+	<lastmod>2014-04-05T10:33:02+02:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+    <xhtml:link
+        rel="alternate"
+        hreflang="en"
+        href="http://localhost/PikatTuristike/index.php/en/147/rekomanduar"
+    />
+</url>
+<url>
+	<loc>http://localhost/PikatTuristike/index.php/en/5/about_us</loc>
+	<lastmod>2013-12-12T16:01:35+01:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+    <xhtml:link
+        rel="alternate"
+        hreflang="sq"
+        href="http://localhost/PikatTuristike/index.php/sq/5/about_us"
+    />
+</url>
+<url>
+	<loc>http://localhost/PikatTuristike/index.php/sq/5/rreth_nesh</loc>
+	<lastmod>2013-12-12T16:01:35+01:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+    <xhtml:link
+        rel="alternate"
+        hreflang="en"
+        href="http://localhost/PikatTuristike/index.php/en/5/rreth_nesh"
+    />
+</url>
+<url>
+	<loc>http://localhost/PikatTuristike/index.php/en/142/blog_page</loc>
+	<lastmod>2014-01-04T22:19:49+01:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+    <xhtml:link
+        rel="alternate"
+        hreflang="sq"
+        href="http://localhost/PikatTuristike/index.php/sq/142/blog_page"
+    />
+</url>
+<url>
+	<loc>http://localhost/PikatTuristike/index.php/sq/142/faqe_blogu</loc>
+	<lastmod>2014-01-04T22:19:49+01:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+    <xhtml:link
+        rel="alternate"
+        hreflang="en"
+        href="http://localhost/PikatTuristike/index.php/en/142/faqe_blogu"
+    />
+</url>
+<url>
+	<loc>http://localhost/PikatTuristike/index.php/en/169/agents</loc>
+	<lastmod>2014-08-01T19:02:31+02:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+    <xhtml:link
+        rel="alternate"
+        hreflang="sq"
+        href="http://localhost/PikatTuristike/index.php/sq/169/agents"
+    />
+</url>
+<url>
+	<loc>http://localhost/PikatTuristike/index.php/sq/169/agjentet</loc>
+	<lastmod>2014-08-01T19:02:31+02:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+    <xhtml:link
+        rel="alternate"
+        hreflang="en"
+        href="http://localhost/PikatTuristike/index.php/en/169/agjentet"
+    />
+</url>
+<url>
+	<loc>http://localhost/PikatTuristike/index.php/en/143/custom_search</loc>
+	<lastmod>2014-02-10T10:54:19+01:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+    <xhtml:link
+        rel="alternate"
+        hreflang="sq"
+        href="http://localhost/PikatTuristike/index.php/sq/143/custom_search"
+    />
+</url>
+<url>
+	<loc>http://localhost/PikatTuristike/index.php/sq/143/pershtat_ikonen_e_kerkimit</loc>
+	<lastmod>2014-02-10T10:54:19+01:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+    <xhtml:link
+        rel="alternate"
+        hreflang="en"
+        href="http://localhost/PikatTuristike/index.php/en/143/pershtat_ikonen_e_kerkimit"
+    />
+</url>
+<url>
+	<loc>http://localhost/PikatTuristike/index.php/en/146/google_link</loc>
+	<lastmod>2014-03-15T18:18:13+01:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+    <xhtml:link
+        rel="alternate"
+        hreflang="sq"
+        href="http://localhost/PikatTuristike/index.php/sq/146/google_link"
+    />
+</url>
+<url>
+	<loc>http://localhost/PikatTuristike/index.php/sq/146/google</loc>
+	<lastmod>2014-03-15T18:18:13+01:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+    <xhtml:link
+        rel="alternate"
+        hreflang="en"
+        href="http://localhost/PikatTuristike/index.php/en/146/google"
+    />
+</url>
+<url>
+	<loc>http://localhost/PikatTuristike/index.php/en/157/articles</loc>
+	<lastmod>2014-04-08T22:08:34+02:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+    <xhtml:link
+        rel="alternate"
+        hreflang="sq"
+        href="http://localhost/PikatTuristike/index.php/sq/157/articles"
+    />
+</url>
+<url>
+	<loc>http://localhost/PikatTuristike/index.php/sq/157/artikuj</loc>
+	<lastmod>2014-04-08T22:08:34+02:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+    <xhtml:link
+        rel="alternate"
+        hreflang="en"
+        href="http://localhost/PikatTuristike/index.php/en/157/artikuj"
+    />
+</url>
+<url>
+	<loc>http://localhost/PikatTuristike/index.php/en/158/test_article_2</loc>
+	<lastmod>2014-04-08T22:30:56+02:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+    <xhtml:link
+        rel="alternate"
+        hreflang="sq"
+        href="http://localhost/PikatTuristike/index.php/sq/158/test_article_2"
+    />
+</url>
+<url>
+	<loc>http://localhost/PikatTuristike/index.php/sq/158/test_article_2</loc>
+	<lastmod>2014-04-08T22:30:56+02:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+    <xhtml:link
+        rel="alternate"
+        hreflang="en"
+        href="http://localhost/PikatTuristike/index.php/en/158/test_article_2"
+    />
+</url>
+<url>
+	<loc>http://localhost/PikatTuristike/index.php/en/156/article_test</loc>
+	<lastmod>2014-04-08T17:59:20+02:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+    <xhtml:link
+        rel="alternate"
+        hreflang="sq"
+        href="http://localhost/PikatTuristike/index.php/sq/156/article_test"
+    />
+</url>
+<url>
+	<loc>http://localhost/PikatTuristike/index.php/sq/156/article_test</loc>
+	<lastmod>2014-04-08T17:59:20+02:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+    <xhtml:link
+        rel="alternate"
+        hreflang="en"
+        href="http://localhost/PikatTuristike/index.php/en/156/article_test"
+    />
+</url>
+<url>
+	<loc>http://localhost/PikatTuristike/index.php/en/154/test_news</loc>
+	<lastmod>2014-04-06T20:01:32+02:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+    <xhtml:link
+        rel="alternate"
+        hreflang="sq"
+        href="http://localhost/PikatTuristike/index.php/sq/154/test_news"
+    />
+</url>
+<url>
+	<loc>http://localhost/PikatTuristike/index.php/sq/154/test_news</loc>
+	<lastmod>2014-04-06T20:01:32+02:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+    <xhtml:link
+        rel="alternate"
+        hreflang="en"
+        href="http://localhost/PikatTuristike/index.php/en/154/test_news"
+    />
+</url>
+<url>
+	<loc>http://localhost/PikatTuristike/index.php/en/4/contact</loc>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+    <xhtml:link
+        rel="alternate"
+        hreflang="sq"
+        href="http://localhost/PikatTuristike/index.php/sq/4/contact"
+    />
+</url>
+<url>
+	<loc>http://localhost/PikatTuristike/index.php/sq/4/kontakt</loc>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+    <xhtml:link
+        rel="alternate"
+        hreflang="en"
+        href="http://localhost/PikatTuristike/index.php/en/4/kontakt"
+    />
+</url>
+<url>
+	<loc>http://localhost/PikatTuristike/index.php/property/29/sq/asdasd</loc>
+	<lastmod>2018-11-12T09:13:30+01:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+</url>
+<url>
+	<loc>http://localhost/PikatTuristike/index.php/property/29/en/asdasd</loc>
+	<lastmod>2018-11-12T09:13:30+01:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+</url>
+<url>
+	<loc>http://localhost/PikatTuristike/index.php/property/27/sq/prove</loc>
+	<lastmod>2018-11-08T15:41:23+01:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+</url>
+<url>
+	<loc>http://localhost/PikatTuristike/index.php/property/27/en/prove</loc>
+	<lastmod>2018-11-08T15:41:23+01:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+</url>
+<url>
+	<loc>http://localhost/PikatTuristike/index.php/property/25/sq/lasdlsad</loc>
+	<lastmod>2018-11-08T11:20:21+01:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+</url>
+<url>
+	<loc>http://localhost/PikatTuristike/index.php/property/25/en/lasdlsad</loc>
+	<lastmod>2018-11-08T11:20:21+01:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+</url>
+<url>
+	<loc>http://localhost/PikatTuristike/index.php/property/23/sq/5_maji</loc>
+	<lastmod>2018-11-06T11:46:15+01:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+</url>
+<url>
+	<loc>http://localhost/PikatTuristike/index.php/property/23/en/5_maji</loc>
+	<lastmod>2018-11-06T11:46:15+01:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+</url>
+<url>
+	<loc>http://localhost/PikatTuristike/index.php/property/22/sq/futja_kot</loc>
+	<lastmod>2018-11-03T14:10:58+01:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+</url>
+<url>
+	<loc>http://localhost/PikatTuristike/index.php/property/22/en/futja_kot</loc>
+	<lastmod>2018-11-03T14:10:58+01:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+</url>
+<url>
+	<loc>http://localhost/PikatTuristike/index.php/property/21/sq/rruga_e_ambasadeve</loc>
+	<lastmod>2018-11-12T09:11:37+01:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+</url>
+<url>
+	<loc>http://localhost/PikatTuristike/index.php/property/21/en/payment_gateway</loc>
+	<lastmod>2018-11-12T09:11:37+01:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+</url>
+<url>
+	<loc>http://localhost/PikatTuristike/index.php/property/26/sq/5_maji</loc>
+	<lastmod>2018-11-08T12:41:59+01:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+</url>
+<url>
+	<loc>http://localhost/PikatTuristike/index.php/property/26/en/5_maji</loc>
+	<lastmod>2018-11-08T12:41:59+01:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+</url>
+<url>
+	<loc>http://localhost/PikatTuristike/index.php/treefield/sq/74/kucove</loc>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+</url>
+<url>
+	<loc>http://localhost/PikatTuristike/index.php/treefield/sq/76/skrapar</loc>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+</url>
+<url>
+	<loc>http://localhost/PikatTuristike/index.php/treefield/en/74/kucove</loc>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+</url>
+<url>
+	<loc>http://localhost/PikatTuristike/index.php/treefield/en/76/skrapar</loc>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+</url>
+</urlset>
