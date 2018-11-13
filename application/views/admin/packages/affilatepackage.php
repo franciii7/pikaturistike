@@ -129,7 +129,7 @@
 
 <?php elseif(!$can_be_purchased): ?>
 
-<?php if($this->session->userdata('type') == 'ADMIN'): ?>
+<?php if($this->session->userdata('type') == 'ADMIN' || $this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE'): ?>
  <a href="<?php echo site_url('admin/user/edit/'.key($affilate_users[$listing->id])); ?>"><span class="label label-warning"><?php _l('Already purchased'); ?></span></a>
  
 <?php else: ?>

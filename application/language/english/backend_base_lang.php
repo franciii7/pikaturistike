@@ -37,7 +37,7 @@ $lang[''] = "";
 $lang[''] = "";
 
 //per qarkun
-$lang['Qarku']= "Qarku";
+$lang['Bashkia']= "Bashkia";
 
 /* languages */
 $lang['croatian'] = "Croatian";
@@ -86,6 +86,8 @@ $lang['AGENT'] = "Agent";
 $lang['AGENT_ADMIN'] = "Agent admin";
 $lang['AGENT_LIMITED'] = "Agent limited";
 $lang['USER'] = "Visitor";
+$lang['ADMINISTRATOR BASHKIE'] = "Administrator Bashkie";
+$lang['PUNONJES BASHKIE'] = "Punonjes Bashkie";
 $lang['Profile'] = "Profile";
 $lang['Language'] = "Language";
 $lang['Images'] = "Images";

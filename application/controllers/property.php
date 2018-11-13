@@ -96,12 +96,12 @@ class Property extends Frontend_Controller
         /* Fetch estate data */
         $estate_data = $this->estate_m->get_array($property_id, TRUE, array('language_id'=>$lang_id));
         
-        if($this->session->userdata('type')!='ADMIN' && $estate_data['is_activated'] != 1 &&
+        if(($this->session->userdata('type')!='ADMIN' && $this->session->userdata('type')!='ADMINISTRATOR BASHKIE' && $this->session->userdata('type')!='PUNONJES BASHKIE') && $estate_data['is_activated'] != 1 &&
            !isset($_GET['preview']))
         {
             //show_error(lang_check('Propertyactivated'));
             redirect('');
-        } else if ($this->session->userdata('type')!='ADMIN' && $estate_data['is_activated'] != 1
+        } else if (($this->session->userdata('type')!='ADMIN' && $this->session->userdata('type')!='ADMINISTRATOR BASHKIE' && $this->session->userdata('type')!='PUNONJES BASHKIE') && $estate_data['is_activated'] != 1
             && isset($_GET['preview']) && $this->estate_m->check_user_permission($property_id, $this->session->userdata('id')) == 0){
             redirect('');
         }

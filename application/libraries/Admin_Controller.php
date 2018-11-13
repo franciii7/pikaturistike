@@ -97,22 +97,23 @@ class Admin_Controller extends MY_Controller
                                    array('imageeditor', 'enquire', 'enquire/edit', 'dashboard', 'estate/index', 'estate/edit', /*'estate/delete',*/ 'user/edit', 
                                          'upload', 'order', 'upload_estate', 'upload_field', 'upload_user', 
                                          'packages/mypackage', 'packages/do_purchase_package', 'packages/cancel_payment');
-                             
-                             
+                                                         
         $CI->acl_config['USER'] = array('imageeditor', 'order', 'upload_estate', 'upload', 'upload_field', 'upload_user');
 
-        //rolet ne shqip
-        // $CI->acl_config['ADMIN_BASHKIE'] = array('imageeditor', 'enquire', 'dashboard', 'estate', /*'page',*/ 'settings', 'slideshow', 'user', 'upload_field_icons',
-        //                                     'upload', 'order', 'upload_slideshow', 'upload_estate', 'upload_user', 'upload_settings', 'upload_treefield', 'news', 
-        //                                     'ads', 'expert', 'companies', 'upload_ads', 'upload_field', 'showroom', 'upload_showroom', 'expert', 
-        //                                     /*'booking', 'packages', 'tools', 'monetize', 'backup',*/ 'reviews', 'emailfiles', 'forms', 'tcalendar',
-        //                                     'savesearch', 'treefield', 'favorites', 'mapreport', /*'benchmarktool',*/ /*'templates', 'templatefiles','addons',*/ 
-    // 'reports','visits'*/);
-
-
-
-
+        $CI->acl_config['ADMINISTRATOR BASHKIE'] = array('imageeditor', 'enquire', 'dashboard', 'estate', 'page', 'settings', 'slideshow', 'user', 'upload_field_icons',
+                                                         'upload', 'order', 'upload_slideshow', 'upload_estate', 'upload_user', 'upload_settings', 'upload_treefield', 'news', 
+                                                         'ads', 'expert', 'companies', 'upload_ads', 'upload_field', 'showroom', 'upload_showroom', 'expert', 
+                                                         'booking', 'packages', 'tools', 'monetize', 'backup', 'reviews', 'emailfiles', 'forms', 'tcalendar',
+                                                         'savesearch', 'treefield', 'favorites', 'mapreport', 'benchmarktool', 'templates', 'templatefiles','addons', 
+                                                         'reports','visits');
         
+        $CI->acl_config['PUNONJES BASHKIE'] = array('imageeditor', 'enquire', 'dashboard', 'estate', 'page', 'settings', 'slideshow', 'user', 'upload_field_icons',
+                                                    'upload', 'order', 'upload_slideshow', 'upload_estate', 'upload_user', 'upload_settings', 'upload_treefield', 'news', 
+                                                    'ads', 'expert', 'companies', 'upload_ads', 'upload_field', 'showroom', 'upload_showroom', 'expert', 
+                                                    'booking', 'packages', 'tools', 'monetize', 'backup', 'reviews', 'emailfiles', 'forms', 'tcalendar',
+                                                    'savesearch', 'treefield', 'favorites', 'mapreport', 'benchmarktool', 'templates', 'templatefiles','addons', 
+                                                    'reports','visits');
+                                                    
         if(config_db_item('agent_reservation_rates_enabled') === TRUE)
         {
             $CI->acl_config['AGENT'][] = 'booking';

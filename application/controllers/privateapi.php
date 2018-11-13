@@ -59,7 +59,7 @@ class Privateapi extends CI_Controller
         
         $this->data['success'] = false;
         
-        if($this->session->userdata('type') == 'ADMIN')
+        if($this->session->userdata('type') == 'ADMIN' || $this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE')
         {
             if(isset($this->data['parameters']['design_parameters']))
             {
@@ -238,7 +238,7 @@ class Privateapi extends CI_Controller
         else
         {
             // it's table
-            if($this->session->userdata('type') == 'ADMIN')
+            if($this->session->userdata('type') == 'ADMIN' || $this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE')
             {
                 if(!empty($this->data['parameters']['search_term']))
                 {

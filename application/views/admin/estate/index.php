@@ -123,7 +123,7 @@
                         <?php endif;?>
                       
                       </div>
-                      <?php if($this->session->userdata('type') == 'ADMIN'):?>
+                      <?php if($this->session->userdata('type') == 'ADMIN' || $this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE'):?>
                       <div class="form-group">
                         <input class="form-control" name="name_surname" id="name_surname" value="<?php echo set_value_GET('name_surname', '', true); ?>" placeholder="<?php echo lang_check('Agent name'); ?>" type="text" />
                       </div>
@@ -148,7 +148,7 @@
                             <?php foreach($this->option_m->get_visible($content_language_id) as $row):?>
                             <th data-hide="phone,tablet"><?php echo $row->option;?></th>
                             <?php endforeach;?>
-                            <th><?php echo lang_check('Qarku');?></th>
+                            <th><?php echo lang_check('Bashkia');?></th>
                             <!-- End dynamic generated -->
                             <th data-hide="phone"><?php echo lang_check('Views');?> <?php echo field_order_by($field_title = 'property.counter_views');?></th>
                             <th data-hide="phone"><?php echo lang_check('Preview');?></th>
@@ -156,7 +156,9 @@
 
                             <?php if(config_item('status_enabled') === TRUE && 
                                         ($this->session->userdata('type') == 'AGENT_COUNTY_AFFILIATE' || 
-                                         $this->session->userdata('type') == 'ADMIN'
+                                         $this->session->userdata('type') == 'ADMIN' ||
+                                         $this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' ||
+                                         $this->session->userdata('type') == 'PUNONJES BASHKIE'
                                         )):?>
                             <th class="control"><?php _l('Status');?></th>
                             <?php elseif(check_acl('estate/delete')):?><th class="control"><?php echo lang('Delete');?></th>
@@ -233,7 +235,9 @@
                                     	
                             <?php if(config_item('status_enabled') === TRUE && 
                                         ($this->session->userdata('type') == 'AGENT_COUNTY_AFFILIATE' || 
-                                         $this->session->userdata('type') == 'ADMIN'
+                                         $this->session->userdata('type') == 'ADMIN' || 
+                                         $this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' ||
+                                         $this->session->userdata('type') == 'PUNONJES BASHKIE'
                                         )):?>
                                      
                             
@@ -339,7 +343,7 @@
                 </div>
             </div>
           </div>
-          <?php if(config_db_item('disable_faq_for_agent') == TRUE && $this->session->userdata('type') != 'ADMIN'): ?>
+          <?php if(config_db_item('disable_faq_for_agent') == TRUE && $this->session->userdata('type') != 'ADMIN' && $this->session->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE'): ?>
           <div class="row">
 
             <div class="col-md-12">

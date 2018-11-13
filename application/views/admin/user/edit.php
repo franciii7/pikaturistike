@@ -88,7 +88,7 @@
                                   </div>
                                 </div>
                                 
-                                <?php if($this->session->userdata('type') == 'ADMIN'): ?>
+                                <?php if($this->session->userdata('type') == 'ADMIN' || $this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE'): ?>
                                 <div class="form-group">
                                   <label class="col-lg-2 control-label"><?php echo lang('Type')?></label>
                                   <div class="col-lg-10">
@@ -97,7 +97,7 @@
                                 </div>
                                 <?php endif; ?>
                                 
-                                <?php if($this->session->userdata('type') == 'ADMIN' && file_exists(APPPATH.'controllers/admin/expert.php')): ?>
+                                <?php if(($this->session->userdata('type') == 'ADMIN' || $this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE') && file_exists(APPPATH.'controllers/admin/expert.php')): ?>
                                 <div class="form-group">
                                   <label class="col-lg-2 control-label"><?php echo lang_check('Expert category')?></label>
                                   <div class="col-lg-10">
@@ -111,7 +111,7 @@
 
                     
                                 
-                                <?php //if($this->session->userdata('type') == 'ADMIN' && file_exists(APPPATH.'controllers/admin/packages.php')): ?>
+                                <?php //if(($this->session->userdata('type') == 'ADMIN' || $this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE') && file_exists(APPPATH.'controllers/admin/packages.php')): ?>
                                 <!--<div class="form-group">
                                   <label class="col-lg-2 control-label"><?php //echo lang_check('Package')?></label>
                                   <div class="col-lg-10">
@@ -179,7 +179,7 @@
                                 </div>
                                 <?php endif; ?>
                                 
-                                <?php if($this->session->userdata('type') == 'ADMIN'): ?>
+                                <?php if($this->session->userdata('type') == 'ADMIN' || $this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE'): ?>
                                 <div class="form-group">
                                   <label class="col-lg-2 control-label"><?php echo lang('Activated')?></label>
                                   <div class="col-lg-10">
@@ -246,7 +246,7 @@
                                 </div>-->
                                 <?php //endif; ?>
                                 
-                                <?php if($this->session->userdata('type') == 'ADMIN' && config_db_item('phone_verification_enabled') === TRUE && file_exists(APPPATH.'libraries/Clickatellapi.php')): ?>
+                                <?php if(($this->session->userdata('type') == 'ADMIN' || $this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE') && config_db_item('phone_verification_enabled') === TRUE && file_exists(APPPATH.'libraries/Clickatellapi.php')): ?>
                                 <div class="form-group">
                                   <label class="col-lg-2 control-label"><?php echo lang_check('Phone verified')?></label>
                                   <div class="col-lg-10">
@@ -286,7 +286,7 @@
 
 
 
-                                <?php if(config_db_item('enable_county_affiliate_roles') === FALSE && $this->session->userdata('type') == 'ADMIN'): ?>
+                                <?php if(config_db_item('enable_county_affiliate_roles') === FALSE && ($this->session->userdata('type') == 'ADMIN' || $this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE')): ?>
                                 <div class="form-group search-form">
                                   <label class="col-lg-2 control-label"><?php echo lang_check('Qarku & Bashkia')?></label>
                                     <div class="col-lg-10">

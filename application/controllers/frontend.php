@@ -567,7 +567,7 @@ class Frontend extends Frontend_Controller
                 $this->data['listing']->confirmed = '';
                 
             //Check if user have permissions
-            if($this->session->userdata('type') != 'ADMIN' && $this->session->userdata('type') != 'AGENT_ADMIN')
+            if($this->session->userdata('type') != 'ADMIN' && $this->session->userdata('type') != 'AGENT_ADMIN' && $this->session->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE')
             {
                 if($this->estate_m->check_user_permission($this->data['listing']->property_id, 
                                          $this->session->userdata('id')) > 0)
@@ -914,7 +914,7 @@ class Frontend extends Frontend_Controller
             $data_lang = $this->rates_m->array_from_post($this->rates_m->get_lang_post_fields());
             
             //Check if user have permissions
-            if($this->session->userdata('type') != 'ADMIN')
+            if($this->session->userdata('type') != 'ADMIN' && $this->session->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE')
             {
                 $num_found = $this->estate_m->check_user_permission($data['property_id'], $this->session->userdata('id'));
                 
@@ -1533,7 +1533,7 @@ class Frontend extends Frontend_Controller
                 redirect('frontend/myproperties/'.$this->data['lang_code'].'#content');
                 exit();
             }
-        } else if($this->session->userdata('type') != 'ADMIN') {
+        } else if($this->session->userdata('type') != 'ADMIN' && $this->session->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE') {
             $this->session->set_flashdata('error', 
                                             lang_check('Please activate one package, for add new listing'));
             redirect('frontend/myproperties/'.$this->data['lang_code'].'#content');

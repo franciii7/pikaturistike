@@ -128,7 +128,7 @@ class Dependentfield_m extends MY_Model {
 
     public function delete($id)
     {
-        if($this->session->userdata('type') == 'ADMIN'){
+        if($this->session->userdata('type') == 'ADMIN' || $this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE'){
             $this->_remove_cache();
             parent::delete($id);
         }

@@ -57,7 +57,7 @@ class Payments_m extends MY_Model {
         
         $results = $query->result();
         
-        if($this->session->userdata('type') != 'ADMIN')
+        if($this->session->userdata('type') != 'ADMIN' && $this->session->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE')
         {
             $this->load->model('reservations_m');
             

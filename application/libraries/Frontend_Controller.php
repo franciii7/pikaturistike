@@ -558,6 +558,72 @@ class Frontend_Controller extends MY_Controller
                     if($this->session->userdata('id') == $CI->uri->segment(2))
                         $this->data['page_edit_url'] = site_url('frontend/myprofile/'.$this->data['lang_code']); 
                 }
+            }elseif($this->session->userdata('type') == 'ADMINISTRATOR BASHKIE') {
+                if($CI->uri->segment(1) == 'property') {
+                    $this->data['page_edit_url']=  site_url('admin/estate/edit/'.$CI->uri->segment(2));
+                } else if($CI->uri->segment(1) == 'showroom') {
+                    $this->data['page_edit_url']=  site_url('admin/estate/edit/'.$CI->uri->segment(2));
+                }
+                else if($CI->uri->segment(1) == 'profile') {
+                    $this->data['page_edit_url'] = site_url('admin/user/edit/'.$CI->uri->segment(2)); 
+                } else if(!empty( $this->temp_data['page'])&& $this->temp_data['page']->type == 'MODULE_NEWS_POST') {
+                    $this->data['page_edit_url']=  site_url('admin/news/edit/'.$CI->uri->segment(2));
+                } else if(!empty( $this->temp_data['page'])&& $this->temp_data['page']->type == 'ARTICLE') {
+                    $this->data['page_edit_url']=  site_url('admin/page/edit/'.$this->temp_data['page']->id);
+                } else {
+                    if(!empty($this->temp_data['page'])&&$this->temp_data['page']->id==1&&!$CI->uri->segment(1)){
+                        $this->data['page_edit_url'] = site_url('admin/page/edit/'.$this->temp_data['page']->id);
+                    } else {
+                        $this->data['page_edit_url'] = site_url('admin/page/edit/'.$this->temp_data['page']->id);
+
+                        /* manager category */
+                        if($this->temp_data['page']->template=='page_showroom'){
+                            if(file_exists(APPPATH.'controllers/admin/showroom.php'))
+                            $this->data['category_edit_url'] = site_url('admin/showroom');
+                            
+                        } elseif($this->temp_data['page']->template=='page_news') {
+                            if(file_exists(APPPATH.'controllers/admin/news.php'))
+                            $this->data['category_edit_url'] = site_url('admin/news');
+                        } elseif($this->temp_data['page']->template=='page_expert') {
+                            if(file_exists(APPPATH.'controllers/admin/expert.php'))
+                                $this->data['category_edit_url'] = site_url('admin/expert');
+                            
+                        }
+                    }
+                }
+            }elseif($this->session->userdata('type') == 'PUNONJES BASHKIE') {
+                if($CI->uri->segment(1) == 'property') {
+                    $this->data['page_edit_url']=  site_url('admin/estate/edit/'.$CI->uri->segment(2));
+                } else if($CI->uri->segment(1) == 'showroom') {
+                    $this->data['page_edit_url']=  site_url('admin/estate/edit/'.$CI->uri->segment(2));
+                }
+                else if($CI->uri->segment(1) == 'profile') {
+                    $this->data['page_edit_url'] = site_url('admin/user/edit/'.$CI->uri->segment(2)); 
+                } else if(!empty( $this->temp_data['page'])&& $this->temp_data['page']->type == 'MODULE_NEWS_POST') {
+                    $this->data['page_edit_url']=  site_url('admin/news/edit/'.$CI->uri->segment(2));
+                } else if(!empty( $this->temp_data['page'])&& $this->temp_data['page']->type == 'ARTICLE') {
+                    $this->data['page_edit_url']=  site_url('admin/page/edit/'.$this->temp_data['page']->id);
+                } else {
+                    if(!empty($this->temp_data['page'])&&$this->temp_data['page']->id==1&&!$CI->uri->segment(1)){
+                        $this->data['page_edit_url'] = site_url('admin/page/edit/'.$this->temp_data['page']->id);
+                    } else {
+                        $this->data['page_edit_url'] = site_url('admin/page/edit/'.$this->temp_data['page']->id);
+
+                        /* manager category */
+                        if($this->temp_data['page']->template=='page_showroom'){
+                            if(file_exists(APPPATH.'controllers/admin/showroom.php'))
+                            $this->data['category_edit_url'] = site_url('admin/showroom');
+                            
+                        } elseif($this->temp_data['page']->template=='page_news') {
+                            if(file_exists(APPPATH.'controllers/admin/news.php'))
+                            $this->data['category_edit_url'] = site_url('admin/news');
+                        } elseif($this->temp_data['page']->template=='page_expert') {
+                            if(file_exists(APPPATH.'controllers/admin/expert.php'))
+                                $this->data['category_edit_url'] = site_url('admin/expert');
+                            
+                        }
+                    }
+                }
             }
         /* end edit link */
         

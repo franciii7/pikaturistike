@@ -1,7 +1,7 @@
 <?php $this->load->view('admin/components/page_head_main')?>
 <body>
 <div class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
-  
+  <?php $this->load->model('user_m')?>
     <div class="containerk">
       <!-- Menu button for smallar screens -->
 		<div class="navbar-header">
@@ -11,7 +11,7 @@
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 		  </button>
-		  <a href="<?php echo site_url('admin/dashboard')?>" class="navbar-brand"><img src="<?php echo base_url('admin-assets/img/custom/logo-system-mini.png');?>" />Map Kiosk <span class="bold">cityguide</span></a>
+		  <a href="<?php echo site_url('admin/dashboard')?>" class="navbar-brand"><img src="<?php echo base_url('admin-assets/img/custom/logo-system-mini.png');?>" />Platforma Turistike <span class="bold">Digjitale</span></a>
 		</div>
       <!-- Site name for smallar screens -->
 
@@ -146,7 +146,7 @@
 
             <li class="nred<?php echo (strpos($this->uri->uri_string(),'dashboard')!==FALSE || $this->uri->uri_string() == 'admin')?' current':'';?>"><a href="<?php echo site_url('admin/dashboard')?>"><i class="icon-desktop"></i> <?php echo lang_check('Dashboard');?></a></li>
             
-            <?php if(check_acl('page') && config_db_item('frontend_disabled') === FALSE):?>
+            <?php if(check_acl('page') && config_db_item('frontend_disabled') === FALSE && $this->session->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE'):?>
             <li class="ngreen<?php echo (strpos($this->uri->uri_string(),'page')!==FALSE)?' current':'';?>"><a href="<?php echo site_url('admin/page')?>"><i class="icon-sitemap"></i> <?php echo lang_check('Pages & menu');?></a></li>
             <?php endif;?>
             
@@ -163,14 +163,16 @@
                 <li><a href="<?php echo site_url('admin/estate')?>"><?php echo lang_check('Manage');?></a></li>
                 <?php if(check_acl('estate/options')):?>
                 <li><a href="<?php echo site_url('admin/estate/options')?>"><?php echo lang_check('Options');?></a></li>
+                <?php if($this->session->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE'): ?>
                 <li><a href="<?php echo site_url('admin/estate/dependent_fields')?>"><?php echo lang_check('Dependent fields');?></a></li>
                 <?php endif;?>
-                <?php if(check_acl('estate/forms') && config_item('search_forms_editor_enabled') == TRUE):?>
+                <?php endif;?>
+                <?php if(check_acl('estate/forms') && config_item('search_forms_editor_enabled') == TRUE && $this->session->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE' ):?>
                 <li><a href="<?php echo site_url('admin/estate/forms')?>"><?php echo lang_check('Search forms');?></a></li>
                 <?php endif;?>
                 
                 <?php
-                    if(file_exists(APPPATH.'controllers/admin/treefield.php') && $this->session->userdata('type') == 'ADMIN')
+                    if(file_exists(APPPATH.'controllers/admin/treefield.php') && ($this->session->userdata('type') == 'ADMIN' || $this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE'))
                     {
                         $CI =& get_instance();
                         $CI->load->model('option_m');
@@ -190,7 +192,7 @@
                 ?>
                 <?php if(config_item('admin_beginner_enabled') === TRUE):?>
                 <?php
-                    if($this->session->userdata('type') == 'ADMIN')
+                    if($this->session->userdata('type') == 'ADMIN' || $this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE')
                     {
                         $CI =& get_instance();
                         $CI->load->model('option_m');
@@ -204,7 +206,7 @@
                 ?>
                 
                 <?php
-                    if($this->session->userdata('type') == 'ADMIN')
+                    if($this->session->userdata('type') == 'ADMIN' || $this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE')
                     {
                         $CI =& get_instance();
                         $CI->load->model('option_m');
@@ -217,7 +219,7 @@
                 
                 ?>
                 <?php endif;?>
-                <?php if(config_item('report_property_enabled') == TRUE && $this->session->userdata('type') == 'ADMIN'):?>
+                <?php if(config_item('report_property_enabled') == TRUE && ($this->session->userdata('type') == 'ADMIN' || $this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE')):?>
                 <li><a href="<?php echo site_url('admin/reports')?>"><?php echo lang_check('Reported');?></a></li>
                 <?php endif;?>
                 <?php if(config_item('status_enabled') === TRUE && 
@@ -227,7 +229,9 @@
                 <?php endif;?>
                 <?php if(config_item('removed_reports_enabled') === TRUE && 
                          ( $this->session->userdata('type') == 'AGENT_COUNTY_AFFILIATE' ||
-                           $this->session->userdata('type') == 'ADMIN' )
+                           $this->session->userdata('type') == 'ADMIN' ||
+                           $this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' ||
+                           $this->session->userdata('type') == 'PUNONJES BASHKIE' )
                          ):?>
                 <li><a href="<?php echo site_url('admin/estate/removed')?>"><?php echo lang_check('Removed');?></a></li>
                 <?php endif;?>
@@ -238,7 +242,7 @@
             </li>
             
             <?php if(config_item('admin_beginner_enabled') === TRUE):?>
-                <?php if(check_acl('user')):?>
+                <?php if(check_acl('user') && $this->session->userdata('type') != 'PUNONJES BASHKIE'):?>
                 <li class="norange<?php echo (strpos($this->uri->uri_string(),'user')!==FALSE && strpos($this->uri->uri_string(),'user/edit/'.$this->session->userdata('id'))===FALSE)?' current':'';?>"><a href="<?php echo site_url('admin/user')?>"><i class="icon-list-alt"></i> <?php echo lang_check('Agents & Users');?></a></li>
                 <?php endif;?>
                 
@@ -275,9 +279,11 @@
                       <ul>
                         <li><a href="<?php echo site_url('admin/settings')?>"><?php echo lang_check('Company details');?></a></li>
                         <li><a href="<?php echo site_url('admin/settings/language')?>"><?php echo lang_check('Languages');?></a></li>
+                        <?php if($this->session->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE'): ?>
                         <li><a href="<?php echo site_url('admin/settings/template')?>"><?php echo lang_check('Template');?></a></li>
-                        <li><a href="<?php echo site_url('admin/settings/system')?>"><?php echo lang_check('System');?></a></li>
                         <li><a href="<?php echo site_url('admin/settings/addons')?>"><?php echo lang_check('Addons');?></a></li>
+                        <?php endif; ?>
+                        <li><a href="<?php echo site_url('admin/settings/system')?>"><?php echo lang_check('System');?></a></li>
                         <?php if(config_db_item('currency_conversions_enabled') === TRUE): ?>
                         <li><a href="<?php echo site_url('admin/settings/currency_conversions')?>"><?php echo lang_check('Currency Conversions');?></a></li>
                         <?php endif; ?>
@@ -308,11 +314,11 @@
             <li class="nlightblue<?php echo (strpos($this->uri->uri_string(),'statistics')!==FALSE)?' current':'';?>"><a target="_blank" href="https://www.google.com/analytics/web"><i class="icon-bar-chart"></i> <?php echo lang_check('Statistics');?></a></li>
             <?php endif;?>
             
-            <?php if(check_acl('backup')):?>
+            <?php if(check_acl('backup') && $this->session->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE'):?>
             <li class="norange<?php echo (strpos($this->uri->uri_string(),'backup')!==FALSE)?' current':'';?>"><a href="<?php echo site_url('admin/backup')?>"><i class="icon-hdd"></i> <?php echo lang_check('Backup')?></a></li>
             <?php endif;?>
             
-            <?php if(file_exists(APPPATH.'controllers/admin/news.php') && check_acl('news')):?>
+            <?php if(file_exists(APPPATH.'controllers/admin/news.php') && check_acl('news') && $this->session->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE'):?>
             <li class="has_submenu nblue<?php echo (strpos($this->uri->uri_string(),'news')!==FALSE)?' current open':'';?>">
                 <a href="#">
                     <!-- Menu name with icon -->
@@ -378,7 +384,7 @@
                 <li><a href="<?php echo site_url('admin/booking')?>"><?php echo lang_check('Reservations');?></a></li>
                 <li><a href="<?php echo site_url('admin/booking/rates')?>"><?php echo lang_check('Rates');?></a></li>
                 <li><a href="<?php echo site_url('admin/booking/payments')?>"><?php echo lang_check('Payments');?></a></li>
-                <?php if($this->session->userdata('type') == 'ADMIN'): ?>
+                <?php if($this->session->userdata('type') == 'ADMIN' || $this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE'): ?>
                 <li><a href="<?php echo site_url('admin/booking/withdrawals')?>"><?php echo lang_check('Withdrawals');?></a></li>
                 <?php endif; ?>
               </ul>
@@ -399,13 +405,13 @@
             </li>
             <?php endif; ?>
             
-            <?php if(file_exists(APPPATH.'controllers/admin/packages.php') && check_acl('packages')):?>
+          <?php if(file_exists(APPPATH.'controllers/admin/packages.php') && check_acl('packages') && $this->session->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE'):?>
             <li class="has_submenu nviolet<?php echo (strpos($this->uri->uri_string(),'packages')!==FALSE)?' current open':'';?>">
-                <a href="#">
+                <a href="#"> 
                     <!-- Menu name with icon -->
-                    <i class="icon-gift"></i> <?php echo lang_check('Packages');?>
+                    <i class="icon-gift"></i> <?php echo lang_check('Packages');?> 
                     <!-- Icon for dropdown -->
-                    <span class="pull-right"><i class="icon-angle-right"></i></span>
+                  <span class="pull-right"><i class="icon-angle-right"></i></span>
                 </a>
               <ul>
                 <li><a href="<?php echo site_url('admin/packages')?>"><?php echo lang_check('Manage');?></a></li>
@@ -416,9 +422,9 @@
                 <li><a href="<?php echo site_url('admin/packages/payments')?>"><?php echo lang_check('Payments');?></a></li>
               </ul>
             </li>
-            <?php elseif(file_exists(APPPATH.'controllers/admin/packages.php') && check_acl('packages/mypackage')): ?>
+            <?php elseif(file_exists(APPPATH.'controllers/admin/packages.php') && check_acl('packages/mypackage') && $this->session->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE'): ?>
             <li class="nviolet<?php echo (strpos($this->uri->uri_string(),'packages')!==FALSE)?' current open':'';?>">
-                <a href="<?php echo site_url('admin/packages/mypackage')?>">
+                <a href="<?php echo site_url('admin/packages/mypackage')?>"> 
                     <!-- Menu name with icon -->
                     <i class="icon-gift"></i> <?php echo lang_check('My package');?>
                 </a>
@@ -426,12 +432,12 @@
             <?php elseif(config_db_item('enable_county_affiliate_roles') === TRUE && 
                      $this->session->userdata('type') == 'AGENT_COUNTY_AFFILIATE' && check_acl('packages/affilatepackage')): ?>
             <li class="nviolet<?php echo (strpos($this->uri->uri_string(),'packages')!==FALSE)?' current open':'';?>">
-                <a href="<?php echo site_url('admin/packages/affilatepackage'); ?>">
+                <a href="<?php echo site_url('admin/packages/affilatepackage'); ?>"> 
                     <!-- Menu name with icon -->
-                    <i class="icon-gift"></i> <?php echo lang_check('Affilate package');?>
+                  <i class="icon-gift"></i> <?php echo lang_check('Affilate package');?>
                 </a>
             </li>
-            <?php endif;?>
+            <?php endif;?> 
             
             <?php if(file_exists(APPPATH.'controllers/admin/reviews.php') && check_acl('reviews')): ?>
             <li class="nblue<?php echo (strpos($this->uri->uri_string(),'reviews')!==FALSE)?' current open':'';?>">
@@ -451,7 +457,7 @@
             </li>
             <?php endif;?>
             
-            <?php if(check_acl('monetize') && config_db_item('frontend_disabled') === FALSE):?>
+            <?php if(check_acl('monetize') && config_db_item('frontend_disabled') === FALSE && $this->session->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE'):?>
             <li class="has_submenu nred<?php echo (strpos($this->uri->uri_string(),'monetize')!==FALSE)?' current open':'';?>">
                 <a href="#">
                     <!-- Menu name with icon -->

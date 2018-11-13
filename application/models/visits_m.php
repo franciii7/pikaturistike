@@ -55,7 +55,7 @@ class Visits_m extends MY_Model {
         $this->db->join('property_user', $this->_table_name.'.property_id = property_user.property_id', 'left');
         $this->db->join('user', $this->_table_name.'.client_id = user.id', 'left');
         
-        if($this->session->userdata('type') != 'ADMIN' && $this->session->userdata('type') != 'AGENT_ADMIN')
+        if($this->session->userdata('type') != 'ADMIN' && $this->session->userdata('type') != 'AGENT_ADMIN' && $this->session->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE')
         {
             $this->db->where('user_id', $this->session->userdata('id'));
         }

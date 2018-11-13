@@ -238,7 +238,7 @@ class Rates extends Frontuser_Controller
                 redirect('rates/index');
             
             //Check if user have permissions
-            if($this->session->userdata('type') != 'ADMIN')
+            if($this->session->userdata('type') != 'ADMIN' && $this->session->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE')
             {
                 $num_found = $this->estate_m->check_user_permission($this->data['rate']->property_id, $this->session->userdata('id'));
                 
@@ -354,7 +354,7 @@ class Rates extends Frontuser_Controller
         }
         
         //Check if user have permissions
-        if($this->session->userdata('type') != 'ADMIN')
+        if($this->session->userdata('type') != 'ADMIN' && $this->session->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE')
         {
             $rate = $this->rates_m->get($listing_id);
             

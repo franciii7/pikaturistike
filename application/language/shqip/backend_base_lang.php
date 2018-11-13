@@ -32,6 +32,8 @@ $lang['Google Maps API key'] = "Google Maps API celsi";
 $lang['View all templates'] = "Shiko të gjitha shabllonet";
 $lang[''] = "";
 
+$lang['Bashkia'] = "Bashkia";
+
 $lang['croatian'] = "Kroatisht";
 $lang['english'] = "Anglisht";
 $lang['slovenian'] = "Sllovenisht";
@@ -72,6 +74,8 @@ $lang['AGENT'] = "Agjenti";
 $lang['AGENT_ADMIN'] = "Agjenti admin";
 $lang['AGENT_LIMITED'] = "Agjenti i kufizuar";
 $lang['USER'] = "Vizitori";
+$lang['ADMINISTRATOR BASHKIE'] = "Administrator Bashkie";
+$lang['PUNONJES BASHKIE'] = "Punonjes Bashkie";
 $lang['Profile'] = "Profili";
 $lang['Language'] = "Gjuha";
 $lang['Images'] = "imazhe";
@@ -636,7 +640,7 @@ $lang['Dates'] = "Datat";
 $lang['Multiple inserted'] = "Shumëfishe";
 $lang['Nothing inserted, reservations already exists'] = "File ekziston";
 $lang['AGENT_COUNTY_AFFILIATE'] = "Filialin e agjensisë";
-$lang['County'] = "Qarku";
+$lang['County'] = "Bashkia";
 $lang['Last admin cant be removed'] = "Po.";
 $lang['Currency Conversions'] = "Monedha";
 $lang['Add currency'] = "Monedha";

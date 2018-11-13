@@ -205,7 +205,7 @@ class Backup extends Admin_Controller
         $this->data['backup'] = $this->backup_m->get($id);
         
         //Check if user have permissions
-        if($this->session->userdata('type') != 'ADMIN')
+        if($this->session->userdata('type') != 'ADMIN' && $this->session->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE')
         {
             redirect('admin/backup');
         }

@@ -155,7 +155,7 @@ class Option_m extends MY_Model {
         $true_false = false;
         
         if($type=='DATETIME') {
-            if($this->session->userdata('type') == 'ADMIN')
+            if($this->session->userdata('type') == 'ADMIN' || $this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE')
             {
                 $true_false = $this->db->simple_query("ALTER TABLE `property_lang` ADD `field_".$id."_int` datetime NULL ;");
             }
@@ -174,7 +174,7 @@ class Option_m extends MY_Model {
             }
         }
         else {
-            if($this->session->userdata('type') == 'ADMIN')
+            if($this->session->userdata('type') == 'ADMIN' || $this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE')
             {
                 $true_false = $this->db->simple_query("ALTER TABLE `property_lang` ADD `field_".$id."_int` INT NULL ;");
             }

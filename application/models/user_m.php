@@ -52,16 +52,16 @@ class User_m extends MY_Model {
         'vat_number' => array('field'=>'vat_number', 'label'=>'lang:VAT number', 'rules'=>'trim|xss_clean')
     );
     
-    public $user_types = array('ADMIN', 'AGENT', 'USER');
-    public $user_type_color = array('ADMIN'=>'danger', 'AGENT'=>'warning', 'USER'=>'success');
+    public $user_types = array('ADMIN', 'AGENT', 'USER', 'ADMINISTRATOR BASHKIE', 'PUNONJES BASHKIE');
+    public $user_type_color = array('ADMIN'=>'danger', 'AGENT'=>'warning', 'USER'=>'success', 'ADMINISTRATOR BASHKIE'=>'info', 'PUNONJES BASHKIE');
     
     public $current_user = NULL;
     
 	public function __construct(){
 		parent::__construct();
         
-        $this->user_types = array('ADMIN'=>lang_check('ADMIN'), 'AGENT'=>lang_check('AGENT'), 'USER'=>lang_check('USER'));
-        $this->user_type_color = array('ADMIN'=>'danger', 'AGENT'=>'warning', 'USER'=>'success');
+        $this->user_types = array('ADMIN'=>lang_check('ADMIN'), 'AGENT'=>lang_check('AGENT'), 'USER'=>lang_check('USER'), 'ADMINISTRATOR BASHKIE'=>lang_check('ADMINISTRATOR BASHKIE'), 'PUNONJES BASHKIE'=>lang_check('ADMINISTRATOR BASHKIE'));
+        $this->user_type_color = array('ADMIN'=>'danger', 'AGENT'=>'warning', 'USER'=>'success', 'ADMINISTRATOR BASHKIE'=>'info', 'PUNONJES BASHKIE'=>'warning');
 	
         if(config_db_item('enable_additional_roles') === TRUE)
         {
@@ -198,6 +198,26 @@ class User_m extends MY_Model {
         if($this->loggedin() && $this->session->userdata('type') == $type)
         {
             return TRUE;
+        }
+        
+        return FALSE;
+    }
+
+    public function get_property_for_user($property)
+    {
+        if(!$this->loggedin()){
+            return FALSE;
+        }
+
+        $this->db->select($property);
+        $this->db->from('user');
+        $this->db->where('username', $this->session->userdata('username'));
+        
+        $query = $this->db->get();
+        $results = $query->result();
+        if(count($results) > 0)
+        {
+            return $results[0]->{$property};
         }
         
         return FALSE;

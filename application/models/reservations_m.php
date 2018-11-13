@@ -404,7 +404,7 @@ class Reservations_m extends MY_Model {
         {
             $this->db->where($this->_table_name.'.saller_id', $this->session->userdata('id'));
         }
-        else if($this->session->userdata('type') != 'ADMIN')
+        else if($this->session->userdata('type') != 'ADMIN' && $this->session->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE')
         {
             $this->db->where('property_user.user_id', $this->session->userdata('id'));
         }

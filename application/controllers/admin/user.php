@@ -29,7 +29,8 @@ class User extends Admin_Controller
         prepare_search_query_GET(array('type'), array('id', 'username', 'name_surname', 'address', 'description', 'mail'));
        
 	    // Fetch all users
-		$this->data['users'] = $this->user_m->get();
+        $this->data['users'] = $this->user_m->get();
+        
         
         // pagination
         $config['base_url'] = site_url('admin/user/index');
@@ -133,7 +134,9 @@ class User extends Admin_Controller
             
             //Check if user have permissions
             if($this->session->userdata('type') != 'ADMIN' &&
-               $this->session->userdata('type') != 'AGENT_ADMIN' )
+               $this->session->userdata('type') != 'AGENT_ADMIN' &&
+               $this->session->userdata('type') != 'ADMINISTRATOR BASHKIE' && 
+               $this->session->userdata('type') != 'PUNONJES BASHKIE')
             {
                 if($id == $this->session->userdata('id'))
                 {
@@ -146,7 +149,9 @@ class User extends Admin_Controller
             }
             
             if($this->data['user']->type == 'ADMIN' && 
-               $this->session->userdata('type') == 'AGENT_ADMIN')
+               $this->session->userdata('type') == 'AGENT_ADMIN' && 
+               $this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' && 
+               $this->session->userdata('type') == 'PUNONJES BASHKIE')
             {
                 redirect('admin/user');
             }
@@ -205,7 +210,7 @@ class User extends Admin_Controller
         $id || $rules['password']['rules'] .= '|required';
         //$rules['mail']['rules'] .= '|callback__unique_email';
             
-        if($this->session->userdata('type') != 'ADMIN')
+        if($this->session->userdata('type') != 'ADMIN' && $this->session->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE')
             unset($rules['type'], $rules['mail_verified'], $rules['phone_verified'], $rules['activated']);
 
         if($this->session->userdata('type') == 'AGENT_LIMITED')
@@ -237,7 +242,7 @@ class User extends Admin_Controller
             if(config_db_item('phone_mobile_enabled') === TRUE)
                 $data['phone2'] = $this->user_m->input->post('phone2');
             
-            if($this->session->userdata('type') != 'ADMIN')
+            if($this->session->userdata('type') != 'ADMIN' && $this->session->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE')
             {
                 unset($data['agency_id'], $data['mail_verified'], $data['phone_verified'], $data['activated'], $data['county_affiliate_values']);
             }
@@ -264,11 +269,11 @@ class User extends Admin_Controller
                 );
             }
             
-            if($this->session->userdata('type') != 'ADMIN' && isset($data['package_id']))
+            if(($this->session->userdata('type') != 'ADMIN' && $this->session->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE') && isset($data['package_id']))
                 unset($data['package_id']);
                 
             
-            if($this->session->userdata('type') == 'ADMIN' && $data['package_id']=='')
+            if(($this->session->userdata('type') == 'ADMIN' || $this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE') && $data['package_id']=='')
                 $data['package_id']= NULL;
                 $data['package_last_payment'] = NULL;
 
@@ -306,7 +311,7 @@ class User extends Admin_Controller
                 }
             }
 
-            if($this->session->userdata('type') != 'ADMIN')
+            if($this->session->userdata('type') != 'ADMIN' && $this->session->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE')
                 unset($data['type']);
 
             if($id == NULL)
@@ -342,7 +347,7 @@ class User extends Admin_Controller
             $message_mail = '';
             if(config_item('email_profile_changed_enabled') == TRUE)
             if(ENVIRONMENT != 'development')
-            if(!empty($data['mail']) && $this->session->userdata('type') == 'ADMIN' /*&& 
+            if(!empty($data['mail']) && ($this->session->userdata('type') == 'ADMIN' || $this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE') /*&& 
                $data['activated'] == 1 && 
                isset($data['password'])*/)
             {

@@ -83,7 +83,7 @@ class Estate extends Admin_Controller
         $this->data['pagination'] = $this->pagination->create_links();
         
         /* user type = ADMIN, search by AGENT/User name enabled */
-        if($this->session->userdata('type') == 'ADMIN' ){
+        if($this->session->userdata('type') == 'ADMIN' || $this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE'){
             prepare_search_query_GET(array($type_field, 'field_4', 'name_surname'), array('property.id', 'property.address', 'search_values'));
 
             if($this->input->get_post('name_surname')) {
@@ -163,7 +163,7 @@ class Estate extends Admin_Controller
         $this->data['pagination'] = $this->pagination->create_links();
         
         /* user type = ADMIN, search by AGENT/User name enabled */
-        if($this->session->userdata('type') == 'ADMIN'){
+        if($this->session->userdata('type') == 'ADMIN' || $this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE'){
             prepare_search_query_GET(array('field_2', 'field_4', 'name_surname'), array('property.id', 'property.address', 'search_values'));
 
             if($this->input->get_post('name_surname')) {
@@ -372,7 +372,7 @@ class Estate extends Admin_Controller
                     exit();
                 }
             }
-        } else if($this->session->userdata('type') != 'ADMIN') {
+        } else if($this->session->userdata('type') != 'ADMIN' && $this->session->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE') {
             $this->session->set_flashdata('error', 
                                             lang_check('Please activate one package, for add new listing'));
             redirect('admin/estate');
@@ -390,7 +390,7 @@ class Estate extends Admin_Controller
             }
             
             //Check if user have permissions
-            if($this->session->userdata('type') != 'ADMIN' && $this->session->userdata('type') != 'AGENT_ADMIN')
+            if($this->session->userdata('type') != 'ADMIN' && $this->session->userdata('type') != 'AGENT_ADMIN' && $this->session->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE')
             {
                 if($this->data['estate']->agent == $this->session->userdata('id'))
                 {
@@ -626,7 +626,7 @@ class Estate extends Admin_Controller
                 $data['date_modified'] = date('Y-m-d H:i:s');
             }
             
-            if($this->session->userdata('type') != 'ADMIN')
+            if($this->session->userdata('type') != 'ADMIN' && $this->session->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE')
             {
                 // only admin can manually change modify date
                 unset($data['date_modified']);
@@ -680,7 +680,9 @@ class Estate extends Admin_Controller
             
             if( $this->session->userdata('type') != 'ADMIN' && 
                 $this->session->userdata('type') != 'AGENT_ADMIN' && 
-                $this->session->userdata('type') != 'AGENT_COUNTY_AFFILIATE')
+                $this->session->userdata('type') != 'AGENT_COUNTY_AFFILIATE' && 
+                $this->session->userdata('type') != 'ADMINISTRATOR BASHKIE' && 
+                $this->session->userdata('type') != 'PUNONJES BASHKIE')
             {
                 $data['agent'] = $this->session->userdata('id');
             }
@@ -795,7 +797,7 @@ class Estate extends Admin_Controller
     
             // [/AGENT_COUNTY_AFFILIATE]
         }
-        else if($this->session->userdata('type') != 'ADMIN')
+        else if($this->session->userdata('type') != 'ADMIN' && $this->session->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE')
         {
             redirect('admin/estate');
         }
@@ -966,7 +968,7 @@ class Estate extends Admin_Controller
         }
         
         //Check if user have permissions
-        if($this->session->userdata('type') != 'ADMIN' && $this->session->userdata('type') != 'AGENT_ADMIN')
+        if($this->session->userdata('type') != 'ADMIN' && $this->session->userdata('type') != 'AGENT_ADMIN' && $this->session->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE')
         {
             $this->data['estate'] = $this->estate_m->get_dynamic($id);
             
@@ -1096,7 +1098,7 @@ class Estate extends Admin_Controller
             }
             
             //Check if user have permissions
-            if($this->session->userdata('type') != 'ADMIN')
+            if($this->session->userdata('type') != 'ADMIN' && $this->session->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE')
             {
                 redirect('admin/estate/dependent_fields');
             }
@@ -1467,7 +1469,7 @@ class Estate extends Admin_Controller
     public function generic_description($limit = 50, $lang_id = 1)
     {
         
-        if($this->session->userdata('type') != 'ADMIN')
+        if($this->session->userdata('type') != 'ADMIN' && $this->session->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE')
             exit('Permission denied');
 
         // Fetch all listings
@@ -1536,7 +1538,7 @@ class Estate extends Admin_Controller
 	{
         if($str=='1')
         {
-            if($this->session->userdata('type') != 'ADMIN' && $this->session->userdata('type') != 'AGENT_ADMIN')
+            if($this->session->userdata('type') != 'ADMIN' && $this->session->userdata('type') != 'AGENT_ADMIN' && $this->session->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE')
             {
                 // Get exception property_id
                 $exception_property_id = NULL;
@@ -2315,7 +2317,7 @@ class Estate extends Admin_Controller
                 }
             }
             
-            if($this->session->userdata('type') != 'ADMIN')
+            if($this->session->userdata('type') != 'ADMIN' && $this->session->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE')
             {
                 // only admin can manually change modify date
                 unset($data['date_modified']);
@@ -2361,7 +2363,9 @@ class Estate extends Admin_Controller
             
             if( $this->session->userdata('type') != 'ADMIN' && 
                 $this->session->userdata('type') != 'AGENT_ADMIN' && 
-                $this->session->userdata('type') != 'AGENT_COUNTY_AFFILIATE')
+                $this->session->userdata('type') != 'AGENT_COUNTY_AFFILIATE' &&
+                $this->session->userdata('type') != 'ADMINISTATOR BASHKIE' &&
+                $this->session->userdata('type') != 'PUNONJES BASHKIE')
             {
                 $data['agent'] = $this->session->userdata('id');
             }

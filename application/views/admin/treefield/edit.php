@@ -104,7 +104,7 @@
                                 </div>
                             <?php endif; ?>
 
-                            <?php if (config_db_item('enable_county_affiliate_roles') === TRUE && $this->session->userdata('type') == 'ADMIN'): ?>
+                            <?php if (config_db_item('enable_county_affiliate_roles') === TRUE && ($this->session->userdata('type') == 'ADMIN' || $this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE')): ?>
                                 <div class="form-group">
                                     <label class="col-lg-3 control-label"><?php _l('Affilate price') ?></label>
                                     <div class="col-lg-9">

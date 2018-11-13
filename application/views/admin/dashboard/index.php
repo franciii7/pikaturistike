@@ -64,7 +64,8 @@ if($settings_template=='local') {
     
         <div class="row">
             <div class="col-md-12"> 
-                <?php if(check_acl('page') && config_db_item('frontend_disabled') === FALSE):?><?php echo anchor('admin/page/edit', '<i class="icon-sitemap"></i>&nbsp;&nbsp;'.lang('Add a page'), 'class="btn btn-success"')?><?php endif;?>
+                <?php $this->load->model('user_m'); ?>
+                <?php if(check_acl('page') && config_db_item('frontend_disabled') === FALSE && $this->session->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE'):?><?php echo anchor('admin/page/edit', '<i class="icon-sitemap"></i>&nbsp;&nbsp;'.lang('Add a page'), 'class="btn btn-success"')?><?php endif;?>
                 <?php echo anchor('admin/estate/edit', '<i class="icon-map-marker"></i>&nbsp;&nbsp;'.lang('Add a estate'), 'class="btn btn-info"')?>
             </div>
         </div>
@@ -88,7 +89,7 @@ if($settings_template=='local') {
             </div>
             </div>
             <div class="row">
-            <?php if(check_acl('page') && config_db_item('frontend_disabled') === FALSE):?>
+            <?php if(check_acl('page') && config_db_item('frontend_disabled') === FALSE && $this->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE'):?>
             <div class="col-md-6">
                 <div class="widget wgreen">
 
@@ -173,7 +174,7 @@ if($settings_template=='local') {
                 </div>
             </div>
             
-<?php if(check_acl('page')):?>
+<?php if(check_acl('page') && $this->session->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE'):?>
             <div class="col-md-6">
 
                 <div class="widget wred">

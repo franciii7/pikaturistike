@@ -378,7 +378,7 @@ class Fmessages extends Frontuser_Controller
         }
         
         //Check if user have permissions
-        if($this->session->userdata('type') != 'ADMIN' && $this->session->userdata('type') != 'AGENT_ADMIN')
+        if($this->session->userdata('type') != 'ADMIN' && $this->session->userdata('type') != 'AGENT_ADMIN' && $this->session->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE')
         {
             if($this->estate_m->check_user_permission($this->data['enquire']->property_id, 
                                      $this->session->userdata('id')) > 0)

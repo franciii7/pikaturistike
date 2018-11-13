@@ -48,7 +48,7 @@ class Enquire extends Admin_Controller
             }
             
             //Check if user have permissions
-            if(($this->session->userdata('type') != 'ADMIN'   && $this->session->userdata('type') != 'AGENT_ADMIN')
+            if($this->session->userdata('type') != 'ADMIN' && $this->session->userdata('type') != 'AGENT_ADMIN' &&  $this->session->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE')
             {
                 if($this->estate_m->check_user_permission($this->data['enquire']->property_id, 
                                          $this->session->userdata('id')) > 0)
@@ -128,7 +128,7 @@ class Enquire extends Admin_Controller
         }
         
         //Check if user have permissions
-        if($this->session->userdata('type') != 'ADMIN'   && $this->session->userdata('type') != 'AGENT_ADMIN')
+        if($this->session->userdata('type') != 'ADMIN' && $this->session->userdata('type') != 'AGENT_ADMIN' && $this->session->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE')
         {
             if($this->estate_m->check_user_permission($this->data['enquire']->property_id, 
                                      $this->session->userdata('id')) > 0)
@@ -224,7 +224,7 @@ class Enquire extends Admin_Controller
         $this->data['enquire'] = $this->enquire_m->get($id);
         
         //Check if user have permissions
-        if($this->session->userdata('type') != 'ADMIN'  && $this->session->userdata('type') != 'AGENT_ADMIN')
+        if($this->session->userdata('type') != 'ADMIN'  && $this->session->userdata('type') != 'AGENT_ADMIN' && $this->session->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE')
         {
             if($this->estate_m->check_user_permission($this->data['enquire']->property_id, 
                                      $this->session->userdata('id')) > 0)
@@ -255,7 +255,7 @@ class Enquire extends Admin_Controller
         $this->data['enquire'] = $this->masking_m->get($id);
         
         //Check if user have permissions
-        if($this->session->userdata('type') != 'ADMIN'   && $this->session->userdata('type') != 'AGENT_ADMIN')
+        if($this->session->userdata('type') != 'ADMIN'   && $this->session->userdata('type') != 'AGENT_ADMIN' && $this->session->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE')
         {
             if($this->estate_m->check_user_permission($this->data['enquire']->property_id, 
                                      $this->session->userdata('id')) > 0)

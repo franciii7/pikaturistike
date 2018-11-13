@@ -23,6 +23,9 @@ $lang['After delete, template changes needed'] = "Poslje brisanja, predložak je
 $lang['Copy to other languages'] = "Kopiraj na druge jezike";
 $lang['Language locked, can\'t be deleted but you can change it!'] = "Izabrani jezik je zaključan, ne može biti obrisan ali može biti izmjenjen!";
 $lang['Back to homepage'] = "Povratak na početnu stranicu";
+
+$lang['Bashkia'] = "Bashkia";
+
 $lang['croatian'] = "Hrvatski";
 $lang['english'] = "Engleski";
 $lang['slovenian'] = "Slovenski";
@@ -63,6 +66,8 @@ $lang['should be unique'] = "je već zauzeto, molimo unesite drugo";
 $lang['ADMIN'] = "Administrator";
 $lang['AGENT'] = "Agent";
 $lang['USER'] = "Posjetitelj";
+$lang['ADMINISTRATOR BASHKIE'] = "Administrator Bashkie";
+$lang['PUNONJES BASHKIE'] = "Punonjes Bashkie";
 $lang['Profile'] = "Profil";
 $lang['Language'] = "Jezik";
 $lang['Images'] = "Slike";

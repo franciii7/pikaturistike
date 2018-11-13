@@ -4,8 +4,8 @@
  $field_id = 64;
  $lang_id = $content_language_id;
  $municipalities = $CI->treefield_m->get_level_values($lang_id, $field_id,-1,1);
- 
-
+ $this->load->model('user_m');
+ $self_municipality_id = $this->user_m->get_property_for_user('municipality_id');
 ?>
 <div class="page-head">
     <!-- Page heading -->
@@ -33,7 +33,7 @@
             <div class="col-md-12"> 
                 <?php echo anchor('admin/user/edit', '<i class="icon-plus"></i>&nbsp;&nbsp;'.lang('Add a new user'), 'class="btn btn-primary"')?>
                 <?php echo anchor('admin/user/export', '<i class="icon-arrow-down"></i>&nbsp;&nbsp;'.lang('Export user list'), 'class="btn btn-info"')?>
-                <?php if($this->session->userdata('type') == 'ADMIN' && config_db_item('user_custom_fields_enabled') === TRUE): ?>
+                <?php if(($this->session->userdata('type') == 'ADMIN' || $this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE') && config_db_item('user_custom_fields_enabled') === TRUE): ?>
                     <?php echo anchor('admin/user/custom_fields/', '<i class="icon-list-alt"></i>&nbsp;&nbsp;'.lang_check('Custom fields'), 'class="btn btn-success pull-right"  style=""')?>
                 <?php endif;?>
             </div>
@@ -64,7 +64,7 @@
                         <?php echo form_dropdown('type', array_merge(array(''=>lang_check('Type')),$this->user_m->user_types), set_value_GET('type', '', true), 'class="form-control"');?>
                       </div>
                       <div class="form-group">
-                        <?php echo form_dropdown('municipality_id', array_merge(array(''=>lang_check('Qarku')),$municipalities), set_value_GET('$municipalities', '', true), 'class="form-control"');?>
+                        <?php echo form_dropdown('municipality_id', array_merge(array(''=>lang_check('Bashkia')),$municipalities), set_value_GET('$municipalities', '', true), 'class="form-control"');?>
                       </div>
                       <button type="submit" class="btn btn-default"><i class="icon icon-search"></i>&nbsp;&nbsp;<?php echo lang_check('Search'); ?></button>
 
@@ -80,7 +80,7 @@
                         	<th><?php echo lang('Username');?></th>
                             <th data-hide="phone,tablet"><?php echo lang('Name and surname');?></th>
                             <th data-hide="phone,tablet"><?php echo lang('Type');?></th>
-                            <th data-hide="phone,tablet"><?php echo lang('Qarku');?></th>
+                            <th data-hide="phone,tablet"><?php echo lang('Bashkia');?></th>
                             <?php if(config_item('agency_agent_enabled') == TRUE): ?>
                             <th data-hide="phone,tablet"><?php _l('Agency');?></th>
                             <?php endif;?>
@@ -97,6 +97,10 @@
                       </thead>
                       <tbody>
                         <?php if(count($users)): foreach($users as $user): ?>
+                            <?php if($this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' && $user->municipality_id != $self_municipality_id) {
+                                continue;
+                            }
+                            ?>
                                     <tr>
                                     	<td><?php echo anchor('admin/user/edit/'.$user->id, $user->username)?>&nbsp;&nbsp;<?php echo $user->activated == 0? '<span class="label label-warning"><i class="icon-remove"></i></span>':''?></td>
                                         <td><?php echo $user->name_surname?></td>
@@ -128,7 +132,7 @@
                                         <?php endif;?>
                                         
                                         <td>
-                                        <?php if($this->session->userdata('type') == 'ADMIN'): ?>
+                                        <?php if($this->session->userdata('type') == 'ADMIN' || $this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE'): ?>
                                     	   <?php echo btn_edit('admin/user/edit/'.$user->id)?>
                                         <?php elseif($this->session->userdata('type') == 'AGENT_ADMIN' && $user->type != 'ADMIN'): ?>
                                             <?php echo btn_edit('admin/user/edit/'.$user->id)?>

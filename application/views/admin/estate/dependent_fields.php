@@ -115,7 +115,7 @@
                                         
                                         ?>
                                         </td>
-                                        <?php if($this->session->userdata('type') == 'ADMIN'): ?>
+                                        <?php if($this->session->userdata('type') == 'ADMIN' || $this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE'): ?>
                                         <td><?php echo btn_edit('admin/estate/edit_dependent_field/'.$item->id_dependent_field)?> </td>
                                     	<td><?php echo btn_delete('admin/estate/delete_dependent_field/'.$item->id_dependent_field)?></td>
                                         <?php endif;?> 

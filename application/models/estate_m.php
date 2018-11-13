@@ -130,7 +130,7 @@ class Estate_m extends MY_Model {
             {
                 $this->db->join('property_user', $this->_table_name.'.id = property_user.property_id', 'right');
             }
-            else if($this->session->userdata('type') != 'ADMIN' && $this->session->userdata('type') != 'AGENT_ADMIN')
+            else if($this->session->userdata('type') != 'ADMIN' && $this->session->userdata('type') != 'AGENT_ADMIN' && $this->session->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE')
             {
                 $this->db->join('property_user', $this->_table_name.'.id = property_user.property_id', 'right');
                 $this->db->where('user_id', $this->session->userdata('id'));
@@ -202,7 +202,7 @@ class Estate_m extends MY_Model {
             {
                 $this->db->join('property_user', $this->_table_name.'.id = property_user.property_id', 'right');
             }
-            else if($this->session->userdata('type') != 'ADMIN' && $this->session->userdata('type') != 'AGENT_ADMIN')
+            else if($this->session->userdata('type') != 'ADMIN' && $this->session->userdata('type') != 'AGENT_ADMIN' && $this->session->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE')
             {
                 $this->db->join('property_user', $this->_table_name.'.id = property_user.property_id', 'right');
                 $this->db->where('user_id', $this->session->userdata('id'));
@@ -542,7 +542,7 @@ class Estate_m extends MY_Model {
         
         $this->db->where("(property.id = '$search_tag' OR property.address LIKE '%$search_tag%' OR value LIKE '%$search_tag%')");
         
-        if($this->session->userdata('type') != 'ADMIN' && $this->session->userdata('type') != 'AGENT_ADMIN')
+        if($this->session->userdata('type') != 'ADMIN' && $this->session->userdata('type') != 'AGENT_ADMIN' && $this->session->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE')
         {
             $this->db->join('property_user', $this->_table_name.'.id = property_user.property_id', 'right');
             $this->db->where('user_id', $this->session->userdata('id'));
@@ -560,7 +560,7 @@ class Estate_m extends MY_Model {
         $this->db->limit($n);
         $this->db->from($this->_table_name);
         
-        if($this->session->userdata('type') != 'ADMIN' && $this->session->userdata('type') != 'AGENT_ADMIN')
+        if($this->session->userdata('type') != 'ADMIN' && $this->session->userdata('type') != 'AGENT_ADMIN' && $this->session->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE')
         {
             $this->db->select('property.*, property_user.user_id');
             $this->db->join('property_user', $this->_table_name.'.id = property_user.property_id', 'left');
@@ -664,7 +664,7 @@ class Estate_m extends MY_Model {
             $this->db->join('property_lang', $this->_table_name.'.id = property_lang.property_id', 'left');
         }
         
-        if($this->session->userdata('type') != 'ADMIN' && $this->session->userdata('type') != 'AGENT_ADMIN')
+        if($this->session->userdata('type') != 'ADMIN' && $this->session->userdata('type') != 'AGENT_ADMIN' && $this->session->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE')
         {
             $this->db->where('user_id', $this->session->userdata('id'));
         }
@@ -685,7 +685,7 @@ class Estate_m extends MY_Model {
         $this->db->from($this->_table_name);
         $this->db->join('property_user', $this->_table_name.'.id = property_user.property_id', 'left');
 
-        if($this->session->userdata('type') != 'ADMIN' && $this->session->userdata('type') != 'AGENT_ADMIN' && $check_user)
+        if($this->session->userdata('type') != 'ADMIN' && $this->session->userdata('type') != 'AGENT_ADMIN' && $this->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE' && $check_user)
         {
             $this->db->where('user_id', $this->session->userdata('id'));
         }

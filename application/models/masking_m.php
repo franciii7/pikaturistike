@@ -36,7 +36,7 @@ class Masking_m extends MY_Model {
     
     public function get($id = NULL, $single = FALSE)
     {
-        if($this->session->userdata('type') != 'ADMIN' && $this->session->userdata('type') != 'AGENT_ADMIN')
+        if($this->session->userdata('type') != 'ADMIN' && $this->session->userdata('type') != 'AGENT_ADMIN' && $this->session->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE')
         {
             $this->db->select($this->_table_name.'.*, property_user.user_id');
             $this->db->join('property_user', $this->_table_name.'.property_id = property_user.property_id', 'left');

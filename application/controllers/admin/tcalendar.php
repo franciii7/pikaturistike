@@ -67,7 +67,7 @@ class Tcalendar extends Admin_Controller
                 redirect('admin/tcalendar/available');
             
             //Check if user have permissions
-            if($this->session->userdata('type') != 'ADMIN')
+            if($this->session->userdata('type') != 'ADMIN' && $this->session->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE')
             {
                 $num_found = $this->estate_m->check_user_permission($this->data['rate']->property_id, $this->session->userdata('id'));
                 
@@ -224,7 +224,7 @@ class Tcalendar extends Admin_Controller
         }
         
         //Check if user have permissions
-        if($this->session->userdata('type') != 'ADMIN')
+        if($this->session->userdata('type') != 'ADMIN' && $this->session->usedata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE')
         {
             $rate = $this->trates_m->get($id);
             

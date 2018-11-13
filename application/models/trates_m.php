@@ -128,7 +128,7 @@ class Trates_m extends MY_Model {
         $this->db->join('property_user', $this->_table_name.'.property_id = property_user.property_id', 'left');
         
         
-        if($this->session->userdata('type') != 'ADMIN')
+        if($this->session->userdata('type') != 'ADMIN' && $this->session->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE')
         {
             $this->db->where('property_user.user_id', $this->session->userdata('id'));
         }
