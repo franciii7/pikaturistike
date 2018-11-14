@@ -10,7 +10,7 @@ class User extends Admin_Controller
         $this->load->model('file_m');
         $this->load->model('repository_m');
         $this->load->model('qa_m');
-        $this->load->model('packages_m');
+        //$this->load->model('packages_m');
 
         //import modelesh
         $this->load->model('estate_m');
@@ -203,7 +203,7 @@ class User extends Admin_Controller
         }
 
         $this->data['expert_categories'] = $this->qa_m->get_no_parents_expert($this->data['content_language_id']);
-        $this->data['packages'] = $this->packages_m->get_form_dropdown('package_name');
+        //$this->data['packages'] = $this->packages_m->get_form_dropdown('package_name');
         
         // Set up the form
         $rules = $this->user_m->rules_admin;

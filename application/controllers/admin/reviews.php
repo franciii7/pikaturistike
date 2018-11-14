@@ -31,10 +31,14 @@ class Reviews extends Admin_Controller
         {
             $listing_selected['user_id'] = $user_id;
         }
-        
+        $municipality_id = null;
+        if($this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE'){
+            $data['municipality_id'] = $self_municipality_id = $this->user_m->get_property_for_user('municipality_id');
+        }
+        //nqs eshte adm bashkie, merr self munic id, dhe filtro listings per property qe e kane munic id sa self
         // Fetch all pages
         $this->data['properties'] = $this->estate_m->get_form_dropdown('address');
-        $this->data['listings'] = $this->reviews_m->get_joined($listing_selected);
+        $this->data['listings'] = $this->reviews_m->get_joined($listing_selected,null,null,null,$municipality_id);
 
         $config['base_url'] = site_url('admin/reviews/index/'.$listing_id.'/');
         $config['uri_segment'] = 5;

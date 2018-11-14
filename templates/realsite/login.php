@@ -24,49 +24,49 @@
                             <div class="col-sm-12">
                                 <?php //_widget('center_recentproperties'); ?>  
                                 
-        <?php if(file_exists(APPPATH.'controllers/admin/packages.php')): ?>
+      <!--  <?php //if(file_exists(APPPATH.'controllers/admin/packages.php')): ?>
         <div class="row-fluid">
             <div class="span12">
             <h2>{lang_AvailablePackages}</h2>
             <div class="property_content ">
                 <div class="widget-content">
-                    <?php if($this->session->flashdata('error_package')):?>
-                    <p class="alert alert-error"><?php echo $this->session->flashdata('error_package')?></p>
-                    <?php endif;?>
+                    <?php //if($this->session->flashdata('error_package')):?>
+                    <p class="alert alert-error"><?php //echo $this->session->flashdata('error_package')?></p>
+                    <?php //endif;?>
                     <table class="table table-striped" style="margin-bottom: 0px;">
                       <thead>
                         <tr>
                         	<th>#</th>
-                            <th><?php echo lang_check('Package name');?></th>
-                            <th><?php echo lang_check('Price');?></th>
-                            <th><?php echo lang_check('Free property activation');?></th>
-                            <th><?php echo lang_check('Days limit');?></th>
-                            <th><?php echo lang_check('Listings limit');?></th>
-                            <th><?php echo lang_check('Free featured limit');?></th>
+                            <th><?php //echo lang_check('Package name');?></th>
+                            <th><?php //echo lang_check('Price');?></th>
+                            <th><?php //echo lang_check('Free property activation');?></th>
+                            <th><?php //echo lang_check('Days limit');?></th>
+                            <th><?php //echo lang_check('Listings limit');?></th>
+                            <th><?php //echo lang_check('Free featured limit');?></th>
                         </tr>
                       </thead>
                       <tbody>
                         <?php
-                        if(count($packages)): foreach($packages as $package):
+                        //if(count($packages)): foreach($packages as $package):
                         ?>
                                     <tr>
-                                    	<td><?php echo $package->id; ?></td>
+                                    	<td><?php //echo $package->id; ?></td>
                                         <td>
-                                        <?php echo $package->package_name; ?>
-                                        <?php echo $package->show_private_listings==1?'&nbsp;<i class="icon-eye-open"></i>':'&nbsp;<i class="icon-eye-close"></i>'; ?>
+                                        <?php //echo $package->package_name; ?>
+                                        <?php //echo $package->show_private_listings==1?'&nbsp;<i class="icon-eye-open"></i>':'&nbsp;<i class="icon-eye-close"></i>'; ?>
                                         </td>
-                                        <td><?php echo $package->package_price.' '.$package->currency_code; ?></td>
-                                        <td><?php echo $package->auto_activation?'<i class="icon-ok"></i>':'<i class="icon-remove"></i>'; ?></td>
-                                        <td><?php echo $package->package_days; ?></td>
-                                        <td><?php echo $package->num_listing_limit?></td>
-                                        <td><?php echo $package->num_featured_limit?></td>
+                                        <td><?php //echo $package->package_price.' '.$package->currency_code; ?></td>
+                                        <td><?php //echo $package->auto_activation?'<i class="icon-ok"></i>':'<i class="icon-remove"></i>'; ?></td>
+                                        <td><?php //echo $package->package_days; ?></td>
+                                        <td><?php //echo $package->num_listing_limit?></td>
+                                        <td><?php //echo $package->num_featured_limit?></td>
                                     </tr>
-                        <?php endforeach;?>
-                        <?php else:?>
+                        <?php //endforeach;?>
+                        <?php //else:?>
                                     <tr>
-                                    	<td colspan="20"><?php echo lang_check('Not available');?></td>
+                                    	<td colspan="20"><?php //echo lang_check('Not available');?></td>
                                     </tr>
-                        <?php endif;?>           
+                        <?php //endif;?>           
                       </tbody>
                     </table>
 
@@ -75,25 +75,25 @@
             </div>
         </div>
         
-        <?php endif; ?>
+        <?php //endif; ?>
         
-        <?php if(isset($settings_activation_price) && isset($settings_featured_price) &&
-                 $settings_activation_price > 0 || $settings_featured_price > 0): ?>
+        <?php //if(isset($settings_activation_price) && isset($settings_featured_price) &&
+                 //$settings_activation_price > 0 || $settings_featured_price > 0): ?>
         <div class="row-fluid">
             <div class="span12">
             <div class="property_content ">
                 <div class="widget-content">
-                <?php if($settings_activation_price > 0): ?>
-                    <?php echo lang_check('* Property activation price:').' '.$settings_activation_price.' '.$settings_default_currency; ?><br />
-                 <?php endif;?>
-                 <?php if($settings_featured_price > 0): ?>
-                    <?php echo lang_check('* Property featured price:').' '.$settings_featured_price.' '.$settings_default_currency; ?>
-                 <?php endif;?>
+                <?php //if($settings_activation_price > 0): ?>
+                    <?php //echo lang_check('* Property activation price:').' '.$settings_activation_price.' '.$settings_default_currency; ?><br />
+                 <?php //endif;?>
+                 <?php //if($settings_featured_price > 0): ?>
+                    <?php //echo lang_check('* Property featured price:').' '.$settings_featured_price.' '.$settings_default_currency; ?>
+                 <?php //endif;?>
                  </div>
             </div>
             </div>
         </div>
-        <?php endif;?>
+        <?php //endif;?> -->
         
         <div class="row-fluid">
             <div class="span6 login-form">

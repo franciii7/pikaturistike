@@ -1,3 +1,12 @@
+<?php
+ $CI =& get_instance();
+ $CI->load->model('treefield_m');
+ $field_id = 64;
+ $lang_id = $content_language_id;
+ $municipalities = $CI->treefield_m->get_level_values($lang_id, $field_id,-1,1);
+ $this->load->model('user_m');
+ $self_municipality_id = $this->user_m->get_property_for_user('municipality_id');
+?>
 <div class="page-head">
     <!-- Page heading -->
       <h2 class="pull-left"><?php echo lang_check('Reviews')?>
@@ -47,6 +56,7 @@
                         	<th>#</th>
                             <th><?php echo lang_check('Listing');?></th>
                             <th><?php echo lang_check('User');?></th>
+                            <th><?php echo lang_check('Bashkia');?></th>
                             <th data-hide="phone,tablet"><?php echo lang_check('Stars');?></th>
                             <th data-hide="phone,tablet"><?php echo lang_check('Date');?></th>
                         	<th class="control"><?php echo lang('Edit');?></th>
@@ -74,6 +84,7 @@
                                             <?php echo $listing_item->user_mail; ?>
                                         <?php endif; ?>
                                         </td>
+                                        <td> <?php echo $listing_item->municipality_id==null?"-":$municipalities[$listing_item->municipality_id] ?> </td>
                                         <td><div class="review_stars_<?php echo $listing_item->stars; ?>"> </div></td>
                                         <td>
                                         <?php echo $listing_item->date_publish; ?>

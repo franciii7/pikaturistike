@@ -89,7 +89,7 @@ if($settings_template=='local') {
             </div>
             </div>
             <div class="row">
-            <?php if(check_acl('page') && config_db_item('frontend_disabled') === FALSE && $this->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE'):?>
+            <?php if(check_acl('page') && config_db_item('frontend_disabled') === FALSE && $this->session->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE'):?>
             <div class="col-md-6">
                 <div class="widget wgreen">
 

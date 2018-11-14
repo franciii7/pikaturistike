@@ -8,6 +8,7 @@ class Favorites_m extends MY_Model {
         'user_id' => array('field'=>'user_id', 'label'=>'lang:User', 'rules'=>'trim|required'),
         'property_id' => array('field'=>'property_id', 'label'=>'lang:Property', 'rules'=>'trim|required'),
         'lang_code' => array('field'=>'lang_code', 'label'=>'lang:Lang code', 'rules'=>'trim'),
+        'municipality_id' => array('field'=>'municipality_id', 'label'=>'lang:municipality_id / City', 'rules'=>'trim')
     );
     
     public $rules_lang = array();
@@ -23,7 +24,8 @@ class Favorites_m extends MY_Model {
         $item->user_id = NULL;
         $item->property_id = NULL;
         $item->lang_code = '';
-        
+        $item->municipality_id = 0;
+
         return $item;
 	}
     

@@ -685,7 +685,7 @@ class Estate_m extends MY_Model {
         $this->db->from($this->_table_name);
         $this->db->join('property_user', $this->_table_name.'.id = property_user.property_id', 'left');
 
-        if($this->session->userdata('type') != 'ADMIN' && $this->session->userdata('type') != 'AGENT_ADMIN' && $this->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE' && $check_user)
+        if($this->session->userdata('type') != 'ADMIN' && $this->session->userdata('type') != 'AGENT_ADMIN' && $this->session->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE' && $check_user)
         {
             $this->db->where('user_id', $this->session->userdata('id'));
         }

@@ -770,3 +770,56 @@ ERROR - 2018-11-13 16:52:24 --> Severity: Notice  --> Undefined variable: option
 ERROR - 2018-11-13 16:52:24 --> Severity: Notice  --> Undefined variable: options_name_32 C:\wamp64\www\pikaturistike\templates\realsite\widgets\results_item.php 96
 ERROR - 2018-11-13 16:52:24 --> Severity: Notice  --> Undefined variable: options_name_32 C:\wamp64\www\pikaturistike\templates\realsite\widgets\results_item.php 96
 ERROR - 2018-11-13 16:52:24 --> Severity: Notice  --> Undefined variable: options_name_32 C:\wamp64\www\pikaturistike\templates\realsite\widgets\results_item.php 96
+ERROR - 2018-11-13 23:18:26 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 115
+ERROR - 2018-11-13 23:18:28 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 115
+ERROR - 2018-11-13 23:18:28 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 115
+ERROR - 2018-11-13 23:18:28 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 115
+ERROR - 2018-11-13 23:18:28 --> Severity: Notice  --> Undefined index: ADMIN_BASHKIE C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 108
+ERROR - 2018-11-13 23:18:28 --> Severity: Notice  --> Undefined index: ADMIN_BASHKIE C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 109
+ERROR - 2018-11-13 23:18:28 --> Severity: Notice  --> Undefined index:  C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 108
+ERROR - 2018-11-13 23:18:28 --> Severity: Notice  --> Undefined index:  C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 109
+ERROR - 2018-11-13 23:18:28 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 115
+ERROR - 2018-11-13 23:18:38 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 305
+ERROR - 2018-11-13 23:18:38 --> Severity: Notice  --> Trying to get property of non-object C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 305
+ERROR - 2018-11-13 23:18:38 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 306
+ERROR - 2018-11-13 23:18:38 --> Severity: Notice  --> Trying to get property of non-object C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 306
+ERROR - 2018-11-13 23:18:38 --> Severity: Notice  --> Array to string conversion C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 315
+ERROR - 2018-11-13 23:18:38 --> Severity: Notice  --> Array to string conversion C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 320
+ERROR - 2018-11-13 23:21:44 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 305
+ERROR - 2018-11-13 23:21:44 --> Severity: Notice  --> Trying to get property of non-object C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 305
+ERROR - 2018-11-13 23:21:44 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 306
+ERROR - 2018-11-13 23:21:44 --> Severity: Notice  --> Trying to get property of non-object C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 306
+ERROR - 2018-11-13 23:21:44 --> Severity: Notice  --> Array to string conversion C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 315
+ERROR - 2018-11-13 23:21:44 --> Severity: Notice  --> Array to string conversion C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 320
+ERROR - 2018-11-13 23:22:36 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 305
+ERROR - 2018-11-13 23:22:36 --> Severity: Notice  --> Trying to get property of non-object C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 305
+ERROR - 2018-11-13 23:22:36 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 306
+ERROR - 2018-11-13 23:22:36 --> Severity: Notice  --> Trying to get property of non-object C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 306
+ERROR - 2018-11-13 23:22:36 --> Severity: Notice  --> Array to string conversion C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 315
+ERROR - 2018-11-13 23:22:36 --> Severity: Notice  --> Array to string conversion C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 320
+ERROR - 2018-11-13 23:23:01 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 115
+ERROR - 2018-11-13 23:23:01 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 115
+ERROR - 2018-11-13 23:23:01 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 115
+ERROR - 2018-11-13 23:23:01 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 115
+ERROR - 2018-11-13 23:23:01 --> Severity: Notice  --> Undefined index: ADMIN_BASHKIE C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 108
+ERROR - 2018-11-13 23:23:01 --> Severity: Notice  --> Undefined index: ADMIN_BASHKIE C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 109
+ERROR - 2018-11-13 23:23:01 --> Severity: Notice  --> Undefined index:  C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 108
+ERROR - 2018-11-13 23:23:01 --> Severity: Notice  --> Undefined index:  C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 109
+ERROR - 2018-11-13 23:23:01 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 115
+ERROR - 2018-11-13 23:24:11 --> Severity: Notice  --> Undefined variable: options_name_32 C:\wamp64\www\pikaturistike\templates\realsite\widgets\results_item.php 96
+ERROR - 2018-11-13 23:24:11 --> Severity: Notice  --> Undefined variable: options_name_32 C:\wamp64\www\pikaturistike\templates\realsite\widgets\results_item.php 96
+ERROR - 2018-11-13 23:24:11 --> Severity: Notice  --> Undefined variable: options_name_32 C:\wamp64\www\pikaturistike\templates\realsite\widgets\results_item.php 96
+ERROR - 2018-11-13 23:24:11 --> Severity: Notice  --> Undefined variable: options_name_32 C:\wamp64\www\pikaturistike\templates\realsite\widgets\results_item.php 96
+ERROR - 2018-11-13 23:24:11 --> Severity: Notice  --> Undefined variable: options_name_32 C:\wamp64\www\pikaturistike\templates\realsite\widgets\results_item.php 96
+ERROR - 2018-11-13 23:25:22 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 305
+ERROR - 2018-11-13 23:25:22 --> Severity: Notice  --> Trying to get property of non-object C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 305
+ERROR - 2018-11-13 23:25:22 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 306
+ERROR - 2018-11-13 23:25:22 --> Severity: Notice  --> Trying to get property of non-object C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 306
+ERROR - 2018-11-13 23:25:22 --> Severity: Notice  --> Array to string conversion C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 315
+ERROR - 2018-11-13 23:25:22 --> Severity: Notice  --> Array to string conversion C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 320
+ERROR - 2018-11-13 23:26:13 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 305
+ERROR - 2018-11-13 23:26:13 --> Severity: Notice  --> Trying to get property of non-object C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 305
+ERROR - 2018-11-13 23:26:14 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 306
+ERROR - 2018-11-13 23:26:14 --> Severity: Notice  --> Trying to get property of non-object C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 306
+ERROR - 2018-11-13 23:26:14 --> Severity: Notice  --> Array to string conversion C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 315
+ERROR - 2018-11-13 23:26:14 --> Severity: Notice  --> Array to string conversion C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 320
