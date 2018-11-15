@@ -16,8 +16,7 @@ class Reviews_m extends MY_Model {
         'stars' => array('field'=>'stars', 'label'=>'lang:Stars', 'rules'=>'trim|required|xss_clean'),
         'message' => array('field'=>'message', 'label'=>'lang:Message', 'rules'=>'trim|xss_clean'),
         'is_visible' => array('field'=>'is_visible', 'label'=>'lang:Visible', 'rules'=>'trim|xss_clean'),
-        'user_mail' => array('field'=>'user_mail', 'label'=>'lang:Mail', 'rules'=>'trim|xss_clean'),
-        'municipality_id' => array('field'=>'municipality_id', 'label'=>'lang:municipality_id / City', 'rules'=>'trim')
+        'user_mail' => array('field'=>'user_mail', 'label'=>'lang:Mail', 'rules'=>'trim|xss_clean')
    );
    
    public $rules_lang = array();
@@ -36,7 +35,6 @@ class Reviews_m extends MY_Model {
         $listing->user_mail = '';
         $listing->message = '';
         $listing->is_visible = 1;
-        $listing->municipality_id = 0;
         
         return $listing;
 	}
@@ -73,7 +71,7 @@ class Reviews_m extends MY_Model {
     
     public function get_joined($where = null, $limit = null, $order_by = null, $offset = null, $municipality_id = null)
     {
-        $this->db->select('reviews.*, user.username, property.address');
+        $this->db->select('reviews.*, user.username, property.address, property.municipality_id');
         $this->db->from($this->_table_name);
         $this->db->join('user', 'user.id = '.$this->_table_name.'.user_id', 'left');
         $this->db->join('property', 'property.id = '.$this->_table_name.'.listing_id');
@@ -83,9 +81,8 @@ class Reviews_m extends MY_Model {
             $this->db->where($where);
         }
         if($municipality_id!=null){
-            $this->db->where('municipality_id',$municipality_id);
+            $this->db->where('property.municipality_id',$municipality_id);
         }
-        
         if($limit != null || $offset != null)
             $this->db->limit($limit, $offset);
         

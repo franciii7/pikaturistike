@@ -31,6 +31,10 @@ class Favorites extends Admin_Controller
         {
             $listing_selected['user_id'] = $user_id;
         }
+        $municipality_id=null;
+        if($this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE'){
+            $municipality_id = $this->user_m->get_property_for_user('municipality_id');
+        }
 
         // Fetch all pages
         $this->data['properties'] = $this->estate_m->get_form_dropdown('address');
@@ -47,7 +51,7 @@ class Favorites extends Admin_Controller
         $this->pagination->initialize($config);
         $this->data['pagination'] = $this->pagination->create_links();
         
-        $this->data['listings'] = $this->favorites_m->get_joined($listing_selected, $config['per_page'], NULL, $pagination_offset);
+        $this->data['listings'] = $this->favorites_m->get_joined($listing_selected, $config['per_page'], NULL, $pagination_offset,$municipality_id);
         
         // Load view
 		$this->data['subview'] = 'admin/favorites/index';

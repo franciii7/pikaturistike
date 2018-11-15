@@ -33,10 +33,11 @@ class Reviews extends Admin_Controller
         }
         $municipality_id = null;
         if($this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE'){
-            $data['municipality_id'] = $self_municipality_id = $this->user_m->get_property_for_user('municipality_id');
+            $municipality_id = $this->user_m->get_property_for_user('municipality_id');
         }
         //nqs eshte adm bashkie, merr self munic id, dhe filtro listings per property qe e kane munic id sa self
         // Fetch all pages
+        
         $this->data['properties'] = $this->estate_m->get_form_dropdown('address');
         $this->data['listings'] = $this->reviews_m->get_joined($listing_selected,null,null,null,$municipality_id);
 
@@ -51,7 +52,7 @@ class Reviews extends Admin_Controller
         $this->pagination->initialize($config);
         $this->data['pagination'] = $this->pagination->create_links();
         
-        $this->data['listings'] = $this->reviews_m->get_joined($listing_selected, $config['per_page'], NULL, $pagination_offset);
+        $this->data['listings'] = $this->reviews_m->get_joined($listing_selected, $config['per_page'], NULL, $pagination_offset,$municipality_id);
         
         // Load view
 		$this->data['subview'] = 'admin/reviews/index';

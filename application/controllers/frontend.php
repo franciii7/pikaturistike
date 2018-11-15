@@ -197,7 +197,7 @@ class Frontend extends Frontend_Controller
         // Login check
         if($this->user_m->loggedin() == FALSE)
         {
-            redirect('frontend/login/'.$this->data['lang_code']);
+            
         }
         else
         {
@@ -205,7 +205,7 @@ class Frontend extends Frontend_Controller
             
             if($this->session->userdata('type') == 'USER')
             {
-                // LOGIN USER, OK
+                redirect('/'.$this->data['lang_code'].'/'.$this->data['page_id'].'/'.$this->data['page_slug']);
             }
             else
             {
