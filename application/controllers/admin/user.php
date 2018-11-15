@@ -209,6 +209,7 @@ class User extends Admin_Controller
         
         // Set up the form
         $rules = $this->user_m->rules_admin;
+        
         $id || $rules['password']['rules'] .= '|required';
         //$rules['mail']['rules'] .= '|callback__unique_email';
             
@@ -240,7 +241,7 @@ class User extends Admin_Controller
                                                          'phone_verified', 'facebook_link', 'youtube_link', 'payment_details',
                                                          'gplus_link', 'twitter_link', 'linkedin_link', 'county_affiliate_values', 'embed_video_code',
                                                          'research_mail_notifications', 'research_sms_notifications', 'agency_id','municipality_id'));
-           
+            json_encode($data);
             if($this->session->userdata('type') == 'ADMINISTRATOR BASHKIE'){
                 $data['municipality_id'] = $self_municipality_id = $this->user_m->get_property_for_user('municipality_id');
             }
