@@ -7,8 +7,7 @@ class Favorites_m extends MY_Model {
     public $rules_admin = array(
         'user_id' => array('field'=>'user_id', 'label'=>'lang:User', 'rules'=>'trim|required'),
         'property_id' => array('field'=>'property_id', 'label'=>'lang:Property', 'rules'=>'trim|required'),
-        'lang_code' => array('field'=>'lang_code', 'label'=>'lang:Lang code', 'rules'=>'trim'),
-        'municipality_id' => array('field'=>'municipality_id', 'label'=>'lang:municipality_id / City', 'rules'=>'trim')
+        'lang_code' => array('field'=>'lang_code', 'label'=>'lang:Lang code', 'rules'=>'trim')
     );
     
     public $rules_lang = array();
@@ -24,7 +23,6 @@ class Favorites_m extends MY_Model {
         $item->user_id = NULL;
         $item->property_id = NULL;
         $item->lang_code = '';
-        $item->municipality_id = 0;
 
         return $item;
 	}
@@ -52,9 +50,9 @@ class Favorites_m extends MY_Model {
         return $query->num_rows();
     }
     
-    public function get_joined($where = null, $limit = null, $order_by = null, $offset = null)
+    public function get_joined($where = null, $limit = null, $order_by = null, $offset = null, $municipality_id = null)
     {
-        $this->db->select('favorites.*, user.username, property.address');
+        $this->db->select('favorites.*, user.username, property.address, property.municipality_id');
         $this->db->from($this->_table_name);
         $this->db->join('user', 'user.id = '.$this->_table_name.'.user_id');
         $this->db->join('property', 'property.id = '.$this->_table_name.'.property_id');
@@ -66,6 +64,10 @@ class Favorites_m extends MY_Model {
         if(!empty($where))
         {
             $this->db->where($where);
+        }
+        if($municipality_id!=null)
+        {
+            $this->db->where('property.municipality_id',$municipality_id);
         }
         
         if($limit != null || $offset != null)
