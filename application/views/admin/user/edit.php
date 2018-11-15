@@ -1,3 +1,17 @@
+<?php
+ $CI =& get_instance();
+ $CI->load->model('treefield_m');
+ $field_id = 64;
+ $lang_id = $content_language_id;
+ $municipalities = $CI->treefield_m->get_level_values($lang_id, $field_id,-1,1);
+ 
+ $this->load->model('user_m');
+ $self_municipality_id = $this->user_m->get_property_for_user('municipality_id');
+ 
+
+?>
+
+
 <div class="page-head">
     <!-- Page heading -->
       <h2 class="pull-left"><?php echo lang('User')?>
@@ -88,13 +102,22 @@
                                   </div>
                                 </div>
                                 
-                                <?php if($this->session->userdata('type') == 'ADMIN' || $this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE'): ?>
-                                <div class="form-group">
-                                  <label class="col-lg-2 control-label"><?php echo lang('Type')?></label>
-                                  <div class="col-lg-10">
-                                    <?php echo form_dropdown('type', $this->user_m->user_types, set_value('type', $user->type), 'class="form-control"');?>
+                                <?php if(/*$this->session->userdata('type') == 'ADMIN' ||*/ $this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE'): ?>
+                                  <div class="form-group">
+                                    <label class="col-lg-2 control-label"><?php echo lang('Type')?></label>
+                                    <div class="col-lg-10">
+                                      <?php echo form_input('type', set_value('type', $this->user_m->user_types['PUNONJES BASHKIE']), 'class="form-control" id="inputPunonjes" readonly' );?>
+                                      <!--echo form_dropdown('type', $this->user_m->user_types['PUNONJES BASHKIE'], set_value('type', $user->type), 'class="form-control"'); -->
+                                    </div>
                                   </div>
-                                </div>
+                                <?php elseif($this->session->userdata('type') == 'ADMIN') : ?>
+                                  <div class="form-group">
+                                    <label class="col-lg-2 control-label"><?php echo lang('Type')?></label>
+                                    <div class="col-lg-10">
+                                      <?php //echo form_input('type', set_value('type', $this->user_m->user_types['PUNONJES BASHKIE']), 'class="form-control" id="inputPunonjes" readonly' );
+                                      echo form_dropdown('type', $this->user_m->user_types, set_value('type', $user->type), 'class="form-control"'); ?>
+                                    </div>
+                                  </div>
                                 <?php endif; ?>
                                 
                                 <?php if(($this->session->userdata('type') == 'ADMIN' || $this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE') && file_exists(APPPATH.'controllers/admin/expert.php')): ?>
@@ -282,56 +305,74 @@
 
 
 
-
-
-
-
-                                <?php if(config_db_item('enable_county_affiliate_roles') === FALSE && ($this->session->userdata('type') == 'ADMIN' || $this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE')): ?>
-                                <div class="form-group search-form">
-                                  <label class="col-lg-2 control-label"><?php echo lang_check('Qarku & Bashkia')?></label>
-                                    <div class="col-lg-10">
-                                                        <!-- fillo kerkimin e qarkut -->
-                                        <?php if(config_item('tree_field_enabled') === TRUE):?>
-                                          <?php
-                                            $CI =& get_instance();
-                                            $CI->load->model('treefield_m');
-                                            $field_id = 64;
-                                            $lang_id = $content_language_id;
-                                            $drop_selected = array();
-                                            if(isset($user->municipality_id)){
-                                              $municipality_drop_selected=array($user->municipality_id);
-                                              $municipality=$CI->treefield_m->get_by_in($user->municipality_id,$lang_id);                                            
-                                              if(isset($municipality)){
-                                                $drop_selected[] = $municipality[0]->parent_id;                                              
-                                                $municipality_drop_options = $CI->treefield_m->get_level_values($lang_id, $field_id,$municipality[0]->parent_id,1);
-                                              }
-                                            }
-                                            $drop_options = $CI->treefield_m->get_level_values($lang_id, $field_id);
-                                            
-                                            $second_drop_selected=$user->municipality_id;
-
-                                            echo '<div class="tree TREE-GENERATOR tree-'.$field_id.'">';
-                                            echo '<div class="field-tree">';
-                                            echo form_dropdown('option'.$field_id.'_'.$lang_id.'_level_0', $drop_options, $drop_selected, 'class="form-control selectpicker tree-input" id="sinputOption_'.$lang_id.'_'.$field_id.'_level_0'.'" '.$drop_selected.'');
-                                            echo '</div>';
-
-                                            $municipality_drop_options = isset($municipality_drop_options)?$municipality_drop_options:array(''=>lang_check('treefield_'.$field_id.'_1'));
-                                            echo '<div class="field-tree">';
-                                            echo form_dropdown('municipality_id', $municipality_drop_options, $municipality_drop_selected, 'class="form-control selectpicker tree-input" id="sinputOption_'.$lang_id.'_'.$field_id.'_level_1'.'"  '.$municipality_drop_options.'');
-                                            echo '</div>';
-                                              
-                                              echo '</div>';
-                                          
-                                          ?>
-                                          
-                                          
-                                          <?php endif; ?>
-                                          <!-- mbaron kerkimi -->                                              
-                                      </div>
-                                      </div>
-                                </div>
-                                <?php endif; ?>
                                 
+
+
+                                <?php if($this->session->userdata('type') == 'ADMINISTRATOR BASHKIE') : ?>
+                                <?php  
+                                  $user->municipality_id = $self_municipality_id; ?>     
+                                      <div class="form-group">
+                                        <label class="col-lg-2 control-label"><?php echo lang('Prove Bashkie')?></label>
+                                        <div class="col-lg-10">
+                                          <?php echo form_input('option', set_value('option', $municipalities[$user->municipality_id]), 'class="form-control" id="inputQarku" readonly' );?>
+                                        </div>
+                                      </div>       
+                                <?php elseif(config_db_item('enable_county_affiliate_roles') === FALSE): ?>
+                                        <div class="form-group search-form">
+                                          <label class="col-lg-2 control-label"><?php echo lang_check('Qarku & Bashkia')?></label>
+                                            <div class="col-lg-10">
+                                                                <!-- fillo kerkimin e qarkut -->
+                                                <?php if(config_item('tree_field_enabled') === TRUE):?>
+                                                  <?php
+                                                    $CI =& get_instance();
+                                                    $CI->load->model('treefield_m');
+                                                    $field_id = 64;
+                                                    $lang_id = $content_language_id;
+                                                    $drop_selected = array();
+                                                    if(isset($user->municipality_id)){
+                                                      $municipality_drop_selected=array($user->municipality_id);
+                                                      $municipality=$CI->treefield_m->get_by_in($user->municipality_id,$lang_id);                                            
+                                                      if(isset($municipality)){
+                                                        $drop_selected[] = $municipality[0]->parent_id;                                              
+                                                        $municipality_drop_options = $CI->treefield_m->get_level_values($lang_id, $field_id,$municipality[0]->parent_id,1);
+                                                        
+                                                      }
+                                                    }
+                                                    $drop_options = $CI->treefield_m->get_level_values($lang_id, $field_id);
+                                                    
+
+                                                    //prindi default
+                                                    //$user->municipality_id = $self_municipality_id;
+                                                    
+                                                    
+                                                    
+                                                    //$second_drop_selected=$user->municipality_id;
+                                                    
+                                                        echo '<div class="tree TREE-GENERATOR tree-'.$field_id.'">';
+                                                        echo '<div class="field-tree">';
+                                                        //echo form_input('option', set_value('option', $municipalities[$user->municipality_id]), 'class="form-control" id="inputQarku" readonly' );
+                                                        //echo $municipalities[$user->municipality_id];
+                                                        echo form_dropdown('option'.$field_id.'_'.$lang_id.'_level_0', $drop_options, $drop_selected, 'class="form-control selectpicker tree-input" id="sinputOption_'.$lang_id.'_'.$field_id.'_level_0'.'" '.$drop_selected.'');
+                                                        echo '</div>';
+                                                        //$municipality_drop_selected = $municipalities[$user->municipality_id];
+
+                                                        $municipality_drop_options = isset($municipality_drop_options)?$municipality_drop_options:array(''=>lang_check('treefield_'.$field_id.'_1'));
+                                                        
+                                                        echo '<div class="field-tree">';
+                                                        echo form_dropdown('municipality_id', $municipality_drop_options, $municipality_drop_selected, 'class="form-control selectpicker tree-input" id="sinputOption_'.$lang_id.'_'.$field_id.'_level_1'.'"  '.$municipality_drop_options.'');
+                                                        echo '</div>';
+                                                          
+                                                          echo '</div>';
+                                                    ?>
+                                                
+                                                  
+                                                  <?php endif; ?>
+                                                  <!-- mbaron kerkimi -->                                              
+                                            </div>
+                                        </div>
+                                   
+                                  
+                                <?php endif; ?>
                                 <?php if((config_db_item('clickatell_api_id') != '' || config_db_item('clickatell_api_key') != '') && file_exists(APPPATH.'controllers/admin/savesearch.php')): ?>
                                 <div class="form-group">
                                   <label class="col-lg-2 control-label"><?php echo lang_check('SMS notifications enabled')?></label>

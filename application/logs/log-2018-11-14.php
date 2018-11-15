@@ -728,3 +728,8 @@ ERROR - 2018-11-14 17:07:24 --> Severity: Notice  --> Undefined offset: 0 C:\wam
 ERROR - 2018-11-14 17:07:34 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\reviews\index.php 87
 ERROR - 2018-11-14 17:07:34 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\reviews\index.php 87
 ERROR - 2018-11-14 17:07:34 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\reviews\index.php 87
+ERROR - 2018-11-14 17:25:20 --> Severity: Notice  --> Undefined variable: options_name_32 C:\xampp\htdocs\pikaturistike\templates\realsite\widgets\results_item.php 96
+ERROR - 2018-11-14 17:25:20 --> Severity: Notice  --> Undefined variable: options_name_32 C:\xampp\htdocs\pikaturistike\templates\realsite\widgets\results_item.php 96
+ERROR - 2018-11-14 17:25:20 --> Severity: Notice  --> Undefined variable: options_name_32 C:\xampp\htdocs\pikaturistike\templates\realsite\widgets\results_item.php 96
+ERROR - 2018-11-14 17:25:20 --> Severity: Notice  --> Undefined variable: options_name_32 C:\xampp\htdocs\pikaturistike\templates\realsite\widgets\results_item.php 96
+ERROR - 2018-11-14 17:25:20 --> Severity: Notice  --> Undefined variable: options_name_32 C:\xampp\htdocs\pikaturistike\templates\realsite\widgets\results_item.php 96

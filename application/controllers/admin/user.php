@@ -10,7 +10,7 @@ class User extends Admin_Controller
         $this->load->model('file_m');
         $this->load->model('repository_m');
         $this->load->model('qa_m');
-        //$this->load->model('packages_m');
+        $this->load->model('packages_m');
 
         //import modelesh
         $this->load->model('estate_m');
@@ -24,6 +24,7 @@ class User extends Admin_Controller
     
     public function index($pagination_offset=0)
 	{
+        
 	    $this->load->library('pagination');
 
         prepare_search_query_GET(array('type'), array('id', 'username', 'name_surname', 'address', 'description', 'mail'));
@@ -53,6 +54,7 @@ class User extends Admin_Controller
         
         prepare_search_query_GET(array('user.type'), array('user.id', 'user.username', 'user.name_surname', 'user.address', 'user.description', 'user.mail'), array('user'));
         $this->data['users'] = $this->user_m->get_pagination($config['per_page'], $pagination_offset);
+        
         
         $this->data['expert_categories'] = $this->qa_m->get_no_parents_expert($this->data['content_language_id']);
         
@@ -203,7 +205,7 @@ class User extends Admin_Controller
         }
 
         $this->data['expert_categories'] = $this->qa_m->get_no_parents_expert($this->data['content_language_id']);
-        //$this->data['packages'] = $this->packages_m->get_form_dropdown('package_name');
+        $this->data['packages'] = $this->packages_m->get_form_dropdown('package_name');
         
         // Set up the form
         $rules = $this->user_m->rules_admin;
@@ -230,7 +232,7 @@ class User extends Admin_Controller
                 redirect('admin/user/edit/'.$id);
                 exit();
             }
-
+            
             $data = $this->user_m->array_from_post(array('name_surname', 'password', 'username', 'research_sms_notifications',
                                                          'address', 'description', 'mail', 'phone', 'phone2', 'type', 
                                                          'qa_id', 'language', 'activated', 'package_id', 
@@ -238,6 +240,10 @@ class User extends Admin_Controller
                                                          'phone_verified', 'facebook_link', 'youtube_link', 'payment_details',
                                                          'gplus_link', 'twitter_link', 'linkedin_link', 'county_affiliate_values', 'embed_video_code',
                                                          'research_mail_notifications', 'research_sms_notifications', 'agency_id','municipality_id'));
+           
+            if($this->session->userdata('type') == 'ADMINISTRATOR BASHKIE'){
+                $data['municipality_id'] = $self_municipality_id = $this->user_m->get_property_for_user('municipality_id');
+            }
             
             if(config_db_item('phone_mobile_enabled') === TRUE)
                 $data['phone2'] = $this->user_m->input->post('phone2');

@@ -6,6 +6,7 @@
  $municipalities = $CI->treefield_m->get_level_values($lang_id, $field_id,-1,1);
  $this->load->model('user_m');
  $self_municipality_id = $this->user_m->get_property_for_user('municipality_id');
+ 
 ?>
 <div class="page-head">
     <!-- Page heading -->
