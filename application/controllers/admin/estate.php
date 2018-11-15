@@ -568,7 +568,10 @@ class Estate extends Admin_Controller
             }
             
             $data = $this->estate_m->array_from_post(array('gps', 'date', 'date_modified', 'address', 'is_featured', 'is_activated', 'is_visible', 'id_transitions'));
-            $data['municipality_id'] = $this->input->post('option64_4_level_1');
+            if($this->session->userdata('type') == 'ADMINISTRATOR BASHKIE') {
+                $data['municipality_id'] = $self_municipality_id = $this->user_m->get_property_for_user('municipality_id');
+            }
+            //$data['municipality_id'] = $this->input->post('option64_4_level_1');
             $dynamic_data = $this->estate_m->array_from_post(array_keys($rules_dynamic));
             // AGENT_LIMITED don't have permission to change this fields...
             if($this->session->userdata('type') == 'AGENT_LIMITED')

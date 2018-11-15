@@ -1,3 +1,15 @@
+<?php
+ $CI =& get_instance();
+ $CI->load->model('treefield_m');
+ $field_id = 64;
+ $lang_id = $content_language_id;
+ $municipalities = $CI->treefield_m->get_level_values($lang_id, $field_id,-1,1);
+ 
+ $this->load->model('user_m');
+ $self_municipality_id = $this->user_m->get_property_for_user('municipality_id');
+ 
+
+?>
 <div class="page-head">
     <!-- Page heading -->
       <h2 class="pull-left"><?php echo lang('Estate')?>
@@ -276,7 +288,15 @@
                                                         $required_notice = '';
                                                     }
                                             ?>
-                                        
+                                        <?php if($this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE'): ?>
+                                            <?php $user->municipality_id = $self_municipality_id; ?>     
+                                            <div class="form-group TREE-GENERATOR">
+                                            <label class="col-lg-3 control-label"><?php echo lang('Prove Bashkie')?></label>
+                                                <div class="col-lg-9">
+                                            <?php echo form_input('option', set_value('option', $municipalities[$user->municipality_id]), 'class="form-control" id="inputQarku" readonly' );?>
+                                                </div>
+                                            </div>
+                                        <?php elseif(config_db_item('enable_county_affiliate_roles') === FALSE): ?> 
                                             <div class="form-group TREE-GENERATOR">
                                               <label class="col-lg-3 control-label">
                                               <?php echo $required_notice.$val_option->option;
@@ -313,6 +333,7 @@
                                                 </div>
                                               </div>
                                             </div>
+                                            <?php endif; ?>
 
 
                                         <?php elseif($val_option->type == 'UPLOAD'):?>

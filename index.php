@@ -22,11 +22,7 @@ define('APP_VERSION_REAL_ESTATE', '1.6.5');
  *
  */
  
-<<<<<<< HEAD
 $strict_development_mode = FALSE;
-=======
-$strict_development_mode = FALSE;	
->>>>>>> d6c1eb1470db00dee2541ea9c972abce979bc904
 $strict_enable_error_reporting = FALSE;
  
 if( (strpos(dirname(__FILE__), '\xampp') === FALSE && $strict_development_mode === FALSE) ||
