@@ -567,7 +567,7 @@ class Estate extends Admin_Controller
                 exit();
             }
             
-            $data = $this->estate_m->array_from_post(array('gps', 'date', 'date_modified', 'address', 'is_featured', 'is_activated', 'is_visible', 'id_transitions'));
+            $data = $this->estate_m->array_from_post(array('gps', 'date', 'date_modified', 'address', 'is_featured', 'is_activated', 'is_visible', 'id_transitions', 'name_of_user'));
             if($this->session->userdata('type') == 'ADMINISTRATOR BASHKIE') {
                 $data['municipality_id'] = $self_municipality_id = $this->user_m->get_property_for_user('municipality_id');
             }
@@ -752,7 +752,7 @@ class Estate extends Admin_Controller
                     $this->email->send();
                 }
             }
-            
+           
             /* [/Email sending] */
             
             $this->session->set_flashdata('message', 

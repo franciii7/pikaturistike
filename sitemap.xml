@@ -397,30 +397,6 @@
     />
 </url>
 <url>
-	<loc>http://localhost/pikaturistike/index.php/property/31/sq/location_i_ri</loc>
-	<lastmod>2018-11-14T09:50:00+01:00</lastmod>
-	<changefreq>monthly</changefreq>
-	<priority>0.5</priority>
-</url>
-<url>
-	<loc>http://localhost/pikaturistike/index.php/property/31/en/location_i_ri</loc>
-	<lastmod>2018-11-14T09:50:00+01:00</lastmod>
-	<changefreq>monthly</changefreq>
-	<priority>0.5</priority>
-</url>
-<url>
-	<loc>http://localhost/pikaturistike/index.php/property/30/sq/test_emri</loc>
-	<lastmod>2018-11-12T12:53:29+01:00</lastmod>
-	<changefreq>monthly</changefreq>
-	<priority>0.5</priority>
-</url>
-<url>
-	<loc>http://localhost/pikaturistike/index.php/property/30/en/test_emri</loc>
-	<lastmod>2018-11-12T12:53:29+01:00</lastmod>
-	<changefreq>monthly</changefreq>
-	<priority>0.5</priority>
-</url>
-<url>
 	<loc>http://localhost/pikaturistike/index.php/property/29/sq/asdasd</loc>
 	<lastmod>2018-11-12T09:13:30+01:00</lastmod>
 	<changefreq>monthly</changefreq>
@@ -482,37 +458,25 @@
 </url>
 <url>
 	<loc>http://localhost/pikaturistike/index.php/property/21/sq/rruga_e_ambasadeve</loc>
-	<lastmod>2018-11-12T09:11:37+01:00</lastmod>
+	<lastmod>2018-11-14T12:34:29+01:00</lastmod>
 	<changefreq>monthly</changefreq>
 	<priority>0.5</priority>
 </url>
 <url>
 	<loc>http://localhost/pikaturistike/index.php/property/21/en/payment_gateway</loc>
-	<lastmod>2018-11-12T09:11:37+01:00</lastmod>
+	<lastmod>2018-11-14T12:34:29+01:00</lastmod>
 	<changefreq>monthly</changefreq>
 	<priority>0.5</priority>
 </url>
 <url>
-	<loc>http://localhost/pikaturistike/index.php/property/33/sq/gjirokaster</loc>
-	<lastmod>2018-11-19T12:10:34+01:00</lastmod>
+	<loc>http://localhost/pikaturistike/index.php/property/30/sq/test_emri</loc>
+	<lastmod>2018-11-12T12:53:29+01:00</lastmod>
 	<changefreq>monthly</changefreq>
 	<priority>0.5</priority>
 </url>
 <url>
-	<loc>http://localhost/pikaturistike/index.php/property/33/en/gjirokaster</loc>
-	<lastmod>2018-11-19T12:10:34+01:00</lastmod>
-	<changefreq>monthly</changefreq>
-	<priority>0.5</priority>
-</url>
-<url>
-	<loc>http://localhost/pikaturistike/index.php/property/32/sq/restorant_bulqize</loc>
-	<lastmod>2018-11-15T16:08:21+01:00</lastmod>
-	<changefreq>monthly</changefreq>
-	<priority>0.5</priority>
-</url>
-<url>
-	<loc>http://localhost/pikaturistike/index.php/property/32/en/restorant_bulqize</loc>
-	<lastmod>2018-11-15T16:08:21+01:00</lastmod>
+	<loc>http://localhost/pikaturistike/index.php/property/30/en/test_emri</loc>
+	<lastmod>2018-11-12T12:53:29+01:00</lastmod>
 	<changefreq>monthly</changefreq>
 	<priority>0.5</priority>
 </url>

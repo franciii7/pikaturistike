@@ -24,10 +24,6 @@ define('APP_VERSION_REAL_ESTATE', '1.6.5');
  
 
 
-$strict_development_mode = FALSE;
-
-$strict_development_mode = FALSE;	
-
 
 $strict_development_mode = FALSE;
 

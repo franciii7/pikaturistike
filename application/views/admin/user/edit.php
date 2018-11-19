@@ -43,7 +43,7 @@
                 <?php endif; ?>
             
                 <?php if(check_acl('user/all_deactivate') && !empty($user->id)):?>
-                <?php echo anchor('admin/user/all_deactivate/'.$user->id, '<i class="icon-remove"></i>&nbsp;&nbsp;'.lang_check('Deactivate all estates'), 'class="btn btn-danger pull-right"')?>
+                <?php echo anchor('admin/user/all_deactivate/'.$user->id, '<i class="icon-remove"></i>&nbsp;&nbsp;'.lang_check('Deactivate all estates'), 'class="btn btn-danger pull-right" style="margin-left:5px;')?>
                 <?php echo anchor('admin/user/all_activate/'.$user->id, '<i class="icon-ok"></i>&nbsp;&nbsp;'.lang_check('Activate all estates'), 'class="btn btn-success pull-right"')?>
                 <?php endif;?>                
             </div>

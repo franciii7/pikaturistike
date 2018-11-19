@@ -203,7 +203,9 @@
                                             &nbsp;&nbsp;&nbsp;&nbsp;<span class="label label-info"><?php echo $estate->status; ?></span>
                                             <?php endif; ?>
                                         </td>
-                                        <td><?php echo check_set($available_agent[$this->estate_m->get_user_id($estate->id)], '')?></td>
+                                        <td><?php 
+                                                echo $estate->name_of_user;
+                                        //echo check_set($available_agent[$this->estate_m->get_user_id($estate->id)], '')?></td>
                                         <!-- Dynamic generated -->
                                         <?php foreach($this->option_m->get_visible($content_language_id) as $row):?>
                                         <td>

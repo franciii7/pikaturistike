@@ -93,31 +93,45 @@
                                 </div>
                                 
                                 <?php if($this->session->userdata('type') == 'ADMIN' || $this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE'): ?>
-                                <div class="form-group">
-                                  <label class="col-lg-3 control-label"><?php echo lang('DateModified')?></label>
-                                  <div class="col-lg-9">
-                                    <?php echo form_input('date_modified', set_value('date_modified', $estate->date_modified), 'class="form-control" id="input_date_modified" placeholder="'.lang('DateModified').'"')?>
-                                  </div>
-                                </div>
+                                            <div class="form-group">
+                                            <label class="col-lg-3 control-label"><?php echo lang('DateModified')?></label>
+                                            <div class="col-lg-9">
+                                                <?php echo form_input('date_modified', set_value('date_modified', $estate->date_modified), 'class="form-control" id="input_date_modified" placeholder="'.lang('DateModified').'"')?>
+                                            </div>
+                                            </div>
                                 <?php endif;?>
+
                                 
-                                <?php if($this->session->userdata('type') == 'ADMIN' || $this->session->userdata('type') == 'AGENT_ADMIN' || $this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE'):?>
+                                <?php //if($this->session->userdata('type') == 'ADMIN' || $this->session->userdata('type') == 'AGENT_ADMIN' || $this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE'):?>
                                 
                                 <?php if(config_db_item('transitions_id_enabled') === TRUE): ?>
-                                <div class="form-group">
-                                  <label class="col-lg-3 control-label"><?php _l('Transitions id')?></label>
-                                  <div class="col-lg-9">
-                                    <?php echo form_input('id_transitions', set_value('id_transitions', $estate->id_transitions), 'class="form-control" id="input_id_transitions" placeholder="'.lang_check('Transitions id').'"')?>
-                                  </div>
-                                </div>
+                                        <div class="form-group">
+                                        <label class="col-lg-3 control-label"><?php _l('Transitions id')?></label>
+                                        <div class="col-lg-9">
+                                            <?php echo form_input('id_transitions', set_value('id_transitions', $estate->id_transitions), 'class="form-control" id="input_id_transitions" placeholder="'.lang_check('Transitions id').'"')?>
+                                        </div>
+                                        </div>
                                 <?php endif;?>
                                 
-                                <div class="form-group">
-                                  <label class="col-lg-3 control-label"><?php echo lang('Agent')?></label>
-                                  <div class="col-lg-9">
-                                    <?php echo form_dropdown_ajax('agent', 'user_m', set_value('agent', $estate->agent), 'name_surname');?>
+                                <?php if($this->session->userdata('type') == 'ADMIN'): ?>
+                                    <div class="form-group">
+                                    <label class="col-lg-3 control-label"><?php echo lang('Agent')?></label>
+                                    <div class="col-lg-9">
+                                        <?php echo form_dropdown_ajax('agent', 'user_m', set_value('agent', $estate->agent), 'name_surname');?>
+                                    </div>
+                                    </div>
+                                <?php elseif($this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE') : ?>
+                                    <div class="form-group">
+                                    <label class="col-lg-3 control-label"><?php echo "USER"?></label>
+                                    <div class="col-lg-9">
+                                       
+                                       <?php 
+                                             echo form_input('name_of_user', set_value('name_of_user',  $this->session->userdata('name_surname')), 'class="form-control" id="inputUser"  readonly' );
+                                             
+                                       //echo form_input('name_of_user', set_value('name_of_user', $this->user_m->name_surname), 'class="form-control" id="inputNameSurname" readonly'); ?>
+                                     
+                                    </div>
                                   </div>
-                                </div>
                                 <?php endif;?>
                                 
                                 <?php if($this->session->userdata('type') == 'AGENT_LIMITED'):?>
@@ -281,6 +295,16 @@
                                                 <?php echo form_textarea('option'.$val_option->id.'_'.$key, set_value('option'.$val_option->id.'_'.$key, isset($estate->{'option'.$val_option->id.'_'.$key})?$estate->{'option'.$val_option->id.'_'.$key}:''), 'class="ckeditor form-control" id="inputOption_'.$key.'_'.$val_option->id.'" placeholder="'.$val_option->option.'" '.$required_text)?>
                                               </div>
                                             </div>
+
+                                        <?php elseif($this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE'): ?>
+                                            <?php $user->municipality_id = $self_municipality_id; ?>     
+                                            <div class="form-group TREE-GENERATOR">
+                                            <label class="col-lg-3 control-label"><?php echo lang('Prove Bashkie')?></label>
+                                                <div class="col-lg-9">
+                                                    <?php echo form_input('option', set_value('option', $municipalities[$user->municipality_id]), 'class="form-control" id="inputQarku" readonly' );?>
+                                                </div>
+                                        </div>
+                                          
                                             
                                         <?php elseif($val_option->type == 'TREE' && config_item('tree_field_enabled') === TRUE):?>
                                             <?php if($settings['template']!='boomerang'){
@@ -288,15 +312,8 @@
                                                         $required_notice = '';
                                                     }
                                             ?>
-                                        <?php if($this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE'): ?>
-                                            <?php $user->municipality_id = $self_municipality_id; ?>     
-                                            <div class="form-group TREE-GENERATOR">
-                                            <label class="col-lg-3 control-label"><?php echo lang('Prove Bashkie')?></label>
-                                                <div class="col-lg-9">
-                                            <?php echo form_input('option', set_value('option', $municipalities[$user->municipality_id]), 'class="form-control" id="inputQarku" readonly' );?>
-                                                </div>
-                                            </div>
-                                        <?php elseif(config_db_item('enable_county_affiliate_roles') === FALSE): ?> 
+                                            
+                                        <?php if(config_db_item('enable_county_affiliate_roles') === FALSE): ?> 
                                             <div class="form-group TREE-GENERATOR">
                                               <label class="col-lg-3 control-label">
                                               <?php echo $required_notice.$val_option->option;

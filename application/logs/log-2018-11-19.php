@@ -591,3 +591,139 @@ ERROR - 2018-11-19 14:36:44 --> Severity: Notice  --> Undefined offset: 0 C:\wam
 ERROR - 2018-11-19 14:36:44 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
 ERROR - 2018-11-19 14:36:44 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
 ERROR - 2018-11-19 14:36:58 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 330
+ERROR - 2018-11-19 14:47:35 --> Severity: Notice  --> Undefined index: Punonjes Bashkie C:\xampp\htdocs\pikaturistike\application\views\admin\user\index.php 111
+ERROR - 2018-11-19 14:47:35 --> Severity: Notice  --> Undefined index: Punonjes Bashkie C:\xampp\htdocs\pikaturistike\application\views\admin\user\index.php 114
+ERROR - 2018-11-19 14:47:35 --> Severity: Notice  --> Undefined index: Punonjes Bashkie C:\xampp\htdocs\pikaturistike\application\views\admin\user\index.php 111
+ERROR - 2018-11-19 14:47:35 --> Severity: Notice  --> Undefined index: Punonjes Bashkie C:\xampp\htdocs\pikaturistike\application\views\admin\user\index.php 114
+ERROR - 2018-11-19 14:47:35 --> Severity: Notice  --> Undefined offset: 0 C:\xampp\htdocs\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:47:35 --> Severity: Notice  --> Undefined offset: 0 C:\xampp\htdocs\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:47:35 --> Severity: Notice  --> Undefined offset: 0 C:\xampp\htdocs\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:47:38 --> Severity: Notice  --> Array to string conversion C:\xampp\htdocs\pikaturistike\application\views\admin\user\edit.php 369
+ERROR - 2018-11-19 14:47:38 --> Severity: Notice  --> Undefined variable: municipality_drop_selected C:\xampp\htdocs\pikaturistike\application\views\admin\user\edit.php 376
+ERROR - 2018-11-19 14:47:38 --> Severity: Notice  --> Array to string conversion C:\xampp\htdocs\pikaturistike\application\views\admin\user\edit.php 376
+ERROR - 2018-11-19 14:47:58 --> Severity: Notice  --> Undefined index: Punonjes Bashkie C:\xampp\htdocs\pikaturistike\application\views\admin\user\index.php 111
+ERROR - 2018-11-19 14:47:58 --> Severity: Notice  --> Undefined index: Punonjes Bashkie C:\xampp\htdocs\pikaturistike\application\views\admin\user\index.php 114
+ERROR - 2018-11-19 14:47:58 --> Severity: Notice  --> Undefined index: Punonjes Bashkie C:\xampp\htdocs\pikaturistike\application\views\admin\user\index.php 111
+ERROR - 2018-11-19 14:47:58 --> Severity: Notice  --> Undefined index: Punonjes Bashkie C:\xampp\htdocs\pikaturistike\application\views\admin\user\index.php 114
+ERROR - 2018-11-19 14:47:58 --> Severity: Notice  --> Undefined offset: 0 C:\xampp\htdocs\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:47:58 --> Severity: Notice  --> Undefined offset: 0 C:\xampp\htdocs\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:47:58 --> Severity: Notice  --> Undefined offset: 0 C:\xampp\htdocs\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:50:58 --> Severity: Notice  --> Array to string conversion C:\xampp\htdocs\pikaturistike\application\views\admin\user\edit.php 369
+ERROR - 2018-11-19 14:50:58 --> Severity: Notice  --> Array to string conversion C:\xampp\htdocs\pikaturistike\application\views\admin\user\edit.php 376
+ERROR - 2018-11-19 14:51:01 --> Severity: Notice  --> Undefined offset: 0 C:\xampp\htdocs\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:51:01 --> Severity: Notice  --> Undefined index: Punonjes Bashkie C:\xampp\htdocs\pikaturistike\application\views\admin\user\index.php 111
+ERROR - 2018-11-19 14:51:01 --> Severity: Notice  --> Undefined index: Punonjes Bashkie C:\xampp\htdocs\pikaturistike\application\views\admin\user\index.php 114
+ERROR - 2018-11-19 14:51:02 --> Severity: Notice  --> Undefined index: Punonjes Bashkie C:\xampp\htdocs\pikaturistike\application\views\admin\user\index.php 111
+ERROR - 2018-11-19 14:51:02 --> Severity: Notice  --> Undefined index: Punonjes Bashkie C:\xampp\htdocs\pikaturistike\application\views\admin\user\index.php 114
+ERROR - 2018-11-19 14:51:02 --> Severity: Notice  --> Undefined offset: 0 C:\xampp\htdocs\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:51:02 --> Severity: Notice  --> Undefined offset: 0 C:\xampp\htdocs\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:51:02 --> Severity: Notice  --> Undefined offset: 0 C:\xampp\htdocs\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:51:20 --> Severity: Warning  --> Creating default object from empty value C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 292
+ERROR - 2018-11-19 14:54:22 --> Severity: Warning  --> Creating default object from empty value C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 292
+ERROR - 2018-11-19 14:54:48 --> Severity: Warning  --> Creating default object from empty value C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 292
+ERROR - 2018-11-19 14:55:05 --> Severity: Warning  --> Creating default object from empty value C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 292
+ERROR - 2018-11-19 14:55:15 --> Severity: Notice  --> Undefined offset: 0 C:\xampp\htdocs\pikaturistike\application\views\admin\estate\index.php 220
+ERROR - 2018-11-19 14:55:15 --> Severity: Notice  --> Undefined offset: 0 C:\xampp\htdocs\pikaturistike\application\views\admin\estate\index.php 220
+ERROR - 2018-11-19 14:55:15 --> Severity: Notice  --> Undefined offset: 0 C:\xampp\htdocs\pikaturistike\application\views\admin\estate\index.php 220
+ERROR - 2018-11-19 14:55:15 --> Severity: Notice  --> Undefined offset: 0 C:\xampp\htdocs\pikaturistike\application\views\admin\estate\index.php 220
+ERROR - 2018-11-19 14:55:15 --> Severity: Notice  --> Undefined offset: 0 C:\xampp\htdocs\pikaturistike\application\views\admin\estate\index.php 220
+ERROR - 2018-11-19 14:55:15 --> Severity: Notice  --> Undefined offset: 0 C:\xampp\htdocs\pikaturistike\application\views\admin\estate\index.php 220
+ERROR - 2018-11-19 14:58:12 --> Severity: Warning  --> Creating default object from empty value C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 285
+ERROR - 2018-11-19 14:58:34 --> Severity: Warning  --> Creating default object from empty value C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 285
+ERROR - 2018-11-19 14:58:42 --> Severity: Warning  --> Creating default object from empty value C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 285
+ERROR - 2018-11-19 15:01:06 --> Severity: Warning  --> Creating default object from empty value C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 292
+ERROR - 2018-11-19 15:07:07 --> Severity: Warning  --> Creating default object from empty value C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 286
+ERROR - 2018-11-19 15:10:48 --> Severity: Warning  --> Creating default object from empty value C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 286
+ERROR - 2018-11-19 15:14:36 --> Severity: Notice  --> Undefined property: Estate::$id C:\xampp\htdocs\pikaturistike\system\core\Model.php 51
+ERROR - 2018-11-19 15:23:09 --> Severity: Warning  --> Creating default object from empty value C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 290
+ERROR - 2018-11-19 15:23:23 --> Severity: Warning  --> Creating default object from empty value C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 290
+ERROR - 2018-11-19 15:23:26 --> Severity: Warning  --> Creating default object from empty value C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 290
+ERROR - 2018-11-19 15:23:28 --> Severity: Warning  --> Creating default object from empty value C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 290
+ERROR - 2018-11-19 15:23:31 --> Severity: Warning  --> Creating default object from empty value C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 290
+ERROR - 2018-11-19 15:23:32 --> Severity: Warning  --> Creating default object from empty value C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 290
+ERROR - 2018-11-19 15:23:33 --> Severity: Warning  --> Creating default object from empty value C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 290
+ERROR - 2018-11-19 15:25:34 --> Severity: Warning  --> Creating default object from empty value C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 297
+ERROR - 2018-11-19 15:28:25 --> Severity: Notice  --> Undefined variable: user C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 128
+ERROR - 2018-11-19 15:28:25 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 128
+ERROR - 2018-11-19 15:28:25 --> Severity: Warning  --> Creating default object from empty value C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 297
+ERROR - 2018-11-19 15:28:35 --> Severity: Notice  --> Undefined variable: user C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 128
+ERROR - 2018-11-19 15:28:35 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 128
+ERROR - 2018-11-19 15:28:35 --> Severity: Warning  --> Creating default object from empty value C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 297
+ERROR - 2018-11-19 15:28:57 --> Severity: Notice  --> Undefined property: Estate::$name_surname C:\xampp\htdocs\pikaturistike\system\core\Model.php 51
+ERROR - 2018-11-19 15:28:57 --> Severity: Warning  --> Creating default object from empty value C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 297
+ERROR - 2018-11-19 15:32:33 --> Severity: Notice  --> Undefined offset: 0 C:\xampp\htdocs\pikaturistike\application\views\admin\estate\index.php 220
+ERROR - 2018-11-19 15:32:33 --> Severity: Notice  --> Undefined offset: 0 C:\xampp\htdocs\pikaturistike\application\views\admin\estate\index.php 220
+ERROR - 2018-11-19 15:32:33 --> Severity: Notice  --> Undefined offset: 0 C:\xampp\htdocs\pikaturistike\application\views\admin\estate\index.php 220
+ERROR - 2018-11-19 15:32:33 --> Severity: Notice  --> Undefined offset: 0 C:\xampp\htdocs\pikaturistike\application\views\admin\estate\index.php 220
+ERROR - 2018-11-19 15:32:33 --> Severity: Notice  --> Undefined offset: 0 C:\xampp\htdocs\pikaturistike\application\views\admin\estate\index.php 220
+ERROR - 2018-11-19 15:32:33 --> Severity: Notice  --> Undefined offset: 0 C:\xampp\htdocs\pikaturistike\application\views\admin\estate\index.php 220
+ERROR - 2018-11-19 15:52:33 --> Severity: Notice  --> Undefined property: Estate::$name_surname C:\xampp\htdocs\pikaturistike\system\core\Model.php 51
+ERROR - 2018-11-19 15:52:33 --> Severity: Warning  --> Creating default object from empty value C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 297
+ERROR - 2018-11-19 15:52:47 --> Severity: Notice  --> Undefined property: Estate::$name_surname C:\xampp\htdocs\pikaturistike\system\core\Model.php 51
+ERROR - 2018-11-19 15:52:47 --> Severity: Warning  --> Creating default object from empty value C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 297
+ERROR - 2018-11-19 15:53:16 --> Severity: Notice  --> Undefined property: Estate::$name_surname C:\xampp\htdocs\pikaturistike\system\core\Model.php 51
+ERROR - 2018-11-19 15:53:16 --> Severity: Warning  --> Creating default object from empty value C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 297
+ERROR - 2018-11-19 15:54:35 --> Severity: Notice  --> Undefined property: Estate::$name_surname C:\xampp\htdocs\pikaturistike\system\core\Model.php 51
+ERROR - 2018-11-19 15:56:15 --> Severity: Notice  --> Undefined property: Estate::$username C:\xampp\htdocs\pikaturistike\system\core\Model.php 51
+ERROR - 2018-11-19 16:00:35 --> Severity: Warning  --> Missing argument 1 for Estate_m::get_user_id(), called in C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php on line 129 and defined C:\xampp\htdocs\pikaturistike\application\models\estate_m.php 1151
+ERROR - 2018-11-19 16:00:35 --> Severity: Notice  --> Undefined variable: property_id C:\xampp\htdocs\pikaturistike\application\models\estate_m.php 1153
+ERROR - 2018-11-19 16:01:36 --> Severity: Notice  --> Undefined variable: id C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 129
+ERROR - 2018-11-19 16:06:36 --> Severity: Notice  --> Undefined variable: user C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 129
+ERROR - 2018-11-19 16:06:36 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 129
+ERROR - 2018-11-19 16:06:36 --> Severity: Notice  --> Undefined index:  C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 129
+ERROR - 2018-11-19 16:06:42 --> Severity: Notice  --> Undefined variable: user C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 129
+ERROR - 2018-11-19 16:06:42 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 129
+ERROR - 2018-11-19 16:06:42 --> Severity: Notice  --> Undefined index:  C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 129
+ERROR - 2018-11-19 16:08:13 --> Severity: Notice  --> Undefined property: Estate::$name_surname C:\xampp\htdocs\pikaturistike\system\core\Model.php 51
+ERROR - 2018-11-19 16:11:00 --> Severity: Warning  --> Creating default object from empty value C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 299
+ERROR - 2018-11-19 16:16:14 --> Severity: Warning  --> Creating default object from empty value C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 300
+ERROR - 2018-11-19 16:16:38 --> Severity: Warning  --> Creating default object from empty value C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 300
+ERROR - 2018-11-19 16:19:02 --> Severity: Notice  --> Undefined property: Estate::$name_surname C:\xampp\htdocs\pikaturistike\system\core\Model.php 51
+ERROR - 2018-11-19 16:19:02 --> Severity: Warning  --> Creating default object from empty value C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 300
+ERROR - 2018-11-19 16:21:26 --> Severity: Warning  --> Creating default object from empty value C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 300
+ERROR - 2018-11-19 16:21:59 --> Severity: Warning  --> Creating default object from empty value C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 300
+ERROR - 2018-11-19 16:22:03 --> Severity: Warning  --> Creating default object from empty value C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 300
+ERROR - 2018-11-19 16:22:25 --> Severity: Warning  --> Creating default object from empty value C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 300
+ERROR - 2018-11-19 16:23:13 --> Severity: Warning  --> Creating default object from empty value C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 300
+ERROR - 2018-11-19 16:25:10 --> Severity: Notice  --> Undefined property: Estate::$name_of_user C:\xampp\htdocs\pikaturistike\system\core\Model.php 51
+ERROR - 2018-11-19 16:25:10 --> Severity: Notice  --> Undefined property: Estate::$name_of_user C:\xampp\htdocs\pikaturistike\system\core\Model.php 51
+ERROR - 2018-11-19 16:25:10 --> Severity: Notice  --> Undefined property: Estate::$name_of_user C:\xampp\htdocs\pikaturistike\system\core\Model.php 51
+ERROR - 2018-11-19 16:25:10 --> Severity: Notice  --> Undefined property: Estate::$name_of_user C:\xampp\htdocs\pikaturistike\system\core\Model.php 51
+ERROR - 2018-11-19 16:25:28 --> Severity: Notice  --> Undefined property: Estate::$name_of_user C:\xampp\htdocs\pikaturistike\system\core\Model.php 51
+ERROR - 2018-11-19 16:25:28 --> Severity: Notice  --> Undefined property: Estate::$name_of_user C:\xampp\htdocs\pikaturistike\system\core\Model.php 51
+ERROR - 2018-11-19 16:25:28 --> Severity: Notice  --> Undefined property: Estate::$name_of_user C:\xampp\htdocs\pikaturistike\system\core\Model.php 51
+ERROR - 2018-11-19 16:25:28 --> Severity: Notice  --> Undefined property: Estate::$name_of_user C:\xampp\htdocs\pikaturistike\system\core\Model.php 51
+ERROR - 2018-11-19 16:25:39 --> Severity: Notice  --> Undefined property: Estate::$name_of_user C:\xampp\htdocs\pikaturistike\system\core\Model.php 51
+ERROR - 2018-11-19 16:28:34 --> Severity: Warning  --> Creating default object from empty value C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 300
+ERROR - 2018-11-19 16:29:21 --> Severity: Notice  --> Undefined offset: 0 C:\xampp\htdocs\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 16:29:21 --> Severity: Notice  --> Undefined index: Punonjes Bashkie C:\xampp\htdocs\pikaturistike\application\views\admin\user\index.php 111
+ERROR - 2018-11-19 16:29:21 --> Severity: Notice  --> Undefined index: Punonjes Bashkie C:\xampp\htdocs\pikaturistike\application\views\admin\user\index.php 114
+ERROR - 2018-11-19 16:29:21 --> Severity: Notice  --> Undefined index: Punonjes Bashkie C:\xampp\htdocs\pikaturistike\application\views\admin\user\index.php 111
+ERROR - 2018-11-19 16:29:21 --> Severity: Notice  --> Undefined index: Punonjes Bashkie C:\xampp\htdocs\pikaturistike\application\views\admin\user\index.php 114
+ERROR - 2018-11-19 16:29:21 --> Severity: Notice  --> Undefined offset: 0 C:\xampp\htdocs\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 16:29:21 --> Severity: Notice  --> Undefined offset: 0 C:\xampp\htdocs\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 16:29:21 --> Severity: Notice  --> Undefined offset: 0 C:\xampp\htdocs\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 16:29:29 --> Severity: Notice  --> Undefined offset: 0 C:\xampp\htdocs\pikaturistike\application\views\admin\user\edit.php 350
+ERROR - 2018-11-19 16:29:29 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\user\edit.php 350
+ERROR - 2018-11-19 16:29:29 --> Severity: Notice  --> Undefined offset: 0 C:\xampp\htdocs\pikaturistike\application\views\admin\user\edit.php 351
+ERROR - 2018-11-19 16:29:29 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\user\edit.php 351
+ERROR - 2018-11-19 16:29:29 --> Severity: Notice  --> Array to string conversion C:\xampp\htdocs\pikaturistike\application\views\admin\user\edit.php 369
+ERROR - 2018-11-19 16:29:29 --> Severity: Notice  --> Array to string conversion C:\xampp\htdocs\pikaturistike\application\views\admin\user\edit.php 376
+ERROR - 2018-11-19 16:29:39 --> Severity: Notice  --> Undefined offset: 0 C:\xampp\htdocs\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 16:29:39 --> Severity: Notice  --> Undefined index: Punonjes Bashkie C:\xampp\htdocs\pikaturistike\application\views\admin\user\index.php 111
+ERROR - 2018-11-19 16:29:39 --> Severity: Notice  --> Undefined index: Punonjes Bashkie C:\xampp\htdocs\pikaturistike\application\views\admin\user\index.php 114
+ERROR - 2018-11-19 16:29:39 --> Severity: Notice  --> Undefined offset: 0 C:\xampp\htdocs\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 16:29:39 --> Severity: Notice  --> Undefined offset: 0 C:\xampp\htdocs\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 16:29:43 --> Severity: Notice  --> Array to string conversion C:\xampp\htdocs\pikaturistike\application\views\admin\user\edit.php 369
+ERROR - 2018-11-19 16:29:43 --> Severity: Notice  --> Array to string conversion C:\xampp\htdocs\pikaturistike\application\views\admin\user\edit.php 376
+ERROR - 2018-11-19 16:29:58 --> Severity: Notice  --> Undefined offset: 0 C:\xampp\htdocs\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 16:29:58 --> Severity: Notice  --> Undefined index: Punonjes Bashkie C:\xampp\htdocs\pikaturistike\application\views\admin\user\index.php 111
+ERROR - 2018-11-19 16:29:58 --> Severity: Notice  --> Undefined index: Punonjes Bashkie C:\xampp\htdocs\pikaturistike\application\views\admin\user\index.php 114
+ERROR - 2018-11-19 16:29:58 --> Severity: Notice  --> Undefined offset: 0 C:\xampp\htdocs\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 16:29:58 --> Severity: Notice  --> Undefined offset: 0 C:\xampp\htdocs\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 16:30:10 --> Severity: Warning  --> Creating default object from empty value C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 300
+ERROR - 2018-11-19 16:30:33 --> Severity: Warning  --> Creating default object from empty value C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 300
+ERROR - 2018-11-19 16:31:43 --> Severity: Warning  --> Creating default object from empty value C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 300
+ERROR - 2018-11-19 16:37:47 --> Severity: Warning  --> Creating default object from empty value C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 301
+ERROR - 2018-11-19 16:40:24 --> Severity: Warning  --> Creating default object from empty value C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 300
+ERROR - 2018-11-19 16:41:39 --> Severity: Warning  --> Creating default object from empty value C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 300
