@@ -260,11 +260,15 @@ class User extends Admin_Controller
                                                          'phone_verified', 'facebook_link', 'youtube_link', 'payment_details',
                                                          'gplus_link', 'twitter_link', 'linkedin_link', 'county_affiliate_values', 'embed_video_code',
                                                          'research_mail_notifications', 'research_sms_notifications', 'agency_id','municipality_id'));
+
             
             if($this->session->userdata('type') == 'ADMINISTRATOR BASHKIE'){
                 $data['municipality_id'] = $this->user_m->get_property_for_user('municipality_id');
-                $data['type'] = 'PUNONJES BASHKIE';
+                $data['type'] = $id == $this->user_m->get_property_for_user('id')?'ADMINISTRATOR BASHKIE':'PUNONJES BASHKIE';
             }
+            
+           
+            
             
             if(config_db_item('phone_mobile_enabled') === TRUE)
                 $data['phone2'] = $this->user_m->input->post('phone2');
@@ -473,7 +477,7 @@ class User extends Admin_Controller
             $this->data['user'] = $this->user_m->get($id);
             
             // Disable removing last activated ADMIN
-            if($this->data['user']->type == 'ADMIN' && $this->user_m->total_admins() <=1)
+            if($this->data['user']->type == 'ADMIN'  && $this->user_m->total_admins() <=1)
             {
                 $this->session->set_flashdata('error', 
                         lang_check('Last admin cant be removed'));
@@ -492,14 +496,17 @@ class User extends Admin_Controller
 	}
         
     public function delete_multiple(){
-        if(isset($_POST["delete_multiple"]) && !empty($_POST["delete_multiple"]))
+        if($this->session->userdata('type') == 'ADMIN') {
+            if(isset($_POST["delete_multiple"]) && !empty($_POST["delete_multiple"]))
             foreach($_POST["delete_multiple"] as $id)
             {
                 if(is_numeric($id))
                     $this->delete($id, FALSE);
             }
         
-        redirect('admin/user');
+            redirect('admin/user');
+        }
+        
     }      
         
     

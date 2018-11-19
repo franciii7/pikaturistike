@@ -109,7 +109,11 @@
                                         <td>
                                         
                                             <span class="label label-<?php echo $this->user_m->user_type_color[$user->type]?>">
-                                            <?php echo $this->user_m->user_types[$user->type]?>
+                                            <?php 
+                                                    
+                                                    echo $this->user_m->user_types[$user->type]
+                                            ?>
+                                            
                                             </span>
                                             <?php if(file_exists(APPPATH.'controllers/admin/expert.php')): ?>
                                             <?php echo (!empty($user->qa_id))?'&nbsp;<span class="label label-info">'.$expert_categories[$user->qa_id].'</span>':'';?>
@@ -152,6 +156,7 @@
                                         <?php endif;?>
                                     </tr>
                         <?php endforeach;?>
+                        
                         <?php else:?>
                                     <tr>
                                     	<td colspan="3"><?php _l('We could not find any'); ?></td>
