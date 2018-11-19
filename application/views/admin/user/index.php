@@ -98,19 +98,21 @@
                       </thead>
                       <tbody>
                         <?php if(count($users)): foreach($users as $user): ?>
-                            <?php if($this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' && $user->municipality_id != $self_municipality_id) {
+                            <?php if($this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' && $user->municipality_id != $self_municipality_id) { 
                                 continue;
                             }
                             ?>
                                     <tr>
                                     	<td><?php echo anchor('admin/user/edit/'.$user->id, $user->username)?>&nbsp;&nbsp;<?php echo $user->activated == 0? '<span class="label label-warning"><i class="icon-remove"></i></span>':''?></td>
                                         <td><?php echo $user->name_surname?></td>
+                                        
                                         <td>
+                                        
                                             <span class="label label-<?php echo $this->user_m->user_type_color[$user->type]?>">
                                             <?php echo $this->user_m->user_types[$user->type]?>
                                             </span>
                                             <?php if(file_exists(APPPATH.'controllers/admin/expert.php')): ?>
-                                            <?php echo (!empty($user->qa_id))?'&nbsp;<span class="label label-info">'.$expert_categories[$user->qa_id].'</span>':''; ?>
+                                            <?php echo (!empty($user->qa_id))?'&nbsp;<span class="label label-info">'.$expert_categories[$user->qa_id].'</span>':'';?>
                                             <?php endif; ?>
                                         </td>
                                         <td><?php echo $user->municipality_id==null?"-":$municipalities[$user->municipality_id] ?></td>

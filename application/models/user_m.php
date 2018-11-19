@@ -90,6 +90,7 @@ class User_m extends MY_Model {
     
     public function login($username = NULL, $password = NULL)
 	{
+        
         if($username === NULL)
         {
             $username = $this->input->post('username');

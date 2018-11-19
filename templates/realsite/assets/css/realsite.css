@@ -7563,13 +7563,15 @@ button.btn, button.btn-secondary {
       .header-title img {
         margin-right: 0px; } }
   .header-title a {
+    display: flex;
+    align-items: center;
     color: #fff; }
     .header-minimal .header-title a {
       color: #424242; }
     .header-minimal.primary .header-title a {
       color: #fff; }
     .header-title a:hover {
-      color: #fff;
+      color: #fff;f
       text-decoration: none; }
       .header-minimal .header-title a:hover {
         color: #424242; }

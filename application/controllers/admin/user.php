@@ -30,8 +30,14 @@ class User extends Admin_Controller
         prepare_search_query_GET(array('type'), array('id', 'username', 'name_surname', 'address', 'description', 'mail'));
        
 	    // Fetch all users
-        $this->data['users'] = $this->user_m->get();
+        $self_municipality_id = $this->user_m->get_property_for_user('municipality_id');
         
+        
+        if ($this->session->userdata('type') == 'ADMINISTRATOR BASHKIE') {
+            $this->data['users'] = $this->user_m->get_by("municipality_id = $self_municipality_id"); 
+        } else {
+            $this->data['users'] = $this->user_m->get();
+        }
         
         // pagination
         $config['base_url'] = site_url('admin/user/index');
@@ -53,8 +59,7 @@ class User extends Admin_Controller
         }
         
         prepare_search_query_GET(array('user.type'), array('user.id', 'user.username', 'user.name_surname', 'user.address', 'user.description', 'user.mail'), array('user'));
-        $this->data['users'] = $this->user_m->get_pagination($config['per_page'], $pagination_offset);
-        
+         // $this->data['users'] = $this->user_m->get_pagination($config['per_page'], $pagination_offset);
         
         $this->data['expert_categories'] = $this->qa_m->get_no_parents_expert($this->data['content_language_id']);
         
@@ -97,14 +102,23 @@ class User extends Admin_Controller
     public function export()
     {
         $this->load->helper('download');
+
+        //current user login
+        $self_municipality_id = $this->user_m->get_property_for_user('municipality_id');
+        // Fetch all users
+        if ($this->session->userdata('type') == 'ADMINISTRATOR BASHKIE') {
+            $users = $this->user_m->get_by("municipality_id = $self_municipality_id"); 
+        } else {
+            $users = $this->user_m->get();
+        }
+		
         
-	    // Fetch all users
-		$users = $this->user_m->get();
-        
+
         $data = '';
         
         foreach($users as $row)
         {
+            
             if(strpos($row->mail, '@') > 1)
             {
                 $data.= $row->mail."\r\n";
@@ -117,6 +131,7 @@ class User extends Admin_Controller
         $name = 'real-estate-users.txt';
         
         force_download($name, $data); 
+    
     }
     
     public function edit($id = NULL)
@@ -158,6 +173,10 @@ class User extends Admin_Controller
                 redirect('admin/user');
             }
             
+            if($this->data['user']->municipality_id !=  $this->user_m->get_property_for_user('municipality_id') 
+            && !$this->data['user']->type == 'ADMIN') {
+                redirect('admin/user');
+            }
             // Fetch file repository
             $repository_id = $this->data['user']->repository_id;
             if(empty($repository_id))
@@ -241,9 +260,10 @@ class User extends Admin_Controller
                                                          'phone_verified', 'facebook_link', 'youtube_link', 'payment_details',
                                                          'gplus_link', 'twitter_link', 'linkedin_link', 'county_affiliate_values', 'embed_video_code',
                                                          'research_mail_notifications', 'research_sms_notifications', 'agency_id','municipality_id'));
-            json_encode($data);
+            
             if($this->session->userdata('type') == 'ADMINISTRATOR BASHKIE'){
-                $data['municipality_id'] = $self_municipality_id = $this->user_m->get_property_for_user('municipality_id');
+                $data['municipality_id'] = $this->user_m->get_property_for_user('municipality_id');
+                $data['type'] = 'PUNONJES BASHKIE';
             }
             
             if(config_db_item('phone_mobile_enabled') === TRUE)

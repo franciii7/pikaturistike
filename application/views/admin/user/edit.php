@@ -102,19 +102,23 @@
                                   </div>
                                 </div>
                                 
-                                <?php if(/*$this->session->userdata('type') == 'ADMIN' ||*/ $this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE'): ?>
+                                <?php if($this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE'): ?>
                                   <div class="form-group">
                                     <label class="col-lg-2 control-label"><?php echo lang('Type')?></label>
                                     <div class="col-lg-10">
-                                      <?php echo form_input('type', set_value('type', $this->user_m->user_types['PUNONJES BASHKIE']), 'class="form-control" id="inputPunonjes" readonly' );?>
-                                      <!--echo form_dropdown('type', $this->user_m->user_types['PUNONJES BASHKIE'], set_value('type', $user->type), 'class="form-control"'); -->
+                                      <?php 
+                                       
+                                      echo form_input('type', set_value('type', empty($user->id) ? $this->user_m->user_types['PUNONJES BASHKIE'] : $this->user_m->user_types[$user->type]), 'class="form-control" id="inputPunonjes" readonly' );
+                                      
+                                      
+                                      ?>
                                     </div>
                                   </div>
                                 <?php elseif($this->session->userdata('type') == 'ADMIN') : ?>
                                   <div class="form-group">
                                     <label class="col-lg-2 control-label"><?php echo lang('Type')?></label>
                                     <div class="col-lg-10">
-                                      <?php //echo form_input('type', set_value('type', $this->user_m->user_types['PUNONJES BASHKIE']), 'class="form-control" id="inputPunonjes" readonly' );
+                                      <?php 
                                       echo form_dropdown('type', $this->user_m->user_types, set_value('type', $user->type), 'class="form-control"'); ?>
                                     </div>
                                   </div>
@@ -312,7 +316,7 @@
                                 <?php  
                                   $user->municipality_id = $self_municipality_id; ?>     
                                       <div class="form-group">
-                                        <label class="col-lg-2 control-label"><?php echo lang('Prove Bashkie')?></label>
+                                        <label class="col-lg-2 control-label"><?php echo lang('Prove Bashkie');?></label>
                                         <div class="col-lg-10">
                                           <?php echo form_input('option', set_value('option', $municipalities[$user->municipality_id]), 'class="form-control" id="inputQarku" readonly' );?>
                                         </div>
