@@ -267,9 +267,10 @@ class User extends Admin_Controller
                 $data['type'] = $id == $this->user_m->get_property_for_user('id')?'ADMINISTRATOR BASHKIE':'PUNONJES BASHKIE';
             }
             
-           
-            
-            
+            if($this->session->userdata('type') == 'PUNONJES BASHKIE') {
+                $data['type'] = 'PUNONJES BASHKIE';
+            }   
+
             if(config_db_item('phone_mobile_enabled') === TRUE)
                 $data['phone2'] = $this->user_m->input->post('phone2');
             
@@ -420,7 +421,12 @@ class User extends Admin_Controller
                     '<p class="label label-success validation">'.lang_check('Changes saved').$message_mail.'</p>');
 
             //redirect('admin/user/index/'.$id);
-            redirect('admin/user/index');
+            
+            if($this->session->userdata('type') == 'PUNONJES BASHKIE'){
+                redirect('admin/user/edit/'.$id);
+            }else {
+                redirect('admin/user/index');
+            }
         }
         
         // Load the view

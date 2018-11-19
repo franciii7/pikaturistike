@@ -1,3 +1,12 @@
+<?php
+ $CI =& get_instance();
+ $CI->load->model('treefield_m');
+ $field_id = 64;
+ $lang_id = $content_language_id;
+ $municipalities = $CI->treefield_m->get_level_values($lang_id, $field_id,-1,1);
+ $this->load->model('user_m');
+ $self_municipality_id = $this->user_m->get_property_for_user('municipality_id');
+?>
 <?php if(config_db_item('map_version') !='open_street' && empty($settings['maps_api_key'])):?>
 <div class="col-md-12">
     <br/>
@@ -141,6 +150,10 @@ if($settings_template=='local') {
                       </thead>
                       <tbody>
                         <?php if(count($estates)): foreach($estates as $estate):?>
+                            <?php if(($this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE') && $estate->municipality_id != $self_municipality_id){
+                                continue;
+                                }
+                                ?>
                                     <tr>
                                         <?php if($estate->is_activated == 0):?>
                                         <td><span class="label label-danger"><?php echo $estate->id?></span></td>

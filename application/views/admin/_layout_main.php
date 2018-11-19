@@ -1,3 +1,7 @@
+<?php
+ $this->load->model('user_m');
+ $self_municipality_id = $this->user_m->get_property_for_user('municipality_id');
+?>
 <?php $this->load->view('admin/components/page_head_main')?>
 <body>
 <div class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
@@ -80,7 +84,7 @@
             </li>
             <?php endif;?>
             
-            <?php if(check_acl('user')):?>
+            <?php if(check_acl('user') && $this->session->userdata('type') != 'PUNONJES BASHKIE'):?>
             <!-- Members button with number of latest members count -->
             <li class="dropdown dropdown-big">
               <a class="dropdown-toggle" href="#" data-toggle="dropdown">
@@ -95,6 +99,10 @@
                     <hr />
                   </li>
                     <?php foreach($users_3 as $user):?>
+                    <?php if($this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' && $user->municipality_id != $self_municipality_id) { 
+                                continue;
+                            }
+                            ?>
                   <li>
                     <!-- List item heading h6-->
                     <a href="<?php echo site_url('admin/user/edit/'.$user->id)?>"><?php echo $user->name_surname?></a> 

@@ -462,3 +462,132 @@ ERROR - 2018-11-19 13:18:31 --> Severity: Notice  --> Undefined index:  C:\xampp
 ERROR - 2018-11-19 13:18:31 --> Severity: Notice  --> Undefined index:  C:\xampp\htdocs\pikaturistike\application\views\admin\user\index.php 114
 ERROR - 2018-11-19 13:19:04 --> Severity: Notice  --> Undefined index: Punonjes Bashkie C:\xampp\htdocs\pikaturistike\application\views\admin\user\index.php 111
 ERROR - 2018-11-19 13:19:04 --> Severity: Notice  --> Undefined index: Punonjes Bashkie C:\xampp\htdocs\pikaturistike\application\views\admin\user\index.php 114
+ERROR - 2018-11-19 14:26:30 --> Severity: Notice  --> Undefined index: ADMIN_BASHKIE C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 111
+ERROR - 2018-11-19 14:26:30 --> Severity: Notice  --> Undefined index: ADMIN_BASHKIE C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 114
+ERROR - 2018-11-19 14:26:30 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:26:30 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:26:30 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:26:30 --> Severity: Notice  --> Undefined index: Punonjes Bashkie C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 111
+ERROR - 2018-11-19 14:26:30 --> Severity: Notice  --> Undefined index: Punonjes Bashkie C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 114
+ERROR - 2018-11-19 14:26:30 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:26:30 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:27:36 --> Severity: Notice  --> Undefined index: ADMIN_BASHKIE C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 111
+ERROR - 2018-11-19 14:27:36 --> Severity: Notice  --> Undefined index: ADMIN_BASHKIE C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 114
+ERROR - 2018-11-19 14:27:36 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:27:36 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:27:36 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:27:36 --> Severity: Notice  --> Undefined index: Punonjes Bashkie C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 111
+ERROR - 2018-11-19 14:27:36 --> Severity: Notice  --> Undefined index: Punonjes Bashkie C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 114
+ERROR - 2018-11-19 14:27:36 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:27:36 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:27:47 --> Severity: Notice  --> Undefined index: ADMIN_BASHKIE C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 111
+ERROR - 2018-11-19 14:27:47 --> Severity: Notice  --> Undefined index: ADMIN_BASHKIE C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 114
+ERROR - 2018-11-19 14:27:47 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:27:47 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:27:47 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:27:47 --> Severity: Notice  --> Undefined index: Punonjes Bashkie C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 111
+ERROR - 2018-11-19 14:27:47 --> Severity: Notice  --> Undefined index: Punonjes Bashkie C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 114
+ERROR - 2018-11-19 14:27:47 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:27:47 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:27:51 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 350
+ERROR - 2018-11-19 14:27:51 --> Severity: Notice  --> Trying to get property of non-object C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 350
+ERROR - 2018-11-19 14:27:51 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 351
+ERROR - 2018-11-19 14:27:51 --> Severity: Notice  --> Trying to get property of non-object C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 351
+ERROR - 2018-11-19 14:27:51 --> Severity: Notice  --> Array to string conversion C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 369
+ERROR - 2018-11-19 14:27:51 --> Severity: Notice  --> Array to string conversion C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 376
+ERROR - 2018-11-19 14:27:57 --> Severity: Notice  --> Undefined index: ADMIN_BASHKIE C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 111
+ERROR - 2018-11-19 14:27:57 --> Severity: Notice  --> Undefined index: ADMIN_BASHKIE C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 114
+ERROR - 2018-11-19 14:27:57 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:27:57 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:27:57 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:27:57 --> Severity: Notice  --> Undefined index: Punonjes Bashkie C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 111
+ERROR - 2018-11-19 14:27:57 --> Severity: Notice  --> Undefined index: Punonjes Bashkie C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 114
+ERROR - 2018-11-19 14:27:57 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:27:57 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:28:02 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 350
+ERROR - 2018-11-19 14:28:02 --> Severity: Notice  --> Trying to get property of non-object C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 350
+ERROR - 2018-11-19 14:28:02 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 351
+ERROR - 2018-11-19 14:28:02 --> Severity: Notice  --> Trying to get property of non-object C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 351
+ERROR - 2018-11-19 14:28:02 --> Severity: Notice  --> Array to string conversion C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 369
+ERROR - 2018-11-19 14:28:02 --> Severity: Notice  --> Array to string conversion C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 376
+ERROR - 2018-11-19 14:28:10 --> Severity: Notice  --> Undefined index: ADMIN_BASHKIE C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 111
+ERROR - 2018-11-19 14:28:10 --> Severity: Notice  --> Undefined index: ADMIN_BASHKIE C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 114
+ERROR - 2018-11-19 14:28:10 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:28:10 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:28:10 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:28:10 --> Severity: Notice  --> Undefined index: Punonjes Bashkie C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 111
+ERROR - 2018-11-19 14:28:10 --> Severity: Notice  --> Undefined index: Punonjes Bashkie C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 114
+ERROR - 2018-11-19 14:28:10 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:28:10 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:29:21 --> Severity: Notice  --> Undefined index: ADMIN_BASHKIE C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 111
+ERROR - 2018-11-19 14:29:21 --> Severity: Notice  --> Undefined index: ADMIN_BASHKIE C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 114
+ERROR - 2018-11-19 14:29:21 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:29:22 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:29:22 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:29:22 --> Severity: Notice  --> Undefined index: Punonjes Bashkie C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 111
+ERROR - 2018-11-19 14:29:22 --> Severity: Notice  --> Undefined index: Punonjes Bashkie C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 114
+ERROR - 2018-11-19 14:29:22 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:29:22 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:29:22 --> Severity: Notice  --> Undefined index: ADMIN_BASHKIE C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 111
+ERROR - 2018-11-19 14:29:22 --> Severity: Notice  --> Undefined index: ADMIN_BASHKIE C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 114
+ERROR - 2018-11-19 14:29:22 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:29:22 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:29:22 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:29:22 --> Severity: Notice  --> Undefined index: Punonjes Bashkie C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 111
+ERROR - 2018-11-19 14:29:22 --> Severity: Notice  --> Undefined index: Punonjes Bashkie C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 114
+ERROR - 2018-11-19 14:29:22 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:29:22 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:29:27 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 350
+ERROR - 2018-11-19 14:29:27 --> Severity: Notice  --> Trying to get property of non-object C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 350
+ERROR - 2018-11-19 14:29:27 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 351
+ERROR - 2018-11-19 14:29:27 --> Severity: Notice  --> Trying to get property of non-object C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 351
+ERROR - 2018-11-19 14:29:27 --> Severity: Notice  --> Array to string conversion C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 369
+ERROR - 2018-11-19 14:29:27 --> Severity: Notice  --> Array to string conversion C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 376
+ERROR - 2018-11-19 14:29:40 --> Severity: Notice  --> Undefined index: ADMIN_BASHKIE C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 111
+ERROR - 2018-11-19 14:29:40 --> Severity: Notice  --> Undefined index: ADMIN_BASHKIE C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 114
+ERROR - 2018-11-19 14:29:40 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:29:40 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:29:40 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:29:40 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:29:59 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 323
+ERROR - 2018-11-19 14:31:22 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 330
+ERROR - 2018-11-19 14:32:11 --> Severity: Notice  --> Undefined index: ADMIN_BASHKIE C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 111
+ERROR - 2018-11-19 14:32:11 --> Severity: Notice  --> Undefined index: ADMIN_BASHKIE C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 114
+ERROR - 2018-11-19 14:32:11 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:32:11 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:32:11 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:32:11 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:32:11 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:32:17 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 350
+ERROR - 2018-11-19 14:32:17 --> Severity: Notice  --> Trying to get property of non-object C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 350
+ERROR - 2018-11-19 14:32:17 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 351
+ERROR - 2018-11-19 14:32:17 --> Severity: Notice  --> Trying to get property of non-object C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 351
+ERROR - 2018-11-19 14:32:17 --> Severity: Notice  --> Array to string conversion C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 369
+ERROR - 2018-11-19 14:32:17 --> Severity: Notice  --> Array to string conversion C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 376
+ERROR - 2018-11-19 14:32:26 --> Severity: Notice  --> Undefined index: ADMIN_BASHKIE C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 111
+ERROR - 2018-11-19 14:32:26 --> Severity: Notice  --> Undefined index: ADMIN_BASHKIE C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 114
+ERROR - 2018-11-19 14:32:26 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:32:26 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:32:26 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:32:26 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:33:28 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 323
+ERROR - 2018-11-19 14:36:29 --> Severity: Notice  --> Undefined index: ADMIN_BASHKIE C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 111
+ERROR - 2018-11-19 14:36:29 --> Severity: Notice  --> Undefined index: ADMIN_BASHKIE C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 114
+ERROR - 2018-11-19 14:36:29 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:36:29 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:36:29 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:36:29 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:36:29 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:36:33 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 350
+ERROR - 2018-11-19 14:36:33 --> Severity: Notice  --> Trying to get property of non-object C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 350
+ERROR - 2018-11-19 14:36:33 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 351
+ERROR - 2018-11-19 14:36:33 --> Severity: Notice  --> Trying to get property of non-object C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 351
+ERROR - 2018-11-19 14:36:33 --> Severity: Notice  --> Array to string conversion C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 369
+ERROR - 2018-11-19 14:36:33 --> Severity: Notice  --> Array to string conversion C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 376
+ERROR - 2018-11-19 14:36:44 --> Severity: Notice  --> Undefined index: ADMIN_BASHKIE C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 111
+ERROR - 2018-11-19 14:36:44 --> Severity: Notice  --> Undefined index: ADMIN_BASHKIE C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 114
+ERROR - 2018-11-19 14:36:44 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:36:44 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:36:44 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:36:44 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\index.php 122
+ERROR - 2018-11-19 14:36:58 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\user\edit.php 330

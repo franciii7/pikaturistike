@@ -320,14 +320,14 @@
                                       <div class="form-group">
                                         <label class="col-lg-2 control-label"><?php echo lang('Prove Bashkie');?></label>
                                         <div class="col-lg-10">
-                                          <?php echo form_input('option', set_value('option', $municipalities[$user->municipality_id]), 'class="form-control" id="inputQarku" readonly' );?>
+                                          <?php echo form_input('option', set_value('option', $municipalities[$user->municipality_id]), 'class="form-control" id="inputQarku" readonly');?>
                                         </div>
                                       </div>
                                 <?php elseif($this->session->userdata('type') == 'PUNONJES BASHKIE') : ?>
                                   <div class="form-group">
                                   <label class="col-lg-2 control-label"><?php echo lang('Prove Bashkie');?></label>
                                   <div class="col-lg-10">
-                                    <?php echo form_input('option', set_value('option', $municipalities[$user->municipality_id]), 'class="form-control" id="inputQarku" readonly' );?>
+                                    <?php echo form_input('option', set_value('option', $municipalities[$user->municipality_id]), 'class="form-control" id="inputQarku" readonly');?>
                                   </div>
                                 </div>
                                             

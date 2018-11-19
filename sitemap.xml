@@ -493,6 +493,30 @@
 	<priority>0.5</priority>
 </url>
 <url>
+	<loc>http://localhost/pikaturistike/index.php/property/33/sq/gjirokaster</loc>
+	<lastmod>2018-11-19T12:10:34+01:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+</url>
+<url>
+	<loc>http://localhost/pikaturistike/index.php/property/33/en/gjirokaster</loc>
+	<lastmod>2018-11-19T12:10:34+01:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+</url>
+<url>
+	<loc>http://localhost/pikaturistike/index.php/property/32/sq/restorant_bulqize</loc>
+	<lastmod>2018-11-15T16:08:21+01:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+</url>
+<url>
+	<loc>http://localhost/pikaturistike/index.php/property/32/en/restorant_bulqize</loc>
+	<lastmod>2018-11-15T16:08:21+01:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+</url>
+<url>
 	<loc>http://localhost/pikaturistike/index.php/property/26/sq/5_maji</loc>
 	<lastmod>2018-11-08T12:41:59+01:00</lastmod>
 	<changefreq>monthly</changefreq>

@@ -92,7 +92,7 @@
                                     <?php echo form_input('zoom_dashboard', set_value('zoom_dashboard', isset($settings['zoom_dashboard'])?$settings['zoom_dashboard']:''), 'class="form-control" id="inputZoom_dashboard" placeholder="'.lang('Zoom index dashboard').'"')?>
                                   </div>
                                 </div>
-                                
+                                <?php if($this->session->userdata('type') == 'ADMIN') : ?>
                                 <div class="form-group">
                                   <label class="col-lg-2 control-label"><?php echo lang('PayPal payment email')?></label>
                                   <div class="col-lg-10">
@@ -231,14 +231,6 @@
                                   </div>
                                 </div>
                     
-                                
-                                <div class="form-group">
-                                  <label class="col-lg-2 control-label"><?php _l('Google Maps API key')?></label>
-                                  <div class="col-lg-10">
-                                    <?php echo form_input('maps_api_key', set_value('maps_api_key', isset($settings['maps_api_key'])?$settings['maps_api_key']:''), 'class="form-control" id="input_GoogleMapsAPIkey" placeholder="'.lang('Google Maps API key').'"')?>
-                                  </div>
-                                </div>
-                                
                                 <div class="form-group">
                                   <label class="col-lg-2 control-label"><?php echo lang_check('AdSense 728x90 code')?></label>
                                   <div class="col-lg-10">
@@ -259,6 +251,15 @@
                                     <?php echo form_textarea('withdrawal_details', set_value('withdrawal_details', isset($settings['withdrawal_details'])?$settings['withdrawal_details']:''), 'placeholder="'.lang_check('Withdrawal payment details').'" rows="3" class="form-control"')?>
                                   </div>
                                 </div>
+                                
+                                  <?php endif;?> 
+                                <div class="form-group">
+                                  <label class="col-lg-2 control-label"><?php _l('Google Maps API key')?></label>
+                                  <div class="col-lg-10">
+                                    <?php echo form_input('maps_api_key', set_value('maps_api_key', isset($settings['maps_api_key'])?$settings['maps_api_key']:''), 'class="form-control" id="input_GoogleMapsAPIkey" placeholder="'.lang('Google Maps API key').'"')?>
+                                  </div>
+                                </div>
+                            
                                 <?php if(config_item('results_page_id_enabled')!=FALSE): ?>
                                 <div class="form-group">
                                   <label class="col-lg-2 control-label"><?php echo lang_check('Results page')?>*</label>
