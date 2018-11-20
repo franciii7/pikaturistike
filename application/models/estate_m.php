@@ -84,7 +84,9 @@ class Estate_m extends MY_Model {
         }  
         
         return $estate;
-	}
+    }
+    
+    
     
     public function update_counter($property_id)
     {
