@@ -107,7 +107,7 @@ class Admin_Controller extends MY_Controller
                                                          'savesearch', 'treefield', 'favorites', 'mapreport', 'benchmarktool', 'templates', 'templatefiles','addons', 
                                                          'reports','visits');
         
-        $CI->acl_config['PUNONJES BASHKIE'] = array('imageeditor', 'enquire', 'dashboard', 'estate', 'page', 'settings', 'slideshow', 'user', 'upload_field_icons',
+        $CI->acl_config['PUNONJES BASHKIE'] = array('imageeditor', 'enquire', 'dashboard', 'estate', 'page', /*'settings',*/ /*'slideshow',*/ 'user', 'upload_field_icons',
                                                     'upload', 'order', 'upload_slideshow', 'upload_estate', 'upload_user', 'upload_settings', 'upload_treefield', 'news', 
                                                     'ads', 'expert', 'companies', 'upload_ads', 'upload_field', 'showroom', 'upload_showroom', 'expert', 
                                                     'booking', 'packages', 'tools', 'monetize', 'backup', 'reviews', 'emailfiles', 'forms', 'tcalendar',

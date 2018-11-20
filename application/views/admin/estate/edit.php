@@ -134,8 +134,8 @@
                                     <label class="col-lg-3 control-label"><?php echo "USER"?></label>
                                     <div class="col-lg-9">
                                        <?php 
-                                           $currentUser = $this->user_m->get_agent($estate->id)['username'];
-                                           echo form_input('name_of_user', set_value('name_of_user',  $currentUser), 'class="form-control" id="inputUser" name="inputUser"  readonly' );
+                                        $currentUser = $this->user_m->get_agent($estate->id)['username'];
+                                        echo form_input('name_of_user', set_value('name_of_user', empty($estate->id) ? $this->session->userdata('name_surname') :  $currentUser), 'class="form-control" id="inputUser" name="inputUser"  readonly' );
                                         //echo form_input('name_of_user', set_value('name_of_user', $this->user_m->name_surname), 'class="form-control" id="inputNameSurname" readonly'); ?>
                                     </div>
                                   </div>
