@@ -267,6 +267,7 @@ class User extends Admin_Controller
             }
             
             if($this->session->userdata('type') == 'PUNONJES BASHKIE') {
+                $data['municipality_id'] = $this->user_m->get_property_for_user('municipality_id');
                 $data['type'] = 'PUNONJES BASHKIE';
             }   
 
