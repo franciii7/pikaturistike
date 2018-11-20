@@ -31,8 +31,7 @@ class User extends Admin_Controller
        
 	    // Fetch all users
         $self_municipality_id = $this->user_m->get_property_for_user('municipality_id');
-        
-        
+             
         if ($this->session->userdata('type') == 'ADMINISTRATOR BASHKIE') {
             $this->data['users'] = $this->user_m->get_by("municipality_id = $self_municipality_id"); 
         } else {

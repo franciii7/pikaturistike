@@ -6,10 +6,19 @@
  $municipalities = $CI->treefield_m->get_level_values($lang_id, $field_id,-1,1);
  
  $this->load->model('user_m');
+
  $self_municipality_id = $this->user_m->get_property_for_user('municipality_id');
  
 
+
 ?>
+
+
+
+
+
+
+
 <div class="page-head">
     <!-- Page heading -->
       <h2 class="pull-left"><?php echo lang('Estate')?>
@@ -124,12 +133,10 @@
                                     <div class="form-group">
                                     <label class="col-lg-3 control-label"><?php echo "USER"?></label>
                                     <div class="col-lg-9">
-                                       
                                        <?php 
-                                             echo form_input('name_of_user', set_value('name_of_user',  $this->session->userdata('name_surname')), 'class="form-control" id="inputUser"  readonly' );
-                                             
-                                       //echo form_input('name_of_user', set_value('name_of_user', $this->user_m->name_surname), 'class="form-control" id="inputNameSurname" readonly'); ?>
-                                     
+                                           $currentUser = $this->user_m->get_agent($estate->id)['username'];
+                                           echo form_input('name_of_user', set_value('name_of_user',  $currentUser), 'class="form-control" id="inputUser" name="inputUser"  readonly' );
+                                        //echo form_input('name_of_user', set_value('name_of_user', $this->user_m->name_surname), 'class="form-control" id="inputNameSurname" readonly'); ?>
                                     </div>
                                   </div>
                                 <?php endif;?>

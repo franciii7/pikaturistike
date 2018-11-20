@@ -204,8 +204,12 @@
                                             <?php endif; ?>
                                         </td>
                                         <td><?php 
-                                                echo $estate->name_of_user;
-                                        //echo check_set($available_agent[$this->estate_m->get_user_id($estate->id)], '')?></td>
+                                            if($this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE'):
+                                                echo $estate->name_of_user; ?>
+                                            <?php else :     
+                                                echo check_set($available_agent[$this->estate_m->get_user_id($estate->id)], '')?>
+                                            <?php endif; ?>    
+                                        </td>
                                         <!-- Dynamic generated -->
                                         <?php foreach($this->option_m->get_visible($content_language_id) as $row):?>
                                         <td>

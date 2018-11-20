@@ -18,6 +18,9 @@ class Estate extends Admin_Controller
     
     public function index($pagination_offset=0)
 	{
+        
+        
+
 	    $this->load->library('pagination');
         $where = array();
         $search_array = array();
@@ -29,7 +32,7 @@ class Estate extends Admin_Controller
         {
             $this->load->model('affilatepackages_m');
             $user_id = $this->session->userdata('id');
-
+            
             $related_tree_paths = $this->affilatepackages_m->get_user_packages($user_id, $this->data['content_language_id']);
             
             $gen_where = array();
@@ -307,6 +310,7 @@ class Estate extends Admin_Controller
             else
             {
                 $where['user_id'] = $this->session->userdata('id');
+               
             }
         }
         // [/AGENT_COUNTY_AFFILIATE]
@@ -342,9 +346,10 @@ class Estate extends Admin_Controller
         // If limit reached, error/warning!
         $this->load->model('packages_m');
         $this->load->model('treefield_m');
-        
+        $this->load->model('user_m');
         
         $user = $this->user_m->get($this->session->userdata('id'));
+        
         
         if(file_exists(APPPATH.'controllers/admin/packages.php'))
         if($user->package_id > 0 && $this->session->userdata('type') == 'AGENT')
@@ -449,6 +454,8 @@ class Estate extends Admin_Controller
         
         // Get available agents
         $this->data['available_agent'] = $this->user_m->get_form_dropdown('name_surname', array('type'=>'AGENT'));
+
+        
         
         $this->data['available_agent'][''] = lang_check('Current user');
         
@@ -570,6 +577,7 @@ class Estate extends Admin_Controller
             $data = $this->estate_m->array_from_post(array('gps', 'date', 'date_modified', 'address', 'is_featured', 'is_activated', 'is_visible', 'id_transitions', 'name_of_user'));
             if($this->session->userdata('type') == 'ADMINISTRATOR BASHKIE') {
                 $data['municipality_id'] = $self_municipality_id = $this->user_m->get_property_for_user('municipality_id');
+                
             }
             //$data['municipality_id'] = $this->input->post('option64_4_level_1');
             $dynamic_data = $this->estate_m->array_from_post(array_keys($rules_dynamic));
@@ -692,6 +700,7 @@ class Estate extends Admin_Controller
             else
             {
                 $data['agent'] = $this->input->post('agent');
+                
             }           
             
             // Save dynamic options
@@ -752,7 +761,8 @@ class Estate extends Admin_Controller
                     $this->email->send();
                 }
             }
-           
+            $actual_user = $this->user_m->get_property_for_user('name_surname');
+           //var_dump($actual_user);die;
             /* [/Email sending] */
             
             $this->session->set_flashdata('message', 
@@ -761,6 +771,7 @@ class Estate extends Admin_Controller
             //redirect('admin/estate/edit/'.$insert_id);
             redirect('admin/estate');
         }
+
         
         // Load the view
 		$this->data['subview'] = 'admin/estate/edit';
