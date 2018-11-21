@@ -563,6 +563,7 @@ class Estate extends Admin_Controller
         $rules = $this->estate_m->rules;
         $this->form_validation->set_rules(array_merge($rules, $rules_dynamic));
         
+        
         // Process the form
         if($this->form_validation->run() == TRUE)
         {
@@ -574,12 +575,11 @@ class Estate extends Admin_Controller
                 exit();
             }
             
-            $data = $this->estate_m->array_from_post(array('gps', 'date', 'date_modified', 'address', 'is_featured', 'is_activated', 'is_visible', 'id_transitions', 'name_of_user'));
-            if($this->session->userdata('type') == 'ADMINISTRATOR BASHKIE') {
-                $data['municipality_id'] = $self_municipality_id = $this->user_m->get_property_for_user('municipality_id');
+            $data = $this->estate_m->array_from_post(array('gps', 'date', 'date_modified', 'address', 'is_featured', 'is_activated', 'is_visible', 'id_transitions', 'name_of_user','municipality_id'));
+            if($this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE'){
+                $data['municipality_id'] = $this->user_m->get_property_for_user('municipality_id');
                 
             }
-            //$data['municipality_id'] = $this->input->post('option64_4_level_1');
             $dynamic_data = $this->estate_m->array_from_post(array_keys($rules_dynamic));
             // AGENT_LIMITED don't have permission to change this fields...
             if($this->session->userdata('type') == 'AGENT_LIMITED')
@@ -669,7 +669,7 @@ class Estate extends Admin_Controller
                 $data['gps'] = ($same_gps[0]+0.00001*$rand_lat).', '.($same_gps[1]+0.00001*$rand_lan);
             }
             /* [/Auto move gps coordinates few meters away if same exists in database] */
-            
+        
             $insert_id = $this->estate_m->save($data, $id);
             
             if(empty($insert_id))
@@ -771,7 +771,7 @@ class Estate extends Admin_Controller
             //redirect('admin/estate/edit/'.$insert_id);
             redirect('admin/estate');
         }
-
+        
         
         // Load the view
 		$this->data['subview'] = 'admin/estate/edit';

@@ -76,7 +76,7 @@ class Estate_m extends MY_Model {
         $estate['is_visible'] = '1';
         $estate['counter_views'] = 0;
         $estate['id_transitions'] = '';
-        
+        $estate['municipality_id'] = '';
         //Add language parameters
         foreach($this->languages as $key=>$value)
         {

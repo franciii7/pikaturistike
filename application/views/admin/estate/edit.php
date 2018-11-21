@@ -3,19 +3,11 @@
  $CI->load->model('treefield_m');
  $field_id = 64;
  $lang_id = $content_language_id;
- $municipalities = $CI->treefield_m->get_level_values($lang_id, $field_id,-1,1);
- 
- $this->load->model('user_m');
-
  $self_municipality_id = $this->user_m->get_property_for_user('municipality_id');
- 
-
-
+ $qarqet = $CI->treefield_m->get_level_values($lang_id, $field_id);
+ $municipalities = $CI->treefield_m->get_level_values($lang_id, $field_id,-1,1);
+ $this->load->model('user_m');
 ?>
-
-
-
-
 
 
 
@@ -303,14 +295,7 @@
                                               </div>
                                             </div>
 
-                                        <?php elseif($this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE'): ?>
-                                            <?php $user->municipality_id = $self_municipality_id; ?>     
-                                            <div class="form-group TREE-GENERATOR">
-                                            <label class="col-lg-3 control-label"><?php echo lang('Prove Bashkie')?></label>
-                                                <div class="col-lg-9">
-                                                    <?php echo form_input('option', set_value('option', $municipalities[$user->municipality_id]), 'class="form-control" id="inputQarku" readonly' );?>
-                                                </div>
-                                        </div>
+                                       
                                           
                                             
                                         <?php elseif($val_option->type == 'TREE' && config_item('tree_field_enabled') === TRUE):?>
@@ -321,6 +306,26 @@
                                             ?>
                                             
                                         <?php if(config_db_item('enable_county_affiliate_roles') === FALSE): ?> 
+                                        <?php if($this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE'): ?>
+                                            <?php
+                                                $municipality=$CI->treefield_m->get_by_in($self_municipality_id,$lang_id);     
+                                                $parent_of_municipality=-1;
+                                                if($municipality){
+                                                    $parent_of_municipality = $municipality[0]->parent_id;
+                                                }
+                                            ?>     
+                                            <div class="form-group">
+                                            <label class="col-lg-3 control-label"><?php echo lang('Prove Bashkie')?></label>
+                                                <div class="col-lg-9">
+                                                    <?php echo form_input('option', set_value('option', $municipalities[$self_municipality_id]), 'class="form-control" id="inputQarku" readonly' );?>
+                                                    
+                                                </div>
+                                                <div class="field-row hidden">
+                                                    <?php echo form_input('option'.$val_option->id.'_'.$key, $qarqet[$parent_of_municipality].' - '.$municipalities[$self_municipality_id].' - ' , 'class="form-control tree-input-value" id="inputOption_'.$key.'_'.$val_option->id.'" rel="" placeholder="'.$val_option->option.'"')?>
+                                                    <?php echo $val_option->id.'_'.$key=='64_4'?form_input('municipality_id', $self_municipality_id, ' id="municipality_id"'):''?>
+                                                </div>
+                                            </div>
+                                        <?php else:?>
                                             <div class="form-group TREE-GENERATOR">
                                               <label class="col-lg-3 control-label">
                                               <?php echo $required_notice.$val_option->option;
@@ -337,7 +342,7 @@
                                                 $drop_selected = array();
                                                 
                                                 echo '<div class="field-row">';
-                                                echo form_dropdown('option'.$val_option->id.'_'.$key.'_level_0', $drop_options, $drop_selected, 'class="form-control" id="inputOption_'.$key.'_'.$val_option->id.'_level_0'.'" placeholder="'.$val_option->option.'" '.$required_text.'');
+                                                echo form_dropdown('option'.$val_option->id.'_'.$key.'_level_0', $drop_options, $drop_selected, 'class="form-control" id="inputOption_'.$key.'_'.$val_option->id.'_level_0'.'" placeholder="'.$val_option->option.'" '.$required_text);
                                                 echo '</div>';
                                                 
                                                 
@@ -354,9 +359,11 @@
                                                 ?>
                                                 <div class="field-row hidden">
                                                 <?php echo form_input('option'.$val_option->id.'_'.$key, set_value('option'.$val_option->id.'_'.$key, isset($estate->{'option'.$val_option->id.'_'.$key})?$estate->{'option'.$val_option->id.'_'.$key}:''), 'class="form-control tree-input-value" id="inputOption_'.$key.'_'.$val_option->id.'" rel="" placeholder="'.$val_option->option.'"')?>
+                                                <?php echo $val_option->id.'_'.$key=='64_4'?form_input('municipality_id', $estate->municipality_id, ' id="municipality_id"'):''?>
                                                 </div>
                                               </div>
                                             </div>
+                                            <?php endif; ?>
                                             <?php endif; ?>
 
 
@@ -853,7 +860,7 @@ $(function () {
         <!-- The file upload form used as target for the file upload widget -->
         <form class="fileupload" action="<?php echo site_url('files/upload_estate/'.$estate->id);?>" method="POST" enctype="multipart/form-data">
             <!-- Redirect browsers with JavaScript disabled to the origin page -->
-            <noscript><input type="hidden" name="redirect" value="<?php echo site_url('admin/estate/edit/'.$estate->id);?>"></noscript>
+            <noscript><input type="hidden" name="redirect" value="<?php echo site_url('admin/estate/edit/'.$estate->id);?>"/></noscript>
             <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
             <div class="fileupload-buttonbar">
                 <div class="span7 col-md-7">
@@ -861,7 +868,7 @@ $(function () {
                     <span class="btn btn-success fileinput-button">
                         <i class="icon-plus icon-white"></i>
                         <span><?php echo lang('add_files...')?></span>
-                        <input type="file" name="files[]" multiple>
+                        <input type="file" name="files[]" multiple/>
                     </span>
                     <button type="reset" class="btn btn-warning cancel">
                         <i class="icon-ban-circle icon-white"></i>
@@ -917,7 +924,7 @@ $(function () {
     <?php if(isset($files[$estate->repository_id]))foreach($files[$estate->repository_id] as $file ):?>
                 <li class="img-rounded template-download fade in">
                     <div class="preview">
-                        <img class="img-rounded" alt="<?php echo $file->filename?>" data-src="<?php echo $file->thumbnail_url?>" src="<?php echo $file->thumbnail_url?>">
+                        <img class="img-rounded" alt="<?php echo $file->filename?>" data-src="<?php echo $file->thumbnail_url?>" src="<?php echo $file->thumbnail_url?>"/>
                     </div>
                     <div class="filename">
                         <code><?php echo character_hard_limiter($file->filename, 20)?></code>
@@ -931,7 +938,7 @@ $(function () {
                         <?php endif;?>
                         <span class="delete">
                             <button class="btn btn-xs btn-danger" data-type="POST" data-url="<?php echo $file->delete_url?>"><i class="icon-trash icon-white"></i></button>
-                            <input type="checkbox" value="1" name="delete">
+                            <input type="checkbox" value="1" name="delete"/>
                         </span>
                     </div>
                 </li>
@@ -1261,7 +1268,8 @@ $(function () {
             $("#inputOption_"+s_lang_id+"_"+s_field_id).attr('rel', last_selected_numeric);
             $("#inputOption_"+s_lang_id+"_"+s_field_id).val(generated_val);
             $("#inputOption_"+s_lang_id+"_"+s_field_id).trigger("change");
-
+            if(s_lang_id==4 && s_field_id==64)
+                $("#municipality_id").attr("value",(s_level==1?$(this).val():""));
         });
         
         // Autoload selects

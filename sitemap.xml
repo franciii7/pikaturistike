@@ -397,122 +397,62 @@
     />
 </url>
 <url>
-	<loc>http://localhost/pikaturistike/index.php/property/27/sq/prove</loc>
-	<lastmod>2018-11-08T15:41:23+01:00</lastmod>
+	<loc>http://localhost/pikaturistike/index.php/property/40/sq/123asdasd</loc>
+	<lastmod>2018-11-21T12:40:01+01:00</lastmod>
 	<changefreq>monthly</changefreq>
 	<priority>0.5</priority>
 </url>
 <url>
-	<loc>http://localhost/pikaturistike/index.php/property/27/en/prove</loc>
-	<lastmod>2018-11-08T15:41:23+01:00</lastmod>
+	<loc>http://localhost/pikaturistike/index.php/property/40/en/123asdasd</loc>
+	<lastmod>2018-11-21T12:40:01+01:00</lastmod>
 	<changefreq>monthly</changefreq>
 	<priority>0.5</priority>
 </url>
 <url>
-	<loc>http://localhost/pikaturistike/index.php/property/25/sq/lasdlsad</loc>
-	<lastmod>2018-11-08T11:20:21+01:00</lastmod>
+	<loc>http://localhost/pikaturistike/index.php/property/39/sq/asdasdasd</loc>
+	<lastmod>2018-11-21T10:46:55+01:00</lastmod>
 	<changefreq>monthly</changefreq>
 	<priority>0.5</priority>
 </url>
 <url>
-	<loc>http://localhost/pikaturistike/index.php/property/25/en/lasdlsad</loc>
-	<lastmod>2018-11-08T11:20:21+01:00</lastmod>
+	<loc>http://localhost/pikaturistike/index.php/property/39/en/asdasdasd</loc>
+	<lastmod>2018-11-21T10:46:55+01:00</lastmod>
 	<changefreq>monthly</changefreq>
 	<priority>0.5</priority>
 </url>
 <url>
-	<loc>http://localhost/pikaturistike/index.php/property/23/sq/5_maji</loc>
-	<lastmod>2018-11-06T11:46:15+01:00</lastmod>
+	<loc>http://localhost/pikaturistike/index.php/property/37/sq/location_pare_tirane</loc>
+	<lastmod>2018-11-21T10:14:52+01:00</lastmod>
 	<changefreq>monthly</changefreq>
 	<priority>0.5</priority>
 </url>
 <url>
-	<loc>http://localhost/pikaturistike/index.php/property/23/en/5_maji</loc>
-	<lastmod>2018-11-06T11:46:15+01:00</lastmod>
+	<loc>http://localhost/pikaturistike/index.php/property/37/en/location_pare_tirane</loc>
+	<lastmod>2018-11-21T10:14:52+01:00</lastmod>
 	<changefreq>monthly</changefreq>
 	<priority>0.5</priority>
 </url>
 <url>
-	<loc>http://localhost/pikaturistike/index.php/property/22/sq/futja_kot</loc>
-	<lastmod>2018-11-03T14:10:58+01:00</lastmod>
+	<loc>http://localhost/pikaturistike/index.php/property/41/sq/nona_fare</loc>
+	<lastmod>2018-11-21T13:04:50+01:00</lastmod>
 	<changefreq>monthly</changefreq>
 	<priority>0.5</priority>
 </url>
 <url>
-	<loc>http://localhost/pikaturistike/index.php/property/22/en/futja_kot</loc>
-	<lastmod>2018-11-03T14:10:58+01:00</lastmod>
+	<loc>http://localhost/pikaturistike/index.php/property/41/en/nona_fare</loc>
+	<lastmod>2018-11-21T13:04:50+01:00</lastmod>
 	<changefreq>monthly</changefreq>
 	<priority>0.5</priority>
 </url>
 <url>
-	<loc>http://localhost/pikaturistike/index.php/property/21/sq/rruga_e_ambasadeve</loc>
-	<lastmod>2018-11-14T12:34:29+01:00</lastmod>
+	<loc>http://localhost/pikaturistike/index.php/property/38/sq/asdasdasd</loc>
+	<lastmod>2018-11-21T10:40:40+01:00</lastmod>
 	<changefreq>monthly</changefreq>
 	<priority>0.5</priority>
 </url>
 <url>
-	<loc>http://localhost/pikaturistike/index.php/property/21/en/payment_gateway</loc>
-	<lastmod>2018-11-14T12:34:29+01:00</lastmod>
-	<changefreq>monthly</changefreq>
-	<priority>0.5</priority>
-</url>
-<url>
-	<loc>http://localhost/pikaturistike/index.php/property/33/sq/asdsa</loc>
-	<lastmod>2018-11-20T16:20:16+01:00</lastmod>
-	<changefreq>monthly</changefreq>
-	<priority>0.5</priority>
-</url>
-<url>
-	<loc>http://localhost/pikaturistike/index.php/property/33/en/asdsa</loc>
-	<lastmod>2018-11-20T16:20:16+01:00</lastmod>
-	<changefreq>monthly</changefreq>
-	<priority>0.5</priority>
-</url>
-<url>
-	<loc>http://localhost/pikaturistike/index.php/property/32/sq/lasdlsad</loc>
-	<lastmod>2018-11-20T16:18:53+01:00</lastmod>
-	<changefreq>monthly</changefreq>
-	<priority>0.5</priority>
-</url>
-<url>
-	<loc>http://localhost/pikaturistike/index.php/property/32/en/lasdlsad</loc>
-	<lastmod>2018-11-20T16:18:53+01:00</lastmod>
-	<changefreq>monthly</changefreq>
-	<priority>0.5</priority>
-</url>
-<url>
-	<loc>http://localhost/pikaturistike/index.php/property/31/sq/lasdlsad</loc>
-	<lastmod>2018-11-19T15:31:36+01:00</lastmod>
-	<changefreq>monthly</changefreq>
-	<priority>0.5</priority>
-</url>
-<url>
-	<loc>http://localhost/pikaturistike/index.php/property/31/en/lasdlsad</loc>
-	<lastmod>2018-11-19T15:31:36+01:00</lastmod>
-	<changefreq>monthly</changefreq>
-	<priority>0.5</priority>
-</url>
-<url>
-	<loc>http://localhost/pikaturistike/index.php/property/30/sq/test_emri</loc>
-	<lastmod>2018-11-12T12:53:29+01:00</lastmod>
-	<changefreq>monthly</changefreq>
-	<priority>0.5</priority>
-</url>
-<url>
-	<loc>http://localhost/pikaturistike/index.php/property/30/en/test_emri</loc>
-	<lastmod>2018-11-12T12:53:29+01:00</lastmod>
-	<changefreq>monthly</changefreq>
-	<priority>0.5</priority>
-</url>
-<url>
-	<loc>http://localhost/pikaturistike/index.php/property/26/sq/5_maji</loc>
-	<lastmod>2018-11-08T12:41:59+01:00</lastmod>
-	<changefreq>monthly</changefreq>
-	<priority>0.5</priority>
-</url>
-<url>
-	<loc>http://localhost/pikaturistike/index.php/property/26/en/5_maji</loc>
-	<lastmod>2018-11-08T12:41:59+01:00</lastmod>
+	<loc>http://localhost/pikaturistike/index.php/property/38/en/asdasdasd</loc>
+	<lastmod>2018-11-21T10:40:40+01:00</lastmod>
 	<changefreq>monthly</changefreq>
 	<priority>0.5</priority>
 </url>

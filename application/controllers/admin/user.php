@@ -141,7 +141,14 @@ class User extends Admin_Controller
 	    if($id)
         {
             $this->data['user'] = $this->user_m->get($id);
-            
+            if(($this->session->userdata('type') == 'ADMINISTRATOR BASHKIE'
+                    && (count($this->data['user']) == 0 || $this->data['user']->municipality_id !=  $this->user_m->get_property_for_user('municipality_id')))
+                ||($this->session->userdata('type') == 'PUNONJES BASHKIE' 
+                    && (count($this->data['user']) == 0 || $this->data['user']->username !=$this->user_m->get_property_for_user('username')))
+            ){
+                redirect('admin/dashboard');
+            }
+
             if(count($this->data['user']) == 0)
             {
                 $this->data['errors'][] = 'User could not be found';
@@ -151,31 +158,22 @@ class User extends Admin_Controller
             //Check if user have permissions
             if($this->session->userdata('type') != 'ADMIN' &&
                $this->session->userdata('type') != 'AGENT_ADMIN' &&
-               $this->session->userdata('type') != 'ADMINISTRATOR BASHKIE' && 
-               $this->session->userdata('type') != 'PUNONJES BASHKIE')
+               $this->session->userdata('type') != 'ADMINISTRATOR BASHKIE')
             {
-                if($id == $this->session->userdata('id'))
-                {
-                    
-                }
-                else
+                if($id != $this->session->userdata('id'))
                 {
                     redirect('admin/user');
                 }
             }
             
             if($this->data['user']->type == 'ADMIN' && 
-               $this->session->userdata('type') == 'AGENT_ADMIN' && 
-               $this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' && 
-               $this->session->userdata('type') == 'PUNONJES BASHKIE')
+               ($this->session->userdata('type') == 'AGENT_ADMIN' || 
+               $this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || 
+               $this->session->userdata('type') == 'PUNONJES BASHKIE'))
             {
-                redirect('admin/user');
+                redirect('admin/dashboard');
             }
             
-            if($this->data['user']->municipality_id !=  $this->user_m->get_property_for_user('municipality_id') 
-            && !$this->data['user']->type == 'ADMIN') {
-                redirect('admin/user');
-            }
             // Fetch file repository
             $repository_id = $this->data['user']->repository_id;
             if(empty($repository_id))

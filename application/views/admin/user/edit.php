@@ -315,23 +315,15 @@
                                 
 
 
-                                <?php if($this->session->userdata('type') == 'ADMINISTRATOR BASHKIE') : ?>
-                                <?php  
-                                  $user->municipality_id = $self_municipality_id; ?>     
+                                <?php if($this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE') : ?>
                                       <div class="form-group">
                                         <label class="col-lg-2 control-label"><?php echo lang('Prove Bashkie');?></label>
                                         <div class="col-lg-10">
-                                          <?php echo form_input('option', set_value('option', $municipalities[$user->municipality_id]), 'class="form-control" id="inputQarku" readonly');?>
+                                          <?php echo form_input('option', set_value('option', $municipalities[$self_municipality_id]), 'class="form-control" id="inputQarku" readonly');?>
+                                          <input type="hidden" name="municipality_id" value="<?php echo $self_municipality_id;?>"/>
                                         </div>
                                       </div>
-                                <?php elseif($this->session->userdata('type') == 'PUNONJES BASHKIE') : ?>
-                                  <div class="form-group">
-                                  <label class="col-lg-2 control-label"><?php echo lang('Prove Bashkie');?></label>
-                                  <div class="col-lg-10">
-                                    <?php echo form_input('option', set_value('option', $municipalities[$user->municipality_id]), 'class="form-control" id="inputQarku" readonly');?>
-                                  </div>
-                                </div>
-                                            
+      
                                 <?php elseif(config_db_item('enable_county_affiliate_roles') === FALSE): ?>
                                         <div class="form-group search-form">
                                           <label class="col-lg-2 control-label"><?php echo lang_check('Qarku & Bashkia')?></label>
@@ -416,7 +408,7 @@ custom_fields_print('custom_fields_code');
                                 <div class="form-group">
                                   <div class="col-lg-offset-2 col-lg-10">
                                     <?php echo form_submit('submit', lang('Save'), 'class="btn btn-primary"')?>
-                                    <a href="<?php echo site_url('admin/user/index')?>" class="btn btn-default" type="button"><?php echo lang('Cancel')?></a>
+                                    <a href="<?php echo ($user->username == $this->user_m->get_property_for_user('username') ?site_url('admin/dashboard'):site_url('admin/user/index'));?>" class="btn btn-default" type="button"><?php echo lang('Cancel')?></a>
                                   </div>
                                 </div>
                        <?php echo form_close()?>
