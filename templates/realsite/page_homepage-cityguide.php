@@ -15,6 +15,7 @@
             <div class="type-property-block">
                 <div class="properties-sort properties-sort-main">
                     <h2 class="real-h">{lang_Realestates} : <span id="count_row"> <?php echo $total_rows; ?></span></h2>
+                    
                     <div class="options">
                         <a class="view-type active hidden-phone" ref="grid" href="#"><img src="assets/img/glyphicons/glyphicons_156_show_thumbnails.png" />
                         </a>
@@ -45,11 +46,11 @@
                 <!-- /.content -->
                 <div class="sidebar col-sm-4 col-md-3">
                     <?php _widget("right_search"); ?>
-                    <?php _widget("right_facebooklike"); ?>
-                    <?php _widget("right_agents"); ?>
+                    <?php //_widget("right_facebooklike"); ?>
+                    <?php //_widget("right_agents"); ?>
                     <!-- /.widget -->
                     
-                    <?php _widget('right_adsverticalsmall'); ?>
+                    <?php //_widget('right_adsverticalsmall'); ?>
 
                     <?php _widget( "right_recentproperties");?>
                     <!-- /.widget -->

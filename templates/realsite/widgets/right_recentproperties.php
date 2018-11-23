@@ -19,8 +19,8 @@
                     </h3>
 
                     <ul class="property-small-location">
-                        <li><a href="#"><?php echo _ch($item['option_7']); ?></a>,</li>
-                         <li><a href="#"><?php echo _ch($item['option_5']); ?></a></li>
+                        <li><a href="#"><?php echo _ch($item['option_64']); ?></a></li>
+                        
                     </ul>
 
                     <div class="property-small-price">

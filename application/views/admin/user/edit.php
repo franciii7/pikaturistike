@@ -317,7 +317,7 @@
 
                                 <?php if($this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE') : ?>
                                       <div class="form-group">
-                                        <label class="col-lg-2 control-label"><?php echo lang('Prove Bashkie');?></label>
+                                        <label class="col-lg-2 control-label"><?php echo lang('Bashkia');?></label>
                                         <div class="col-lg-10">
                                           <?php echo form_input('option', set_value('option', $municipalities[$self_municipality_id]), 'class="form-control" id="inputQarku" readonly');?>
                                           <input type="hidden" name="municipality_id" value="<?php echo $self_municipality_id;?>"/>

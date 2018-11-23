@@ -2,13 +2,13 @@
 <html>
 <head>
   {template_head}
-    <script>
+<script>
         var map_router;
         var map;
     $(document).ready(function(){
 
 })
-  </script>
+</script>
   
 <script>
     $(document).ready(function(){
@@ -89,7 +89,7 @@ if (!empty($lang_facebook_code))
     </div><!-- /.header-->
 </div><!-- /.header-->
 
-<?php _widget('ads_horizontal'); ?>
+<?php //_widget('ads_horizontal'); ?>
 
 <div class="page-wrapper"> 
     <div class="main">   
@@ -218,9 +218,9 @@ if (!empty($lang_facebook_code))
             </dl>
         </div><!-- /.property-list -->
 
-        <h2 class="mb30"><?php _l('Share links');?></h2>
+        <!--<h2 class="mb30"><?php //_l('Share links');?></h2>
 
-             <ul class="clearfix sharing-buttons">
+            <ul class="clearfix sharing-buttons">
             <li>
                 <a class="facebook" href="https://www.facebook.com/share.php?u={page_current_url}&title={page_title}"  onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
                     <i class="fa fa-facebook fa-left"></i>
@@ -239,7 +239,7 @@ if (!empty($lang_facebook_code))
                     <span class="social-name">Twitter</span>
                 </a>
             </li>
-        </ul>
+        </ul>-->
    </div>
 </div><!-- /.row -->
 
@@ -566,7 +566,7 @@ if (!empty($lang_facebook_code))
 </div>
 </div>
                 <?php endif;?>
-                <br style="clear:both;" />
+                <br style="clear:both;"/>
                 
 </div><!-- /.content -->
 
@@ -589,7 +589,7 @@ if (!empty($lang_facebook_code))
             <div class="agent-small-inner">
                 <div class="agent-small-image">
                     <a href="{agent_url}" class="agent-small-image-inner">
-                        <img src="{agent_image_url}" alt="">
+                        <img src="{agent_image_url}" alt=""/>
                     </a><!-- /.agent-small-image-inner -->
                 </div><!-- /.agent-small-image -->
 
@@ -611,8 +611,8 @@ if (!empty($lang_facebook_code))
     </div><!-- /.widget-content -->
 </div><!-- /.widget -->
 {/has_agent}
-<?php _widget('property_right_qrcode');?>
-<?php _widget('property_right_pdf');?>
+<?php //_widget('property_right_qrcode');?>
+<?php //_widget('property_right_pdf');?>
 <?php if(file_exists(APPPATH.'controllers/propertycompare.php')):?>
     <?php _widget('property_compare'); ?>
 <?php endif;?>
@@ -641,7 +641,7 @@ if (!empty($lang_facebook_code))
 </div>         
 <?php endif;?>  
         
-<?php _widget('right_ads'); ?>
+<?php //_widget('right_ads'); ?>
 <?php _widget('right_recentproperties'); ?>
 <?php _widget('property_right_weather');?>
 <div class="widget">

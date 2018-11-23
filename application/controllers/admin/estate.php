@@ -630,6 +630,9 @@ class Estate extends Admin_Controller
                         $dynamic_data[$key] = date('Y-m-d H:i:s', $timestamp);
                     }
                 }
+
+
+                
             }
             
             if(isset($data['date_modified']) && empty($data['date_modified']))

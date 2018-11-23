@@ -412,6 +412,7 @@ class User extends Admin_Controller
                     $message_mail = ', '.lang_check('Problem sending email to user');
                 }
             }
+            
             // [END] Email user about new changes
             
             $this->session->set_flashdata('message', 
@@ -425,6 +426,7 @@ class User extends Admin_Controller
                 redirect('admin/user/index');
             }
         }
+       
         
         // Load the view
 		$this->data['subview'] = 'admin/user/edit';

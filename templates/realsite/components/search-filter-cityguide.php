@@ -1,5 +1,5 @@
 <div class="map-filter-horizontal search-select cityguide-search-box">
-        <div class="container search-form">
+        <div class="search-form">
           
          <ul class="menu menu-onmap tabbed-selector_2 cityguide-list-search" id="search_option_2">
                 <li class="all-button">

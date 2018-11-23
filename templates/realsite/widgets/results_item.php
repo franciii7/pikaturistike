@@ -5,6 +5,14 @@ if(isset($columns) && $columns == 4)
     $col_md = '3';
 }
 ?>
+<style>
+    p {
+        font-size: 12px;
+        font-style: bold;
+    }
+    
+
+</style>
 
 <?php if(config_db_item('template_purpose') == 'real-estate'): ?>
 
@@ -25,21 +33,26 @@ if(isset($columns) && $columns == 4)
             <div class="property-box-meta">
 
                 <div class="property-box-meta-item">
-                    <span><?php echo $options_name_19; ?></span>
-                    <strong><?php echo _ch($item['option_19']); ?></strong>
+                    <span><?php echo $options_name_2; ?></span>
+                    <strong><?php echo _ch($item['option_2']); ?></strong>
                 </div>
                 <!-- /.property-box-meta-item -->
 
                 <div class="property-box-meta-item">
-                    <span><?php echo $options_name_58; ?></span>
-                    <strong><?php echo _ch($item['option_58']); ?></strong>
+                    <span><?php echo $options_name_64; ?></span>
+                    <strong><?php echo _ch($item['option_64']); ?></strong>
                 </div>
                 <!-- /.property-box-meta-item -->
-
                 <div class="property-box-meta-item">
-                    <span><?php echo $options_name_32;?></span>
-                    <strong class="<?php echo (!empty($item['option_32'])) ? 'glyphicon glyphicon-ok':'glyphicon glyphicon-remove';  ?>"></strong>
+                    <span><?php echo $options_name_56; ?></span>
+                    <strong><?php echo _ch($item['option_56']); ?><?php echo (!empty($item['option_56'])) ? _ch($options_suffix_56): ''; ?></strong>
                 </div>
+
+
+                <!-- <div class="property-box-meta-item">
+                    <span><?php //echo $options_name_32;?></span>
+                    <strong class="<?php //echo (!empty($item['option_32'])) ? 'glyphicon glyphicon-ok':'glyphicon glyphicon-remove';  ?>"></strong>
+                </div> -->
                 <!-- /.property-box-meta-item -->
             </div>
             <!-- /.property-box-meta -->
@@ -81,20 +94,24 @@ if(isset($columns) && $columns == 4)
             <div class="property-box-meta">
 
                 <div class="property-box-meta-item">
-                    <span><?php echo $options_name_56; ?></span>
-                    <strong><?php echo _ch($item['option_56']); ?></strong>
+                    <span><p><?php echo $options_name_2; ?></p></span>
+                    <strong style="font-size:18px;"><?php echo _ch($item['option_2']); ?></strong>
+                </div>
+                <!-- /.property-box-meta-item -->
+                <div class="property-box-meta-item">
+                    <span><p><?php echo $options_name_64; ?></p></span>
+                    <strong style="font-size:15px;"><?php echo _ch($item['option_64']); ?></strong>
+                </div>
+
+                <div class="property-box-meta-item">
+                    <span><p><?php echo $options_name_56; ?></p></span>
+                    <strong><?php echo _ch($item['option_56']); ?><?php echo (!empty($item['option_56'])) ? _ch($options_suffix_56): ''; ?></strong>
                 </div>
                 <!-- /.property-box-meta-item -->
 
                 <div class="property-box-meta-item">
-                    <span><?php echo $options_name_44; ?></span>
-                    <strong><?php echo _ch($item['option_44']); ?><?php echo (!empty($item['option_44'])) ? _ch($options_suffix_44): ''; ?></strong>
-                </div>
-                <!-- /.property-box-meta-item -->
-
-                <div class="property-box-meta-item">
-                    <span><?php echo $options_name_32;?></span>
-                    <strong class="<?php echo (!empty($item['option_32'])) ? 'glyphicon glyphicon-ok':'glyphicon glyphicon-remove';  ?>"></strong>
+                    <span><?php //echo $options_name_32;?></span>
+                    <strong class="<?php //echo (!empty($item['option_32'])) ? 'glyphicon glyphicon-ok':'glyphicon glyphicon-remove';  ?>"></strong>
                 </div>
                 <!-- /.property-box-meta-item -->
             </div>

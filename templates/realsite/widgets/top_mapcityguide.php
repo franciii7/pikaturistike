@@ -324,8 +324,9 @@
         </div>
     <?php endif; ?>   
 
-    <div id="map" class="map cityguide-map" data-transparent-marker-image="assets/img/transparent-marker-image.png"></div>
-    {template_search-filter-cityguide}<!-- /.map-filter-horizontal --> 
+    <div id="map" class="map cityguide-map" data-transparent-marker-image="assets/img/transparent-marker-image.png">
+        {template_search-filter-cityguide}<!-- /.map-filter-horizontal --> 
+    </div>
 </div><!-- /.map-wrapper -->
 
 <script type="text/javascript">

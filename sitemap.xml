@@ -397,6 +397,18 @@
     />
 </url>
 <url>
+	<loc>http://localhost/pikaturistike/index.php/property/42/sq/sadsadsa</loc>
+	<lastmod>2018-11-22T15:24:34+01:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+</url>
+<url>
+	<loc>http://localhost/pikaturistike/index.php/property/42/en/sadsadsa</loc>
+	<lastmod>2018-11-22T15:24:34+01:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+</url>
+<url>
 	<loc>http://localhost/pikaturistike/index.php/property/40/sq/123asdasd</loc>
 	<lastmod>2018-11-21T12:40:01+01:00</lastmod>
 	<changefreq>monthly</changefreq>
@@ -434,13 +446,13 @@
 </url>
 <url>
 	<loc>http://localhost/pikaturistike/index.php/property/41/sq/nona_fare</loc>
-	<lastmod>2018-11-21T13:04:50+01:00</lastmod>
+	<lastmod>2018-11-22T16:12:17+01:00</lastmod>
 	<changefreq>monthly</changefreq>
 	<priority>0.5</priority>
 </url>
 <url>
 	<loc>http://localhost/pikaturistike/index.php/property/41/en/nona_fare</loc>
-	<lastmod>2018-11-21T13:04:50+01:00</lastmod>
+	<lastmod>2018-11-22T16:12:17+01:00</lastmod>
 	<changefreq>monthly</changefreq>
 	<priority>0.5</priority>
 </url>
