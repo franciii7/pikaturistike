@@ -1,10 +1,9 @@
 <?php 
 
-$lang['email_must_be_array'] = "";
-
-$lang['email_invalid_address'] = "Adresa e emailit e pavlefshme";
-$lang['email_attachment_missing'] = "Nuk u gjet paketa %s";
-$lang['email_attachment_unreadable'] = "E pamundur hapja e të bashkangjiturit";
+$lang['email_must_be_array'] = "Metoda e validimit te email duhet te kthej nje array";
+$lang['email_invalid_address'] = "Adresa e emailit e pavlefshme : %s";
+$lang['email_attachment_missing'] = "Nuk u gjet attachment : %s";
+$lang['email_attachment_unreadable'] = "E pamundur hapja e attachment : %s";
 $lang['email_no_recipients'] = "";
 $lang['email_send_failure_phpmail'] = "";
 $lang['email_send_failure_sendmail'] = "";

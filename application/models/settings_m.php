@@ -51,7 +51,7 @@ class Settings_m extends MY_Model {
         'listing_expiry_days' => array('field'=>'listing_expiry_days', 'label'=>'lang:Listing expiry days', 'rules'=>'trim|is_natural'),
         'activation_price' => array('field'=>'activation_price', 'label'=>'lang:Activation price', 'rules'=>'trim|is_numeric'),
         'featured_price' => array('field'=>'featured_price', 'label'=>'lang:Featured price', 'rules'=>'trim|is_numeric'),
-        'default_currency' => array('field'=>'default_currency', 'label'=>'lang:Default currency code', 'rules'=>'trim|required'),
+        'default_currency' => array('field'=>'default_currency', 'label'=>'lang:Default currency code', 'rules'=>'trim'),
         
         'authorize_api_login_id' => array('field'=>'authorize_api_login_id', 'label'=>'lang:Authorize api login id', 'rules'=>'trim'),
         'authorize_api_hash_secret' => array('field'=>'authorize_api_hash_secret', 'label'=>'lang:Authorize api hash secret', 'rules'=>'trim'),
