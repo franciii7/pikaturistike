@@ -58,7 +58,7 @@ class User extends Admin_Controller
         }
         
         prepare_search_query_GET(array('user.type'), array('user.id', 'user.username', 'user.name_surname', 'user.address', 'user.description', 'user.mail'), array('user'));
-         // $this->data['users'] = $this->user_m->get_pagination($config['per_page'], $pagination_offset);
+          $this->data['users'] = $this->user_m->get_pagination($config['per_page'], $pagination_offset);
         
         $this->data['expert_categories'] = $this->qa_m->get_no_parents_expert($this->data['content_language_id']);
         
