@@ -169,9 +169,9 @@
 
               <ul>
                 <li><a href="<?php echo site_url('admin/estate')?>"><?php echo lang_check('Manage');?></a></li>
-                <?php if($this->session->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE'): ?>
                 <?php if(check_acl('estate/options')):?>
-                <li><a href="<?php echo site_url('admin/estate/options')?>"><?php echo lang_check('Options');?></a></li> 
+                <li><a href="<?php echo site_url('admin/estate/options')?>"><?php echo lang_check('Options');?></a></li>
+                <?php if($this->session->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('type') != 'PUNONJES BASHKIE'): ?>
                 <li><a href="<?php echo site_url('admin/estate/dependent_fields')?>"><?php echo lang_check('Dependent fields');?></a></li>
                 <?php endif;?>
                 <?php endif;?>
@@ -180,7 +180,7 @@
                 <?php endif;?>
                 
                 <?php
-                    if(file_exists(APPPATH.'controllers/admin/treefield.php') && ($this->session->userdata('type') == 'ADMIN'))
+                    if(file_exists(APPPATH.'controllers/admin/treefield.php') && ($this->session->userdata('type') == 'ADMIN' || $this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE'))
                     {
                         $CI =& get_instance();
                         $CI->load->model('option_m');
@@ -200,7 +200,7 @@
                 ?>
                 <?php if(config_item('admin_beginner_enabled') === TRUE):?>
                 <?php
-                    if($this->session->userdata('type') == 'ADMIN')
+                    if($this->session->userdata('type') == 'ADMIN' || $this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE')
                     {
                         $CI =& get_instance();
                         $CI->load->model('option_m');
@@ -214,7 +214,7 @@
                 ?>
                 
                 <?php
-                    if($this->session->userdata('type') == 'ADMIN')
+                    if($this->session->userdata('type') == 'ADMIN' || $this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE')
                     {
                         $CI =& get_instance();
                         $CI->load->model('option_m');
