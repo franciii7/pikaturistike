@@ -205,16 +205,19 @@ if (!empty($lang_facebook_code))
         <div class="property-list">
             <dl>
                 {category_options_1}
-                 {is_text}
-                 <dt>{option_name}</dt><dd>{option_prefix} {option_value} {option_suffix}</dd>
-                 {/is_text}
                  {is_dropdown}
                  <dt>{option_name}</dt><dd><span class='label label-success'>{option_prefix} {option_value} {option_suffix}</span></dd>
                  {/is_dropdown}
                  {is_checkbox}
                  <dt>{option_name}</dt><dd>{option_prefix} {option_value} {option_suffix}</dd>
                  {/is_checkbox}
-                {/category_options_1}
+                 {is_text}
+                 <dt>{option_name}</dt><dd>{option_prefix} {option_value} {option_suffix}</dd>
+                 {/is_text}
+                 {/category_options_1}
+                 <dt><?php echo $options_name_64; ?></dt><dd>{estate_data_option_64}</dd>
+                    
+                
             </dl>
         </div><!-- /.property-list -->
 
@@ -551,22 +554,8 @@ if (!empty($lang_facebook_code))
                 <?php _widget('property_center-facecomments');?>
                 <hr/>
                 
-                 <?php if(count($agent_estates) > 0): ?>
-                <h2>{lang_Agentestates}</h2>
-   <div id="ajax_results">
-    <div class="row row-flex">
-    <?php foreach($agent_estates as $key=>$item): ?>
-        <?php _generate_results_item(array('key'=>$key, 'item'=>$item)); ?>
-    <?php endforeach;?>
-</div><!-- /.row -->
-<div class="center">
-    <div class="pagination pagination-ajax-results">
-        <?php echo $pagination_links_agent; ?>
-    </div>
-</div>
-</div>
-                <?php endif;?>
-                <br style="clear:both;"/>
+                
+                
                 
 </div><!-- /.content -->
 

@@ -124,9 +124,9 @@ class User_m extends MY_Model {
         
         if(count($user))
         {   
-            if($user->activated == FALSE && $user->type == 'USER')
+            if($user->activated == FALSE && $user->type == 'PUNONJES BASHKIE')
             {
-                // User and not activated
+               //afisho mesazh ne controller
             }
             else
             {

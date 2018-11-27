@@ -527,7 +527,7 @@ class User extends Admin_Controller
         
         if($this->user_m->loggedin() === TRUE)
         {
-            if($this->session->userdata('type') == 'USER')
+            if($this->session->userdata('type') == 'PUNONJES BASHKIE')
             {
                 if(config_db_item('frontend_disabled') === TRUE)
                 {

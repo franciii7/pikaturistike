@@ -207,13 +207,21 @@
                                 </div>
                                 <?php endif; ?>
                                 
-                                <?php if($this->session->userdata('type') == 'ADMIN' || $this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE'): ?>
-                                <div class="form-group">
-                                  <label class="col-lg-2 control-label"><?php echo lang('Activated')?></label>
-                                  <div class="col-lg-10">
-                                    <?php echo form_checkbox('activated', '1', set_value('activated', $user->activated), 'id="inputActivated"')?>
+                                <?php if($this->session->userdata('type') == 'ADMIN' || $this->session->userdata('type') == 'ADMINISTRATOR BASHKIE'): ?>
+                                  <div class="form-group">
+                                    <label class="col-lg-2 control-label"><?php echo lang('Activated')?></label>
+                                    <div class="col-lg-10">
+                                      <?php echo form_checkbox('activated', '1', set_value('activated', $user->activated), 'id="inputActivated"')?>
+                                    </div>
                                   </div>
-                                </div>
+                                  <?php elseif($this->session->userdata('type' == 'PUNONJES BASHKIE')) : ?>
+                                     <div class="form-group">
+                                     <label class="col-lg-2 control-label hidden"><?php echo lang('Activated')?></label>
+                                     <div class="col-lg-10">
+                                       <?php echo form_checkbox('activated', '1', set_value('activated', $user->activated), 'id="inputActivated" hidden')?>
+                                     </div>
+                                   </div>
+                                    
                                 <?php endif; ?>
 
                                 
@@ -316,7 +324,7 @@
 
 
                                 <?php if($this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE') : ?>
-                                      <div class="form-group">
+                                      <div class="form-group hidden">
                                         <label class="col-lg-2 control-label"><?php echo lang('Bashkia');?></label>
                                         <div class="col-lg-10">
                                           <?php echo form_input('option', set_value('option', $municipalities[$self_municipality_id]), 'class="form-control" id="inputQarku" readonly');?>
