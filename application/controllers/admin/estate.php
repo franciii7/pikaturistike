@@ -86,7 +86,7 @@ class Estate extends Admin_Controller
         $this->data['pagination'] = $this->pagination->create_links();
         
         /* user type = ADMIN, search by AGENT/User name enabled */
-        if($this->session->userdata('type') == 'ADMIN' || $this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE'){
+        if($this->session->userdata('type') == 'ADMIN'){
             prepare_search_query_GET(array($type_field, 'field_4', 'name_surname'), array('property.id', 'property.address', 'search_values'));
 
             if($this->input->get_post('name_surname')) {
@@ -95,7 +95,10 @@ class Estate extends Admin_Controller
                 $this->db->join('user', 'property_user.user_id = user.id', 'left');
             }
         } else {
-            prepare_search_query_GET(array($type_field, 'field_4'), array('property.id', 'address', 'search_values'));
+            if($this->input->get_post('name_of_user')){
+                $this->db->select('property.name_of_user');
+            }
+            prepare_search_query_GET(array($type_field, 'field_4','name_of_user'), array('property.id', 'address', 'search_values'));
         }
         
         $order_by = 'property.id DESC';
