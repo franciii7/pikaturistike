@@ -2,41 +2,43 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4317f0a4-3169-4bf5-9f9a-af9a95303b07" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/application/controllers/admin/estate.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/admin/estate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/admin/user.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/admin/user.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/language/shqip/content_lang.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/language/shqip/content_lang.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/logs/log-2018-11-21.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/logs/log-2018-11-21.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/admin/estate/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin/estate/edit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/admin/user/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin/user/edit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/captcha/1542799806.3472.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/captcha/1542799851.1367.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/captcha/1542799856.2202.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/captcha/1542799907.737.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/captcha/1542799915.9484.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/captcha/1542799919.9604.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/captcha/1542799927.5281.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/captcha/1542799956.9943.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/captcha/1542800452.3612.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/captcha/1542800463.2708.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/captcha/1542801970.5622.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/captcha/1542801974.1238.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/captcha/1542801987.0311.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/franci.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/thumbnail/franci.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/logs/log-2018-11-23.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/logs/log_time.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/logs/log_time.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/admin/dashboard/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin/dashboard/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1542980631.2475.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1542980634.8614.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1542980635.7993.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1542980636.8079.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1542980642.5088.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1542980643.242.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1542980643.4746.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1542980649.7256.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1542980650.5036.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1542980653.9994.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1542980654.8253.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1542980725.4821.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1542982342.112.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1542982354.7454.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1542982355.48.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1542982360.584.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1542982370.2537.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1542982371.8379.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1542982372.6958.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1542982386.7698.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1542982387.4263.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1542982390.7202.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1542982391.6134.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1542982394.8349.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1542982395.4999.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1542982396.1381.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1542982401.0947.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/sitemap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sitemap.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/realsite/assets/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/templates/realsite/assets/css/custom.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/realsite/assets/css/realsite.css" beforeDir="false" afterPath="$PROJECT_DIR$/templates/realsite/assets/css/realsite.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/realsite/assets/img/flags/al.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/realsite/assets/scss/helpers/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/templates/realsite/assets/scss/helpers/_header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/realsite/components/search-filter-cityguide.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/realsite/components/search-filter-cityguide.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system/libraries/Profiler.php" beforeDir="false" afterPath="$PROJECT_DIR$/system/libraries/Profiler.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/realsite/language/shqip/frontend_template_lang.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/realsite/language/shqip/frontend_template_lang.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/realsite/myproperties.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/realsite/myproperties.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/realsite/page_homepage-cityguide.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/realsite/page_homepage-cityguide.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/realsite/property.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/realsite/property.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/realsite/results.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/realsite/results.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/realsite/widgets/header_mainmenu.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/realsite/widgets/header_mainmenu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/realsite/widgets/results_item.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/realsite/widgets/results_item.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/realsite/widgets/right_recentproperties.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/realsite/widgets/right_recentproperties.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/realsite/widgets/top_mapcityguide.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/realsite/widgets/top_mapcityguide.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,21 +46,84 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/controllers/files.php">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/admin/dashboard/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-430">
-              <caret line="413" column="72" selection-start-line="413" selection-start-column="72" selection-end-line="413" selection-end-column="72" />
+            <state relative-caret-position="204">
+              <caret line="536" column="67" selection-start-line="536" selection-start-column="55" selection-end-line="536" selection-end-column="67" />
+              <folding>
+                <element signature="e#28#34#0" expanded="true" />
+                <element signature="e#34#40#0" expanded="true" />
+                <element signature="e#31#37#0" expanded="true" />
+                <element signature="e#37#43#0" expanded="true" />
+                <element signature="e#0#6#0" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/admin/dashboard.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="577">
+              <caret line="64" column="56" selection-start-line="64" selection-start-column="50" selection-end-line="64" selection-end-column="56" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/models/estate_m.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="559">
+              <caret line="174" column="68" lean-forward="true" selection-start-line="174" selection-start-column="68" selection-end-line="174" selection-end-column="68" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/controllers/admin/user.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="60" column="12" selection-start-line="60" selection-start-column="12" selection-end-line="60" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/core/MY_Model.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="243" lean-forward="true" selection-start-line="243" selection-end-line="243" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>Edit</find>
+      <find>admin/estate/ed</find>
+      <find>&lt;a</find>
+      <find>$data</find>
+      <find>get_field_from_listing</find>
+      <find>endrit</find>
+      <find>get_by(</find>
+      <find>va</find>
+      <find>$value</find>
+      <find>filter_res</find>
+      <find>estates_all</find>
+      <find>get_by</find>
+      <find>mark-color</find>
+      <find>field_</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -67,6 +132,11 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/application/controllers/files.php" />
+        <option value="$PROJECT_DIR$/application/controllers/admin/estate.php" />
+        <option value="$PROJECT_DIR$/application/core/MY_Model.php" />
+        <option value="$PROJECT_DIR$/application/views/admin/dashboard/index.php" />
+        <option value="$PROJECT_DIR$/application/models/estate_m.php" />
+        <option value="$PROJECT_DIR$/application/controllers/admin/user.php" />
       </list>
     </option>
   </component>
@@ -96,8 +166,8 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="140" />
-    <option name="y" value="20" />
+    <option name="x" value="-54" />
+    <option name="y" value="-11" />
     <option name="width" value="1400" />
     <option name="height" value="970" />
   </component>
@@ -106,6 +176,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -122,13 +193,12 @@
               <item name="pikaturistike" type="b2602c69:ProjectViewProjectNode" />
               <item name="pikaturistike" type="462c0819:PsiDirectoryNode" />
               <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="logs" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -147,6 +217,20 @@
       </list>
     </option>
   </component>
+  <component name="RunManager" selected="JavaScript Debug.estate.php">
+    <configuration name="estate.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/pikaturistike/application/controllers/admin/estate.php">
+      <method v="2" />
+    </configuration>
+    <configuration name="estate.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/application/controllers/admin/estate.php">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.estate.php" />
+        <item itemvalue="PHP Script.estate.php" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -158,44 +242,148 @@
       <option name="presentableId" value="Default" />
       <updated>1542981350512</updated>
       <workItem from="1542981356361" duration="670000" />
+      <workItem from="1542982293258" duration="925000" />
+      <workItem from="1543063873904" duration="6901000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="670000" />
+    <option name="totallyTimeSpent" value="8496000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20476772" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2096577" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32922733" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39977604" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/application/controllers/admin/estate.php</url>
+          <line>1225</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/application/controllers/admin/estate.php</url>
+          <line>343</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/application/controllers/admin/estate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="456" selection-start-line="456" selection-end-line="456" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/frontend.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="861" column="58" selection-start-line="861" selection-start-column="58" selection-end-line="861" selection-end-column="58" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#358#364#0" expanded="true" />
+            <element signature="e#364#370#0" expanded="true" />
+            <element signature="e#403#409#0" expanded="true" />
+            <element signature="e#409#415#0" expanded="true" />
+            <element signature="e#437#443#0" expanded="true" />
+            <element signature="e#443#449#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/files.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-430">
-          <caret line="413" column="72" selection-start-line="413" selection-start-column="72" selection-end-line="413" selection-end-column="72" />
+        <state relative-caret-position="811">
+          <caret line="169" column="5" selection-start-line="169" selection-start-column="5" selection-end-line="170" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/helpers/cms_helper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="1253" column="48" lean-forward="true" selection-start-line="1253" selection-start-column="48" selection-end-line="1253" selection-end-column="48" />
+          <folding>
+            <element signature="e#40#48#0" expanded="true" />
+            <element signature="n#style#0;n#pre#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#!!top" expanded="true" />
+            <element signature="e#0#6#0" expanded="true" />
+            <element signature="e#0#6#0" expanded="true" />
+            <element signature="e#0#6#0" expanded="true" />
+            <element signature="e#6#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/core/MY_Model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="243" lean-forward="true" selection-start-line="243" selection-end-line="243" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin/dashboard/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="536" column="67" selection-start-line="536" selection-start-column="55" selection-end-line="536" selection-end-column="67" />
+          <folding>
+            <element signature="e#28#34#0" expanded="true" />
+            <element signature="e#34#40#0" expanded="true" />
+            <element signature="e#31#37#0" expanded="true" />
+            <element signature="e#37#43#0" expanded="true" />
+            <element signature="e#0#6#0" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/admin/dashboard.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="577">
+          <caret line="64" column="56" selection-start-line="64" selection-start-column="50" selection-end-line="64" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/logs/log-2018-11-23.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/estate_m.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="559">
+          <caret line="174" column="68" lean-forward="true" selection-start-line="174" selection-start-column="68" selection-end-line="174" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/admin/user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="60" column="12" selection-start-line="60" selection-start-column="12" selection-end-line="60" selection-end-column="12" />
         </state>
       </provider>
     </entry>

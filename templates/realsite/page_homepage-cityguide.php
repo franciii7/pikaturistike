@@ -61,10 +61,10 @@
         </div>
         <!-- /.container -->
 
-       <?php _widget( "bottom_partners"); ?>
+       <?php //_widget( "bottom_partners"); ?>
         <!-- /.widget -->
 
-        <?php _widget( "bottom_choosecolor"); ?>
+        <?php //_widget( "bottom_choosecolor"); ?>
         <!-- /.widget -->
     </div>
     <!-- /.main -->

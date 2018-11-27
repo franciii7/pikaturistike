@@ -73,9 +73,9 @@
                 <div class="admin-content-header">
                     <div class="admin-content-header-inner">
                         <div class="container-fluid header-navigation">
-                            <div class="admin-content-header-logo">
+                            <div class="admin-content-header-logo" style="width:280px;">
                                 <a href="{homepage_url_lang}">
-                                    <img src="assets/img/logo_black.png" alt="{settings_websitetitle}">
+                                    <img src="<?php echo $website_logo_url;?>" alt="{settings_websitetitle}" style="max-height: 45px;max-width: 60px; margin-right:0px;">
                                     {settings_websitetitle}
                                 </a>
                             </div><!-- /admin-content-header-logo -->

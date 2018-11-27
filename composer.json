@@ -10,6 +10,7 @@
         "facebook/php-sdk-v4": "~5.0",
         "stichoza/google-translate-php": "~3.2",
         "league/oauth2-google": "~1.0",
-        "league/oauth2-facebook": "~1.0"
+        "league/oauth2-facebook": "~1.0",
+        "makeusabrew/bootbox": "dev-master"
     }
 }

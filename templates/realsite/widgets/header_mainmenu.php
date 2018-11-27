@@ -43,7 +43,7 @@
                         <i class="fa fa-plus"></i>
                     </a><!-- /.header-action -->
                 <?php else: ?>
-                    <a class="header-action" href="{myproperties_url}" title="{lang_Addproperty}">
+                    <a class="header-action" href="{front_login_url}" title="{lang_Login}">
                         <i class="fa fa-plus"></i>
                     </a><!-- /.header-action -->
                 <?php endif; ?>

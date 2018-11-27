@@ -6,7 +6,7 @@
             </div><!-- /.admin-content-footer-left -->
 
             <div class="admin-content-footer-right">
-                 <?php _l('Created by');?> <a href="http://iwinter.com.hr"><?php _l('Iwinter');?></a>
+                 <?php _l('Created by');?> <a href="http://www.commprog.com/"><?php _l('CommunicationProgress');?></a>
             </div><!-- /.admin-content-footer-right -->
         </div><!-- /.container-fluid -->
     </div><!-- /.admin-content-footer-inner -->
