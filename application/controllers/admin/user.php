@@ -29,14 +29,9 @@ class User extends Admin_Controller
 
         prepare_search_query_GET(array('type'), array('id', 'username', 'name_surname', 'address', 'description', 'mail'));
        
-	    // Fetch all users
-        $self_municipality_id = $this->user_m->get_property_for_user('municipality_id');
-             
-        if ($this->session->userdata('type') == 'ADMINISTRATOR BASHKIE') {
-            $this->data['users'] = $this->user_m->get_by("municipality_id = $self_municipality_id"); 
-        } else {
+	    // Fetch all users        
             $this->data['users'] = $this->user_m->get();
-        }
+
         
         // pagination
         $config['base_url'] = site_url('admin/user/index');

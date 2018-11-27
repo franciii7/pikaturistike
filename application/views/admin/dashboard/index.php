@@ -535,6 +535,10 @@ $(function () {
                 var positron = L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}{r}.png').addTo(map);
 
                 <?php if(count($estates_all)): foreach($estates_all as $estate):?>
+                    <?php if(($this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE') && $estate->municipality_id != $self_municipality_id){
+                                continue;
+                            }
+                    ?>
                    <?php
                        
                         // skip if gps is not defined

@@ -16,7 +16,3 @@
 <?php endforeach; ?>
 </body>
 </html>
-
-
-
-
