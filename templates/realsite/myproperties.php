@@ -308,6 +308,8 @@
     </div><!-- /#main-wrapper -->
      <?php _subtemplate( 'footers', _ch($subtemplate_footer, 'standart')); ?>
 </div><!-- /#wrapper -->
+
+
 <?php _widget('custom_javascript'); ?> 
 </body>
 </html>

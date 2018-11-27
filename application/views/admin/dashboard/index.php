@@ -91,7 +91,7 @@ if($settings_template=='local') {
 
                 <div class="widget-content">
                   <div class="gmap" id="mapsProperties">
-
+                      
                   </div>
                 </div>
               </div> 
@@ -272,7 +272,7 @@ $(function () {
     .labels-marker {
             overflow: visible !important;
     }
-     <?php if($settings_template=='realsite' || $settings_template=='disabled-cityguide' || $settings_template=='worlddealer'):?>
+    <?php if($settings_template=='realsite' || $settings_template=='disabled-cityguide' || $settings_template=='worlddealer'):?>
         /* realsite marker */  
        .marker {
            background-color: #2196F3 ;
@@ -547,8 +547,7 @@ $(function () {
                         }elseif(file_exists(FCPATH.'templates/'.$settings_template.'/assets/img/icons/marker_blue.png'))
                             $icon_url = base_url('templates/'.$settings_template.'/assets/img/icons/marker_blue.png');
 
-                        $value = $this->estate_m->get_field_from_listing($estate, 6);
-
+                        $value = $this->estate_m->get_field_from_listing($estate, 2);
                         if($settings_template=='local') {
                             $value = $this->estate_m->get_field_from_listing($estate, 79);
                             $icon_url = '';
@@ -560,6 +559,8 @@ $(function () {
                             {
                                 if($value != '' && $value != 'empty')
                                 {
+                                    if(file_exists(FCPATH.'admin-assets/img/markers/'.$value.'.png'))
+                                        $icon_url = base_url('admin-assets/img/markers/'.$value.'.png');
                                    if(file_exists(FCPATH.'templates/'.$settings_template.'/assets/img/markers/'.$value.'.png'))
                                     $icon_url = base_url('templates/'.$settings_template.'/assets/img/markers/'.$value.'.png');
                                    elseif(file_exists(FCPATH.'templates/'.$settings_template.'/assets/img/icons/'.$value.'.png'))
@@ -582,13 +583,14 @@ $(function () {
                                 isset($value)? $data .='<div class="opt">'.htmlentities(strip_tags($value), ENT_QUOTES, "UTF-8").'</div>':'';
                             }
                         endforeach;
-                        $data .= '<div class="footer"><a style=\\"font-weight:bold;\\" href=\\"'.site_url('admin/estate/edit/'.$estate->id).'\\">'.lang('Edit').'</a></div>';
+
+                        $data .= '<div class="footer"><a style="font-weight:bold;" href="estate/edit/'.$estate->id.'">'.lang('Edit').'</a></div>';
                    ?>
                            
                    var marker = L.marker(
                        [<?php _che($estate->gps); ?>],
                        {icon: L.divIcon({
-                               html: '<div class=\"marker  <?php echo $value;?>-mark-color\"><img src=\"<?php echo $icon_url;?>\"></div>',
+                               html: '<div class="marker  <?php echo $value;?>-mark-color"><img src="<?php echo $icon_url;?>"></div>',
                                className: 'open_steet_map_marker',
                                 <?php if($settings_template=='local'):?>
                                    iconSize: [31, 46],
@@ -654,8 +656,8 @@ $(function () {
                         {
                             if($value != '' && $value != 'empty')
                             {
-                               /* if(file_exists(FCPATH.'admin-assets/img/markers/'.$value.'.png'))
-                                $icon_url = base_url('admin-assets/img/markers/'.$value.'.png');*/
+                                if(file_exists(FCPATH.'admin-assets/img/markers/'.$value.'.png'))
+                                $icon_url = base_url('admin-assets/img/markers/'.$value.'.png');
                                if(file_exists(FCPATH.'templates/'.$settings_template.'/assets/img/markers/'.$value.'.png'))
                                 $icon_url = base_url('templates/'.$settings_template.'/assets/img/markers/'.$value.'.png');
                                elseif(file_exists(FCPATH.'templates/'.$settings_template.'/assets/img/icons/'.$value.'.png'))
@@ -669,38 +671,38 @@ $(function () {
                     echo '{latLng:['.$estate->gps.'], ';
                     
                     // HTML MARKER;
-                    if($settings_template=='realsite' ||  $settings_template=='worlddealer' || $settings_template=='realocation' || $settings_template=='disabled-cityguide'){  
+                    if($settings_template=='realsite' ||  $settings_template=='worlddealer' || $settings_template=='realocation' || $settings_template=='disabled-cityguide'){
                     echo 'options:{ icon: "'.$marker_transparent.'", 
                                 labelAnchor: new google.maps.Point(20,50),
                                 labelClass: "labels-marker ",
                                 labelContent: "<div class=\"marker  '.$value.'-mark-color\"><img src=\"'.$icon_url.'\"></div>"
                                     },';
-                    } elseif($settings_template=='realia'){  
+                    } elseif($settings_template=='realia'){
                     echo 'options:{ icon: "'.$marker_transparent.'", 
                                 labelAnchor: new google.maps.Point(20,60),
                                 labelClass: "labels-marker ",
                                 labelContent: "<div class=\"marker  '.$value.'-mark-color\"><img src=\"'.$icon_url.'\"></div>"
                                     },';
-                    } elseif($settings_template=='bootstrap4'){  
+                    } elseif($settings_template=='bootstrap4'){
                     echo 'options:{ icon: "'.$marker_transparent.'", 
                                 labelAnchor: new google.maps.Point(18,50),
                                 labelClass: "labels-marker ",
                                 labelContent: "<div class=\"marker  '.$value.'-mark-color\"><img src=\"'.$icon_url.'\"></div>"
                                     },';
-                    } elseif($settings_template=='rento'){  
+                    } elseif($settings_template=='rento'){
                     echo 'options:{ icon: "'.$marker_transparent.'", 
                                 labelAnchor: new google.maps.Point(20,25),
                                 labelClass: "labels-marker ",
                                 labelContent: "<div class=\"marker  '.$value.'-mark-color\"><img src=\"'.$icon_url.'\"></div>"
                                     },';
-                   } elseif($settings_template=='local'){  
+                   } elseif($settings_template=='local'){
                     echo 'options:{ icon: "'.$marker_transparent.'", 
                                 labelAnchor: new google.maps.Point(20,50),
                                 labelClass: "labels-marker ",
                                 labelContent: "<div class=\"marker  '.$value.'-mark-color\"><img src=\"'.$icon_url.'\"></div>"
                                     },';
                    }else {
-                        echo 'options:{ icon: "'.$icon_url.'"},'; 
+                        echo 'options:{ icon: "'.$icon_url.'"},';
                     }
                     echo 'data:"'.strip_tags($estate->address);
                     foreach($this->option_m->get_visible($content_language_id) as $row):
@@ -714,7 +716,7 @@ $(function () {
                             echo isset($value)?'<br />'.htmlentities(strip_tags($value), ENT_QUOTES, "UTF-8"):'';
                         }
                     endforeach;
-                    echo '<br /><a style=\\"font-weight:bold;\\" href=\\"'.site_url('admin/estate/edit/'.$estate->id).'\\">'.lang('Edit').'</a>"},';
+                    echo '<br /><a style="font-weight:bold;" href="estate/edit/'.$estate->id.'">'.lang('Edit').'</a>"},';
                 endforeach;
                 endif;?> 
                 ],

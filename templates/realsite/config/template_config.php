@@ -9,7 +9,7 @@ $config['property_map_disabled'] = TRUE;
 $config['property_map_route_enabled'] = TRUE;
 $config['search_forms_editor_enabled'] = TRUE;
 $config['locked_forms'] = array(1);
-//$config['custom_map_center'] = '46.3077, 16.3383';
+$config['custom_map_center'] = '41.1533, 20.1683';
 $config['field_file_upload_enabled'] = TRUE;
 
 $config['multiple_enabled'] = TRUE;

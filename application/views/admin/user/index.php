@@ -61,12 +61,14 @@
                       <div class="form-group">
                         <input class="form-control" name="smart_search" id="smart_search" value="<?php echo set_value_GET('smart_search', '', true); ?>" placeholder="<?php echo lang_check('Smart agent search'); ?>" type="text" />
                       </div>
+                      <?php if($this->session->userdata('type') != 'ADMINISTRATOR BASHKIE'):?>
                       <div class="form-group">
                         <?php echo form_dropdown('type', array_merge(array(''=>lang_check('Type')),$this->user_m->user_types), set_value_GET('type', '', true), 'class="form-control"');?>
                       </div>
                       <div class="form-group">
                         <?php echo form_dropdown('municipality_id', array_merge(array(''=>lang_check('Bashkia')),$municipalities), set_value_GET('$municipalities', '', true), 'class="form-control"');?>
                       </div>
+                      <?php endif;?>
                       <button type="submit" class="btn btn-default"><i class="icon icon-search"></i>&nbsp;&nbsp;<?php echo lang_check('Search'); ?></button>
 
                     </form>
@@ -173,3 +175,9 @@
           </div>
         </div>
 </div>
+
+
+
+
+
+

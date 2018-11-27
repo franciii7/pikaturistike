@@ -2,19 +2,19 @@
 
 $lang['configurator'] = "Sistemi";
 $lang['start_configuration'] = "Kontrolli i konfigurimit të rregullimit të kartelave të Evolution";
-$lang['l_site_name'] = "Emri bashkise";
+$lang['l_site_name'] = "Emri i bashkisë";
 $lang['l_language'] = "Gjuha";
 $lang['croatian'] = "Kroatisht";
 $lang['english'] = "Anglisht";
 $lang['client_username'] = "Emri i përdoruesit";
 $lang['client_password'] = "Fjalëkalim";
-$lang['admin_username'] = "Emër përdoruesi DB admin";
-$lang['admin_password'] = "Fjalkalimi adminit";
-$lang['agent_username'] = "Emri i përdoruesit";
-$lang['agent_password'] = "Fjalëkalim";
+$lang['admin_username'] = "Emri i admin";
+$lang['admin_password'] = "Fjalëkalimi i admin";
+$lang['agent_username'] = "Emri i agent";
+$lang['agent_password'] = "Fjalëkalimi i agent";
 $lang['item_purchase_code'] = "Kod i pavlefshëm i kartës së sigurisë";
-$lang['codecanyon_username'] = "Emri i përdoruesit";
-$lang['app_type'] = "Aplikacion";
+$lang['codecanyon_username'] = "Username CodeCanyon";
+$lang['app_type'] = "Tipi i aplikacionit";
 $lang['template'] = "Modeli";
 $lang['suggest_item_purchase_code'] = "- Kodet e librit ...";
 $lang['enable_link_login'] = "Përdorues/fjalëkalim i pavlefshëm";

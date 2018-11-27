@@ -135,6 +135,17 @@
     />
 </url>
 <url>
+	<loc>http://localhost/pikaturistike/index.php/sq/145/info</loc>
+	<lastmod>2014-03-02T11:55:40+01:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+    <xhtml:link
+        rel="alternate"
+        hreflang="en"
+        href="http://localhost/pikaturistike/index.php/en/145/info"
+    />
+</url>
+<url>
 	<loc>http://localhost/pikaturistike/index.php/en/145/full</loc>
 	<lastmod>2014-03-02T11:55:40+01:00</lastmod>
 	<changefreq>monthly</changefreq>
@@ -143,61 +154,6 @@
         rel="alternate"
         hreflang="sq"
         href="http://localhost/pikaturistike/index.php/sq/145/full"
-    />
-</url>
-<url>
-	<loc>http://localhost/pikaturistike/index.php/sq/145/plot</loc>
-	<lastmod>2014-03-02T11:55:40+01:00</lastmod>
-	<changefreq>monthly</changefreq>
-	<priority>0.5</priority>
-    <xhtml:link
-        rel="alternate"
-        hreflang="en"
-        href="http://localhost/pikaturistike/index.php/en/145/plot"
-    />
-</url>
-<url>
-	<loc>http://localhost/pikaturistike/index.php/en/147/featured</loc>
-	<lastmod>2014-04-05T10:33:02+02:00</lastmod>
-	<changefreq>monthly</changefreq>
-	<priority>0.5</priority>
-    <xhtml:link
-        rel="alternate"
-        hreflang="sq"
-        href="http://localhost/pikaturistike/index.php/sq/147/featured"
-    />
-</url>
-<url>
-	<loc>http://localhost/pikaturistike/index.php/sq/147/rekomanduar</loc>
-	<lastmod>2014-04-05T10:33:02+02:00</lastmod>
-	<changefreq>monthly</changefreq>
-	<priority>0.5</priority>
-    <xhtml:link
-        rel="alternate"
-        hreflang="en"
-        href="http://localhost/pikaturistike/index.php/en/147/rekomanduar"
-    />
-</url>
-<url>
-	<loc>http://localhost/pikaturistike/index.php/en/5/about_us</loc>
-	<lastmod>2013-12-12T16:01:35+01:00</lastmod>
-	<changefreq>monthly</changefreq>
-	<priority>0.5</priority>
-    <xhtml:link
-        rel="alternate"
-        hreflang="sq"
-        href="http://localhost/pikaturistike/index.php/sq/5/about_us"
-    />
-</url>
-<url>
-	<loc>http://localhost/pikaturistike/index.php/sq/5/rreth_nesh</loc>
-	<lastmod>2013-12-12T16:01:35+01:00</lastmod>
-	<changefreq>monthly</changefreq>
-	<priority>0.5</priority>
-    <xhtml:link
-        rel="alternate"
-        hreflang="en"
-        href="http://localhost/pikaturistike/index.php/en/5/rreth_nesh"
     />
 </url>
 <url>
@@ -223,25 +179,14 @@
     />
 </url>
 <url>
-	<loc>http://localhost/pikaturistike/index.php/en/169/agents</loc>
-	<lastmod>2014-08-01T19:02:31+02:00</lastmod>
-	<changefreq>monthly</changefreq>
-	<priority>0.5</priority>
-    <xhtml:link
-        rel="alternate"
-        hreflang="sq"
-        href="http://localhost/pikaturistike/index.php/sq/169/agents"
-    />
-</url>
-<url>
-	<loc>http://localhost/pikaturistike/index.php/sq/169/agjentet</loc>
-	<lastmod>2014-08-01T19:02:31+02:00</lastmod>
+	<loc>http://localhost/pikaturistike/index.php/sq/143/kerko</loc>
+	<lastmod>2014-02-10T10:54:19+01:00</lastmod>
 	<changefreq>monthly</changefreq>
 	<priority>0.5</priority>
     <xhtml:link
         rel="alternate"
         hreflang="en"
-        href="http://localhost/pikaturistike/index.php/en/169/agjentet"
+        href="http://localhost/pikaturistike/index.php/en/143/kerko"
     />
 </url>
 <url>
@@ -253,39 +198,6 @@
         rel="alternate"
         hreflang="sq"
         href="http://localhost/pikaturistike/index.php/sq/143/custom_search"
-    />
-</url>
-<url>
-	<loc>http://localhost/pikaturistike/index.php/sq/143/pershtat_ikonen_e_kerkimit</loc>
-	<lastmod>2014-02-10T10:54:19+01:00</lastmod>
-	<changefreq>monthly</changefreq>
-	<priority>0.5</priority>
-    <xhtml:link
-        rel="alternate"
-        hreflang="en"
-        href="http://localhost/pikaturistike/index.php/en/143/pershtat_ikonen_e_kerkimit"
-    />
-</url>
-<url>
-	<loc>http://localhost/pikaturistike/index.php/en/146/google_link</loc>
-	<lastmod>2014-03-15T18:18:13+01:00</lastmod>
-	<changefreq>monthly</changefreq>
-	<priority>0.5</priority>
-    <xhtml:link
-        rel="alternate"
-        hreflang="sq"
-        href="http://localhost/pikaturistike/index.php/sq/146/google_link"
-    />
-</url>
-<url>
-	<loc>http://localhost/pikaturistike/index.php/sq/146/google</loc>
-	<lastmod>2014-03-15T18:18:13+01:00</lastmod>
-	<changefreq>monthly</changefreq>
-	<priority>0.5</priority>
-    <xhtml:link
-        rel="alternate"
-        hreflang="en"
-        href="http://localhost/pikaturistike/index.php/en/146/google"
     />
 </url>
 <url>
@@ -377,24 +289,16 @@
     />
 </url>
 <url>
-	<loc>http://localhost/pikaturistike/index.php/en/4/contact</loc>
+	<loc>http://localhost/pikaturistike/index.php/property/43/sq/locationtirane</loc>
+	<lastmod>2018-11-26T16:47:32+01:00</lastmod>
 	<changefreq>monthly</changefreq>
 	<priority>0.5</priority>
-    <xhtml:link
-        rel="alternate"
-        hreflang="sq"
-        href="http://localhost/pikaturistike/index.php/sq/4/contact"
-    />
 </url>
 <url>
-	<loc>http://localhost/pikaturistike/index.php/sq/4/kontakt</loc>
+	<loc>http://localhost/pikaturistike/index.php/property/43/en/locationtirane</loc>
+	<lastmod>2018-11-26T16:47:32+01:00</lastmod>
 	<changefreq>monthly</changefreq>
 	<priority>0.5</priority>
-    <xhtml:link
-        rel="alternate"
-        hreflang="en"
-        href="http://localhost/pikaturistike/index.php/en/4/kontakt"
-    />
 </url>
 <url>
 	<loc>http://localhost/pikaturistike/index.php/property/42/sq/sadsadsa</loc>
