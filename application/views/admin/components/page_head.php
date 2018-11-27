@@ -11,10 +11,10 @@
   <meta name="author" content="">
 
   <!-- Stylesheets -->
-  <link href="<?php echo base_url('admin-assets/style/bootstrap.css')?>" rel="stylesheet">
-  <link rel="stylesheet" href="<?php echo base_url('admin-assets/style/font-awesome.css')?>">
-  <link href="<?php echo base_url('admin-assets/style/style.css')?>" rel="stylesheet">
-  <link href="<?php echo base_url('admin-assets/style/custom.css')?>" rel="stylesheet">
+  <!--<link href="<?php //echo base_url('admin-assets/style/bootstrap.css')?>" rel="stylesheet">
+  <link rel="stylesheet" href="<?php //echo base_url('admin-assets/style/font-awesome.css')?>">
+  <link href="<?php //echo base_url('admin-assets/style/style.css')?>" rel="stylesheet">
+  <link href="<?php //echo base_url('admin-assets/style/custom.css')?>" rel="stylesheet">-->
   
   <!-- HTML5 Support for IE -->
   <!--[if lt IE 9]>
@@ -22,7 +22,7 @@
   <![endif]-->
 
   <!-- Favicon -->
-  <link rel="shortcut icon" href="<?php echo base_url('admin-assets/img/favicon/favicon.png')?>">
+  <link rel="shortcut icon" href="<?php echo base_url('admin-assets/img/favicon/favicon.png')?>"> 
   
   
 

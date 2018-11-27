@@ -1,74 +1,103 @@
-<!-- Form area -->
-<div class="admin-form">
-  <div class="container">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login V3</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="../../../templates/realsite/assets/img/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../../../vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../../../templates/realsite/assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../../../templates/realsite/assets/fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../../../vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="../../../vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../../../vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../../../vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="../../../vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../../../templates/realsite/assets/css/util.css">
+	<link rel="stylesheet" type="text/css" href="../../../templates/realsite/assets/css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-login100" style="background-image: url('../../../templates/realsite/assets/img/images/bg-01.jpg');">
+			<div class="wrap-login100">
+        <form action="http://localhost/pikaturistike/index.php/admin/user/login#content" method="post" accept-charset="utf-8" class="login100-form validate-form">
+					<span class="login100-form-logo">
+						<i class="zmdi zmdi-pin"></i>
+					</span>
 
-    <div class="row">
-      <div class="col-md-12">
-        <!-- Widget starts -->
-            <div class="widget worange">
-              <!-- Widget head -->
-              <div class="widget-head">
-                <i class="icon-lock"></i> <?php echo lang('Login')?> 
-              </div>
+					<span class="login100-form-title p-b-34 p-t-27">
+						Log in
+					</span>
+					<div class="wrap-input100 validate-input" data-validate = "Enter username">
+						<input class="input100" type="text" name="username" placeholder="<?php echo lang('Username'); ?>" id="inputUsername" autocomplete="off">
+						<span class="focus-input100" data-placeholder="&#xf207;"></span>
+          </div>
 
-              <div class="widget-content">
-                <div class="padd">
-                
-                <?php echo validation_errors()?>
-                <?php if($this->session->flashdata('error')):?>
-                <p class="label label-important validation"><?php echo $this->session->flashdata('error')?></p>
-                <?php endif;?>
-                
-                  <!-- Login form -->
-                  <?php echo form_open(NULL, array('class' => 'form-horizontal'))?>
-                    <!-- Email -->
-                    <div class="form-group">
-                      <label class="control-label col-lg-4" for="inputUsername"><?php echo lang('Username')?></label>
-                      <div class="col-lg-8">
-                        <?php echo form_input('username', NULL, 'class="form-control" id="inputUsername" placeholder="'.lang('Username').'"')?>
-                      </div>
-                    </div>
-                    <!-- Password -->
-                    <div class="form-group">
-                      <label class="control-label col-lg-4" for="inputPassword"><?php echo lang('Password')?></label>
-                      <div class="col-lg-8">
-                        <?php echo form_password('password', NULL, 'class="form-control" id="inputPassword" placeholder="'.lang('Password').'"')?>
-                      </div>
-                    </div>
-                    <!-- Remember me checkbox and sign in button -->
-                    <div class="form-group">
-					<div class="col-lg-8 col-lg-offset-4">
-                      <div class="checkbox">
-                        <label>
-                          <input type="checkbox" name="remember" id="remember" value="true" /> <?php echo lang('Remember me')?>
-                        </label>
-						</div>
+					<div class="wrap-input100 validate-input" data-validate="Enter password">
+						<input class="input100" type="password" name="password" placeholder="<?php echo lang('Password') ?>" id="inputPassword" autocomplete="off"> 
+						<span class="focus-input100" data-placeholder="&#xf191;"></span>
 					</div>
+ 
+					<div class="contact100-form-checkbox">
+						<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+						<label class="label-checkbox100" for="ckb1">
+            <?php echo lang('Remember me')?>
+						</label>
 					</div>
-                        <div class="col-lg-8 col-lg-offset-4">
-							<button type="submit" class="btn btn-danger"><?php echo lang('Sign in')?></button>
-							<button type="reset" class="btn btn-default"><?php echo lang('Reset')?></button>
-						</div>
-                    <br />
-                  <?php echo form_close()?>
-				  
-                <?php if(config_item('app_type') == 'demo'):?>
-                <p class="label label-info validation"><?php echo lang_check('Admin creditionals: admin, admin')?></p>
-                <p class="label label-info validation"><?php echo lang_check('Agent creditionals: agent, agent')?></p>
-                <?php endif;?>
-                  
-				</div>
-                </div>
-              
-                <div class="widget-foot">
-                  <a href="<?php echo site_url('admin/user/register')?>"><?php echo lang('Not Registred?')?></a>
-                  <a href="<?php echo site_url('admin/user/forgetpassword')?>"><?php echo lang_check('Forget password?')?></a>
-                  <?php if(config_db_item('frontend_disabled') === FALSE): ?>
-                  <span class="pull-right"><a href="<?php echo site_url('')?>"><?php echo lang_check('Back to homepage')?></a></span>
-                  <?php endif; ?>
-                </div>
-            </div>  
-      </div>
-    </div>
-  </div> 
-</div>
+
+					<div class="container-login100-form-btn">
+            <button type="submit" class="login100-form-btn"><?php echo lang('Sign in')?></button>
+					</div>
+
+					<div class="text-center p-t-90">
+            <a class="txt1" href="<?php echo site_url('admin/user/forgetpassword')?>"><?php echo lang_check('Forget password?')?></a>
+          </div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+
+  <div id="dropDownSelect1"></div>
+  
+	
+<!--===============================================================================================-->
+	<script src="../../../vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../../../vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../../../vendor/bootstrap/js/popper.js"></script>
+	<script src="../../../vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../../../vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../../../vendor/daterangepicker/moment.min.js"></script>
+	<script src="../../../vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="../../../vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="../../../templates/realsite/assets/js/main.js"></script>
+
+
+<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-23581568-13');
+	</script>
+
+</body>
+</html>

@@ -62,3 +62,5 @@ ERROR - 2018-11-27 10:49:26 --> Severity: Notice  --> Undefined offset: 0 C:\xam
 ERROR - 2018-11-27 10:49:26 --> Severity: Notice  --> Undefined offset: 0 C:\xampp\htdocs\pikaturistike\application\views\admin\user\index.php 124
 ERROR - 2018-11-27 11:32:33 --> Severity: Notice  --> Undefined variable: content_language_id C:\xampp\htdocs\pikaturistike\application\views\admin\_layout_main.php 190
 ERROR - 2018-11-27 11:32:33 --> Severity: Notice  --> Undefined property: stdClass::$option_ C:\xampp\htdocs\pikaturistike\application\views\admin\_layout_main.php 190
+ERROR - 2018-11-27 12:27:34 --> 404 Page Not Found --> http://localhost/pikaturistike/index.php/admin/vendor/bootstrap/css/bootstrap.min.css
+ERROR - 2018-11-27 14:41:26 --> Severity: Notice  --> Undefined variable: website_logo_url C:\xampp\htdocs\pikaturistike\application\views\admin\user\login.php 37
