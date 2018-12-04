@@ -2608,3 +2608,7 @@ body .cityguide-search-box {
     clear: both;
     display: table;
 }
+
+.leaflet-top .leaflet-left, .leaflet-bar, .leaflet-pane, .leaflet-map-pane{
+    z-index: 0 !important;
+}

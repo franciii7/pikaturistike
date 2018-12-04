@@ -14,7 +14,6 @@
 <link rel="stylesheet" type="text/css" href="assets/libraries/nvd3/nv.d3.min.css">
 <link rel="stylesheet" type="text/css" href="assets/libraries/OwlCarousel/owl-carousel/owl.carousel.css">
 <link rel="stylesheet" type="text/css" href="assets/css/realsite.css">
-<link rel="stylesheet" type="text/css" href="assets/css/custom.css">
 <link rel="stylesheet" type="text/css" href="assets/css/custom_media.css">
 <link rel="stylesheet" type="text/css" href="assets/css/jquery.fileupload-ui.css">
 <link rel="stylesheet" type="text/css" href="assets/css/jquery.fileupload-ui-noscript.css">
@@ -48,6 +47,8 @@
     
 <?php load_map_api(config_db_item('map_version'));?>
 
+
+<link rel="stylesheet" type="text/css" href="assets/css/custom.css">
 
 <?php if(config_db_item('map_version') !='open_street'):?>
 <script type="text/javascript" src="assets/libraries/jquery-google-map/infobox.js"></script>

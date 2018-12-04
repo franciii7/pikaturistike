@@ -80,11 +80,14 @@
                                 
                                 <div class="form-group">
                                   <label class="col-lg-3 control-label"><?php echo lang('Gps')?></label>
-                                  <div class="col-lg-9">
+                                  <div class="col-lg-9 input-group">
                                     <?php echo form_input('gps', set_value('gps', $estate->gps), 'class="form-control" id="inputGps" placeholder="'.lang('Gps').'" readonly')?>
+                                    <span class="input-group-btn">
+                                        <button id="findCurrentLocationBtn" class="btn btn-default" style="font-size:14px !important;" type="button"><span class="glyphicon glyphicon-map-marker text-info"></span></button>
+                                    </span>
                                   </div>
                                 </div>
-                                
+
                                 <div class="form-group">
                                   <label class="col-lg-3 control-label"><?php echo lang('DateTime')?></label>
                                   <div class="col-lg-9">
@@ -1603,8 +1606,19 @@ $(document).ready(function(){
         });
         return false;
     });
+    $("#findCurrentLocationBtn").on('click',getLocation)
 });
-
+function getLocation() {
+    edit_map.locate({
+      setView: true,
+      enableHighAccuracy: true
+    })
+    .on('locationfound', function(e) {
+      edit_map_marker.setLatLng([e.latlng.lat, e.latlng.lng]).update(); 
+        edit_map.panTo(new L.LatLng(e.latlng.lat, e.latlng.lng));
+        $('#inputGps').val(e.latlng.lat+', '+e.latlng.lng);
+    });
+}
 </script>
 
 <link rel="stylesheet" href="<?php echo base_url('admin-assets/js/pedigree/style.css')?>">
@@ -1612,6 +1626,7 @@ $(document).ready(function(){
 <script src="<?php echo base_url('admin-assets/js/pedigree/jquery.tree.js')?>"></script>
 
 <script>
+
 
 function generate_pedigree_tree(id_key)
 {

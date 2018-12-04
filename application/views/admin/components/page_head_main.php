@@ -39,7 +39,7 @@
     <link href="<?php echo base_url('admin-assets/style/widgets.css')?>" rel="stylesheet">   
     <link href="<?php echo base_url('admin-assets/js/footable/css/footable.core.css')?>" rel="stylesheet">   
     
-    <link href="<?php echo base_url('admin-assets/style/custom.css')?>" rel="stylesheet">
+
     
     <?php
         $week = '';
@@ -70,7 +70,7 @@
     ?>
     
     <?php load_map_api(config_db_item('map_version'));?>
-    
+    <link href="<?php echo base_url('admin-assets/style/custom.css')?>" rel="stylesheet">
     <!-- JS -->
     <script src="<?php echo base_url('admin-assets/js/jquery.js')?>"></script> <!-- jQuery -->
     <script src="<?php echo base_url('admin-assets/js/jquery.translator.min.js')?>"></script> <!-- jQuery translate-->
@@ -161,7 +161,8 @@
     var clusters ='';
     clusters = L.markerClusterGroup({spiderfyOnMaxZoom: true, showCoverageOnHover: false, zoomToBoundsOnClick: true});
     <?php endif;?>
-        
+    var edit_map_marker;
+    var edit_map;
     $(function () {
         
         <?php if(config_db_item('price_by_purpose') == TRUE): ?>
@@ -236,8 +237,7 @@
         
         
         <?php if(config_db_item('map_version') =='open_street'):?>
-            var edit_map_marker;
-            var edit_map
+            
             if($('#mapsAddress').length){
                 if($('#inputGps').length && $('#inputGps').val() != '')
                 {
