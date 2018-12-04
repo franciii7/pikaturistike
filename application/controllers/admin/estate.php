@@ -64,7 +64,7 @@ class Estate extends Admin_Controller
         if($this->data['settings']['template'] == 'local')
             $type_field = 'json_object';
 
-        prepare_search_query_GET(array($type_field, 'field_4'), array('property.id', 'address', 'search_values'));
+        prepare_search_query_GET(array($type_field, 'field_4'), array('property.id', 'address', 'search_values',''));
         
         // Fetch all estates
         $config['total_rows'] = $this->estate_m->count_get_by($where, false, NULL, 'property.id DESC', 
@@ -86,7 +86,7 @@ class Estate extends Admin_Controller
         $this->data['pagination'] = $this->pagination->create_links();
         
         /* user type = ADMIN, search by AGENT/User name enabled */
-        if($this->session->userdata('type') == 'ADMIN' || $this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE'){
+        if($this->session->userdata('type') == 'ADMIN' ){
             prepare_search_query_GET(array($type_field, 'field_4', 'name_surname'), array('property.id', 'property.address', 'search_values'));
 
             if($this->input->get_post('name_surname')) {
@@ -95,7 +95,10 @@ class Estate extends Admin_Controller
                 $this->db->join('user', 'property_user.user_id = user.id', 'left');
             }
         } else {
-            prepare_search_query_GET(array($type_field, 'field_4'), array('property.id', 'address', 'search_values'));
+            if($this->input->get_post('name_of_user')){
+                $this->db->select('property.name_of_user');
+            }
+            prepare_search_query_GET(array($type_field, 'field_4', 'name_of_user'), array('property.id', 'address', 'search_values'));
         }
         
         $order_by = 'property.id DESC';
@@ -348,6 +351,7 @@ class Estate extends Admin_Controller
         $this->load->model('treefield_m');
         $this->load->model('user_m');
         
+        
         $user = $this->user_m->get($this->session->userdata('id'));
         
         
@@ -449,8 +453,11 @@ class Estate extends Admin_Controller
             $this->data['estate'] = $this->estate_m->get_new();
         }
         
+        
+        
 		// Pages for dropdown
         $this->data['languages'] = $this->language_m->get_form_dropdown('language');
+        
         
         // Get available agents
         $this->data['available_agent'] = $this->user_m->get_form_dropdown('name_surname', array('type'=>'AGENT'));
@@ -458,7 +465,7 @@ class Estate extends Admin_Controller
         
         
         $this->data['available_agent'][''] = lang_check('Current user');
-        
+       
         // Get all options
         foreach($this->option_m->languages as $key=>$val){
             $this->data['options_lang'][$key] = $this->option_m->get_lang(NULL, FALSE, $key);
@@ -578,8 +585,8 @@ class Estate extends Admin_Controller
             $data = $this->estate_m->array_from_post(array('gps', 'date', 'date_modified', 'address', 'is_featured', 'is_activated', 'is_visible', 'id_transitions', 'name_of_user','municipality_id'));
             if($this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE'){
                 $data['municipality_id'] = $this->user_m->get_property_for_user('municipality_id');
-                
             }
+            
             $dynamic_data = $this->estate_m->array_from_post(array_keys($rules_dynamic));
             // AGENT_LIMITED don't have permission to change this fields...
             if($this->session->userdata('type') == 'AGENT_LIMITED')
@@ -774,7 +781,7 @@ class Estate extends Admin_Controller
             //redirect('admin/estate/edit/'.$insert_id);
             redirect('admin/estate');
         }
-        
+        //var_dump($data);die;
         
         // Load the view
 		$this->data['subview'] = 'admin/estate/edit';

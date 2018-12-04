@@ -123,10 +123,14 @@
                         <?php endif;?>
                       
                       </div>
-                      <?php if($this->session->userdata('type') == 'ADMIN' || $this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE'):?>
+                      <?php if($this->session->userdata('type') == 'ADMIN'):?>
                       <div class="form-group">
                         <input class="form-control" name="name_surname" id="name_surname" value="<?php echo set_value_GET('name_surname', '', true); ?>" placeholder="<?php echo lang_check('Agent name'); ?>" type="text" />
                       </div>
+                        <?php else: ?>
+                        <div class="form-group">
+                            <input class="form-control" name="name_of_user" id="name_of_user" value="<?php echo set_value_GET('name_of_user', '', true); ?>" placeholder="<?php echo lang_check('Agent name'); ?>" type="text" />
+                        </div>
                      <?php endif;?>
                       <button type="submit" class="btn btn-default"><i class="icon icon-search"></i>&nbsp;&nbsp;<?php echo lang_check('Search'); ?></button>
 

@@ -3516,12 +3516,13 @@ class Frontend extends Frontend_Controller
         // Prevent direct access for google and simmilar
         if(!isset($_POST['page_num']))
             redirect('');
-
+        
         $this->load->model('treefield_m');
         $lang_id = $this->data['lang_id'];        
         
         // Fetch post values
         $address = $this->input->post('address');
+        
         $order = $this->input->post('order');
         $view = $this->input->post('view');
 
@@ -3546,9 +3547,10 @@ class Frontend extends Frontend_Controller
                     $post_option_sum.=$val.' ';
                 }
             }
+
         }
         // End fetch post values     
-
+        
         /* Define order */
         if(empty($order))$order='id DESC';
 
@@ -3580,7 +3582,7 @@ class Frontend extends Frontend_Controller
         if($order=='counter_views DESC')
             $this->data['order_viewsDESC_selected'] = 'selected';
         /* End define order */
-        
+       
         /* Define view */
         if(empty($view))$view='grid';
         

@@ -656,7 +656,8 @@ class User extends Admin_Controller
                 exit();
             }
             
-            $data = $this->user_m->array_from_post(array('mail'));          
+            $data = $this->user_m->array_from_post(array('mail'));  
+                   
             
             // Get user id && pass hash to generate new pass hash
             $user = $this->user_m->get_by(array('mail'=>$data['mail']), true);

@@ -94,17 +94,17 @@
                             </div>
                             </div><!-- /.admin-content-header-menu  -->
                         </div><!-- /.container-fluid -->
-                         <?php if(config_db_item('property_subm_disabled')==FALSE):  ?>
-                            <?php if(config_db_item('enable_qs') == 1): ?>
-                                <a class="header-action" href="<?php echo site_url('fquick/submission/'.$lang_code); ?>" title="<?php echo lang_check('Quick add listing');?>">
+                         <!--<?php //if(config_db_item('property_subm_disabled')==FALSE):  ?>
+                            <?php //if(config_db_item('enable_qs') == 1): ?>
+                                <a class="header-action" href="<?php //echo site_url('fquick/submission/'.$lang_code); ?>" title="<?php //echo lang_check('Quick add listing');?>">
                                     <i class="fa fa-plus"></i>
-                                </a><!-- /.header-action -->
-                            <?php else: ?>
-                                <a class="header-action" href="{myproperties_url}" title="{lang_Addproperty}">
-                                    <i class="fa fa-plus"></i>
-                                </a><!-- /.header-action -->
-                            <?php endif; ?>
-                        <?php endif;?>
+                                </a> /.header-action 
+                            <?php //else: ?>
+                                <a class="header-action" href="{myproperties_url}" title="{lang_Addproperty} hidden">
+                                    <i class="fa fa-plus hidden"></i>
+                                </a>/.header-action 
+                            <?php //endif; ?>
+                        <?php //endif;?>->-->
                     </div><!-- /.admin-content-header-inner -->
                 </div><!-- /.admin-content-header -->
                 <div class="search-form hidden">

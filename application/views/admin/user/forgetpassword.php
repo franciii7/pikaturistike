@@ -1,3 +1,14 @@
+<link href="../../../admin-assets/style/bootstrap.css" rel="stylesheet">
+<link href="../../../admin-assets/style/bootstrap.css" rel="stylesheet">
+<link rel="stylesheet" href="../../../admin-assets/style/font-awesome.css">
+<link href="../../../admin-assets/style/style.css" rel="stylesheet">
+<link href="../../../admin-assets/style/custom.css" rel="stylesheet">
+  
+ 
+
+  <!-- Favicon -->
+<link rel="shortcut icon" href="../../../admin-assets/img/favicon/favicon.png">
+
 <!-- Form area -->
 <div class="admin-form">
   <div class="container">
@@ -44,3 +55,6 @@
     </div>
   </div> 
 </div>
+
+<script src="../../../admin-assets/js/jquery.js"></script>
+<script src="../../../admin-assets/js/bootstrap.js"></script>

@@ -28,6 +28,7 @@
                                 <option value="field_44_int ASC" {order_priceASC_selected}>{lang_BeacheDistance}</option>
                                 <option value="field_56_int ASC" {order_priceASC_selected}>{lang_RatingASC}</option>
                                 <option value="field_56_int DESC" {order_priceDESC_selected}>{lang_RatingDESC}</option>
+                                
                             </select>
                         </div>
                         <span class="pull-right hidden-xs">{lang_OrderBy}&nbsp;&nbsp;&nbsp;</span>

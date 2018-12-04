@@ -64,3 +64,23 @@ ERROR - 2018-11-27 11:32:33 --> Severity: Notice  --> Undefined variable: conten
 ERROR - 2018-11-27 11:32:33 --> Severity: Notice  --> Undefined property: stdClass::$option_ C:\xampp\htdocs\pikaturistike\application\views\admin\_layout_main.php 190
 ERROR - 2018-11-27 12:27:34 --> 404 Page Not Found --> http://localhost/pikaturistike/index.php/admin/vendor/bootstrap/css/bootstrap.min.css
 ERROR - 2018-11-27 14:41:26 --> Severity: Notice  --> Undefined variable: website_logo_url C:\xampp\htdocs\pikaturistike\application\views\admin\user\login.php 37
+ERROR - 2018-11-27 17:36:29 --> Severity: Notice  --> Undefined index: package_id C:\xampp\htdocs\pikaturistike\templates\realsite\myproperties.php 210
+ERROR - 2018-11-27 17:36:29 --> Severity: Notice  --> Undefined index: package_id C:\xampp\htdocs\pikaturistike\templates\realsite\myproperties.php 228
+ERROR - 2018-11-27 17:36:29 --> Severity: Notice  --> Undefined index: package_id C:\xampp\htdocs\pikaturistike\templates\realsite\myproperties.php 210
+ERROR - 2018-11-27 17:36:29 --> Severity: Notice  --> Undefined index: package_id C:\xampp\htdocs\pikaturistike\templates\realsite\myproperties.php 216
+ERROR - 2018-11-27 17:36:29 --> Severity: Notice  --> Undefined index: package_id C:\xampp\htdocs\pikaturistike\templates\realsite\myproperties.php 228
+ERROR - 2018-11-27 17:36:29 --> Severity: Notice  --> Undefined index: package_id C:\xampp\htdocs\pikaturistike\templates\realsite\myproperties.php 210
+ERROR - 2018-11-27 17:36:29 --> Severity: Notice  --> Undefined index: package_id C:\xampp\htdocs\pikaturistike\templates\realsite\myproperties.php 216
+ERROR - 2018-11-27 17:36:29 --> Severity: Notice  --> Undefined index: package_id C:\xampp\htdocs\pikaturistike\templates\realsite\myproperties.php 228
+ERROR - 2018-11-27 17:37:48 --> Severity: Notice  --> Undefined variable: options_values_arr_2 C:\xampp\htdocs\pikaturistike\templates\realsite\components\search-filter-cityguide.php 11
+ERROR - 2018-11-27 17:37:48 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\xampp\htdocs\pikaturistike\templates\realsite\components\search-filter-cityguide.php 11
+ERROR - 2018-11-27 17:38:46 --> Severity: Notice  --> Undefined variable: options_values_arr_2 C:\xampp\htdocs\pikaturistike\templates\realsite\components\search-filter-cityguide.php 11
+ERROR - 2018-11-27 17:38:46 --> Severity: Warning  --> Invalid argument supplied for foreach() C:\xampp\htdocs\pikaturistike\templates\realsite\components\search-filter-cityguide.php 11
+ERROR - 2018-11-27 17:39:10 --> Severity: Notice  --> Undefined index: package_id C:\xampp\htdocs\pikaturistike\templates\realsite\myproperties.php 210
+ERROR - 2018-11-27 17:39:10 --> Severity: Notice  --> Undefined index: package_id C:\xampp\htdocs\pikaturistike\templates\realsite\myproperties.php 228
+ERROR - 2018-11-27 17:39:10 --> Severity: Notice  --> Undefined index: package_id C:\xampp\htdocs\pikaturistike\templates\realsite\myproperties.php 210
+ERROR - 2018-11-27 17:39:10 --> Severity: Notice  --> Undefined index: package_id C:\xampp\htdocs\pikaturistike\templates\realsite\myproperties.php 216
+ERROR - 2018-11-27 17:39:10 --> Severity: Notice  --> Undefined index: package_id C:\xampp\htdocs\pikaturistike\templates\realsite\myproperties.php 228
+ERROR - 2018-11-27 17:39:10 --> Severity: Notice  --> Undefined index: package_id C:\xampp\htdocs\pikaturistike\templates\realsite\myproperties.php 210
+ERROR - 2018-11-27 17:39:10 --> Severity: Notice  --> Undefined index: package_id C:\xampp\htdocs\pikaturistike\templates\realsite\myproperties.php 216
+ERROR - 2018-11-27 17:39:10 --> Severity: Notice  --> Undefined index: package_id C:\xampp\htdocs\pikaturistike\templates\realsite\myproperties.php 228

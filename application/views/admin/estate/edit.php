@@ -10,7 +10,6 @@
 ?>
 
 
-
 <div class="page-head">
     <!-- Page heading -->
       <h2 class="pull-left"><?php echo lang('Estate')?>
@@ -118,7 +117,7 @@
                                     <div class="form-group">
                                     <label class="col-lg-3 control-label"><?php echo lang('Agent')?></label>
                                     <div class="col-lg-9">
-                                        <?php echo form_dropdown_ajax('agent', 'user_m', set_value('agent', $estate->agent), 'name_surname');?>
+                                        <?php echo form_dropdown_ajax('name_of_user', 'user_m', set_value('name_of_user', $estate->agent), 'name_surname');?>
                                     </div>
                                     </div>
                                 <?php elseif($this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE') : ?>
