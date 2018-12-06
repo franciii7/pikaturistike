@@ -42,13 +42,13 @@
                     </div>
                 </div>
                 <div class="row  custom-row">
-                    <div class="content col-sm-8 col-md-9" style="width:1000px;height:3000px;">
+                    <div class="content col-sm-8 col-md-9">
                         <div class=" mytestresult">
                             <?php _widget('center_categories');?>
                             
                             <div class="post box">
                                 <div class="container-body">{page_body}</div>
-                                <div style="padding: 20px 0;">
+                                <div>
                                     <?php _widget('center_imagegallery'); ?>
                                 </div>
                             </div>

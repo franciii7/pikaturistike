@@ -30,3 +30,4 @@ $config['all_results_default'] = true;
 $config['limit_curl_calls'] = 150;
 
 
+$config['custom_map_center'] = '39.8592, 20.0271';

@@ -334,9 +334,9 @@ function onLocationFound(e) {
         </div>
     <?php endif; ?>   
 
-    <div id="map" class="map cityguide-map" data-transparent-marker-image="assets/img/transparent-marker-image.png" style="height:800px;">
+    <div id="map" class="map cityguide-map" data-transparent-marker-image="assets/img/transparent-marker-image.png" style="height:800px;"></div>
         {template_search-filter-cityguide}<!-- /.map-filter-horizontal --> 
-    </div>
+    
 </div><!-- /.map-wrapper -->
 
 <script type="text/javascript">

@@ -712,7 +712,7 @@ class Estate extends Admin_Controller
                 $data['agent'] = $this->input->post('agent');
                 
             }           
-            var_dump($data);exit;
+           
             // Save dynamic options
             $dynamic_data['agent'] = $data['agent'];
             $this->estate_m->save_dynamic($dynamic_data, $insert_id);
@@ -783,6 +783,7 @@ class Estate extends Admin_Controller
         }
         //var_dump($data);die;
         
+    
         // Load the view
 		$this->data['subview'] = 'admin/estate/edit';
         $this->load->view('admin/_layout_main', $this->data);

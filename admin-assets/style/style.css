@@ -1092,36 +1092,42 @@ form label{
   background-color: #fa3031;
   border: 1px solid #fa3031;
   color: #fff;
+  border-radius: 5px;
 }
 
 .widget.wlightblue .widget-head{
   background-color: #52b9e9;
   border: 1px solid #52b9e9;
   color: #fff;
+  border-radius: 5px;
 }
 
 .widget.wblue .widget-head{
   background-color: #1171a3;
   border: 1px solid #1171a3;
   color: #fff;
+  border-radius: 5px;
 }
 
 .widget.wgreen .widget-head{
   background-color: #43c83c;
   border: 1px solid #43c83c;
   color: #fff;
+  border-radius: 5px;
 }
 
 .widget.worange .widget-head{
   background-color: #f88529;
-  border: 1px solid #f88529;
+  border: 2px solid #f88529;
   color: #fff;
+  border-radius: 5px;
 }
 
 .widget.wviolet .widget-head{
   background-color: #932ab6;
   border: 1px solid #932ab6;
   color: #fff;
+  border-radius: 5px;
 }
 
 .widget.wred .widget-head .widget-icons a,

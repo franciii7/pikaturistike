@@ -1,41 +1,40 @@
     <div class="container">
-    
-    
         <div class="header-inner">
-            <div class="header-main">
-           
-               <div class="header-title">
-                   <a href="{homepage_url_lang}">
-                       <img src="<?php echo $website_logo_url; ?>" alt="{settings_websitetitle}">
-
-                        <span>{settings_websitetitle}</span>
-                   </a>
-               </div><!-- /.header-title -->
-
-               <div class="header-navigation">
+            <div class="header-main row">
+                <div class="header-title col-xs-8 col-md-6">
+                    <a href="{homepage_url_lang}">
+                        <img style="margin:0;" src="<?php echo $website_logo_url; ?>" alt="{settings_websitetitle}">
+                        <span>Pikat Turistike</span>
+                    </a>
+                </div><!-- /.header-title -->
+                    
+                
+                <div class="header-navigation col-xs-4 col-md-6">
                     <div class="nav-main-wrapper">
                         <div class="nav-main-title visible-xs">
                             <a href="{homepage_url_lang}">
-                            <img src="<?php echo $website_logo_url; ?>" alt="{settings_websitetitle}">
-                            <span>{settings_websitetitle}</span>
+                                <img style="margin:0;" src="<?php echo $website_logo_url; ?>" alt="{settings_websitetitle}">
+                                <span>Pikat Turistike</span>
                             </a>
                         </div><!-- /.nav-main-title -->
 
                         <div class="nav-main-inner">
                             <nav>
-                            <?php _widget('menu'); ?>
-                            <!-- /.nav -->
+                                <?php _widget('menu'); ?>
+                                    <!-- /.nav -->
                             </nav>
                         </div><!-- /.nav-main-inner -->
                     </div><!-- /.nav-main-wrapper -->
-                    <button type="button" class="navbar-toggle">
-                        <span class="sr-only"><?php _l('Toggle navigation');?></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
+                        <button type="button" class="navbar-toggle">
+                            <span class="sr-only"><?php _l('Toggle navigation');?></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
                 </div><!-- /.header-navigation -->
-           </div><!-- /.header-main -->
+                    
+                
+            </div><!-- /.header-main -->
 
             <?php if(config_db_item('property_subm_disabled')==FALSE):  ?>
                 <?php if(config_db_item('enable_qs') == 1): ?>

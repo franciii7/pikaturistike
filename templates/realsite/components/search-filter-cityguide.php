@@ -8,7 +8,9 @@
                         <span class="glyphicon-class"><?php echo lang_check('All'); ?></span>
                     </a>
                 </li>
-                <?php foreach ($options_values_arr_2 as $key=>$val): ?>
+                <?php foreach ($options_values_arr_2 as $key=>$val): 
+                    if($key == 29) break;
+                    ?>
                  <li class="cat_<?php echo $key;?>">
                      <a href="#" class="cityguide-search-btn header">
                         <strong class="cityguide-search-icon">
@@ -46,4 +48,4 @@
                     </form>
                 </div>
         </div><!-- /.container -->
-    </div>
+</div>

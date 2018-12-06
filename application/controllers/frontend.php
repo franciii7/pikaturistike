@@ -3582,7 +3582,7 @@ class Frontend extends Frontend_Controller
         if($order=='counter_views DESC')
             $this->data['order_viewsDESC_selected'] = 'selected';
         /* End define order */
-       
+
         /* Define view */
         if(empty($view))$view='grid';
         

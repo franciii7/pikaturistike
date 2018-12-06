@@ -1,5 +1,10 @@
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no">
+<meta name="theme-color" content="#C62828" />
+<meta name="msapplication-navbutton-color" content="#C62828" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#C62828" />
 <title>{page_title}</title>
 <meta name="description" content="{page_description}" />
 <meta name="keywords" content="{page_keywords}" />

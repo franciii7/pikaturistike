@@ -7544,7 +7544,6 @@ button.btn, button.btn-secondary {
   margin: -27px -700px 0px -700px; }
 
 .header-title {
-  
   float: left;
   font-family: 'Montserrat';
   font-size: 30px;
@@ -7564,15 +7563,13 @@ button.btn, button.btn-secondary {
       .header-title img {
         margin-right: 0px; } }
   .header-title a {
-    display: flex;
-    align-items: center;
     color: #fff; }
     .header-minimal .header-title a {
       color: #424242; }
     .header-minimal.primary .header-title a {
       color: #fff; }
     .header-title a:hover {
-      color: #ffff;
+      color: #fff;
       text-decoration: none; }
       .header-minimal .header-title a:hover {
         color: #424242; }

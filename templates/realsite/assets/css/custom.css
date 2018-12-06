@@ -5,9 +5,6 @@
     font-style: normal;
 }
 
-body {
-    background-color: #f1f1f1 !important;
-}
 .header-title span
 {
     font-family: MontserratRegular;
@@ -1609,7 +1606,7 @@ body .cityguide-search-box {
 }
 
 body .cityguide-map {
-    height: 1150px;   
+    height: 750px;   
 }
 
 .cityguide-list-search {
@@ -2071,17 +2068,20 @@ body .cityguide-map {
     
 }
 
+
+
 @media (max-width: 768px) {
     
-    .map-filter-horizontal {
+    /*.map-filter-horizontal {
         position: static !important;
-    }
+    }*/
     
     body .cityguide-map,
     .map {
-        height: 300px;
+        height: 600px;
     }
 }
+
 
 .box-icon-white [class^="icon-"], 
 .box-icon-white [class*=" icon-"] {
@@ -2554,19 +2554,6 @@ body .popupCustom .leaflet-popup-content-wrapper .leaflet-popup-content {
 
 body .cityguide-search-box {
     z-index: 500;
-    position: absolute;
-    bottom: 0;
-    background: linear-gradient(to top,rgba(0,0,0,.55),transparent);
-    border-width: 0;
-    padding-top: 80px;
-}
-
-.property-box:hover{
-    webkit-transition: box-shadow 0.3s cubic-bezier(0.55, 0, 0.1, 1) 0s;
-    -moz-transition: box-shadow 0.3s cubic-bezier(0.55, 0, 0.1, 1) 0s;
-    -o-transition: box-shadow 0.3s cubic-bezier(0.55, 0, 0.1, 1) 0s;
-    transition: box-shadow 0.3s cubic-bezier(0.55, 0, 0.1, 1) 0s;
-    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1), 0 2px 2px 0 rgba(0, 0, 0, 0.05);
 }
 
 .leaflet-top,
@@ -2609,6 +2596,6 @@ body .cityguide-search-box {
     display: table;
 }
 
-.leaflet-top .leaflet-left, .leaflet-bar, .leaflet-pane, .leaflet-map-pane{
-    z-index: 0 !important;
+.map-filter-horizontal.search-select.cityguide-search-box {
+    background-color: rgba(255,255,255,0.42) !important;
 }

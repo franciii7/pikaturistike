@@ -289,14 +289,14 @@
     />
 </url>
 <url>
-	<loc>http://localhost/pikaturistike/index.php/property/46/sq/test</loc>
-	<lastmod>2018-11-30T12:41:16+01:00</lastmod>
+	<loc>http://localhost/pikaturistike/index.php/property/45/sq/test</loc>
+	<lastmod>2018-11-30T12:28:05+01:00</lastmod>
 	<changefreq>monthly</changefreq>
 	<priority>0.5</priority>
 </url>
 <url>
-	<loc>http://localhost/pikaturistike/index.php/property/46/en/test</loc>
-	<lastmod>2018-11-30T12:41:16+01:00</lastmod>
+	<loc>http://localhost/pikaturistike/index.php/property/45/en/test</loc>
+	<lastmod>2018-11-30T12:28:05+01:00</lastmod>
 	<changefreq>monthly</changefreq>
 	<priority>0.5</priority>
 </url>
@@ -337,6 +337,18 @@
 	<priority>0.5</priority>
 </url>
 <url>
+	<loc>http://localhost/pikaturistike/index.php/property/41/sq/location_5_tirane</loc>
+	<lastmod>2018-11-22T16:12:17+01:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+</url>
+<url>
+	<loc>http://localhost/pikaturistike/index.php/property/41/en/nona_fare</loc>
+	<lastmod>2018-11-22T16:12:17+01:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+</url>
+<url>
 	<loc>http://localhost/pikaturistike/index.php/property/40/sq/location_4_tirane</loc>
 	<lastmod>2018-11-21T12:40:01+01:00</lastmod>
 	<changefreq>monthly</changefreq>
@@ -361,42 +373,6 @@
 	<priority>0.5</priority>
 </url>
 <url>
-	<loc>http://localhost/pikaturistike/index.php/property/37/sq/location_pare_tirane</loc>
-	<lastmod>2018-11-21T10:14:52+01:00</lastmod>
-	<changefreq>monthly</changefreq>
-	<priority>0.5</priority>
-</url>
-<url>
-	<loc>http://localhost/pikaturistike/index.php/property/37/en/location_pare_tirane</loc>
-	<lastmod>2018-11-21T10:14:52+01:00</lastmod>
-	<changefreq>monthly</changefreq>
-	<priority>0.5</priority>
-</url>
-<url>
-	<loc>http://localhost/pikaturistike/index.php/property/45/sq/test</loc>
-	<lastmod>2018-11-30T12:28:05+01:00</lastmod>
-	<changefreq>monthly</changefreq>
-	<priority>0.5</priority>
-</url>
-<url>
-	<loc>http://localhost/pikaturistike/index.php/property/45/en/test</loc>
-	<lastmod>2018-11-30T12:28:05+01:00</lastmod>
-	<changefreq>monthly</changefreq>
-	<priority>0.5</priority>
-</url>
-<url>
-	<loc>http://localhost/pikaturistike/index.php/property/41/sq/location_5_tirane</loc>
-	<lastmod>2018-11-22T16:12:17+01:00</lastmod>
-	<changefreq>monthly</changefreq>
-	<priority>0.5</priority>
-</url>
-<url>
-	<loc>http://localhost/pikaturistike/index.php/property/41/en/nona_fare</loc>
-	<lastmod>2018-11-22T16:12:17+01:00</lastmod>
-	<changefreq>monthly</changefreq>
-	<priority>0.5</priority>
-</url>
-<url>
 	<loc>http://localhost/pikaturistike/index.php/property/38/sq/location_2_tirane</loc>
 	<lastmod>2018-11-21T10:40:40+01:00</lastmod>
 	<changefreq>monthly</changefreq>
@@ -405,6 +381,18 @@
 <url>
 	<loc>http://localhost/pikaturistike/index.php/property/38/en/location_2_tirane</loc>
 	<lastmod>2018-11-21T10:40:40+01:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+</url>
+<url>
+	<loc>http://localhost/pikaturistike/index.php/property/37/sq/location_pare_tirane</loc>
+	<lastmod>2018-11-21T10:14:52+01:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+</url>
+<url>
+	<loc>http://localhost/pikaturistike/index.php/property/37/en/location_pare_tirane</loc>
+	<lastmod>2018-11-21T10:14:52+01:00</lastmod>
 	<changefreq>monthly</changefreq>
 	<priority>0.5</priority>
 </url>

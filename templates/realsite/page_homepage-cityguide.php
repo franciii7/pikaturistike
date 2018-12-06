@@ -15,7 +15,6 @@
             <div class="type-property-block">
                 <div class="properties-sort properties-sort-main">
                     <h2 class="real-h">{lang_Realestates} : <span id="count_row"> <?php echo $total_rows; ?></span></h2>
-                    
                     <div class="options">
                         <a class="view-type active hidden-phone" ref="grid" href="#"><img src="assets/img/glyphicons/glyphicons_156_show_thumbnails.png" />
                         </a>

@@ -50,3 +50,12 @@ ERROR - 2018-12-06 09:55:26 --> Severity: Notice  --> Undefined variable: estate
 ERROR - 2018-12-06 09:55:26 --> Severity: Notice  --> Undefined variable: estate_data_option_6 C:\wamp64\www\pikaturistike\templates\realsite\widgets\map_popup.php 11
 ERROR - 2018-12-06 09:55:26 --> Severity: Notice  --> Undefined variable: estate_data_option_6 C:\wamp64\www\pikaturistike\templates\realsite\widgets\map_popup.php 11
 ERROR - 2018-12-06 09:55:26 --> Severity: Notice  --> Undefined variable: estate_data_option_6 C:\wamp64\www\pikaturistike\templates\realsite\widgets\map_popup.php 11
+ERROR - 2018-12-06 11:08:36 --> Severity: Notice  --> Undefined offset: 0 C:\xampp\htdocs\pikaturistike\application\views\admin\estate\index.php 230
+ERROR - 2018-12-06 11:08:36 --> Severity: Notice  --> Undefined offset: 0 C:\xampp\htdocs\pikaturistike\application\views\admin\estate\index.php 230
+ERROR - 2018-12-06 11:08:36 --> Severity: Notice  --> Undefined offset: 0 C:\xampp\htdocs\pikaturistike\application\views\admin\estate\index.php 230
+ERROR - 2018-12-06 11:09:58 --> Severity: Notice  --> Undefined offset: 0 C:\xampp\htdocs\pikaturistike\application\views\admin\estate\index.php 230
+ERROR - 2018-12-06 11:09:58 --> Severity: Notice  --> Undefined offset: 0 C:\xampp\htdocs\pikaturistike\application\views\admin\estate\index.php 230
+ERROR - 2018-12-06 11:09:58 --> Severity: Notice  --> Undefined offset: 0 C:\xampp\htdocs\pikaturistike\application\views\admin\estate\index.php 230
+ERROR - 2018-12-06 11:10:34 --> Severity: Notice  --> Undefined offset: 0 C:\xampp\htdocs\pikaturistike\application\views\admin\estate\index.php 230
+ERROR - 2018-12-06 11:10:34 --> Severity: Notice  --> Undefined offset: 0 C:\xampp\htdocs\pikaturistike\application\views\admin\estate\index.php 230
+ERROR - 2018-12-06 11:10:34 --> Severity: Notice  --> Undefined offset: 0 C:\xampp\htdocs\pikaturistike\application\views\admin\estate\index.php 230
