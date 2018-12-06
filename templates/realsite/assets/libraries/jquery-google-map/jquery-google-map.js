@@ -286,7 +286,8 @@ navigator.msPointerEnabled = true;
                 bounds.extend(me);
                 map.fitBounds(bounds);
                 var zoom = map.getZoom();
-                map.setZoom(zoom > zoomOnMapSearch ? zoomOnMapSearch : zoom);
+				map.setZoom(zoom > zoomOnMapSearch ? zoomOnMapSearch : zoom);
+				console.log(bounds);
             }, function(error) {
                 console.log(error);
             });

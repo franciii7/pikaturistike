@@ -34,8 +34,8 @@ $(document).ready(function(){
                 })
             }
         ).addTo(property_map);
-
-        property_marker.bindPopup("{estate_data_address}<br />{lang_GPS}: {estate_data_gps}");
+        
+        property_marker.bindPopup("{estate_data_address}<br /><a target='_blank' href='https://www.google.com/maps?saddr=My+Location&daddr="+"{estate_data_gps}"+"'> <?php echo(lang_check('Route to location')); ?></a>");
     }
 })
 <?php else:?>    
@@ -397,6 +397,7 @@ function getAddress (coord, selector) {
 <div class="map-route-company-wrapper">
     <div id="map-route-company"></div><!-- /#map-route-company -->
 </div><!-- /.map-route-company-wrapper -->
+
 <?php if(config_db_item('map_version') !='open_street'):?>
 <a href="#" class="btn btn-primary" id='routemap-direction-guid'><?php _l('Directions guide');?></a>
 <div class="direction-guid map-route-company-wrapper" id="direction-guid" style="display: none;">

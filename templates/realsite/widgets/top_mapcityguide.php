@@ -28,13 +28,24 @@
 </style>
 
 <script>
+function getCurrentLocationOSM(_map) {
+    map.on('locationfound', onLocationFound);
+    map.locate({setView: true, watch: true, maxZoom: 12});
+}
+function onLocationFound(e) {
+    var radius = e.accuracy / 2;
+    L.marker(e.latlng).addTo(map)
+        .bindPopup("You are within " + radius + " meters from this point").openPopup();
+    L.circle(e.latlng, radius).addTo(map);
+}
+
+
+
  $(document).ready(function(){
- 
-    $(document).ready(function(){
         // option
         if($('#map').length){
         <?php if(config_db_item('map_version') =='open_street'):?>
-
+        
             map = L.map('map', {
                 <?php if(config_item('custom_map_center') === FALSE): ?>
                 center: [{all_estates_center}],
@@ -73,6 +84,7 @@
                 markers.push(marker);
             <?php endforeach; ?>
             map.addLayer(clusters);
+            getCurrentLocationOSM(map);
         <?php else:?>
         var style_map = mapStyle || '';
         
@@ -180,9 +192,7 @@
 
         <?php endif;?>
         }
-    })
-
-})
+});
 </script>
 
 

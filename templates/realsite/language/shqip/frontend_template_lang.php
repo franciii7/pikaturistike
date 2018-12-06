@@ -43,6 +43,7 @@ $lang['Fromprice'] = "çmimi min";
 $lang['Toprice'] = "çmimi max";
 $lang['Lastaddedproperties'] = "Të shtuar së fundmi";
 $lang['Propertyactivated'] = "Listimi nuk aktivizohet";
+$lang['Route to location'] = "Shko në vendndodhje";
 $lang['Login'] = "Hyrje";
 $lang['Sign in'] = "Kyçuni";
 $lang['Reset'] = "Rivendos";

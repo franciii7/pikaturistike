@@ -7,7 +7,9 @@
             <a href="<?php _che($url, ''); ?>"><?php _che($address, ''); ?></a>
         </div>
         <div class="infobox-content-price"> </div>
-        <div class="infobox-content-body"><?php _che($option_chlimit_8, ''); ?></div>
+        <div class="infobox-content-body"><?php _che($option_chlimit_8, ''); ?> <br>
+        <?php echo '<a target="_blank" href= "https://www.google.com/maps?saddr=My+Location&daddr='.$gps.'">'.lang_check("Route to location").'</a>'?>
+        </div> 
     </div>
     <div class="infobox-contact">
         <div class="infobox-contact-title"><a href="<?php _che($url, ''); ?>"><?php echo _che($option_10, ''); ?></a>

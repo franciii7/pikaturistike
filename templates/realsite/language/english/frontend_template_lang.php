@@ -54,7 +54,7 @@ $lang['Fromprice'] = "Min. price";
 $lang['Toprice'] = "Max. price";
 $lang['Lastaddedproperties'] = "Last added locations";
 $lang['Propertyactivated'] = "Listing isn't activated";
-$lang[''] = "";
+$lang['Route to location'] = "Route to location";
 
 $lang['Login'] = "Login";
 $lang['Sign in'] = "Sign in";
