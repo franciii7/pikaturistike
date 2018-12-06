@@ -36,6 +36,7 @@ function onLocationFound(e) {
         myMarkerOSM = L.marker(e.latlng).bindPopup("<?php echo(lang_check('You are here'))?>");
         myMarkerOSM.addTo(map);
         myMarkerOSM.openPopup();
+        map.setView(e.latlng,12);
     }else{
         myMarkerOSM.setLatLng(e.latlng); 
     }
@@ -88,7 +89,7 @@ function onLocationFound(e) {
             <?php endforeach; ?>
             map.addLayer(clusters);
             
-            map.locate({setView: true, watch: true, maxZoom: 12});
+            map.locate({setView: false, watch: true, maxZoom: 12});
             map.on('locationfound', onLocationFound);
         <?php else:?>
         var style_map = mapStyle || '';
