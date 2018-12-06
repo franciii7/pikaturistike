@@ -135,14 +135,14 @@
     />
 </url>
 <url>
-	<loc>http://localhost/pikaturistike/index.php/sq/145/info</loc>
+	<loc>http://localhost/pikaturistike/index.php/sq/145/full</loc>
 	<lastmod>2014-03-02T11:55:40+01:00</lastmod>
 	<changefreq>monthly</changefreq>
 	<priority>0.5</priority>
     <xhtml:link
         rel="alternate"
         hreflang="en"
-        href="http://localhost/pikaturistike/index.php/en/145/info"
+        href="http://localhost/pikaturistike/index.php/en/145/full"
     />
 </url>
 <url>
@@ -157,39 +157,6 @@
     />
 </url>
 <url>
-	<loc>http://localhost/pikaturistike/index.php/en/142/blog_page</loc>
-	<lastmod>2014-01-04T22:19:49+01:00</lastmod>
-	<changefreq>monthly</changefreq>
-	<priority>0.5</priority>
-    <xhtml:link
-        rel="alternate"
-        hreflang="sq"
-        href="http://localhost/pikaturistike/index.php/sq/142/blog_page"
-    />
-</url>
-<url>
-	<loc>http://localhost/pikaturistike/index.php/sq/142/faqe_blogu</loc>
-	<lastmod>2014-01-04T22:19:49+01:00</lastmod>
-	<changefreq>monthly</changefreq>
-	<priority>0.5</priority>
-    <xhtml:link
-        rel="alternate"
-        hreflang="en"
-        href="http://localhost/pikaturistike/index.php/en/142/faqe_blogu"
-    />
-</url>
-<url>
-	<loc>http://localhost/pikaturistike/index.php/sq/143/kerko</loc>
-	<lastmod>2014-02-10T10:54:19+01:00</lastmod>
-	<changefreq>monthly</changefreq>
-	<priority>0.5</priority>
-    <xhtml:link
-        rel="alternate"
-        hreflang="en"
-        href="http://localhost/pikaturistike/index.php/en/143/kerko"
-    />
-</url>
-<url>
 	<loc>http://localhost/pikaturistike/index.php/en/143/custom_search</loc>
 	<lastmod>2014-02-10T10:54:19+01:00</lastmod>
 	<changefreq>monthly</changefreq>
@@ -198,6 +165,17 @@
         rel="alternate"
         hreflang="sq"
         href="http://localhost/pikaturistike/index.php/sq/143/custom_search"
+    />
+</url>
+<url>
+	<loc>http://localhost/pikaturistike/index.php/sq/143/pershtat_ikonen_e_kerkimit</loc>
+	<lastmod>2014-02-10T10:54:19+01:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+    <xhtml:link
+        rel="alternate"
+        hreflang="en"
+        href="http://localhost/pikaturistike/index.php/en/143/pershtat_ikonen_e_kerkimit"
     />
 </url>
 <url>
@@ -289,43 +267,7 @@
     />
 </url>
 <url>
-	<loc>http://localhost/pikaturistike/index.php/property/45/sq/test</loc>
-	<lastmod>2018-11-30T12:28:05+01:00</lastmod>
-	<changefreq>monthly</changefreq>
-	<priority>0.5</priority>
-</url>
-<url>
-	<loc>http://localhost/pikaturistike/index.php/property/45/en/test</loc>
-	<lastmod>2018-11-30T12:28:05+01:00</lastmod>
-	<changefreq>monthly</changefreq>
-	<priority>0.5</priority>
-</url>
-<url>
-	<loc>http://localhost/pikaturistike/index.php/property/44/sq/location_8_tirane</loc>
-	<lastmod>2018-11-27T10:23:04+01:00</lastmod>
-	<changefreq>monthly</changefreq>
-	<priority>0.5</priority>
-</url>
-<url>
-	<loc>http://localhost/pikaturistike/index.php/property/44/en/sadsadsa</loc>
-	<lastmod>2018-11-27T10:23:04+01:00</lastmod>
-	<changefreq>monthly</changefreq>
-	<priority>0.5</priority>
-</url>
-<url>
-	<loc>http://localhost/pikaturistike/index.php/property/43/sq/location_7_tirane</loc>
-	<lastmod>2018-11-26T16:47:32+01:00</lastmod>
-	<changefreq>monthly</changefreq>
-	<priority>0.5</priority>
-</url>
-<url>
-	<loc>http://localhost/pikaturistike/index.php/property/43/en/locationtirane</loc>
-	<lastmod>2018-11-26T16:47:32+01:00</lastmod>
-	<changefreq>monthly</changefreq>
-	<priority>0.5</priority>
-</url>
-<url>
-	<loc>http://localhost/pikaturistike/index.php/property/42/sq/location_6_tirane</loc>
+	<loc>http://localhost/pikaturistike/index.php/property/42/sq/sadsadsa</loc>
 	<lastmod>2018-11-22T15:24:34+01:00</lastmod>
 	<changefreq>monthly</changefreq>
 	<priority>0.5</priority>
@@ -337,19 +279,7 @@
 	<priority>0.5</priority>
 </url>
 <url>
-	<loc>http://localhost/pikaturistike/index.php/property/41/sq/location_5_tirane</loc>
-	<lastmod>2018-11-22T16:12:17+01:00</lastmod>
-	<changefreq>monthly</changefreq>
-	<priority>0.5</priority>
-</url>
-<url>
-	<loc>http://localhost/pikaturistike/index.php/property/41/en/nona_fare</loc>
-	<lastmod>2018-11-22T16:12:17+01:00</lastmod>
-	<changefreq>monthly</changefreq>
-	<priority>0.5</priority>
-</url>
-<url>
-	<loc>http://localhost/pikaturistike/index.php/property/40/sq/location_4_tirane</loc>
+	<loc>http://localhost/pikaturistike/index.php/property/40/sq/123asdasd</loc>
 	<lastmod>2018-11-21T12:40:01+01:00</lastmod>
 	<changefreq>monthly</changefreq>
 	<priority>0.5</priority>
@@ -361,7 +291,7 @@
 	<priority>0.5</priority>
 </url>
 <url>
-	<loc>http://localhost/pikaturistike/index.php/property/39/sq/location_3_tirane</loc>
+	<loc>http://localhost/pikaturistike/index.php/property/39/sq/asdasdasd</loc>
 	<lastmod>2018-11-21T10:46:55+01:00</lastmod>
 	<changefreq>monthly</changefreq>
 	<priority>0.5</priority>
@@ -369,18 +299,6 @@
 <url>
 	<loc>http://localhost/pikaturistike/index.php/property/39/en/asdasdasd</loc>
 	<lastmod>2018-11-21T10:46:55+01:00</lastmod>
-	<changefreq>monthly</changefreq>
-	<priority>0.5</priority>
-</url>
-<url>
-	<loc>http://localhost/pikaturistike/index.php/property/38/sq/location_2_tirane</loc>
-	<lastmod>2018-11-21T10:40:40+01:00</lastmod>
-	<changefreq>monthly</changefreq>
-	<priority>0.5</priority>
-</url>
-<url>
-	<loc>http://localhost/pikaturistike/index.php/property/38/en/location_2_tirane</loc>
-	<lastmod>2018-11-21T10:40:40+01:00</lastmod>
 	<changefreq>monthly</changefreq>
 	<priority>0.5</priority>
 </url>
@@ -393,6 +311,30 @@
 <url>
 	<loc>http://localhost/pikaturistike/index.php/property/37/en/location_pare_tirane</loc>
 	<lastmod>2018-11-21T10:14:52+01:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+</url>
+<url>
+	<loc>http://localhost/pikaturistike/index.php/property/41/sq/nona_fare</loc>
+	<lastmod>2018-11-22T16:12:17+01:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+</url>
+<url>
+	<loc>http://localhost/pikaturistike/index.php/property/41/en/nona_fare</loc>
+	<lastmod>2018-11-22T16:12:17+01:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+</url>
+<url>
+	<loc>http://localhost/pikaturistike/index.php/property/38/sq/asdasdasd</loc>
+	<lastmod>2018-11-21T10:40:40+01:00</lastmod>
+	<changefreq>monthly</changefreq>
+	<priority>0.5</priority>
+</url>
+<url>
+	<loc>http://localhost/pikaturistike/index.php/property/38/en/asdasdasd</loc>
+	<lastmod>2018-11-21T10:40:40+01:00</lastmod>
 	<changefreq>monthly</changefreq>
 	<priority>0.5</priority>
 </url>

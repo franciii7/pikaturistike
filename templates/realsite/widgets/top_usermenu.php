@@ -27,7 +27,7 @@
         {is_logged_other}
         <ul class="breadcrumb">
           <li><a href="{login_url}"><i class="icon-wrench icon-white"></i> {lang_Admininterface}</a></li>
-        <?php if(isset($page_edit_url)&&!empty($page_edit_url)):?>
+        <?php if(isset($page_edit_url)&&!empty($page_edit_url)&&$this->session->userdata('type') != 'ADMINISTRATOR BASHKIE' && $this->session->userdata('PUNONJES BASHKIE')):?>
             <li><a href="{page_edit_url}"><i class="icon-edit icon-white"></i> <?php echo _l('edit page');?></a></li>
         <?php endif;?>
         <?php if(isset($category_edit_url)&&!empty($category_edit_url)) :?>

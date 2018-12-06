@@ -74,7 +74,7 @@
                                 <div class="form-group">
                                   <label class="col-lg-3 control-label"><?php echo lang('Address')?></label>
                                   <div class="col-lg-9">
-                                    <?php echo form_input('address', set_value('address', $estate->address), 'class="form-control" id="inputAddress" placeholder="'.lang('Address').'"')?>
+                                    <?php echo form_input('address', set_value('address', $estate->address), 'class="form-control" id="inputAddress" autocomplete="off" placeholder="'.lang('Address').'"')?>
                                   </div>
                                 </div>
                                 

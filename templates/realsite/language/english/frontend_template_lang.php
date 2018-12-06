@@ -37,7 +37,7 @@ $lang['Realestates'] = "Locations";
 $lang['Results'] = "Results";
 $lang['Locationonmap'] = "Location on map";
 $lang['Noestates'] = "No locations found";
-$lang[''] = "";
+$lang['You are here'] = "You are here";
 
 $lang['Description'] = "Description";
 $lang['Generalamenities'] = "General amenities";

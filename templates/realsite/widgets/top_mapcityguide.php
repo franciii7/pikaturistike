@@ -28,15 +28,18 @@
 </style>
 
 <script>
-function getCurrentLocationOSM(_map) {
-    map.on('locationfound', onLocationFound);
-    map.locate({setView: true, watch: true, maxZoom: 12});
-}
+var myMarkerOSM = null;
 function onLocationFound(e) {
-    var radius = e.accuracy / 2;
-    L.marker(e.latlng).addTo(map)
-        .bindPopup("You are within " + radius + " meters from this point").openPopup();
-    L.circle(e.latlng, radius).addTo(map);
+    //var radius = e.accuracy / 2;
+    
+    if(!myMarkerOSM){
+        myMarkerOSM = L.marker(e.latlng).bindPopup("<?php echo(lang_check('You are here'))?>");
+        myMarkerOSM.addTo(map);
+        myMarkerOSM.openPopup();
+    }else{
+        myMarkerOSM.setLatLng(e.latlng); 
+    }
+    //L.circle(e.latlng, radius).addTo(map);
 }
 
 
@@ -54,8 +57,8 @@ function onLocationFound(e) {
                 <?php endif; ?>
                 zoom: {settings_zoom}+1,
                 scrollWheelZoom: scrollWheelEnabled,
-                dragging: !L.Browser.mobile,
-                tap: !L.Browser.mobile
+                //dragging: !L.Browser.mobile,
+                //tap: !L.Browser.mobile
             });     
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -84,7 +87,9 @@ function onLocationFound(e) {
                 markers.push(marker);
             <?php endforeach; ?>
             map.addLayer(clusters);
-            getCurrentLocationOSM(map);
+            
+            map.locate({setView: true, watch: true, maxZoom: 12});
+            map.on('locationfound', onLocationFound);
         <?php else:?>
         var style_map = mapStyle || '';
         

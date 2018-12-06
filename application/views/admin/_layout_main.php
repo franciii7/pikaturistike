@@ -142,7 +142,7 @@
           <!-- Search form -->
           <div class="sidebar-widget">
              <?php echo form_open('admin/dashboard/search');?>
-              	<input type="text" class="form-control" name="search" placeholder="<?php echo lang_check('Search')?>" />
+              	<input type="text" class="form-control" name="search" autocomplete="off" placeholder="<?php echo lang_check('Search')?>" />
             <?php echo form_close();?>
           </div>
 
