@@ -32,7 +32,7 @@
         
         <div class="row">
             <div class="col-md-12"> 
-                <div class="col-md-offset-10"><?php echo anchor('admin/user/edit', '<i class="icon-plus"></i>&nbsp;&nbsp;'.lang('Add a new user'), 'class="btn btn-primary"')?>
+                <div class="col-md-6"><?php echo anchor('admin/user/edit', '<i class="icon-plus"></i>&nbsp;&nbsp;'.lang('Add a new user'), 'class="btn btn-primary"')?>
                 <?php echo anchor('admin/user/export', '<i class="icon-arrow-down"></i>&nbsp;&nbsp;'.lang('Export user list'), 'class="btn btn-info"')?>
                 <?php if(($this->session->userdata('type') == 'ADMIN' || $this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE') && config_db_item('user_custom_fields_enabled') === TRUE): ?>
                     <?php echo anchor('admin/user/custom_fields/', '<i class="icon-list-alt"></i>&nbsp;&nbsp;'.lang_check('Custom fields'), 'class="btn btn-success pull-right"  style=""')?>

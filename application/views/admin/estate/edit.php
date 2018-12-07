@@ -242,7 +242,7 @@
                                             <div class="form-group <?php echo (!$val_option->is_frontend && $this->session->userdata('type') == 'AGENT_LIMITED'?' hidden':'') ?>">
                                                 <label class="col-lg-3 control-label"><?php echo $required_notice.$val_option->option?> <?php if(!empty($options_lang[$key][$key_option]->hint)):?><i class="icon-question-sign hint" data-hint="<?php echo $options_lang[$key][$key_option]->hint;?>"></i><?php endif;?></label>
                                               <div class="<?php echo empty($options_lang[$key][$key_option]->prefix)&&empty($options_lang[$key][$key_option]->suffix)?'col-lg-9':'col-lg-6'; ?>">
-                                                <?php echo form_input('option'.$val_option->id.'_'.$key, set_value('option'.$val_option->id.'_'.$key, isset($estate->{'option'.$val_option->id.'_'.$key})?$estate->{'option'.$val_option->id.'_'.$key}:''), 'class="form-control '.$val_option->type.'" id="inputOption_'.$key.'_'.$val_option->id.'" placeholder="'.$val_option->option.'" '.$required_text.' '.$max_length_text)?>
+                                                <?php echo form_input('option'.$val_option->id.'_'.$key, set_value('option'.$val_option->id.'_'.$key, isset($estate->{'option'.$val_option->id.'_'.$key})?$estate->{'option'.$val_option->id.'_'.$key}:''), 'class="form-control '.$val_option->type.'" id="inputOption_'.$key.'_'.$val_option->id.'" placeholder="'.$val_option->option.'" '.$required_text.' '.$max_length_text. 'required')?>
                                               </div>
                                               <?php if(!empty($options_lang[$key][$key_option]->prefix) || !empty($options_lang[$key][$key_option]->suffix)): ?>
                                               <div class="col-lg-3">
@@ -265,7 +265,7 @@
 
                                                 $drop_selected = set_value('option'.$val_option->id.'_'.$key, isset($estate->{'option'.$val_option->id.'_'.$key})?$estate->{'option'.$val_option->id.'_'.$key}:'');
                                                 
-                                                echo form_dropdown('option'.$val_option->id.'_'.$key, $drop_options, $drop_selected, 'class="form-control" id="inputOption_'.$key.'_'.$val_option->id.'" placeholder="'.$val_option->option.'" '.$required_text)
+                                                echo form_dropdown('option'.$val_option->id.'_'.$key, $drop_options, $drop_selected, 'class="form-control" id="inputOption_'.$key.'_'.$val_option->id.'" placeholder="'.$val_option->option.'" '.$required_text. 'required')
                                                 
                                                 ?>
                                                 <?php //=form_dropdown('option'.$val_option->id.'_'.$key, explode(',', $options_lang[$key][$key_option]->values), set_value('option'.$val_option->id.'_'.$key, isset($estate->{'option'.$val_option->id.'_'.$key})?$estate->{'option'.$val_option->id.'_'.$key}:''), 'class="form-control" id="inputOption_'.$val_option->id.'" placeholder="'.$val_option->option.'"')?>

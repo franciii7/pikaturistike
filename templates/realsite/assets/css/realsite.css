@@ -5821,7 +5821,9 @@ h1.page-header {
   font-size: 28px;
   line-height: 60px;
   margin: 0px 0px 30px 0px;
-  padding: 0px; }
+  padding: 0px; 
+  padding-left: 5px !important;
+}
 
 h2.page-header {
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
@@ -6153,6 +6155,8 @@ ul {
   height: 300px; }
 
 .page-wrapper {
+  
+  background-size: cover;
   display: table;
   height: 100%;
   overflow: hidden;

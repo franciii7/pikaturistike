@@ -917,6 +917,7 @@
 }
 
 #main .control-group input,#main .control-group textarea,#main .control-group .uneditable-input {
+    border-radius:12px;
     width: 206px;
 }
 
@@ -1079,6 +1080,7 @@
 
     .admin-wrapper .admin-content-header-menu .nav {
         overflow: hidden;
+        color: #000 !important;
     }
 
     .admin-wrapper .header-navigation {
@@ -1215,7 +1217,7 @@
     color: #fff;
     background-color: #d9534f;
     border-color: #d43f3a;
-    border-radius: 0px;
+    border-radius: 18px;
     box-shadow: none;
 }
 

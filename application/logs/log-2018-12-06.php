@@ -63,3 +63,9 @@ ERROR - 2018-12-06 12:28:57 --> Severity: Notice  --> Undefined offset: 0 C:\wam
 ERROR - 2018-12-06 12:28:57 --> Severity: Notice  --> Undefined offset: 0 C:\wamp64\www\pikaturistike\application\views\admin\estate\index.php 230
 ERROR - 2018-12-06 15:13:54 --> Severity: Warning  --> unlink(C:\wamp64\www\pikaturistike\files/captcha/1544097705.4152.jpg): No such file or directory C:\wamp64\www\pikaturistike\system\helpers\captcha_helper.php 98
 ERROR - 2018-12-06 15:13:55 --> Severity: Warning  --> unlink(C:\wamp64\www\pikaturistike\files/captcha/1544097710.6515.jpg): No such file or directory C:\wamp64\www\pikaturistike\system\helpers\captcha_helper.php 98
+ERROR - 2018-12-06 15:43:48 --> Severity: Notice  --> Undefined offset: 0 C:\xampp\htdocs\pikaturistike\application\views\admin\estate\index.php 230
+ERROR - 2018-12-06 15:43:48 --> Severity: Notice  --> Undefined offset: 0 C:\xampp\htdocs\pikaturistike\application\views\admin\estate\index.php 230
+ERROR - 2018-12-06 15:43:48 --> Severity: Notice  --> Undefined offset: 0 C:\xampp\htdocs\pikaturistike\application\views\admin\estate\index.php 230
+ERROR - 2018-12-06 15:43:51 --> Severity: Notice  --> Undefined offset: 0 C:\xampp\htdocs\pikaturistike\application\views\admin\estate\index.php 230
+ERROR - 2018-12-06 15:43:51 --> Severity: Notice  --> Undefined offset: 0 C:\xampp\htdocs\pikaturistike\application\views\admin\estate\index.php 230
+ERROR - 2018-12-06 15:43:51 --> Severity: Notice  --> Undefined offset: 0 C:\xampp\htdocs\pikaturistike\application\views\admin\estate\index.php 230

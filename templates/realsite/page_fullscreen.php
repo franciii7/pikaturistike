@@ -7,19 +7,105 @@
     {has_color}
     <link href="assets/css/variants/admin_{color}.css" rel="stylesheet">
     {/has_color}
-    
+    <style>
+
+        @media (min-width: 768px) {
+            body.open .admin-navigation {
+                position: fixed;
+                height: 100%;
+                left: 0;
+                top: 0;
+                z-index: 99999;  
+                background-color:#d32f2f;
+            }
+            .open .admin-navigation-inner::-webkit-scrollbar-track
+            {
+                background-color: #D32F2F;
+            }
+
+            .open .admin-navigation-inner::-webkit-scrollbar
+            {
+                width: 4px;
+                background-color: #D32F2F;
+            }
+
+            .open .admin-navigation-inner::-webkit-scrollbar-thumb
+            {
+                background-color: #fff;
+            }
+
+            .admin-content-inner{
+                padding-left: 240px;
+            }
+            .admin-content-header-menu .menu-dark ul#nav-main li a {
+                color:white;
+            }
+            .open .admin-navigation-inner{
+                overflow-y: scroll;
+                height: 100%;
+                margin-top: 35px;
+                background-color: #c62f2f;
+                padding-bottom: 120px;
+            }
+            .avatar .lang-menu{
+                background-color:#d32f2f;
+            }
+            .admin-content-header-logo{
+                width:208px;
+                margin-top: -5px;
+            }
+            .admin-content-header-logo a{
+                font-size: 20px;
+            }
+        }
+
+@media (max-width: 767px) {
+    body.open .admin-navigation {
+		position: fixed;
+		height: 100%;
+		left: 0;
+		top: 0;
+		z-index: 99999;
+        width: 60px !important;
+    }
+	.admin-content-inner {
+        padding-left: 60px;
+    }
+    .admin-content-header-menu .menu-dark ul#nav-main li a{
+        color:inherit;
+    }
+    .nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus{
+        background-color: #fafafa;
+    }
+    .navbar-toggle .icon-bar{
+        background-color:white;
+    }
+    .open .admin-navigation-inner{
+        overflow-y: scroll;
+        height: 100%;
+        margin-top: -40px;
+        background-color: #c62f2f;
+        padding-bottom: 120px;
+    }
+    .admin-content-header-logo{
+        width:280px;
+    }
+}
+
+    </style>
 </head>
 
 <body class="open hide-secondary-sidebar fullscreen">
     <div class="admin-wrapper">
         <div class="admin-navigation">
-    <div class="admin-navigation-inner">
-        <nav>
-            <ul class="menu">
+        <ul class="menu">
                 <li class="avatar lang-menu">
                  {print_lang_menu}
                 </li>
             </ul>
+    <div class="admin-navigation-inner">
+        <nav>
+            <!---->
             <ul id="search_option_2" class="menu menu-onmap tabbed-selector_2">
                 <li class="all-button">
                     <a class="filter-type" href="#"><strong><i class="glyphicon glyphicon-th"></i></strong> <span><?php echo lang_check('All'); ?></span></a>
@@ -73,8 +159,8 @@
                 <div class="admin-content-header">
                     <div class="admin-content-header-inner">
                         <div class="container-fluid header-navigation">
-                            <div class="admin-content-header-logo" style="width:280px;">
-                                <a href="{homepage_url_lang}">
+                            <div class="admin-content-header-logo">
+                                <a href="{homepage_url_lang}" style="font-family: MontserratRegular;color:#fff;">
                                     <img src="<?php echo $website_logo_url;?>" alt="{settings_websitetitle}" style="max-height: 45px;max-width: 60px; margin-right:0px;">
                                     {settings_websitetitle}
                                 </a>
@@ -138,9 +224,7 @@
                 center: [<?php echo config_item('custom_map_center'); ?>],
                 <?php endif; ?>
                 zoom: {settings_zoom}+1,
-                scrollWheelZoom: scrollWheelEnabled,
-                dragging: !L.Browser.mobile,
-                tap: !L.Browser.mobile
+                scrollWheelZoom: scrollWheelEnabled
             });     
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
