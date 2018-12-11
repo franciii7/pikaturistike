@@ -987,7 +987,7 @@ class CI_DB_active_record extends CI_DB_driver {
 		$query = $this->query($sql);
 		$this->_reset_select();
 
-		if (!$query || $query->num_rows() == 0)
+		if ($query->num_rows() == 0)
 		{
 			return 0;
 		}

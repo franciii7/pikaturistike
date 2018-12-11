@@ -125,7 +125,7 @@
                                     </div>
                                 <?php elseif($this->session->userdata('type') == 'ADMINISTRATOR BASHKIE' || $this->session->userdata('type') == 'PUNONJES BASHKIE') : ?>
                                     <div class="form-group">
-                                    <label class="col-lg-3 control-label"><?php echo "Punonjësi"?></label>
+                                    <label class="col-lg-3 control-label"><?php echo "USER"?></label>
                                     <div class="col-lg-9">
                                        <?php 
                                         

@@ -315,18 +315,6 @@
 	<priority>0.5</priority>
 </url>
 <url>
-	<loc>http://localhost/pikaturistike/index.php/property/43/sq/tirane_1</loc>
-	<lastmod>2018-12-07T09:54:43+01:00</lastmod>
-	<changefreq>monthly</changefreq>
-	<priority>0.5</priority>
-</url>
-<url>
-	<loc>http://localhost/pikaturistike/index.php/property/43/en/tirane_1</loc>
-	<lastmod>2018-12-07T09:54:43+01:00</lastmod>
-	<changefreq>monthly</changefreq>
-	<priority>0.5</priority>
-</url>
-<url>
 	<loc>http://localhost/pikaturistike/index.php/property/41/sq/nona_fare</loc>
 	<lastmod>2018-11-22T16:12:17+01:00</lastmod>
 	<changefreq>monthly</changefreq>

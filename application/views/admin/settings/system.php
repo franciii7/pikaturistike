@@ -312,7 +312,7 @@
                                 </div>
                                 <?php endif; ?> 
                     
-                               <!-- <div class="form-group">
+                                <div class="form-group">
                                   <label class="col-lg-2 control-label"><?php echo lang_check('Word filtering')?></label>
                                   <div class="col-lg-10">
                                     <?php echo form_input('word_filtering', set_value('word_filtering', isset($settings['word_filtering'])?$settings['word_filtering']:''), 'class="form-control" id="inputword_filtering" placeholder="'.lang_check('Word filtering').'"')?>
@@ -326,12 +326,12 @@
                                   </div>
                                 </div>
                                  
-                               <div class="form-group">
+                                <div class="form-group">
                                   <label class="col-lg-2 control-label"><?php echo lang_check('Property submission disabled')?></label>
                                   <div class="col-lg-10">
                                     <?php echo form_checkbox('property_subm_disabled', '1', set_value('property_subm_disabled', isset($settings['property_subm_disabled'])?$settings['property_subm_disabled']:'0'), 'id="input_property_subm_disabled"')?>
                                   </div>
-                                </div> -->
+                                </div>
                                  
                                 <div class="form-group">
                                   <label class="col-lg-2 control-label"><?php echo lang_check('Page offline')?></label>
@@ -347,7 +347,7 @@
                                   </div>
                                 </div>
                                 
-                               <!-- <div class="form-group">
+                                <div class="form-group">
                                   <label class="col-lg-2 control-label"><?php _l('Enable quick submission')?></label>
                                   <div class="col-lg-10">
                                     <?php echo form_checkbox('enable_qs', '1', set_value('enable_qs', isset($settings['enable_qs'])?$settings['enable_qs']:'0'), 'id="input_enable_qs"')?>
@@ -359,7 +359,7 @@
                                   <div class="col-lg-10">
                                     <?php echo form_checkbox('multilang_on_qs', '1', set_value('multilang_on_qs', isset($settings['multilang_on_qs'])?$settings['multilang_on_qs']:'0'), 'id="input_multilang_on_qs"')?>
                                   </div>
-                                </div> -->
+                                </div>
                                <?php if(file_exists(APPPATH.'libraries/Clickatellapi.php')): ?>
                                 <div class="form-group">
                                   <label class="col-lg-2 control-label"><?php echo lang_check('Clickatell api key')?> (<?php echo lang_check('Define only one field api key or appi id')?>)</label>
