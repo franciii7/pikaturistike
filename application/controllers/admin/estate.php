@@ -98,7 +98,7 @@ class Estate extends Admin_Controller
             if($this->input->get_post('name_of_user')){
                 $this->db->select('property.name_of_user');
             }
-            prepare_search_query_GET(array($type_field, 'field_4', 'name_of_user'), array('property.id', 'address', 'search_values'));
+            prepare_search_query_GET(array($type_field, 'field_4', 'name_of_user'), array('property.id', 'property.address', 'search_values'));
         }
         
         $order_by = 'property.id DESC';

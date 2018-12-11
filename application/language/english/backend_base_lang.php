@@ -494,6 +494,7 @@ $lang['Featured price'] = "Featured price";
 $lang['Featured'] = "Featured";
 $lang['Withdrawal payment details'] = "Bank payment details";
 $lang['Translate with MyMemory API'] = "Translate with MyMemory API";
+$lang['Translate with Google API'] = "Translate with Google API";
 $lang['Facebook ID'] = "Facebook ID";
 $lang['Real estates'] = "Locations";
 $lang['Pages & menu'] = "Pages & menu";

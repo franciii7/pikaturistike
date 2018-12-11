@@ -25,9 +25,9 @@ define('APP_VERSION_REAL_ESTATE', '1.6.5');
 
 
 
-$strict_development_mode = FALSE;
+$strict_development_mode = TRUE;
 
-$strict_enable_error_reporting = FALSE;
+$strict_enable_error_reporting = TRUE;
  
 if( (strpos(dirname(__FILE__), '\xampp') === FALSE && $strict_development_mode === FALSE) ||
     file_exists('install.txt') )
