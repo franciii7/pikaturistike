@@ -34,7 +34,7 @@ class Reviews_m extends MY_Model {
         $listing->stars = 0;
         $listing->user_mail = '';
         $listing->message = '';
-        $listing->is_visible = 1;
+        $listing->is_visible = 0;
         
         return $listing;
 	}
@@ -57,6 +57,7 @@ class Reviews_m extends MY_Model {
     public function get_avarage_rating($property_id)
     {
         $this->db->where('listing_id', $property_id);
+        $this->db->where('is_visible', 1);
         $this->db->select_avg('stars');
         $query = $this->db->get($this->_table_name);
         

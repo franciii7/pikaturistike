@@ -3,10 +3,14 @@
     
 <?php if(config_db_item('map_version') =='open_street'):?>
 <?php
+
+
 $icon = 'assets/img/markers/marker_blue.png';
-if(file_exists(FCPATH.'templates/'.$settings_template.
-               '/assets/img/markers/'.$estate_data_option_6.'.png'))
+if(isset($estate_file_type_icon_url)){
+    $icon = $estate_file_type_icon_url;
+}else if(file_exists(FCPATH.'templates/'.$settings_template.'/assets/img/markers/'.$estate_data_option_6.'.png'))
     $icon = 'assets/img/markers/'.$estate_data_option_6.'.png';
+    
 ?>  
     
 $(document).ready(function(){
@@ -391,7 +395,7 @@ function getAddress (coord, selector) {
 
 <h2 class="page-header"><?php _l('Route to location'); ?></h2>
 <?php if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') :?>
-<a href="#" class="btn btn-primary" id='routemap-mylocation'><?php _l('Show distance from My Location');?></a>
+<!--<a href="#" class="btn btn-primary" id='routemap-mylocation'><?php //_l('Show distance from My Location');?></a>-->
 <?php endif; ?>
 
 <div class="map-route-company-wrapper">

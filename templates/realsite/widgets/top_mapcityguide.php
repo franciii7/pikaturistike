@@ -44,7 +44,6 @@ function onLocationFound(e) {
 }
 
 
-
  $(document).ready(function(){
         // option
         if($('#map').length){
@@ -69,6 +68,7 @@ function onLocationFound(e) {
 
             <?php foreach($all_estates as $item): ?>
                 <?php
+                
                     if(!isset($item['gps']))break;
                     if(empty($item['gps']))continue;
                 ?>
@@ -83,11 +83,14 @@ function onLocationFound(e) {
                         })
                     }
                 )/*.addTo(map)*/;
+                
+
                 marker.bindPopup("<?php echo _generate_popup($item, true); ?>", jpopup_customOptions);
                 clusters.addLayer(marker);
                 markers.push(marker);
             <?php endforeach; ?>
             map.addLayer(clusters);
+            
             
             map.locate({setView: false, watch: true, maxZoom: 12});
             map.on('locationfound', onLocationFound);
@@ -340,7 +343,7 @@ function onLocationFound(e) {
         </div>
     <?php endif; ?>   
 
-    <div id="map" class="map cityguide-map" data-transparent-marker-image="assets/img/transparent-marker-image.png" style="height:800px;"></div>
+    <div id="map" class="map cityguide-map" data-transparent-marker-image="assets/img/transparent-marker-image.png" style="height:500px;"></div>
         {template_search-filter-cityguide}<!-- /.map-filter-horizontal --> 
     
 </div><!-- /.map-wrapper -->

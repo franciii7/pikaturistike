@@ -219,6 +219,7 @@ class Frontend_Controller extends MY_Controller
             $this->data['page_id'] = '';
         }
         else if($this->data['page_id'] == 'login' || 
+                $this->data['page_id'] == 'register' || 
                 $this->data['page_id'] == 'myproperties' ||
                 $this->data['page_id'] == 'myprofile' ||
                 $this->data['page_id'] == 'myvisits' ||
@@ -489,6 +490,8 @@ class Frontend_Controller extends MY_Controller
         $this->data['login_url'] = site_url('admin/dashboard');
 
         $this->data['front_login_url'] = site_url('frontend/login/'.$this->data['lang_code']);
+        $this->data['front_register_url'] = site_url('frontend/register/'.$this->data['lang_code']);
+
         $this->data['myproperties_url'] = site_url('frontend/myproperties/'.$this->data['lang_code']);
         $this->data['myprofile_url'] = site_url('frontend/myprofile/'.$this->data['lang_code']);
         $this->data['myreservations_url'] = site_url('frontend/myreservations/'.$this->data['lang_code']);
@@ -781,7 +784,7 @@ class Frontend_Controller extends MY_Controller
     {
         $this->load->model('favorites_m');
         $favorites_list = array();
-        
+
         // Check login and fetch user id
         $this->load->library('session');
         $this->load->model('user_m');
@@ -792,8 +795,8 @@ class Frontend_Controller extends MY_Controller
                 $favorites_list[$value->property_id] = true;
             }
         }
-        
-        
+
+
         foreach($results_obj as $key=>$estate_arr)
         {
             $estate = array();
@@ -809,9 +812,9 @@ class Frontend_Controller extends MY_Controller
             $estate['is_favorite'] = FALSE;
             if(isset($favorites_list[$estate_arr->id]))
                 $estate['is_favorite'] = TRUE;
-            
+
             $json_obj = json_decode($estate_arr->json_object);
-            
+
             foreach($options_name as $key2=>$row2)
             {
                 $key1 = $row2->option_id;
@@ -821,17 +824,17 @@ class Frontend_Controller extends MY_Controller
                     $row1 = $json_obj->{"field_$key1"};
                     if(substr($row1, -2) == ' -')$row1=substr($row1, 0, -2);
                     $estate['option_'.$key1] = $row1;
-                    
+
                     if(is_numeric($row1))
                         $estate['option_'.$key1] = (int)$row1;
-                    
+
                     $estate['option_chlimit_'.$key1] = character_limiter(strip_tags($row1), 80);
                     $estate['option_icon_'.$key1] = '';
-                    
+
                     if(!empty($row1))
                     {
                         $estate['has_option_'.$key1][] = array('count'=>count($row1));
-                        
+
                         if(isset($this->data['options_obj_'.$key1]->type) && ($this->data['options_obj_'.$key1]->type == 'CHECKBOX' || $this->data['options_obj_'.$key1]->type == 'INPUTBOX'))
                         if(!empty($this->data['options_obj_'.$key1]->image_filename))
                         {
@@ -847,7 +850,7 @@ class Frontend_Controller extends MY_Controller
                     }
                 }
             }
-            
+
             // [START] custom price field
             $estate['custom_price'] = '';
             if(!empty($estate['option_36']))
@@ -858,7 +861,7 @@ class Frontend_Controller extends MY_Controller
                     $estate['custom_price'].=' / ';
                 $estate['custom_price'].=$this->data['options_prefix_37'].$estate['option_37'].$this->data['options_suffix_37'];
             }
-                
+
             if(empty($estate['option_37']) && !empty($estate['option_56']))
             {
                 if(!empty($estate['custom_price']))
@@ -883,7 +886,7 @@ class Frontend_Controller extends MY_Controller
                             $estate['icon'] = base_url('files/'.$gallery_images[$value_index]);
                         }
                     }
-                    
+
                     if(!$uloaded_set)
                     if(file_exists(FCPATH.'templates/'.$this->data['settings_template'].
                                    '/assets/img/markers/'.$this->data['color_path'].$estate['option_6'].'.png'))
@@ -893,7 +896,7 @@ class Frontend_Controller extends MY_Controller
                     $estate['icon'] = 'assets/img/markers/'.$estate['option_6'].'.png';
                 }
             }
-            
+
             /* [badgets] */
             $estate['badget'] = 'assets/img/badgets/empty.png';
             if(isset($estate['option_38']))
@@ -902,7 +905,7 @@ class Frontend_Controller extends MY_Controller
                 {
                     // if uploaded
                     $uloaded_set = false;
-                    if(!empty($this->data['options_obj_38']->image_gallery)) 
+                    if(!empty($this->data['options_obj_38']->image_gallery))
                     {
                         $gallery_images = explode(',', $this->data['options_obj_38']->image_gallery);
                         $value_index = array_search($json_obj->field_38, $this->data['options_values_arr_38']);
@@ -912,24 +915,24 @@ class Frontend_Controller extends MY_Controller
                             $estate['badget'] = base_url('files/'.$gallery_images[$value_index]);
                         }
                     }
-                    
+
                     if(!$uloaded_set)
                     if(file_exists(FCPATH.'templates/'.$this->data['settings_template'].
                                    '/assets/img/badgets/'.$estate['option_38'].'.png'))
                     $estate['badget'] = 'assets/img/badgets/'.$estate['option_38'].'.png';
-                    
+
                 }
             }
             /* [/badgets] */
-            
+
             // [fetch marker by type uploaded image]
-            
+
             // Check if images are uploaded
             if(config_db_item('field_file_upload_enabled') === TRUE && !empty($this->data['options_obj_2']->image_gallery) && isset($this->data['options_values_arr_2']) && !empty($this->data['options_values_arr_2']))
             {
                 // Get selected type index
                 $image_index = array_search($estate['option_2'], $this->data['options_values_arr_2']);
-                
+
                 // Explode images
                 $images = explode(',', $this->data['options_obj_2']->image_gallery);
 
@@ -937,14 +940,14 @@ class Frontend_Controller extends MY_Controller
                 if(!empty($images[$image_index]))
                 {
                     $image_filename = 'files/'.$images[$image_index];
-                    
+
                     if(file_exists(FCPATH.$image_filename))
                         $estate['icon'] = base_url($image_filename);
                 }
             }
 
             // [/fetch marker by type uploaded image]
-            
+
             // Url to preview
             if(isset($json_obj->field_10))
             {
@@ -954,7 +957,7 @@ class Frontend_Controller extends MY_Controller
             {
                 $estate['url'] = slug_url($this->data['listing_uri'].'/'.$estate_arr->id.'/'.$this->data['lang_code']);
             }
-            
+
             // Thumbnail
             if(!empty($estate_arr->image_filename) and file_exists(FCPATH.'files/thumbnail/'.$estate_arr->image_filename))
             {
@@ -964,7 +967,7 @@ class Frontend_Controller extends MY_Controller
             {
                 $estate['thumbnail_url'] = 'assets/img/no_image.jpg';
             }
-            
+
             // [agent second image]
             if(isset($estate_arr->agent_rep_id))
             if(isset($this->data['images_'.$estate_arr->agent_rep_id]))
@@ -972,12 +975,12 @@ class Frontend_Controller extends MY_Controller
                 if(isset($this->data['images_'.$estate_arr['agent_rep_id']][1]))
                 $estate['agent_sec_img_url'] = $this->data['images_'.$estate_arr['agent_rep_id']][1]->thumbnail_url;
             }
-            
+
             $estate['has_agent_sec_img'] = array();
             if(isset($estate['agent_sec_img_url']))
                 $estate['has_agent_sec_img'][] = array('count'=>'1');
             // [/agent second image]
-            
+
             $results_array[] = $estate;
         }
     }

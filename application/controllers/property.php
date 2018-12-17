@@ -35,9 +35,9 @@ class Property extends Frontend_Controller
     }
 
     public function index()
-    {
+    { 
         $this->load->model('userattend_m');
-        
+
         $print = false;
         if($this->input->get('v')=='print')
             $print = true;
@@ -47,9 +47,9 @@ class Property extends Frontend_Controller
         $property_slug = (string) $this->uri->segment(4);
         $this->data['page_keywords']='';
         $lang_id = $this->data['lang_id'];
-        
+
         $option_sum = '';
-        
+
         /* Fetch estate data */
         $this->data['property_id'] = $property_id;
         
@@ -66,7 +66,9 @@ class Property extends Frontend_Controller
         //$this->data['options'] = $options = $this->option_m->get_options($lang_id);
         $options_name = $this->option_m->get_lang(NULL, FALSE, $lang_id);
         $this->data['options_name'] = &$options_name;
+        
         $option_categories = array();
+        
         foreach($options_name as $key=>$row)
         {
             $this->data['options_obj_'.$row->option_id] = $row;
@@ -90,7 +92,9 @@ class Property extends Frontend_Controller
             $this->data['category_options_count_'.$row->parent_id] = 0;
             
             $option_categories[$row->option_id] = $row->parent_id;
+            
         }
+        
         /* End fetch options names */
         
         /* Fetch estate data */
@@ -119,8 +123,9 @@ class Property extends Frontend_Controller
         $json_obj = json_decode($estate_data['json_object']);
         
         $categories_hidden_preview = array();
-        
+       
         if(!empty($json_obj))
+        
         foreach($json_obj as $key_json=>$val)
         {
             $j_parts = explode('_',$key_json);
@@ -209,6 +214,26 @@ class Property extends Frontend_Controller
             }
         }
         
+
+        if(config_db_item('field_file_upload_enabled') === TRUE && !empty($this->data['options_obj_2']->image_gallery))
+        {
+            // Get selected type index
+            $image_index = array_search( $this->data['estate_data_option_2'], $this->data['options_values_arr_2']);
+            
+            // Explode images
+            $images = explode(',', $this->data['options_obj_2']->image_gallery);
+
+            // set if image exists
+            if(!empty($images[$image_index]))
+            {
+                $image_filename = 'files/'.$images[$image_index];
+                
+                if(file_exists(FCPATH.$image_filename))
+                    $this->data['estate_file_type_icon_url'] = base_url($image_filename);
+            }
+        }
+
+
         if(!isset($this->data['estate_data_option_10']))$this->data['estate_data_option_10'] = '';
         $url_title = url_title_cro($this->data['estate_data_option_10']);
         if(empty($url_title))$url_title='title_undefined';
@@ -403,7 +428,7 @@ class Property extends Frontend_Controller
         $this->data['all_estates'] = array();
         $results_obj = $this->estate_m->get_by($where, false, 100, 'property.is_featured DESC, '.$order, 
                                                0, $search_array);
-        $this->generate_results_array($results_obj, $this->data['all_estates'], $options_name); 
+        $this->generate_results_array($results_obj, $this->data['all_estates'], $options_name);
         $this->data['all_estates_center'] = calculateCenter($this->data['all_estates']);
         
         $this->data['has_no_all_estates'] = array();
@@ -412,7 +437,7 @@ class Property extends Frontend_Controller
             $this->data['has_no_all_estates'][] = array('count'=>count($this->data['all_estates']));
         }
         /* [/Get all estates data] */
-
+        
         $this->data['agent_estates'] = array();
         if(isset($agent['id']))
         {
@@ -618,7 +643,7 @@ class Property extends Frontend_Controller
                 $data['user_id'] = $this->session->userdata('id');
                 $data['stars'] = $data_review['stars'];
                 $data['message'] = $data_review['message'];
-                $data['is_visible'] = 1;
+                $data['is_visible'] = 0;
                 $data['date_publish'] = date('Y-m-d H:i:s');
                 if(!isset($this->data['loged_user']))
                 {
@@ -628,7 +653,7 @@ class Property extends Frontend_Controller
                 
                 $this->reviews_m->save($data);
                 
-                $reviews_all = $this->reviews_m->get_listing(array('listing_id'=>$property_id));
+                $reviews_all = $this->reviews_m->get_listing(array('listing_id'=>$property_id,'is_visible'=>1));
                 $avarage_stars = intval($this->reviews_m->get_avarage_rating($property_id)+0.5);
                 
                 /* save avarage_stars into db tabe property  */
@@ -919,7 +944,7 @@ class Property extends Frontend_Controller
                 $this->data['reviews_submitted'] = $this->reviews_m->check_if_exists($this->session->userdata('id'), $property_id); 
             }
             
-            $this->data['reviews_all'] = $this->reviews_m->get_listing(array('listing_id'=>$property_id));
+            $this->data['reviews_all'] = $this->reviews_m->get_listing(array('listing_id'=>$property_id,'is_visible'=>1));
             
             $this->data['avarage_stars'] = intval($this->reviews_m->get_avarage_rating($property_id)+0.5);
 

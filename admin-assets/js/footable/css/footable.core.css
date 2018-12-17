@@ -155,6 +155,7 @@
 .footable-row-detail-inner {
   display: table;
 }
+
 .footable-row-detail-row {
   display: table-row;
   line-height: 1.5em;
@@ -172,6 +173,9 @@
 }
 .footable-row-detail-value {
   display: table-cell;
+}
+.footable-row-detail-value:last-child {
+  border: none;
 }
 .footable-odd {
   background-color: #f7f7f7;

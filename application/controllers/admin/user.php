@@ -634,10 +634,10 @@ class User extends Admin_Controller
 	}
     
     public function forgetpassword()
-    {
+    {       
 	    // Redirect a user if he's alredy logged in'
 	    $dashboard = 'admin/dashboard';
-	    $this->user_m->loggedin() == FALSE || redirect($dashboard);
+	    $this->user_m->loggedin() == FALSE || redirect("");
         
         
         // Set up the form

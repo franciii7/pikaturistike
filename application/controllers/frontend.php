@@ -216,6 +216,7 @@ class Frontend extends Frontend_Controller
       
     private function load_head_data()
     {
+        
         /* Helpers */
         $this->data['year'] = date('Y');
         /* End helpers */
@@ -1302,22 +1303,28 @@ class Frontend extends Frontend_Controller
     
     public function myprofile()
     {
-        $this->check_login();
-        $this->load_head_data();
+        if($this->user_m->loggedin() == TRUE ){
+            //$this->check_login();
+            $this->load_head_data();
 
-        $this->data['content_language_id'] = $this->data['lang_id'];
-        
-        if($this->session->userdata('type') == 'USER')
-        {
-            // Load user data
-            $this->data['user_data'] = $this->user_m->get_array($this->session->userdata('id'));
+            $this->data['content_language_id'] = $this->data['lang_id'];
             
-            $id = $this->data['user_data']['id'];
-            //print_r($this->data['user_data']);
-            
-            // [Custom fields]
-            custom_fields_load($this->data, $this->data['user_data']['custom_fields']);
-            // [/Custom fields]
+            if($this->session->userdata('type') == 'USER')
+            {
+                // Load user data
+                $this->data['user_data'] = $this->user_m->get_array($this->session->userdata('id'));
+                
+                $id = $this->data['user_data']['id'];
+                //print_r($this->data['user_data']);
+                
+                // [Custom fields]
+                custom_fields_load($this->data, $this->data['user_data']['custom_fields']);
+                // [/Custom fields]
+            }
+            else
+            {
+                redirect('');
+            }
         }
         else
         {
@@ -1474,6 +1481,262 @@ class Frontend extends Frontend_Controller
         echo str_replace('assets/', base_url('templates/'.$this->data['settings_template']).'/assets/', $output);
     }
     
+    public function register()
+    { 
+        
+        $this->load_head_data();
+        
+        $current_language =  $this->language_m->get_name($this->data['lang_code']);
+        if(empty($current_language))$current_language='';
+
+
+ // Main page data
+        $this->data['page_navigation_title'] = lang_check('Register');
+        $this->data['page_title'] = lang_check('Register');
+        $this->data['page_body']  = '';
+        $this->data['page_description']  = '';
+        $this->data['page_keywords']  = '';
+ // Get templates
+        $templatesDirectory = opendir(FCPATH.'templates/'.$this->data['settings_template'].'/components');
+        // get each template
+        $template_prefix = 'page_';
+        $this->data['is_registration'] = true;
+        $this->data['is_login'] = false;
+        if(isset($_POST['password_confirm']) || $this->session->flashdata('error_registration') != '')
+        {
+            if(config_db_item('property_subm_disabled')==TRUE):
+                exit('Registration disabled');
+            endif;
+            $this->data['is_registration'] = true;
+            
+            $rules = $this->user_m->rules_admin;
+            $rules['name_surname']['label'] = 'lang:FirstLast';
+            $rules['password']['rules'] .= '|required';
+            $rules['type']['rules'] = 'trim';
+            $rules['language']['rules'] = 'trim';
+            $rules['mail']['label'] = 'lang:Email';
+            $rules['mail']['rules'] .= '|valid_email';
+            
+            if(config_db_item('register_reduced') === TRUE)
+            {
+                $rules['name_surname']['rules'] = 'trim|xss_clean';
+                $rules['username']['rules'] = 'trim|xss_clean';
+                
+                $e_mail = $this->input->post('mail');
+                if(!empty($e_mail))
+                {
+                    if(empty($_POST['username']))
+                        $_POST['username'] = $e_mail;
+                    if(empty($_POST['name_surname']))
+                        $_POST['name_surname'] = $e_mail;
+                }
+            }
+            
+            if(config_item('captcha_disabled') === FALSE)
+                $rules['captcha'] = array('field'=>'captcha', 'label'=>'lang:Captcha', 
+                                          'rules'=>'trim|required|callback_captcha_check|xss_clean');
+                                          
+            if(config_item('recaptcha_site_key') !== FALSE)
+                $rules['g-recaptcha-response'] = array('field'=>'g-recaptcha-response', 'label'=>'lang:Recaptcha', 
+                                                        'rules'=>'trim|required|callback_captcha_check|xss_clean');
+            
+            $this->form_validation->set_rules($rules);
+
+            // Process the form
+            if($this->form_validation->run() == TRUE)
+            {
+                if($this->config->item('app_type') == 'demo')
+                {
+                    $this->session->set_flashdata('error_registration', 
+                            lang_check('Data editing disabled in demo'));
+                    redirect('frontend/register/'.$this->data['lang_code']);
+                    exit();
+                }
+                
+                $data = $this->user_m->array_from_post(array('name_surname', 'mail', 'password', 'username',
+                                                             'address', 'description', 'mail', 'phone','phone2', 'type', 'language', 'activated', 'type'));
+                if($data['password'] == '')
+                {
+                    unset($data['password']);
+                }
+                else
+                {
+                    $data['password'] = $this->user_m->hash($data['password']);
+                }
+
+                if($data['type'] == 'AGENT' && config_db_item('dropdown_register_enabled') === TRUE)
+                {
+                    $data['type'] = 'AGENT';
+                }
+                else
+                {
+                    $data['type'] = 'USER';
+                }
+                
+                $data['activated'] = '1';
+                if(config_db_item('email_activation_enabled') === TRUE)
+                    $data['activated'] = '0';
+                
+                $data['description'] = '';
+                $data['language'] = $current_language;
+                $data['registration_date'] = date('Y-m-d H:i:s');
+                $data['mail_verified'] = 0;
+                $data['phone_verified'] = 0;
+                
+                if(empty($data['phone']))$data['phone'] = '';
+                if(empty($data['phone2']))$data['phone2'] = '';
+                if(empty($data['address']))$data['address'] = '';
+
+                if($this->config->item('def_package') !== FALSE && $data['type'] == 'USER')
+                {
+                    $data['package_id'] = $this->config->item('def_package');
+                    
+                    $this->load->model('packages_m');
+                    $package = $this->packages_m->get($data['package_id']);
+                    
+                    if(is_object($package))
+                    {
+                        $days_extend = $package->package_days;
+                    
+                        if($days_extend > 0)
+                            $data['package_last_payment'] = date('Y-m-d H:i:s', time() + 86400*intval($days_extend));
+                    }
+                }
+                
+                if($this->config->item('def_package_agent') !== FALSE && $data['type'] == 'AGENT')
+                {
+                    $data['package_id'] = $this->config->item('def_package_agent');
+                    
+                    $this->load->model('packages_m');
+                    $package = $this->packages_m->get($data['package_id']);
+                    
+                    if(is_object($package))
+                    {
+                        $days_extend = $package->package_days;
+                    
+                        if($days_extend > 0)
+                            $data['package_last_payment'] = date('Y-m-d H:i:s', time() + 86400*intval($days_extend));
+                    }
+                }
+                
+                $user_id = $this->user_m->save($data, NULL);
+                
+                $message_mail = '';
+
+                if(!empty($data['mail']) && config_db_item('email_activation_enabled') === TRUE)
+                {
+                    $data['mail_verified'] = 0;
+                    // [START] Activation email
+                    
+                    //if(ENVIRONMENT != 'development')
+                    $this->load->library('email');
+                    $config_mail['mailtype'] = 'html';
+                    $this->email->initialize($config_mail);
+                    $this->email->from($this->data['settings_noreply'], lang_check('Web page'));
+                    $this->email->to($data['mail']);
+                    
+                    $this->email->subject(lang_check('Activate your account'));
+                    
+                    $new_hash = substr($this->user_m->hash($data['mail'].$user_id), 0, 5);
+                    
+                    $data_m = array();
+                    $data_m['name_surname'] = $data['name_surname'];
+                    $data_m['username'] = $data['username'];
+                    $data_m['activation_link'] = '<a href="'.site_url('admin/user/verifyemail/'.$user_id.'/'.$new_hash).'">'.lang_check('Activate your account').'</a>';
+                    $data_m['login_link'] = '<a href="'.site_url('frontend/login/').'?username='.$data['username'].'">'.lang_check('login_link').'</a>';
+                    
+                    $message = $this->load->view('email/email_activation', array('data'=>$data_m), TRUE);
+                    
+                    $this->email->message($message);
+                    if ( ! $this->email->send())
+                    {
+                        $message_mail = ', '.lang_check('Problem sending email to user');
+                    }
+                    // [END] Activation email
+                }
+
+                $submit = true;
+                if(!empty($data['phone']) && !empty($user_id) &&
+                   (config_db_item('clickatell_api_id') != FALSE || config_db_item('clickatell_api_key') != FALSE) && config_db_item('phone_verification_enabled') === TRUE &&
+                   file_exists(APPPATH.'libraries/Clickatellapi.php'))
+                {
+                    $data['phone_verified'] = 0;
+                    
+                    //Send SMS for phone verification
+                    $new_hash = substr($this->user_m->hash($data['phone'].$user_id), 0, 5);
+                    
+                    $message='';
+                    $message.=lang_check('Your code').": \n";
+                    $message.=$new_hash."\n";
+                    $message.=lang_check('Verification link').": \n";
+                    $message.=site_url('admin/user/verifyphone/'.$user_id.'/'.$new_hash);
+                    
+                    $this->load->library('clickatellapi');
+                    $return_sms = $this->clickatellapi->send_sms($message, $data['phone']);
+                    
+                    if(substr_count($return_sms, 'successnmessage') == 0)
+                    {
+                        // nginx causing error 502
+                        $return_sms = json_decode($return_sms);
+                        $this->user_m->delete($user_id);
+
+                        $this->_clickatellapi_error = $return_sms->message;
+                        $rules = array();
+                        $rules['phone'] = array('field'=>'phone', 'label'=>'lang:Phone', 
+                                        'rules'=>'callback__phone_clickatellapi_check');
+            
+                        $this->form_validation->set_rules($rules);
+                        $this->form_validation->run();
+                        $submit = false;                        
+                    }
+                }
+                
+                if($submit) {
+                
+                    if(config_db_item('email_activation_enabled') === TRUE)
+                    {
+                        $this->session->set_flashdata('error_registration', 
+                            lang_check('Thanks on registration, please check and activate your email to login').$message_mail);
+                    
+                    } else if(!empty($data['phone']) && !empty($user_id) &&
+                        (config_db_item('clickatell_api_id') != FALSE || config_db_item('clickatell_api_key') != FALSE) && config_db_item('phone_verification_enabled') === TRUE &&
+                        file_exists(APPPATH.'libraries/Clickatellapi.php'))
+                    {
+                        $this->session->set_flashdata('error_registration', 
+                                lang_check('Thanks on registration, we sent code for activation on your phone number, please check and activate').' '.$data['phone']);
+                    }
+                    else
+                    {
+                        $this->session->set_flashdata('error_registration', 
+                                lang_check('Thanks on registration, you can login now').$message_mail);
+                    }
+
+                    if(!empty($user_id) && 
+                        config_item('registration_interest_enabled') === TRUE && 
+                        config_item('tree_field_enabled') === TRUE)
+                    {
+                        redirect('fresearch/treealerts/'.$this->data['lang_code'].'/'.$user_id.'/'.md5($user_id.config_item('encryption_key')));
+                    }
+
+
+                    redirect('frontend/register/'.$this->data['lang_code'], 'refresh');
+                }
+            }
+        }
+        while($tempFile = readdir($templatesDirectory)) {
+            if ($tempFile != "." && $tempFile != ".." && strpos($tempFile, '.php') !== FALSE) {
+                if(substr_count($tempFile, $template_prefix) == 0)
+                {
+                    $template_output = $this->parser->parse($this->data['settings_template'].'/components/'.$tempFile, $this->data, TRUE);
+                    //$template_output = str_replace('assets/', base_url('templates/'.$this->data['settings_template']).'/assets/', $template_output);
+                    $this->data['template_'.substr($tempFile, 0, -4)] = $template_output;
+                }
+            }
+        }
+        $output = $this->parser->parse($this->data['settings_template'].'/register.php', $this->data, TRUE);
+        echo str_replace('assets/', base_url('templates/'.$this->data['settings_template']).'/assets/', $output);
+    }
+
     public function editproperty()
     {
         $this->check_login();
@@ -2080,6 +2343,11 @@ class Frontend extends Frontend_Controller
     
     public function login()
     {
+        if($this->uri->segment(3)==null
+        || (string) $this->uri->segment(3)=="")
+        {
+            redirect("/frontend/login/en");
+        }
         if($this->user_m->loggedin() == TRUE)
         {
     	    $dashboard = 'admin/dashboard';
@@ -2113,306 +2381,307 @@ class Frontend extends Frontend_Controller
         $current_language =  $this->language_m->get_name($this->data['lang_code']);
         if(empty($current_language))$current_language='';
         
-        
-        if($this->config->item('facebook_api_version') == '2.4' || floatval($this->config->item('facebook_api_version')) >= 2.4
-              || version_compare($this->config->item('facebook_api_version'), 2.4, '>') 
-            )
+        //fb
         {
-            $user_facebook = FALSE;
-            if($this->config->item('appId') != '')
-            {   
-        		$this->load->library('facebook/Facebook'); // Automatically picks appId and secret from config
-        		$user_facebook = $this->facebook->getUser();
-            }
+            // if($this->config->item('facebook_api_version') == '2.4' || floatval($this->config->item('facebook_api_version')) >= 2.4
+            //     || version_compare($this->config->item('facebook_api_version'), 2.4, '>') 
+            //     )
+            // {
+            //     $user_facebook = FALSE;
+            //     if($this->config->item('appId') != '')
+            //     {   
+            //         $this->load->library('facebook/Facebook'); // Automatically picks appId and secret from config
+            //         $user_facebook = $this->facebook->getUser();
+            //     }
 
-            if ($user_facebook !== FALSE) {
-                try {
-                    $data['user_profile'] = $user_facebook;
-                    
-                    if(!isset($data['user_profile']['email']))
-                    {
-                        $this->session->set_flashdata('error', 
-                                lang_check('Email permissions on Facebook is required to login'));
-                        $this->facebook->destroySession();
-                        redirect('frontend/login/'.$this->data['lang_code']); 
-                        exit();
-                    }
-    
-                    // Register and login with Facebook if Facebook ID didn't exists'
-                    $user_face = $this->user_m->get_by(array('password'=>$this->user_m->hash($data['user_profile']['id']), 
-                                                             'username'=>$data['user_profile']['email']), true);
-                    
-                    if(count($user_face) == 0)
-                    {
-                        // Check if email already exists
-                        if($this->user_m->if_exists($data['user_profile']['email']) === TRUE)
-                        {
-                            $this->facebook->destroySession();
-                            
-                            $this->session->set_flashdata('error', 
-                                    lang_check('Email already exists in database, please contact administrator or reset password'));
-                            
-                            redirect('frontend/login/'.$this->data['lang_code']); 
-                            exit();
-                        }
+            //     if ($user_facebook !== FALSE) {
+            //         try {
+            //             $data['user_profile'] = $user_facebook;
                         
-                        // Register user
-                        $data_f['username'] = $data['user_profile']['email'];
-                        $data_f['mail'] = $data['user_profile']['email'];
-                        $data_f['password'] = $this->user_m->hash($data['user_profile']['id']);
-                        $data_f['facebook_id'] = $data['user_profile']['id'];
-                        $data_f['type'] = 'USER';
-                        $data_f['name_surname'] = $data['user_profile']['name'];
-                        $data_f['activated'] = '1';
-                        $data_f['description'] = '';
-                        $data_f['language'] = $current_language;
-                        $data_f['registration_date'] = date('Y-m-d H:i:s');
-                        $data_f['mail_verified'] = 0;
-                        $data_f['phone_verified'] = 0;               
-                        
-                        if($this->config->item('def_package') !== FALSE)
-                        {
-                            $data_f['package_id'] = $this->config->item('def_package');
-                            
-                            $this->load->model('packages_m');
-                            $package = $this->packages_m->get($data_f['package_id']);
-                            
-                            if(is_object($package))
-                            {
-                                $days_extend = $package->package_days;
-                            
-                                if($days_extend > 0)
-                                    $data_f['package_last_payment'] = date('Y-m-d H:i:s', time() + 86400*intval($days_extend));
-                            }
-                        }                            
-                        
-                        $data_r['user_id'] = $this->user_m->save($data_f, NULL);
-                        
-                        if(empty($data_r['user_id']))
-                        {
-                            echo $this->db->last_query().'<br />';
-                            exit ('Facebook login failed, user not added to database');
-                        }
-                        
-                        $facebook_id = $user_facebook['id'];
-                        if(!empty($facebook_id)){
-                            $this->load->model('repository_m');
-                            $this->load->model('file_m');
-                            $this->load->library('uploadHandler', array('initialize'=>FALSE));
-
-                            $user_data = $this->user_m->get($data_r['user_id']);
-                            // Fetch file repository
-                            $repository_id = $user_data->repository_id;
-                            if(empty($repository_id))
-                            {
-                                // Create repository
-                                $repository_id = $this->repository_m->save(array('name'=>'user_m'));
-                                // Update with new repository_id
-                                $this->user_m->save(array('repository_id'=>$repository_id), $user_data->id);
-                            }
-
-                            $url = 'https://graph.facebook.com/'.$facebook_id.'/picture?width=1360&redirect=false';
-                            
-                            $handle   = curl_init($url);
-                            curl_setopt($handle, CURLOPT_HEADER, false);
-                            curl_setopt($handle, CURLOPT_FAILONERROR, true);  // this works
-                            curl_setopt($handle, CURLOPT_HTTPHEADER, Array("User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.15) Gecko/20080623 Firefox/2.0.0.15") ); // request as if Firefox
-                            curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
-                            curl_setopt($handle, CURLOPT_FOLLOWLOCATION, true);
-                            curl_setopt($handle, CURLOPT_CONNECTTIMEOUT, 3);
-                            $connectable = curl_exec($handle);
-                            ##print $connectable;
-                            curl_close($handle);
-                            
-                            if(!empty($connectable)){
-                                $facebook_i_data = json_decode($connectable);
-
-                                if(!empty($facebook_i_data) && isset($facebook_i_data->data) && isset($facebook_i_data->data->url)){
-                                    $user_avatar = $facebook_i_data->data->url;
-                                    $handle   = curl_init($user_avatar);
-                                    curl_setopt($handle, CURLOPT_HEADER, false);
-                                    curl_setopt($handle, CURLOPT_FAILONERROR, true);  // this works
-                                    curl_setopt($handle, CURLOPT_HTTPHEADER, Array("User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.15) Gecko/20080623 Firefox/2.0.0.15") ); // request as if Firefox
-                                    curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
-                                    curl_setopt($handle, CURLOPT_FOLLOWLOCATION, true);
-                                    curl_setopt($handle, CURLOPT_CONNECTTIMEOUT, 3);
-                                    $file = curl_exec($handle);
-                                    ##print $connectable;
-                                    curl_close($handle);
-
-                                    $new_file_name=time().rand(000, 999).'.jpg';
-                                    file_put_contents(FCPATH.'/files/'.$new_file_name, $file);
-                                    /* create thumbnail */
-                                    $this->uploadhandler->regenerate_versions($new_file_name);
-                                    /* end create thumbnail */
-                                    $file_name = $new_file_name;
-                                    $file_id = $this->file_m->save(array(
-                                    'repository_id' => $repository_id,
-                                    'order' => 0,
-                                    'filename' => $file_name,
-                                    )); 
-                                } 
-                            }
-                        }
-                    } 
-                    
-                    // Login with facebook :: AUTO
-                    if($this->user_m->login($data['user_profile']['email'], $data['user_profile']['id']) == TRUE)
-                    {
-                        redirect('frontend/myproperties/'.$this->data['lang_code']);
-                        exit();
-                    }
-                    else
-                    {
-                        $this->session->set_flashdata('error', 
-                                lang_check('That email/password combination does not exists'));
-                        redirect('frontend/login/'.$this->data['lang_code']); 
-                        exit();
-                    }
-    
-                } catch (FacebookApiException $e) {
-                    $user = null;
-                    echo 'facebook loading error';
-                }
-            }
-            else if($this->config->item('appId') != ''){
-                $this->facebook->logout();
-            }
-    
-            $this->data['login_url_facebook'] = '';
-            
-            if ($user_facebook) {
-                //echo 'logout';
-                //exit();
-                
-                //$data['logout_url'] = site_url('facebookdemo/logout'); // Logs off application
-                // OR 
-                // Logs off FB!
-                // $data['logout_url'] = $this->facebook->getLogoutUrl();
-    
-            } else if($this->config->item('appId') != ''){
-                $this->data['login_url_facebook'] = $this->facebook->login_url();
-            }
-            
-        }
-        else
-        {
-            $user_facebook = FALSE;
-            if($this->config->item('appId') != '')
-            {
-        		$this->load->library('facebook'); // Automatically picks appId and secret from config
-        		$user_facebook = $this->facebook->getUser();
-            }   
-            
-            if ($user_facebook) {
-                try {
-                    $data['user_profile'] = $this->facebook->api('/me');
-                    
-                    if(!isset($data['user_profile']['email']))
-                    {
-                        $this->session->set_flashdata('error', 
-                                lang_check('Email permissions on Facebook is required to login'));
-                        $this->facebook->destroySession();
-                        redirect('frontend/login/'.$this->data['lang_code']); 
-                        exit();
-                    }
-    
-                    // Register and login with Facebook if Facebook ID didn't exists'
-                    $user_face = $this->user_m->get_by(array('password'=>$this->user_m->hash($data['user_profile']['id']), 
-                                                             'username'=>$data['user_profile']['email']), true);
-                    
-                    if(count($user_face) == 0)
-                    {
-                        // Check if email already exists
-                        if($this->user_m->if_exists($data['user_profile']['email']) === TRUE)
-                        {
-                            exit('Email already exists in database, please contact administrator or reset password');
-                        }
-                        
-                        // Register user
-                        $data_f['username'] = $data['user_profile']['email'];
-                        $data_f['mail'] = $data['user_profile']['email'];
-                        $data_f['password'] = $this->user_m->hash($data['user_profile']['id']);
-                        $data_f['facebook_id'] = $data['user_profile']['link'];
-                        $data_f['type'] = 'USER';
-                        $data_f['name_surname'] = $data['user_profile']['name'];
-                        $data_f['activated'] = '1';
-                        $data_f['description'] = '';
-                        $data_f['language'] = $current_language;
-                        $data_f['registration_date'] = date('Y-m-d H:i:s');
-                        $data_f['mail_verified'] = 0;
-                        $data_f['phone_verified'] = 0;               
-                        
-                        if($this->config->item('def_package') !== FALSE)
-                        {
-                            $data_f['package_id'] = $this->config->item('def_package');
-                            
-                            $this->load->model('packages_m');
-                            $package = $this->packages_m->get($data_f['package_id']);
-                            
-                            if(is_object($package))
-                            {
-                                $days_extend = $package->package_days;
-                            
-                                if($days_extend > 0)
-                                    $data_f['package_last_payment'] = date('Y-m-d H:i:s', time() + 86400*intval($days_extend));
-                            }
-                        }      
-                        
-                        $data_r['user_id'] = $this->user_m->save($data_f, NULL);
-                    } 
-                    
-                    // Login with facebook :: AUTO
-                    if($this->user_m->login($data['user_profile']['email'], $data['user_profile']['id']) == TRUE)
-                    {
-                        
-                        if(!empty($data_r['user_id']) && 
-                            config_item('registration_interest_enabled') === TRUE && 
-                            config_item('tree_field_enabled') === TRUE)
-                        {
-                            $user_id = $data_r['user_id'];
-                            
-                            redirect('fresearch/treealerts/'.$this->data['lang_code'].'/'.$user_id.'/'.md5($user_id.config_item('encryption_key')));
-                        }
-                        
-                        redirect('frontend/myproperties/'.$this->data['lang_code']);
-                        exit();
-                    }
-                    else
-                    {
-                        $this->session->set_flashdata('error', 
-                                lang_check('That email/password combination does not exists'));
-                        redirect('frontend/login/'.$this->data['lang_code']); 
-                        exit();
-                    }
-    
-                } catch (FacebookApiException $e) {
-                    $user = null;
-                    echo 'facebook loading error';
-                }
-            }else if($this->config->item('appId') != ''){
-                $this->facebook->destroySession();
-            }
-    
-            $this->data['login_url_facebook'] = '';
-            
-            if ($user_facebook) {
-                //echo 'logout';
-                //exit();
-                
-                //$data['logout_url'] = site_url('facebookdemo/logout'); // Logs off application
-                // OR 
-                // Logs off FB!
-                // $data['logout_url'] = $this->facebook->getLogoutUrl();
-    
-            } else if($this->config->item('appId') != ''){
-                $this->data['login_url_facebook'] = $this->facebook->getLoginUrl(array(
-                    'redirect_uri' => site_url('frontend/login/'.$this->data['lang_code']), 
-                    'scope' => array("email") // permissions here
-                ));
-            }
-        }
+            //             if(!isset($data['user_profile']['email']))
+            //             {
+            //                 $this->session->set_flashdata('error', 
+            //                         lang_check('Email permissions on Facebook is required to login'));
+            //                 $this->facebook->destroySession();
+            //                 redirect('frontend/login/'.$this->data['lang_code']); 
+            //                 exit();
+            //             }
         
+            //             // Register and login with Facebook if Facebook ID didn't exists'
+            //             $user_face = $this->user_m->get_by(array('password'=>$this->user_m->hash($data['user_profile']['id']), 
+            //                                                     'username'=>$data['user_profile']['email']), true);
+                        
+            //             if(count($user_face) == 0)
+            //             {
+            //                 // Check if email already exists
+            //                 if($this->user_m->if_exists($data['user_profile']['email']) === TRUE)
+            //                 {
+            //                     $this->facebook->destroySession();
+                                
+            //                     $this->session->set_flashdata('error', 
+            //                             lang_check('Email already exists in database, please contact administrator or reset password'));
+                                
+            //                     redirect('frontend/login/'.$this->data['lang_code']); 
+            //                     exit();
+            //                 }
+                            
+            //                 // Register user
+            //                 $data_f['username'] = $data['user_profile']['email'];
+            //                 $data_f['mail'] = $data['user_profile']['email'];
+            //                 $data_f['password'] = $this->user_m->hash($data['user_profile']['id']);
+            //                 $data_f['facebook_id'] = $data['user_profile']['id'];
+            //                 $data_f['type'] = 'USER';
+            //                 $data_f['name_surname'] = $data['user_profile']['name'];
+            //                 $data_f['activated'] = '1';
+            //                 $data_f['description'] = '';
+            //                 $data_f['language'] = $current_language;
+            //                 $data_f['registration_date'] = date('Y-m-d H:i:s');
+            //                 $data_f['mail_verified'] = 0;
+            //                 $data_f['phone_verified'] = 0;               
+                            
+            //                 if($this->config->item('def_package') !== FALSE)
+            //                 {
+            //                     $data_f['package_id'] = $this->config->item('def_package');
+                                
+            //                     $this->load->model('packages_m');
+            //                     $package = $this->packages_m->get($data_f['package_id']);
+                                
+            //                     if(is_object($package))
+            //                     {
+            //                         $days_extend = $package->package_days;
+                                
+            //                         if($days_extend > 0)
+            //                             $data_f['package_last_payment'] = date('Y-m-d H:i:s', time() + 86400*intval($days_extend));
+            //                     }
+            //                 }                            
+                            
+            //                 $data_r['user_id'] = $this->user_m->save($data_f, NULL);
+                            
+            //                 if(empty($data_r['user_id']))
+            //                 {
+            //                     echo $this->db->last_query().'<br />';
+            //                     exit ('Facebook login failed, user not added to database');
+            //                 }
+                            
+            //                 $facebook_id = $user_facebook['id'];
+            //                 if(!empty($facebook_id)){
+            //                     $this->load->model('repository_m');
+            //                     $this->load->model('file_m');
+            //                     $this->load->library('uploadHandler', array('initialize'=>FALSE));
+
+            //                     $user_data = $this->user_m->get($data_r['user_id']);
+            //                     // Fetch file repository
+            //                     $repository_id = $user_data->repository_id;
+            //                     if(empty($repository_id))
+            //                     {
+            //                         // Create repository
+            //                         $repository_id = $this->repository_m->save(array('name'=>'user_m'));
+            //                         // Update with new repository_id
+            //                         $this->user_m->save(array('repository_id'=>$repository_id), $user_data->id);
+            //                     }
+
+            //                     $url = 'https://graph.facebook.com/'.$facebook_id.'/picture?width=1360&redirect=false';
+                                
+            //                     $handle   = curl_init($url);
+            //                     curl_setopt($handle, CURLOPT_HEADER, false);
+            //                     curl_setopt($handle, CURLOPT_FAILONERROR, true);  // this works
+            //                     curl_setopt($handle, CURLOPT_HTTPHEADER, Array("User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.15) Gecko/20080623 Firefox/2.0.0.15") ); // request as if Firefox
+            //                     curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
+            //                     curl_setopt($handle, CURLOPT_FOLLOWLOCATION, true);
+            //                     curl_setopt($handle, CURLOPT_CONNECTTIMEOUT, 3);
+            //                     $connectable = curl_exec($handle);
+            //                     ##print $connectable;
+            //                     curl_close($handle);
+                                
+            //                     if(!empty($connectable)){
+            //                         $facebook_i_data = json_decode($connectable);
+
+            //                         if(!empty($facebook_i_data) && isset($facebook_i_data->data) && isset($facebook_i_data->data->url)){
+            //                             $user_avatar = $facebook_i_data->data->url;
+            //                             $handle   = curl_init($user_avatar);
+            //                             curl_setopt($handle, CURLOPT_HEADER, false);
+            //                             curl_setopt($handle, CURLOPT_FAILONERROR, true);  // this works
+            //                             curl_setopt($handle, CURLOPT_HTTPHEADER, Array("User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.15) Gecko/20080623 Firefox/2.0.0.15") ); // request as if Firefox
+            //                             curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
+            //                             curl_setopt($handle, CURLOPT_FOLLOWLOCATION, true);
+            //                             curl_setopt($handle, CURLOPT_CONNECTTIMEOUT, 3);
+            //                             $file = curl_exec($handle);
+            //                             ##print $connectable;
+            //                             curl_close($handle);
+
+            //                             $new_file_name=time().rand(000, 999).'.jpg';
+            //                             file_put_contents(FCPATH.'/files/'.$new_file_name, $file);
+            //                             /* create thumbnail */
+            //                             $this->uploadhandler->regenerate_versions($new_file_name);
+            //                             /* end create thumbnail */
+            //                             $file_name = $new_file_name;
+            //                             $file_id = $this->file_m->save(array(
+            //                             'repository_id' => $repository_id,
+            //                             'order' => 0,
+            //                             'filename' => $file_name,
+            //                             )); 
+            //                         } 
+            //                     }
+            //                 }
+            //             } 
+                        
+            //             // Login with facebook :: AUTO
+            //             if($this->user_m->login($data['user_profile']['email'], $data['user_profile']['id']) == TRUE)
+            //             {
+            //                 redirect('frontend/myproperties/'.$this->data['lang_code']);
+            //                 exit();
+            //             }
+            //             else
+            //             {
+            //                 $this->session->set_flashdata('error', 
+            //                         lang_check('That email/password combination does not exists'));
+            //                 redirect('frontend/login/'.$this->data['lang_code']); 
+            //                 exit();
+            //             }
+        
+            //         } catch (FacebookApiException $e) {
+            //             $user = null;
+            //             echo 'facebook loading error';
+            //         }
+            //     }
+            //     else if($this->config->item('appId') != ''){
+            //         $this->facebook->logout();
+            //     }
+        
+            //     $this->data['login_url_facebook'] = '';
+                
+            //     if ($user_facebook) {
+            //         //echo 'logout';
+            //         //exit();
+                    
+            //         //$data['logout_url'] = site_url('facebookdemo/logout'); // Logs off application
+            //         // OR 
+            //         // Logs off FB!
+            //         // $data['logout_url'] = $this->facebook->getLogoutUrl();
+        
+            //     } else if($this->config->item('appId') != ''){
+            //         $this->data['login_url_facebook'] = $this->facebook->login_url();
+            //     }
+                
+            // }
+            // else
+            // {
+            //     $user_facebook = FALSE;
+            //     if($this->config->item('appId') != '')
+            //     {
+            //         $this->load->library('facebook'); // Automatically picks appId and secret from config
+            //         $user_facebook = $this->facebook->getUser();
+            //     }   
+                
+            //     if ($user_facebook) {
+            //         try {
+            //             $data['user_profile'] = $this->facebook->api('/me');
+                        
+            //             if(!isset($data['user_profile']['email']))
+            //             {
+            //                 $this->session->set_flashdata('error', 
+            //                         lang_check('Email permissions on Facebook is required to login'));
+            //                 $this->facebook->destroySession();
+            //                 redirect('frontend/login/'.$this->data['lang_code']); 
+            //                 exit();
+            //             }
+        
+            //             // Register and login with Facebook if Facebook ID didn't exists'
+            //             $user_face = $this->user_m->get_by(array('password'=>$this->user_m->hash($data['user_profile']['id']), 
+            //                                                     'username'=>$data['user_profile']['email']), true);
+                        
+            //             if(count($user_face) == 0)
+            //             {
+            //                 // Check if email already exists
+            //                 if($this->user_m->if_exists($data['user_profile']['email']) === TRUE)
+            //                 {
+            //                     exit('Email already exists in database, please contact administrator or reset password');
+            //                 }
+                            
+            //                 // Register user
+            //                 $data_f['username'] = $data['user_profile']['email'];
+            //                 $data_f['mail'] = $data['user_profile']['email'];
+            //                 $data_f['password'] = $this->user_m->hash($data['user_profile']['id']);
+            //                 $data_f['facebook_id'] = $data['user_profile']['link'];
+            //                 $data_f['type'] = 'USER';
+            //                 $data_f['name_surname'] = $data['user_profile']['name'];
+            //                 $data_f['activated'] = '1';
+            //                 $data_f['description'] = '';
+            //                 $data_f['language'] = $current_language;
+            //                 $data_f['registration_date'] = date('Y-m-d H:i:s');
+            //                 $data_f['mail_verified'] = 0;
+            //                 $data_f['phone_verified'] = 0;               
+                            
+            //                 if($this->config->item('def_package') !== FALSE)
+            //                 {
+            //                     $data_f['package_id'] = $this->config->item('def_package');
+                                
+            //                     $this->load->model('packages_m');
+            //                     $package = $this->packages_m->get($data_f['package_id']);
+                                
+            //                     if(is_object($package))
+            //                     {
+            //                         $days_extend = $package->package_days;
+                                
+            //                         if($days_extend > 0)
+            //                             $data_f['package_last_payment'] = date('Y-m-d H:i:s', time() + 86400*intval($days_extend));
+            //                     }
+            //                 }      
+                            
+            //                 $data_r['user_id'] = $this->user_m->save($data_f, NULL);
+            //             } 
+                        
+            //             // Login with facebook :: AUTO
+            //             if($this->user_m->login($data['user_profile']['email'], $data['user_profile']['id']) == TRUE)
+            //             {
+                            
+            //                 if(!empty($data_r['user_id']) && 
+            //                     config_item('registration_interest_enabled') === TRUE && 
+            //                     config_item('tree_field_enabled') === TRUE)
+            //                 {
+            //                     $user_id = $data_r['user_id'];
+                                
+            //                     redirect('fresearch/treealerts/'.$this->data['lang_code'].'/'.$user_id.'/'.md5($user_id.config_item('encryption_key')));
+            //                 }
+                            
+            //                 redirect('frontend/myproperties/'.$this->data['lang_code']);
+            //                 exit();
+            //             }
+            //             else
+            //             {
+            //                 $this->session->set_flashdata('error', 
+            //                         lang_check('That email/password combination does not exists'));
+            //                 redirect('frontend/login/'.$this->data['lang_code']); 
+            //                 exit();
+            //             }
+        
+            //         } catch (FacebookApiException $e) {
+            //             $user = null;
+            //             echo 'facebook loading error';
+            //         }
+            //     }else if($this->config->item('appId') != ''){
+            //         $this->facebook->destroySession();
+            //     }
+        
+            //     $this->data['login_url_facebook'] = '';
+                
+            //     if ($user_facebook) {
+            //         //echo 'logout';
+            //         //exit();
+                    
+            //         //$data['logout_url'] = site_url('facebookdemo/logout'); // Logs off application
+            //         // OR 
+            //         // Logs off FB!
+            //         // $data['logout_url'] = $this->facebook->getLogoutUrl();
+        
+            //     } else if($this->config->item('appId') != ''){
+            //         $this->data['login_url_facebook'] = $this->facebook->getLoginUrl(array(
+            //             'redirect_uri' => site_url('frontend/login/'.$this->data['lang_code']), 
+            //             'scope' => array("email") // permissions here
+            //         ));
+            //     }
+            // }
+        }
         if(file_exists(APPPATH.'controllers/admin/packages.php'))
         {
             $this->load->model('packages_m');
@@ -2433,229 +2702,9 @@ class Frontend extends Frontend_Controller
         $this->data['is_login'] = false;
 
         // Set up the form for register
-        if(isset($_POST['password_confirm']) || $this->session->flashdata('error_registration') != '')
-        {
-            if(config_db_item('property_subm_disabled')==TRUE):
-                exit('Registration disabled');
-            endif;
-            $this->data['is_registration'] = true;
-            
-            $rules = $this->user_m->rules_admin;
-            $rules['name_surname']['label'] = 'lang:FirstLast';
-            $rules['password']['rules'] .= '|required';
-            $rules['type']['rules'] = 'trim';
-            $rules['language']['rules'] = 'trim';
-            $rules['mail']['label'] = 'lang:Email';
-            $rules['mail']['rules'] .= '|valid_email';
-            
-            if(config_db_item('register_reduced') === TRUE)
-            {
-                $rules['name_surname']['rules'] = 'trim|xss_clean';
-                $rules['username']['rules'] = 'trim|xss_clean';
-                
-                $e_mail = $this->input->post('mail');
-                if(!empty($e_mail))
-                {
-                    if(empty($_POST['username']))
-                        $_POST['username'] = $e_mail;
-                    if(empty($_POST['name_surname']))
-                        $_POST['name_surname'] = $e_mail;
-                }
-            }
-            
-            if(config_item('captcha_disabled') === FALSE)
-                $rules['captcha'] = array('field'=>'captcha', 'label'=>'lang:Captcha', 
-                                          'rules'=>'trim|required|callback_captcha_check|xss_clean');
-                                          
-            if(config_item('recaptcha_site_key') !== FALSE)
-                $rules['g-recaptcha-response'] = array('field'=>'g-recaptcha-response', 'label'=>'lang:Recaptcha', 
-                                                        'rules'=>'trim|required|callback_captcha_check|xss_clean');
-            
-            $this->form_validation->set_rules($rules);
-
-            // Process the form
-            if($this->form_validation->run() == TRUE)
-            {
-                if($this->config->item('app_type') == 'demo')
-                {
-                    $this->session->set_flashdata('error_registration', 
-                            lang_check('Data editing disabled in demo'));
-                    redirect('frontend/login/'.$this->data['lang_code']);
-                    exit();
-                }
-                
-                $data = $this->user_m->array_from_post(array('name_surname', 'mail', 'password', 'username',
-                                                             'address', 'description', 'mail', 'phone','phone2', 'type', 'language', 'activated', 'type'));
-                if($data['password'] == '')
-                {
-                    unset($data['password']);
-                }
-                else
-                {
-                    $data['password'] = $this->user_m->hash($data['password']);
-                }
-
-                if($data['type'] == 'AGENT' && config_db_item('dropdown_register_enabled') === TRUE)
-                {
-                    $data['type'] = 'AGENT';
-                }
-                else
-                {
-                    $data['type'] = 'USER';
-                }
-                
-                $data['activated'] = '1';
-                if(config_db_item('email_activation_enabled') === TRUE)
-                    $data['activated'] = '0';
-                
-                $data['description'] = '';
-                $data['language'] = $current_language;
-                $data['registration_date'] = date('Y-m-d H:i:s');
-                $data['mail_verified'] = 0;
-                $data['phone_verified'] = 0;
-                
-                if(empty($data['phone']))$data['phone'] = '';
-                if(empty($data['phone2']))$data['phone2'] = '';
-                if(empty($data['address']))$data['address'] = '';
-
-                if($this->config->item('def_package') !== FALSE && $data['type'] == 'USER')
-                {
-                    $data['package_id'] = $this->config->item('def_package');
-                    
-                    $this->load->model('packages_m');
-                    $package = $this->packages_m->get($data['package_id']);
-                    
-                    if(is_object($package))
-                    {
-                        $days_extend = $package->package_days;
-                    
-                        if($days_extend > 0)
-                            $data['package_last_payment'] = date('Y-m-d H:i:s', time() + 86400*intval($days_extend));
-                    }
-                }
-                
-                if($this->config->item('def_package_agent') !== FALSE && $data['type'] == 'AGENT')
-                {
-                    $data['package_id'] = $this->config->item('def_package_agent');
-                    
-                    $this->load->model('packages_m');
-                    $package = $this->packages_m->get($data['package_id']);
-                    
-                    if(is_object($package))
-                    {
-                        $days_extend = $package->package_days;
-                    
-                        if($days_extend > 0)
-                            $data['package_last_payment'] = date('Y-m-d H:i:s', time() + 86400*intval($days_extend));
-                    }
-                }
-                
-                $user_id = $this->user_m->save($data, NULL);
-                
-                $message_mail = '';
-
-                if(!empty($data['mail']) && config_db_item('email_activation_enabled') === TRUE)
-                {
-                    $data['mail_verified'] = 0;
-                    // [START] Activation email
-                    
-                    //if(ENVIRONMENT != 'development')
-                    $this->load->library('email');
-                    $config_mail['mailtype'] = 'html';
-                    $this->email->initialize($config_mail);
-                    $this->email->from($this->data['settings_noreply'], lang_check('Web page'));
-                    $this->email->to($data['mail']);
-                    
-                    $this->email->subject(lang_check('Activate your account'));
-                    
-                    $new_hash = substr($this->user_m->hash($data['mail'].$user_id), 0, 5);
-                    
-                    $data_m = array();
-                    $data_m['name_surname'] = $data['name_surname'];
-                    $data_m['username'] = $data['username'];
-                    $data_m['activation_link'] = '<a href="'.site_url('admin/user/verifyemail/'.$user_id.'/'.$new_hash).'">'.lang_check('Activate your account').'</a>';
-                    $data_m['login_link'] = '<a href="'.site_url('frontend/login/').'?username='.$data['username'].'#content">'.lang_check('login_link').'</a>';
-                    
-                    $message = $this->load->view('email/email_activation', array('data'=>$data_m), TRUE);
-                    
-                    $this->email->message($message);
-                    if ( ! $this->email->send())
-                    {
-                        $message_mail = ', '.lang_check('Problem sending email to user');
-                    }
-                    // [END] Activation email
-                }
-
-                $submit = true;
-                if(!empty($data['phone']) && !empty($user_id) &&
-                   (config_db_item('clickatell_api_id') != FALSE || config_db_item('clickatell_api_key') != FALSE) && config_db_item('phone_verification_enabled') === TRUE &&
-                   file_exists(APPPATH.'libraries/Clickatellapi.php'))
-                {
-                    $data['phone_verified'] = 0;
-                    
-                    //Send SMS for phone verification
-                    $new_hash = substr($this->user_m->hash($data['phone'].$user_id), 0, 5);
-                    
-                    $message='';
-                    $message.=lang_check('Your code').": \n";
-                    $message.=$new_hash."\n";
-                    $message.=lang_check('Verification link').": \n";
-                    $message.=site_url('admin/user/verifyphone/'.$user_id.'/'.$new_hash);
-                    
-                    $this->load->library('clickatellapi');
-                    $return_sms = $this->clickatellapi->send_sms($message, $data['phone']);
-                    
-                    if(substr_count($return_sms, 'successnmessage') == 0)
-                    {
-                        // nginx causing error 502
-                        $return_sms = json_decode($return_sms);
-                        $this->user_m->delete($user_id);
-
-                        $this->_clickatellapi_error = $return_sms->message;
-                        $rules = array();
-                        $rules['phone'] = array('field'=>'phone', 'label'=>'lang:Phone', 
-                                        'rules'=>'callback__phone_clickatellapi_check');
-            
-                        $this->form_validation->set_rules($rules);
-                        $this->form_validation->run();
-                        $submit = false;                        
-                    }
-                }
-                
-                if($submit) {
-                
-                    if(config_db_item('email_activation_enabled') === TRUE)
-                    {
-                        $this->session->set_flashdata('error_registration', 
-                            lang_check('Thanks on registration, please check and activate your email to login').$message_mail);
-                    
-                    } else if(!empty($data['phone']) && !empty($user_id) &&
-                        (config_db_item('clickatell_api_id') != FALSE || config_db_item('clickatell_api_key') != FALSE) && config_db_item('phone_verification_enabled') === TRUE &&
-                        file_exists(APPPATH.'libraries/Clickatellapi.php'))
-                    {
-                        $this->session->set_flashdata('error_registration', 
-                                lang_check('Thanks on registration, we sent code for activation on your phone number, please check and activate').' '.$data['phone']);
-                    }
-                    else
-                    {
-                        $this->session->set_flashdata('error_registration', 
-                                lang_check('Thanks on registration, you can login now').$message_mail);
-                    }
-
-                    if(!empty($user_id) && 
-                        config_item('registration_interest_enabled') === TRUE && 
-                        config_item('tree_field_enabled') === TRUE)
-                    {
-                        redirect('fresearch/treealerts/'.$this->data['lang_code'].'/'.$user_id.'/'.md5($user_id.config_item('encryption_key')));
-                    }
-
-
-                    redirect('frontend/login/'.$this->data['lang_code'], 'refresh');
-                }
-            }
-        }
-        else
-        {
+        
+       
+        
             $this->data['is_login'] = true;
             
     	    $dashboard = 'admin/dashboard';
@@ -2704,7 +2753,7 @@ class Frontend extends Frontend_Controller
                         redirect('frontend/myreservations/'.$this->data['lang_code']);
                     }
                     
-                    redirect('frontend/myproperties/'.$this->data['lang_code']);
+                    redirect(''.$this->data['lang_code']);
                 }
                 else
                 {
@@ -2713,7 +2762,7 @@ class Frontend extends Frontend_Controller
                     redirect('frontend/login/'.$this->data['lang_code']);                
                 }
             }
-        }
+        
         
         // Get templates
         $templatesDirectory = opendir(FCPATH.'templates/'.$this->data['settings_template'].'/components');
@@ -3927,17 +3976,18 @@ class Frontend extends Frontend_Controller
     
 	public function index ()
 	{
+
         $lang_id = $this->data['lang_id'];
-        
+
         $this->_page_offline();
         // Fetch all files by repository_id
-        
+
         $this->data['page_documents'] = array();
         $this->data['page_images'] = array();
         $this->data['page_files'] = array();
-        
+
         $where_in = array($this->temp_data['page']->repository_id);
-        
+
         $this->load->model('ads_m');
         $ads_act = $this->ads_m->get_by(array('is_activated'=>1));
         foreach($ads_act as $row)
@@ -3960,7 +4010,7 @@ class Frontend extends Frontend_Controller
             {
                 $file->thumbnail_url = base_url('files/thumbnail/'.$file->filename);
                 $this->data['images_'.$file->repository_id][] = $file;
-                
+
                 if($this->temp_data['page']->repository_id == $file->repository_id)
                 {
                     $this->data['page_images'][] = $file;
@@ -3975,7 +4025,7 @@ class Frontend extends Frontend_Controller
                     $this->data['page_documents'][] = $file;
                 }
             }
-            
+
             $this->data['files_'.$file->repository_id][] = $file;
 
             if($this->temp_data['page']->repository_id == $file->repository_id)
@@ -3983,16 +4033,16 @@ class Frontend extends Frontend_Controller
                 $this->data['page_files'][] = $file;
             }
         }
-        
+
         // Has attributes
         $this->data['has_page_documents'] = array();
         if(count($this->data['page_documents']))
             $this->data['has_page_documents'][] = array('count'=>count($this->data['page_documents']));
-        
+
         $this->data['has_page_images'] = array();
         if(count($this->data['page_images']))
             $this->data['has_page_images'][] = array('count'=>count($this->data['page_images']));
-            
+
         $this->data['has_page_files'] = array();
         if(count($this->data['page_files']))
             $this->data['has_page_files'][] = array('count'=>count($this->data['page_files']));
@@ -4013,12 +4063,12 @@ class Frontend extends Frontend_Controller
         // Example: ?search={"search_option_smart": "zagreb"}
         $search_json = NULL;
         if(isset($_GET['search']))$search_json = json_decode($this->input->get_post('search', TRUE));
-        
+
         if($search_json !== FALSE && $search_json !== NULL)
         {
             $post_option = array();
             $post_option_sum = ' ';
-            
+
             if(is_array($search_json) || is_object($search_json))
             {
                 foreach($search_json as $key=>$val)
@@ -4028,11 +4078,11 @@ class Frontend extends Frontend_Controller
                         $post_option[substr($key, strrpos($key, 'tion_')+5)] = $tmp_post;
                         $post_option_sum.=$tmp_post.' ';
                     }
-                    
+
                     if(is_array($tmp_post))
                     {
                         $category_num = substr($key, strrpos($key, 'gory_')+5);
-                        
+
                         foreach($tmp_post as $key=>$val)
                         {
                             $post_option['0'.$category_num.'9999'.$key] = $val;
@@ -4049,7 +4099,7 @@ class Frontend extends Frontend_Controller
             $this->data['search_query'] = '';
             if(!empty($post_option['smart']))
                 $this->data['search_query'] = $post_option['smart'];
-                   
+
             $this->data['search_option_location'] = '';
             if(!empty($post_option['location']))
                 $this->data['search_option_location'] = $post_option['location'];
@@ -4063,10 +4113,10 @@ class Frontend extends Frontend_Controller
         $purpose = '';
         $this->data['purpose_rent_active'] = '';
         $this->data['purpose_sale_active'] = '';
-        
+
         $this->data['is_purpose_rent'] = array();
         $this->data['is_purpose_sale'] = array();
-        
+
         if(strpos($this->temp_data['page']->template, 'rent') !== FALSE)
         {
             $purpose = 'rent';
@@ -4080,12 +4130,12 @@ class Frontend extends Frontend_Controller
             $this->data['purpose_sale_active'] = 'active';
             $this->data['is_purpose_sale'][] = array('count'=>'1');
         }
-        
+
         $where = array();
         $where['is_activated'] = 1;
         $where['is_visible'] = 1;
         $where['language_id']  = $lang_id;
-        
+
         if(isset($this->data['settings_listing_expiry_days']))
         {
             if(is_numeric($this->data['settings_listing_expiry_days']) && $this->data['settings_listing_expiry_days'] > 0)
@@ -4093,11 +4143,11 @@ class Frontend extends Frontend_Controller
                  $where['property.date_modified >']  = date("Y-m-d H:i:s" , time()-$this->data['settings_listing_expiry_days']*86400);
             }
         }
-        
+
 
         //$options = $this->option_m->get_options($this->data['lang_id']);
         $options_name = $this->option_m->get_lang(NULL, FALSE, $this->data['lang_id']);
-        
+
         $this->data['search_purpose'] = NULL;
 
         /* Check for tab/purpose select */
@@ -4105,7 +4155,7 @@ class Frontend extends Frontend_Controller
         {
             $this->data['options_val_'.$row->option_id] = $row->values;
         }
-        
+
         $this->select_tab_by_title = '';
         if(isset($this->data['options_val_4']) && !isset($_GET['search']))
         {
@@ -4115,7 +4165,7 @@ class Frontend extends Frontend_Controller
                 $this->select_tab_by_title = strtolower($this->data['page_title']);
             }
         }
-        
+
         if(!empty($this->data['search_query']))
             $this->data['page_title'].=' - '.$this->data['search_query'];
 
@@ -4130,7 +4180,7 @@ class Frontend extends Frontend_Controller
         }
 
         /* End check for tab/purpose select */
-        
+
         /* [GeoPlugin] */
         $this->data['geodata'] = NULL;
         if(file_exists(APPPATH.'libraries/Geoplugin.php') && config_db_item('geoplugin_enabled') === TRUE)
@@ -4142,13 +4192,13 @@ class Frontend extends Frontend_Controller
             } else {
                 $ip = $_SERVER['REMOTE_ADDR'];
             }
-            
+
             //$ip = '93.139.139.12';
-            
+
             if(strlen($ip) > 5){
                 $this->load->library('geoplugin');
                 $this->geoplugin->locate($ip);
-                
+
                 if(!empty($this->geoplugin->city))
                 {
                     $this->data['geodata'] = $this->geoplugin->city;
@@ -4161,11 +4211,11 @@ class Frontend extends Frontend_Controller
                 {
                     $this->data['geodata'] = $this->geoplugin->countryName;
                 }
-    
+
                 if(empty($this->data['search_query']) && !isset($_GET['search']))
                     $this->data['search_query'] = $this->data['geodata'];
             }
-            
+
         }
         /* [/GeoPlugin] */
 
@@ -4181,7 +4231,7 @@ class Frontend extends Frontend_Controller
             $this->data['options_values_arr_'.$row->option_id] = array();
             $this->data['options_values_radio_'.$row->option_id] = '';
             $this->data['options_obj_'.$row->option_id] = $row;
-            
+
             if(count(explode(',', $row->values)) > 0)
             {
                 $options_h = '<option value="">'.$row->option.'</option>';
@@ -4195,11 +4245,11 @@ class Frontend extends Frontend_Controller
                     {
                         $o_selected = 'selected="selected"';
                     }
-                    
+
                     $selected = '';
                     if($this->_get_purpose() == strtolower($val))$selected = 'selected="selected"';
                     if($o_selected == 'selected="selected"')$selected = 'selected="selected"';
-                    
+
                     if(empty($val))
                     {
                         $options_h='<option value="'.$val.'" '.$selected.'>'.lang_check('Any').'</option>';
@@ -4209,18 +4259,18 @@ class Frontend extends Frontend_Controller
                         $options_h.='<option value="'.$val.'" '.$selected.'>'.$val.'</option>';
                     }
                     $this->data['options_values_arr_'.$row->option_id][] = $val;
-                    
+
                     $active = '';
                     if(!empty($val)){
                         if($this->_get_purpose() == strtolower($val))$active = 'active';
                         if($o_selected == 'selected="selected"')$active = 'active';
                         $options_li.= '<li class="'.$active.' cat_'.$key2.'"><a href="#">'.$val.'</a></li>';
                     }
-                    
+
                     $checked = '';
                     if($this->_get_purpose() == strtolower($val))$checked = 'checked';
                     if($o_selected == 'selected="selected"')$checked = 'checked';
-                    
+
                     $radio_li.='<label class="checkbox">
                                 <input type="radio" rel="'.$val.'" name="search_option_'.$row->option_id.'" value="'.$key2.'" '.$checked.'> '.$val.'
                                 </label>';
@@ -4236,45 +4286,45 @@ class Frontend extends Frontend_Controller
         $last_n = 4;
         if(config_item('last_estates_limit'))
             $last_n = config_item('last_estates_limit');
-        
+
         $last_n_estates = $this->estate_m->get_by(array('is_activated' => 1, 'language_id'=>$lang_id), FALSE, $last_n, 'id DESC');
-        
+
         $this->data['last_estates_num'] = $last_n;
         $this->data['last_estates'] = array();
-        $this->generate_results_array($last_n_estates, $this->data['last_estates'], $options_name); 
+        $this->generate_results_array($last_n_estates, $this->data['last_estates'], $options_name);
         /* [/Get last n properties] */
-        
+
         /* [Offset] */
-        
+
         if(isset($search_json->page_num))
         {
             $this->data['pagination_offset'] = $search_json->page_num;
             $config['cur_page'] = $search_json->page_num;
         }
-        
+
         /* [/Offset] */
-        
+
         /* [Define order] */
-        
+
         if(isset($search_json->order))
         {
             $order=$search_json->order;
         }
-        
+
         if(empty($order))$order='id DESC';
 
         $this->data['order_dateASC_selected'] = '';
         if($order=='id ASC')
             $this->data['order_dateASC_selected'] = 'selected';
-            
+
         $this->data['order_dateDESC_selected'] = '';
         if($order=='id DESC')
             $this->data['order_dateDESC_selected'] = 'selected';
-            
+
         $this->data['order_priceASC_selected'] = '';
         if($order=='price ASC')
             $this->data['order_priceASC_selected'] = 'selected';
-            
+
         $this->data['order_priceDESC_selected'] = '';
         if($order=='price DESC')
             $this->data['order_priceDESC_selected'] = 'selected';
@@ -4282,24 +4332,24 @@ class Frontend extends Frontend_Controller
         $this->data['order_livingarea_selected'] = '';
         if($order=='livingArea')
             $this->data['order_livingarea_selected'] = 'selected';
-        
+
         $this->data['order_viewsASC_selected'] = '';
         if($order=='counter_views ASC')
             $this->data['order_viewsASC_selected'] = 'selected';
-            
+
         $this->data['order_viewsDESC_selected'] = '';
         if($order=='counter_views DESC')
             $this->data['order_viewsDESC_selected'] = 'selected';
-            
+
         if(count($this->data['is_purpose_rent']) > 0)
         {
             $order = str_replace("price", "field_37_int", $order);
         }
-        
+
         $order = str_replace("price", "field_36_int", $order);
         /* [/Define order] */
-        
-        /* Pagination configuration */ 
+
+        /* Pagination configuration */
         $config['full_tag_open'] = '<ul class="pagination">';
         $config['full_tag_close'] = '</ul>';
         $config['base_url'] = $this->data['ajax_load_url'];
@@ -4313,12 +4363,12 @@ class Frontend extends Frontend_Controller
         /* [Search configuration] */
         $offset_properties = $this->data['pagination_offset'];
         $search_array = $search_json;
-        
+
         if(!empty($this->data['search_query']))
         {
             if($search_array === NULL)$search_array  = new stdClass();
-            
-            $search_array->search_option_smart = 
+
+            $search_array->search_option_smart =
                                 $this->data['search_query'];
         }
 
@@ -4332,83 +4382,83 @@ class Frontend extends Frontend_Controller
                 $this->data['purpose_rent_active'] = 'active';
                 $this->data['is_purpose_rent'] = array();
                 $this->data['is_purpose_rent'][] = array('count'=>'1');
-                
+
                 $this->data['purpose_sale_active'] = '';
                 $this->data['is_purpose_sale'] = array();
             }
         }
-                
+
         if(!empty($lang_purpose) && $search_array===NULL)
         {
             $search_array['v_search_option_4'] = $lang_purpose;
         }
-        
+
         if(!empty($address)){
             $where['property.address']  = $address;
         }
         /* [/Search configuration] */
 
         /* [Get paginated results] */
-        $config['total_rows'] = $this->estate_m->count_get_by($where, false, NULL, 'property.is_featured DESC, '.$order, 
+        $config['total_rows'] = $this->estate_m->count_get_by($where, false, NULL, 'property.is_featured DESC, '.$order,
                                                NULL, $search_array);
-        
+
         $this->data['total_rows'] = $config['total_rows'];
-        
-        $results_obj = $this->estate_m->get_by($where, false, $config['per_page'], 'property.is_featured DESC, '.$order, 
+
+        $results_obj = $this->estate_m->get_by($where, false, $config['per_page'], 'property.is_featured DESC, '.$order,
                                                $offset_properties, $search_array);
 
         $this->data['has_no_results'] = array();
         if(count($results_obj) == 0)
             $this->data['has_no_results'][] = array('count'=>count($results_obj));
-        
-        
+
+
         $this->data['results'] = array();
-        $this->generate_results_array($results_obj, $this->data['results'], $options_name); 
+        $this->generate_results_array($results_obj, $this->data['results'], $options_name);
 
         $this->pagination->initialize($config);
         $this->data['pagination_links'] =  $this->pagination->create_links();
         /* [/Get paginated results] */
-        
+
         $limit_markers = 100;
         if(config_db_item('limit_markers') == FALSE && is_int(config_db_item('limit_markers'))){
             $limit_markers = config_db_item('limit_markers');
         }
         /* [Get all estates data] */
         $this->data['all_estates'] = array();
-        $results_obj = $this->estate_m->get_by($where, false, $limit_markers, 'property.is_featured DESC, '.$order, 
+        $results_obj = $this->estate_m->get_by($where, false, $limit_markers, 'property.is_featured DESC, '.$order,
                                                0, $search_array);
-        $this->generate_results_array($results_obj, $this->data['all_estates'], $options_name); 
+        $this->generate_results_array($results_obj, $this->data['all_estates'], $options_name);
         $this->data['all_estates_center'] = calculateCenter($this->data['all_estates']);
-        
+
         $this->data['has_no_all_estates'] = array();
         if(count($this->data['all_estates']) == 0)
         {
             $this->data['has_no_all_estates'][] = array('count'=>count($this->data['all_estates']));
         }
         /* [/Get all estates data] */
-        
+
         /* [Get featured estates data] */
         $this->data['featured_properties'] = array();
         $this->data['featured_estates'] = $this->estate_m->get_by(array_merge($where, array('is_featured'=>1)));
-        $this->generate_results_array($this->data['featured_estates'], $this->data['featured_properties'], $options_name);      
+        $this->generate_results_array($this->data['featured_estates'], $this->data['featured_properties'], $options_name);
         /* [/Get featured estates data] */
-        
-        
+
+
         /* [Fetch all agents] */
-        
+
         $search_agent = $this->input->get('search-agent', TRUE);
-        
+
         $user_enabled= '';
         if(config_db_item('agents_page_user_enable') !== FALSE && config_db_item('agents_page_user_enable') == 1) {
             $user_enabled= ' or type LIKE \'USER%\' ';
         }
-                
+
         $all_agents = $this->user_m->get_counted('type LIKE \'AGENT%\' '.$user_enabled.' and activated=1', FALSE, NULL, 'properties_count DESC, user_id', '', $search_agent);
         /* [Fetch agent listings num] */
         $this->load->model('packages_m');
         $listings_count = $this->packages_m->get_curr_listings();
-        /* [/Fetch agent listings num] */        
-        
+        /* [/Fetch agent listings num] */
+
         $this->data['all_agents'] = array();
         foreach($all_agents as $key=>$agent_obj)
         {
@@ -4417,15 +4467,15 @@ class Frontend extends Frontend_Controller
             $agent['phone'] = $agent_obj->phone;
             $agent['mail'] = $agent_obj->mail;
             $agent['address'] = $agent_obj->address;
-            
+
             $agent['agent_name_title'] = url_title_cro($agent_obj->name_surname);
             $agent['agent_url'] = slug_url('profile/'.$agent_obj->id.'/'.$this->data['lang_code'].'/'.$agent['agent_name_title']);
-            
+
             if(isset($listings_count[$agent_obj->id]))
                 $agent['total_listings_num'] = $listings_count[$agent_obj->id];
             else
                 $agent['total_listings_num'] = '0';
-            
+
             if(isset($agent_obj->image_user_filename) and file_exists(FCPATH.'files/thumbnail/'.$agent_obj->image_user_filename))
             {
                 $agent['image_url'] =  base_url('files/thumbnail/'.$agent_obj->image_user_filename);
@@ -4435,37 +4485,37 @@ class Frontend extends Frontend_Controller
                 //$agent['image_url'] = 'assets/img/no_image.jpg';
                 $agent['image_url'] = 'assets/img/user-agent.png';
             }
-            
+
             // [agent second image]
             if(isset($agent_obj->image_agency_filename) and file_exists(FCPATH.'files/thumbnail/'.$agent_obj->image_agency_filename))
             {
                 $agent['image_sec_url'] = base_url('files/thumbnail/'.$agent_obj->image_agency_filename);
             }
             // [/agent second image]
-            
+
             $this->data['all_agents'][] = $agent;
         }
-        
+
         $this->data['has_agents'] = array();
         if(count($all_agents))
             $this->data['has_agents'][] = array('count'=>count($all_agents));
-            
+
          /* [/Fetch all agents] */
-        
+
         /* [Fetch paginated agents] */
-        
+
         $offset = $this->uri->segment(4);
         if(empty($offset))$offset = 0;
-        
+
         $agent_per_page = config_item('per_page_agents');
         if(empty($agent_per_page))
             $agent_per_page = 32;
-        
+
         $user_enabled= '';
         if(config_db_item('agents_page_user_enable') !== FALSE && config_db_item('agents_page_user_enable') == 1) {
             $user_enabled= ' or type LIKE \'USER%\' ';
         }
-        
+
         $paginated_agents = $this->user_m->get_counted('(type LIKE \'AGENT%\' '.$user_enabled.') AND activated=1 AND NOT property_id IS NULL', FALSE, $agent_per_page, 'properties_count DESC, user_id', $offset, $search_agent);
 
         $this->data['paginated_agents'] = array();
@@ -4477,12 +4527,12 @@ class Frontend extends Frontend_Controller
             $agent['mail'] = $agent_obj->mail;
             $agent['address'] = $agent_obj->address;
             $agent['description'] = $agent_obj->description;
-            
+
             $agent['agent_name_title'] = url_title_cro($agent_obj->name_surname);
             $agent['agent_url'] = slug_url('profile/'.$agent_obj->id.'/'.$this->data['lang_code'].'/'.$agent['agent_name_title']);
-            
+
             $agent['total_listings_num'] = $agent_obj->properties_count;
-            
+
             if(isset($agent_obj->image_user_filename) and file_exists(FCPATH.'files/thumbnail/'.$agent_obj->image_user_filename))
             {
                 $agent['image_url'] =  base_url('files/thumbnail/'.$agent_obj->image_user_filename);
@@ -4491,13 +4541,13 @@ class Frontend extends Frontend_Controller
             {
                 $agent['image_url'] = 'assets/img/user-agent.png';
             }
-            
+
             $agent['agent_profile'] = (array) $agent_obj;
-            
+
             $this->data['paginated_agents'][] = $agent;
         }
 
-        /* Pagination configuration */ 
+        /* Pagination configuration */
         $config_2['base_url'] = site_url($this->data['lang_code'].'/'.$this->data['page_id'].'/'.$this->uri->segment(3).'/');
         //$config_2['first_url'] = site_url($this->uri->uri_string());
         $config_2['total_rows'] = count($this->data['all_agents']);
@@ -4519,10 +4569,10 @@ class Frontend extends Frontend_Controller
         $pagination_3 = new MY_Pagination($config_2);
         //$pagination_2->initialize($config_2);
         $this->data['agents_pagination'] = $pagination_3->create_links();
-        
-        
+
+
         /* [/Fetch paginated agents] */
-        
+
         /* Validation for contact */
         $rules = array(
             'firstname' => array('field'=>'firstname', 'label'=>'lang:FirstLast', 'rules'=>'trim|required|xss_clean'),
@@ -4530,23 +4580,23 @@ class Frontend extends Frontend_Controller
             'phone' => array('field'=>'phone', 'label'=>'lang:Phone', 'rules'=>'trim|xss_clean'),
             'message' => array('field'=>'message', 'label'=>'lang:Message', 'rules'=>'trim|required|xss_clean')
        );
-       
+
        if(config_item('captcha_disabled') === FALSE)
-            $rules['captcha'] = array('field'=>'captcha', 'label'=>'lang:Captcha', 
+            $rules['captcha'] = array('field'=>'captcha', 'label'=>'lang:Captcha',
                                                     'rules'=>'trim|required|callback_captcha_check|xss_clean');
-       
+
         if(config_item('recaptcha_site_key') !== FALSE)
-            $rules['g-recaptcha-response'] = array('field'=>'g-recaptcha-response', 'label'=>'lang:Recaptcha', 
+            $rules['g-recaptcha-response'] = array('field'=>'g-recaptcha-response', 'label'=>'lang:Recaptcha',
                                                     'rules'=>'trim|required|callback_captcha_check|xss_clean');
-       
+
        if(isset($_POST['question']))
        {
             unset($rules['message']);
             $rules['question'] = array('field'=>'question', 'label'=>'lang:Question', 'rules'=>'trim|required|xss_clean');
        }
-       
+
        $this->form_validation->set_rules($rules);
-        
+
         // Process the form
         if($this->form_validation->run() == TRUE)
         {
@@ -4556,45 +4606,45 @@ class Frontend extends Frontend_Controller
             $this->load->library('email');
             $config_mail['mailtype'] = 'html';
             $this->email->initialize($config_mail);
-            
+
             $this->email->from($this->data['settings_noreply'], lang_check('Web page'));
             $this->email->to($this->data['settings_email']);
-            
+
             $this->email->subject(lang_check('Message from real-estate web'));
-            
+
             if(isset($_POST['question']))
             {
                 $this->load->model('qa_m');
-                
+
                 $data_t = $this->page_m->array_from_post(array('firstname', 'email', 'phone', 'question'));
-                
+
                 $data = array();
                 $data['is_readed'] = 0;
                 $data['date'] = date('Y-m-d H:i:s');
                 $data['type'] = 'QUESTION';
                 $data['answer_user_id'] = 0;
                 $data['parent_id'] = 0;
-                
+
                 $data_lang = array();
                 $data_lang['question_'.$lang_id] = $data_t['question'];
-                
+
                 $id = $this->qa_m->save_with_lang($data, $data_lang, NULL);
                 $this->email->subject(lang_check('Expert question from real-estate web'));
-    
+
                 $data['name_surname'] = $data_t['firstname'];
                 $data['phone'] = $data_t['phone'];
                 $data['mail'] = $data_t['email'];
             }
-            
+
             unset($_POST['captcha'], $_POST['captcha_hash']);
-            
+
             $message='';
             foreach($_POST as $key=>$value){
             	$message.="$key:\n$value\n";
             }
-                        
+
             $message = $this->load->view('email/contact_message', array('data'=>$data), TRUE);
-            
+
             $this->email->message($message);
             if ( ! $this->email->send())
             {
@@ -4604,13 +4654,13 @@ class Frontend extends Frontend_Controller
             {
                 $this->session->set_flashdata('email_sent', 'email_sent_true');
             }
-            
+
 //            echo $this->email->print_debugger();
 //            exit();
 
             redirect($this->uri->uri_string());
         }
-        
+
         $this->data['validation_errors'] = validation_errors();
 
         $this->data['form_sent_message'] = '';
@@ -4623,9 +4673,9 @@ class Frontend extends Frontend_Controller
             else
             {
                 $this->data['form_sent_message'] = '<p class="alert alert-error">'.lang_check('message_sent_error').'</p>';
-            }  
+            }
         }
-        
+
         // Form errors
         $this->data['form_error_firstname'] = form_error('firstname')==''?'':'error';
         $this->data['form_error_email'] = form_error('email')==''?'':'error';
@@ -4633,25 +4683,25 @@ class Frontend extends Frontend_Controller
         $this->data['form_error_message'] = form_error('message')==''?'':'error';
         $this->data['form_error_question'] = form_error('question')==''?'':'error';
         $this->data['form_error_captcha'] = form_error('captcha')==''?'':'error';
-        
+
         // Form values
         $this->data['form_value_firstname'] = set_value('firstname', '');
         $this->data['form_value_email'] = set_value('email', '');
         $this->data['form_value_phone'] = set_value('phone', '');
         $this->data['form_value_message'] = set_value('message', '');
         $this->data['form_value_question'] = set_value('question', '');
-        
+
         /* End validation for contact */
-        
+
         $page_id = $this->data['page_id'];
-        
+
         /* {PAGE SLIDESHOW} */
         if(config_db_item('page_slideshow_enabled') == TRUE && count($this->data['page_images']) > 0)
         {
             $rep_file_count = array();
             $this->data['slideshow_images'] = array();
             $num=0;
-    
+
             foreach($this->data['page_images']  as $key=>$file)
             {
                 if($this->temp_data['page']->repository_id == $file->repository_id)
@@ -4661,25 +4711,25 @@ class Frontend extends Frontend_Controller
                     $slideshow_image['url'] = str_replace(' ', '%20', base_url('files/'.$file->filename));
                     $slideshow_image['first_active'] = '';
                     if($num==0)$slideshow_image['first_active'] = 'active';
-                    
+
                     $this->data['slideshow_images'][] = $slideshow_image;
                     $num++;
                 }
             }
         }
          /* {/PAGE SLIDESHOW} */
-        
+
         /* {ARTICLES} */
         // Fetch all pages
         $this->data['news_articles'] = $this->page_m->get_lang(NULL, FALSE, $lang_id, array('parent_id' => $page_id, 'type'=>'ARTICLE'), null, '', 'date_publish DESC');
-        
+
         $this->data['news_articles_157'] = $this->page_m->get_lang(NULL, FALSE, $lang_id, array('parent_id' => 157, 'type'=>'ARTICLE'), null, '', 'date_publish DESC');
         /* {/ARTICLES} */
-        
+
         /* {MODULE_NEWS} */
-        
+
         $category_id = 0;
-        
+
         // Check for contained category/parent_id
         $news_category = $this->page_m->get_contained_news_category($page_id);
         $cat_merge = array('date_publish <'=>date('Y-m-d H:i:s'));
@@ -4688,22 +4738,22 @@ class Frontend extends Frontend_Controller
             $cat_merge = array('parent_id' => $news_category->id);
             $category_id = $news_category->id;
         }
-        
+
         $category_id_get = $this->input->get('cat', TRUE);
         if(!empty($category_id_get))
         {
             $cat_merge = array('parent_id' => $category_id_get);
             $category_id = $category_id_get;
         }
-        
+
         $pagination_offset=0;
-        
+
         // Fetch all pages
         $this->data['page_languages'] = $this->language_m->get_form_dropdown('language');
         $this->data['categories'] = $this->page_m->get_no_parents_news_category($lang_id);
         $this->data['news_module_all'] = $this->page_m->get_lang(NULL, FALSE, $lang_id, array_merge($cat_merge, array('type'=>'MODULE_NEWS_POST')), null, '', 'date_publish DESC');
-        
-        /* Pagination configuration */ 
+
+        /* Pagination configuration */
         $config_2['base_url'] = site_url('news/ajax/'.$this->data['lang_code'].'/'.$this->data['page_id'].'/'.$category_id.'/');
         //$config_2['first_url'] = site_url($this->uri->uri_string());
         $config_2['total_rows'] = count($this->data['news_module_all']);
@@ -4725,35 +4775,35 @@ class Frontend extends Frontend_Controller
         $pagination_2 = new CI_Pagination($config_2);
         //$pagination_2->initialize($config_2);
         $this->data['news_pagination'] = $pagination_2->create_links();
-        
-        $this->data['news_module_all'] = $this->page_m->get_lang(NULL, FALSE, $lang_id, 
-                                                          array_merge($cat_merge, array('type'=>'MODULE_NEWS_POST')), 
+
+        $this->data['news_module_all'] = $this->page_m->get_lang(NULL, FALSE, $lang_id,
+                                                          array_merge($cat_merge, array('type'=>'MODULE_NEWS_POST')),
                                                           $config_2['per_page'], $pagination_offset, 'date_publish DESC');
-        
+
         if(file_exists(APPPATH.'controllers/admin/news.php'))
         {
-            $this->data['news_module_latest_5'] = $this->page_m->get_lang(NULL, FALSE, $lang_id, 
-                                                              array_merge($cat_merge, array('type'=>'MODULE_NEWS_POST')), 
+            $this->data['news_module_latest_5'] = $this->page_m->get_lang(NULL, FALSE, $lang_id,
+                                                              array_merge($cat_merge, array('type'=>'MODULE_NEWS_POST')),
                                                               5, 0, 'date_publish DESC');
         }
         else
         {
-            $this->data['news_module_latest_5'] = $this->page_m->get_lang(NULL, FALSE, $lang_id, 
-                                                              array('type'=>'ARTICLE'), 
+            $this->data['news_module_latest_5'] = $this->page_m->get_lang(NULL, FALSE, $lang_id,
+                                                              array('type'=>'ARTICLE'),
                                                               5, 0, 'date DESC');
         }
 
-        
+
         /* {/MODULE_NEWS} */
-        
+
         /* {MODULE_ADS} */
         $this->load->model('ads_m');
         $this->data['ads'] = array();
-        
+
         foreach($this->ads_m->ads_types as $type_key=>$type_name)
         {
             $ads_by_type = $this->ads_m->get_by(array('type'=>$type_key));
-            
+
             $num_ads = count($ads_by_type);
 
             $this->data['has_ads_'.$type_name] = array();
@@ -4763,11 +4813,11 @@ class Frontend extends Frontend_Controller
                 $rand_ad_key=0;
                 if($ads_by_type[0]->is_random)
                     $rand_ad_key = rand(0, $num_ads-1);
-                
+
                 if(isset($ads_by_type[$rand_ad_key]) && isset($this->data['images_'.$ads_by_type[$rand_ad_key]->repository_id]))
                 {
                     $rand_image = rand(0, count($this->data['images_'.$ads_by_type[$rand_ad_key]->repository_id])-1);
-                    
+
                     $this->data['random_ads_'.$type_name.'_link'] = $ads_by_type[$rand_ad_key]->link;
                     $this->data['random_ads_'.$type_name.'_repository'] = $ads_by_type[$rand_ad_key]->repository_id;
                     $this->data['random_ads_'.$type_name.'_image'] = $this->data['images_'.$ads_by_type[$rand_ad_key]->repository_id][$rand_image]->url;
@@ -4776,13 +4826,13 @@ class Frontend extends Frontend_Controller
             }
         }
         /* {/MODULE_ADS} */
-        
+
         /* {MODULE_SHOWROOM} */
-        
+
         $this->load->model('showroom_m');
-        
+
         $category_id = 0;
-        
+
         // Check for contained category/parent_id
         $showroom_category = $this->showroom_m->get_contained_showroom_category($page_id);
         $cat_merge = array();
@@ -4791,21 +4841,21 @@ class Frontend extends Frontend_Controller
             $cat_merge = array('parent_id' => $showroom_category->id);
             $category_id = $showroom_category->id;
         }
-        
+
         $category_id_get = $this->input->get('cat', TRUE);
         if(!empty($category_id_get))
         {
             $cat_merge = array('parent_id' => $category_id_get);
             $category_id = $category_id_get;
         }
-        
+
         $pagination_offset=0;
-        
+
         // Fetch all pages
         $this->data['categories_showroom'] = $this->showroom_m->get_no_parents_showrooms_category($lang_id);
         $this->data['showroom_module_all'] = $this->showroom_m->get_lang(NULL, FALSE, $lang_id, array_merge($cat_merge, array('type'=>'COMPANY')), null, '', 'date_publish DESC');
-        
-        /* Pagination configuration */ 
+
+        /* Pagination configuration */
         $config_2['base_url'] = site_url('showroom/ajax/'.$this->data['lang_code'].'/'.$this->data['page_id'].'/'.$category_id.'/');
         //$config_2['first_url'] = site_url($this->uri->uri_string());
         $config_2['total_rows'] = count($this->data['showroom_module_all']);
@@ -4827,23 +4877,23 @@ class Frontend extends Frontend_Controller
         $pagination_2 = new CI_Pagination($config_2);
         //$pagination_2->initialize($config_2);
         $this->data['showroom_pagination'] = $pagination_2->create_links();
-        
-        $this->data['showroom_module_all'] = $this->showroom_m->get_lang(NULL, FALSE, $lang_id, 
-                                                          array_merge($cat_merge, array('type'=>'COMPANY')), 
+
+        $this->data['showroom_module_all'] = $this->showroom_m->get_lang(NULL, FALSE, $lang_id,
+                                                          array_merge($cat_merge, array('type'=>'COMPANY')),
                                                           $config_2['per_page'], $pagination_offset, 'date_publish DESC');
-        
-        $this->data['showroom_module_latest_5'] = $this->showroom_m->get_lang(NULL, FALSE, $lang_id, 
-                                                          array_merge($cat_merge, array('type'=>'COMPANY')), 
+
+        $this->data['showroom_module_latest_5'] = $this->showroom_m->get_lang(NULL, FALSE, $lang_id,
+                                                          array_merge($cat_merge, array('type'=>'COMPANY')),
                                                           5, 0, 'date_publish DESC');
-        
+
         /* {/MODULE_SHOWROOM} */
-        
+
         /* {MODULE_Q&A} */
-        
+
         $this->load->model('qa_m');
-        
+
         $category_id = 0;
-        
+
         // Check for contained category/parent_id
         $expert_category = $this->qa_m->get_contained_expert_category($page_id);
         $cat_merge = array();
@@ -4852,21 +4902,21 @@ class Frontend extends Frontend_Controller
             $cat_merge = array('parent_id' => $expert_category->id);
             $category_id = $expert_category->id;
         }
-        
+
         $category_id_get = $this->input->get('cat', TRUE);
         if(!empty($category_id_get))
         {
             $cat_merge = array('parent_id' => $category_id_get);
             $category_id = $category_id_get;
         }
-        
+
         $pagination_offset=0;
-                
+
         // Fetch all pages
         $this->data['categories_expert'] = $this->qa_m->get_no_parents_expert_category($lang_id);
         $this->data['expert_module_all'] = $this->qa_m->get_lang(NULL, FALSE, $lang_id, array_merge($cat_merge, array('type'=>'QUESTION', 'is_readed'=>1)), null, '', 'date_publish DESC');
-        
-        /* Pagination configuration */ 
+
+        /* Pagination configuration */
         $config_2['base_url'] = site_url('expert/ajax/'.$this->data['lang_code'].'/'.$this->data['page_id'].'/'.$category_id.'/');
         //$config_2['first_url'] = site_url($this->uri->uri_string());
         $config_2['total_rows'] = count($this->data['expert_module_all']);
@@ -4888,18 +4938,18 @@ class Frontend extends Frontend_Controller
         $pagination_2 = new CI_Pagination($config_2);
         //$pagination_2->initialize($config_2);
         $this->data['expert_pagination'] = $pagination_2->create_links();
-        
-        $this->data['expert_module_all'] = $this->qa_m->get_lang(NULL, FALSE, $lang_id, 
-                                                          array_merge($cat_merge, array('type'=>'QUESTION', 'is_readed'=>1)), 
+
+        $this->data['expert_module_all'] = $this->qa_m->get_lang(NULL, FALSE, $lang_id,
+                                                          array_merge($cat_merge, array('type'=>'QUESTION', 'is_readed'=>1)),
                                                           $config_2['per_page'], $pagination_offset, 'date_publish DESC');
-        
-        $this->data['expert_module_latest_5'] = $this->qa_m->get_lang(NULL, FALSE, $lang_id, 
-                                                          array_merge($cat_merge, array('type'=>'QUESTION', 'is_readed'=>1)), 
+
+        $this->data['expert_module_latest_5'] = $this->qa_m->get_lang(NULL, FALSE, $lang_id,
+                                                          array_merge($cat_merge, array('type'=>'QUESTION', 'is_readed'=>1)),
                                                           5, 0, 'date_publish DESC');
-        
+
         // Fetch all experts
         $all_experts = $this->user_m->get_by(array('qa_id !='=>0, 'type !=' => 'USER'));
-        
+
         $this->data['all_experts'] = array();
         foreach($all_experts as $key=>$expert_obj)
         {
@@ -4908,7 +4958,7 @@ class Frontend extends Frontend_Controller
             $agent['phone'] = $expert_obj->phone;
             $agent['mail'] = $expert_obj->mail;
             $agent['address'] = $expert_obj->address;
-            
+
             if(isset($expert_obj->image_user_filename))
             {
                 $agent['image_url'] =  base_url('files/thumbnail/'.$expert_obj->image_user_filename);
@@ -4921,7 +4971,7 @@ class Frontend extends Frontend_Controller
 
             $this->data['all_experts'][$expert_obj->id] = $agent;
         }
-        
+
         /* {/MODULE_Q&A} */
 
         // Get templates
@@ -4938,32 +4988,32 @@ class Frontend extends Frontend_Controller
                 }
             }
         }
-        
+
         // custom template defined
         if(substr($this->temp_data['page']->template, 0, 7) == 'custom_')
         {
             $this->load->model('customtemplates_m');
             $template_id = substr($this->temp_data['page']->template, 7);
-            
+
             $this->temp_data['page']->template = 'custom_template';
-            
+
             $this->data['template_data'] = $this->customtemplates_m->get($template_id);
             $this->data['widgets_order'] = json_decode($this->data['template_data']->widgets_order);
         }
-        
+
         if(isset($this->data['widget_preview']) && $this->data['widget_preview']) {
             $this->temp_data['page']->template = 'inc_widget_preview';
             $this->data['widget_preview_file'] = $this->uri->segment(3);
         }
-        
+
         $output = $this->parser->parse($this->data['settings_template'].'/'.$this->temp_data['page']->template.'.php', $this->data, TRUE);
         $output =  str_replace('assets/', base_url('templates/'.$this->data['settings_template']).'/assets/', $output);
-        
+
         if(config_item('litecache_enabled') === TRUE)
         {
             $this->litecache->save_cache($output);
         }
-        
+
         echo $output;
 	}
 

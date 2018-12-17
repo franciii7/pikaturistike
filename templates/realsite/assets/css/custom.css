@@ -1248,6 +1248,8 @@
 }
 
 #main .btn-success {
+    border-radius: 17px;
+
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
@@ -1707,6 +1709,7 @@ body .cityguide-map {
 }
 
 .form-real-guide .form-group .btn {
+    border-radius: 10px;
     margin-bottom: 10px;
 }
 

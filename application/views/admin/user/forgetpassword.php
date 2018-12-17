@@ -48,7 +48,7 @@
                 </div>
               
                 <div class="widget-foot">
-                  <a href="<?php echo site_url('admin/user/login')?>"><?php echo lang('Login here')?></a>
+                  <a href="<?php echo site_url('frontend/login')?>"><?php echo lang('Login here')?></a>
                 </div>
             </div>  
       </div>

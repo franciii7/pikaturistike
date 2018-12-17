@@ -35,6 +35,7 @@ class Admin_Controller extends MY_Controller
         $this->load->model('language_m');
         $this->load->model('file_m');
         $this->load->model('repository_m');
+        $this->load->model('option_m');
         
         header('P3P: CP="CAO PSA OUR"'); // IE11 cache issues
         header("Expires: Tue, 03 Jul 2001 06:00:00 GMT");

@@ -1,272 +1,108 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    {template_head}
+	<title>Login V3</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="assets/img/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../../../vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assets/fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../../../vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="../../../vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../../../vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../../../vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="../../../vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="assets/css/util.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+<!--===============================================================================================-->
 </head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-login100" style="background-image: url('assets/img/images/bg-01.jpg');">
+			<div class="wrap-login100">
+        <form action="" method="post" accept-charset="utf-8" class="login100-form validate-form">
+					<span class="login100-form-logo">
+						<i class="zmdi zmdi-pin"></i>
+					</span>
 
-<body class="<?php _widget('custom_paletteclass'); ?>">
-<?php _widget('custom_palette'); ?>
-<div class="page-wrapper">
-    <div class="header header-standard">
-        <?php _widget('header_loginmenu');?>
-        <?php _widget('header_mainmenu');?>
-    </div><!-- /.header-->
-    <div class="main" id="main">
-        <div class="container" id='content'>
-            <div id="main-inner">
-                <!-- MAP -->
-                <?php //_widget('top_map'); ?>
-                <div id="content" class="container">
-                    <!-- SLOGAN -->
-                    <?php _widget('top_slogan'); ?>                
-                    <div class="block-content block-content-small-padding">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <?php //_widget('center_recentproperties'); ?>  
-                                
-      <!--  <?php //if(file_exists(APPPATH.'controllers/admin/packages.php')): ?>
-        <div class="row-fluid">
-            <div class="span12">
-            <h2>{lang_AvailablePackages}</h2>
-            <div class="property_content ">
-                <div class="widget-content">
-                    <?php //if($this->session->flashdata('error_package')):?>
-                    <p class="alert alert-error"><?php //echo $this->session->flashdata('error_package')?></p>
-                    <?php //endif;?>
-                    <table class="table table-striped" style="margin-bottom: 0px;">
-                      <thead>
-                        <tr>
-                        	<th>#</th>
-                            <th><?php //echo lang_check('Package name');?></th>
-                            <th><?php //echo lang_check('Price');?></th>
-                            <th><?php //echo lang_check('Free property activation');?></th>
-                            <th><?php //echo lang_check('Days limit');?></th>
-                            <th><?php //echo lang_check('Listings limit');?></th>
-                            <th><?php //echo lang_check('Free featured limit');?></th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <?php
-                        //if(count($packages)): foreach($packages as $package):
-                        ?>
-                                    <tr>
-                                    	<td><?php //echo $package->id; ?></td>
-                                        <td>
-                                        <?php //echo $package->package_name; ?>
-                                        <?php //echo $package->show_private_listings==1?'&nbsp;<i class="icon-eye-open"></i>':'&nbsp;<i class="icon-eye-close"></i>'; ?>
-                                        </td>
-                                        <td><?php //echo $package->package_price.' '.$package->currency_code; ?></td>
-                                        <td><?php //echo $package->auto_activation?'<i class="icon-ok"></i>':'<i class="icon-remove"></i>'; ?></td>
-                                        <td><?php //echo $package->package_days; ?></td>
-                                        <td><?php //echo $package->num_listing_limit?></td>
-                                        <td><?php //echo $package->num_featured_limit?></td>
-                                    </tr>
-                        <?php //endforeach;?>
-                        <?php //else:?>
-                                    <tr>
-                                    	<td colspan="20"><?php //echo lang_check('Not available');?></td>
-                                    </tr>
-                        <?php //endif;?>           
-                      </tbody>
-                    </table>
+					<span class="login100-form-title p-b-34 p-t-27">
+						<?php echo lang('Login')?>
+          			</span>
+          
+            
+					<div class="wrap-input100 validate-input" data-validate = "Enter username">
+						<input class="input100" type="text" name="username" placeholder="<?php echo lang('Username'); ?>" id="inputUsername" autocomplete="off">
+						<span class="focus-input100" data-placeholder="&#xf207;"></span>
+          </div>
 
-                  </div>
-            </div>
-            </div>
-        </div>
-        
-        <?php //endif; ?>
-        
-        <?php //if(isset($settings_activation_price) && isset($settings_featured_price) &&
-                 //$settings_activation_price > 0 || $settings_featured_price > 0): ?>
-        <div class="row-fluid">
-            <div class="span12">
-            <div class="property_content ">
-                <div class="widget-content">
-                <?php //if($settings_activation_price > 0): ?>
-                    <?php //echo lang_check('* Property activation price:').' '.$settings_activation_price.' '.$settings_default_currency; ?><br />
-                 <?php //endif;?>
-                 <?php //if($settings_featured_price > 0): ?>
-                    <?php //echo lang_check('* Property featured price:').' '.$settings_featured_price.' '.$settings_default_currency; ?>
-                 <?php //endif;?>
-                 </div>
-            </div>
-            </div>
-        </div>
-        <?php //endif;?> -->
-        
-        <div class="row-fluid">
-            <div class="span6 login-form">
-            <h2>{lang_Login}</h2>
-            <div class="property_content widget-content box">
-                <?php if($is_login):?>
-                <?php echo validation_errors()?>
-                <?php if($this->session->flashdata('error')):?>
-                <p class="alert alert-error"><?php echo $this->session->flashdata('error')?></p>
-                <?php endif;?>
-                <?php flashdata_message();?>
-                <?php endif;?>
-                
-                  <!-- Login form -->
-                  <?php echo form_open(NULL, array('class' => 'form-horizontal'))?>
-                    <!-- Email -->
-                    <div class="control-group">
-                      <label class="control-label" for="inputUsername"><?php echo lang('Username')?></label>
-                      <div class="controls">
-                        <?php echo form_input('username', $this->input->get('username'), 'class="form-control" id="inputUsername" placeholder="'.lang('Username').'"')?>
-                      </div>
-                    </div>
-                    <!-- Password -->
-                    <div class="control-group">
-                      <label class="control-label" for="inputPassword"><?php echo lang('Password')?></label>
-                      <div class="controls">
-                        <?php echo form_password('password', $this->input->get('password'), 'class="form-control" id="inputPassword" placeholder="'.lang('Password').'"')?>
-                      </div>
-                    </div>
-                    <!-- Remember me checkbox and sign in button -->
-                    <div class="control-group">
-					<div class="controls">
-                      <div class="checkbox">
-                        <label>
-                          <input type="checkbox" name="remember" id="remember" value="true" /> <?php echo lang('Remember me')?>
-                        </label>
-						</div>
+					<div class="wrap-input100 validate-input" data-validate="Enter password">
+						<input class="input100" type="password" name="password" placeholder="<?php echo lang('Password') ?>" id="inputPassword" autocomplete="off"> 
+						<span class="focus-input100" data-placeholder="&#xf191;"></span>
 					</div>
+ 
+					<div class="contact100-form-checkbox">
+						<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember">
+						<label class="label-checkbox100" for="ckb1">
+            			<?php echo lang('Remember me')?>
+						</label>
 					</div>
-                    <div class="control-group">
-					   <div class="controls">
-							<button type="submit" class="btn btn-danger"><?php echo lang('Sign in')?></button>
-							<button type="reset" class="btn btn-default"><?php echo lang('Reset')?></button>
-                            <a href="<?php echo site_url('admin/user/forgetpassword'); ?>"><em><?php echo lang_check('Forget password?')?></em></a>
-						</div>
-                    </div>
-                  <?php echo form_close()?>
-				  
-                <?php if(config_item('app_type') == 'demo'):?>
-                <p class="alert alert-info"><?php echo lang_check('User creditionals: user, user')?></p>
-                <?php endif;?>
-                
-                <?php if(config_item('appId') != '' && !empty($login_url_facebook)): ?>
-                <a href="<?php echo $login_url_facebook; ?>" style="text-align:center;display:block;"><img src="assets/img/login-facebook.png" /></a>
-                <?php endif;?>
-                
-                <?php if(config_item('glogin_enabled')): ?>
-                    <a href="<?php echo site_url('api/google_login/'.$lang_id); ?>" style="text-align:center;display:block;"><img src="assets/img/login-google.png" /></a>
-                <?php endif;?>
-                <?php if(file_exists(APPPATH.'libraries/Twlogin.php')): ?>
-                    <?php 
-                        $CI = &get_instance();
-                        $CI->load->library('twlogin');
-                    ?>
-                    <?php if($CI->twlogin->__get('consumerKey') && $CI->twlogin->__get('consumerSecret')): ?>
-                        <a href="<?php echo site_url('api/twitter_login/'.$lang_id); ?>" title style="text-align:center;display:block;"><img src="assets/img/twitter_signin.png" alt="twitter_login" /></a>
-                    <?php endif;?>
-                <?php endif;?> 
-            </div></div>
-            <div class="span6 register-form">
-            <h2>{lang_Register}</h2>
-            <a name="content" id="content"></a>
-            <div class="property_content widget-content">
-                <?php if($this->session->flashdata('error_registration') != ''):?>
-                <p class="alert alert-success"><?php echo $this->session->flashdata('error_registration')?></p>
-                <?php endif;?>
-                <?php if($is_registration):?>
-                <?php echo validation_errors()?>
-                <?php endif;?>
-                  <!-- Login form -->
-                  <?php echo form_open(NULL, array('class' => 'form-horizontal'))?>
-                  <?php if(config_db_item('register_reduced') == FALSE): ?>
-                                <div class="control-group">
-                                  <label class="control-label"><?php echo lang('FirstLast')?></label>
-                                  <div class="controls">
-                                    <?php echo form_input('name_surname', set_value('name_surname', ''), 'class="form-control" id="inputNameSurname" placeholder="'.lang('FirstLast').'"')?>
-                                  </div>
-                                </div>
-                                
-                                <div class="control-group">
-                                  <label class="control-label"><?php echo lang('Username')?></label>
-                                  <div class="controls">
-                                    <?php echo form_input('username', set_value('username', ''), 'class="form-control" id="inputUsername" placeholder="'.lang('Username').'"')?>
-                                  </div>
-                                </div>
-                  <?php endif; ?>
-                                <div class="control-group">
-                                  <label class="control-label"><?php echo lang('Email')?></label>
-                                  <div class="controls">
-                                    <?php echo form_input('mail', set_value('mail', ''), 'class="form-control" id="inputMail" placeholder="'.lang('Email').'"')?>
-                                  </div>
-                                </div>
-                  
-                                <div class="control-group">
-                                  <label class="control-label"><?php echo lang('Password')?></label>
-                                  <div class="controls">
-                                    <?php echo form_password('password', set_value('password', ''), 'class="form-control" id="inputPassword" placeholder="'.lang('Password').'" autocomplete="off"')?>
-                                  </div>
-                                </div>
-                                
-                                <div class="control-group">
-                                  <label class="control-label"><?php echo lang('Confirmpassword')?></label>
-                                  <div class="controls">
-                                    <?php echo form_password('password_confirm', set_value('password_confirm', ''), 'class="form-control" id="inputPasswordConfirm" placeholder="'.lang('Confirmpassword').'" autocomplete="off"')?>
-                                  </div>
-                                </div>
-                  <?php if(config_db_item('register_reduced') == FALSE): ?>
-                                <div class="control-group">
-                                  <label class="control-label"><?php echo lang('Address')?></label>
-                                  <div class="controls">
-                                    <?php echo form_textarea('address', set_value('address', ''), 'placeholder="'.lang('Address').'" rows="3" class="form-control"')?>
-                                  </div>
-                                </div>          
-                                
-                                <div class="control-group">
-                                  <label class="control-label"><?php echo lang('Phone')?> <?php echo lang_check('PhoneAdd')?></label>
-                                  <div class="controls">
-                                    <?php echo form_input('phone', set_value('phone', ''), 'class="form-control" id="inputPhone" placeholder="'.lang('Phone').'"')?>
-                                  </div>
-                                </div>
-                   <?php endif; ?>
 
-                                
-                                <?php if(config_item('captcha_disabled') === FALSE): ?>
-                                <div class="control-group" >
-                                    <label class="control-label captcha"><?php echo $captcha['image']; ?></label>
-                                    <div class="controls">
-                                        <input class="captcha" name="captcha" type="text" placeholder="{lang_Captcha}" value="" />
-                                        <input class="hidden" name="captcha_hash" type="text" value="<?php echo $captcha_hash; ?>" />
-                                    </div>
-                                </div>
-                                <?php endif; ?>
-                            <?php if(config_item('recaptcha_site_key') !== FALSE): ?>
-                            <div class="control-group" >
-                                <label class="control-label captcha"></label>
-                                <div class="controls">
-                                    <?php _recaptcha(true); ?>
-                               </div>
-                            </div>
-                            <?php endif; ?>     
-                    <div class="control-group">
-                        <div class="controls">
-    						<button type="submit" class="btn btn-danger"><?php echo lang('Register')?></button>
-    						<button type="reset" class="btn btn-success"><?php echo lang('Reset')?></button>
-    					</div>
+					<div class="container-login100-form-btn">
+                        <button type="submit" class="login100-form-btn"><?php echo lang('Sign in')?></button>                       
                     </div>
-                  <?php echo form_close()?>
-            </div></div>
-        </div>
-                                
-                            </div>
-                        </div><!-- /.row -->
-                    </div><!-- /.block-content -->
-                    <!-- SOCIAL -->
-                    <?php //_widget('bottom_social'); ?>  
-                    <!-- STATISTICS -->
-                    <?php //_widget('bottom_stats'); ?> 
-                </div><!-- /.container -->
-            </div><!-- /#main-inner -->
-        </div><!-- /#main -->
-    </div><!-- /#main-wrapper -->
-     <?php _subtemplate( 'footers', _ch($subtemplate_footer, 'standart')); ?>
-</div><!-- /#wrapper -->
-<?php _widget('custom_javascript'); ?> 
+                    <br/>
+                    <div class="container-login100-form-btn">               
+                        <a class="login100-form-btn" href="<?php echo site_url('/frontend/register')?>/{lang_code}"><?php echo lang_check('Register')?></a>
+					</div>
+					<div class="text-center p-t-90">
+            			<a class="txt1" href="<?php echo site_url('admin/user/forgetpassword')?>"><?php echo lang_check('Forget password?')?></a>
+          			</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+
+  <div id="dropDownSelect1"></div>
+  
+	
+<!--===============================================================================================-->
+	<script src="../../../vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../../../vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../../../vendor/bootstrap/js/popper.js"></script>
+	<script src="../../../vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../../../vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../../../vendor/daterangepicker/moment.min.js"></script>
+	<script src="../../../vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="../../../vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="assets/js/main.js"></script>
+
+
+<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-23581568-13');
+</script>
+
 </body>
 </html>

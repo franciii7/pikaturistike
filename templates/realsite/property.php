@@ -29,7 +29,6 @@
      }
 })
 </script>
-
 <?php if(file_exists(FCPATH.'templates/'.$settings_template.'/assets/js/places.js')): ?>
 <script src="assets/js/places.js"></script>
 <?php endif; ?>

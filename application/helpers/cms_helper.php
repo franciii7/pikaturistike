@@ -639,7 +639,7 @@ function btn_view_sent($uri)
 
 function btn_edit($uri)
 {
-	return anchor($uri, '<i class="icon-edit"></i> '.lang('edit'), array('class'=>'btn btn-primary'));
+	return anchor($uri, '<i class="icon-edit"></i> '.lang('edit'), array('class'=>'btn btn-primary', 'style'=>'border-radius:50%;'));
 }
 
 function btn_edit_invoice($uri)
@@ -649,7 +649,7 @@ function btn_edit_invoice($uri)
 
 function btn_delete($uri)
 {
-	return anchor($uri, '<i class="icon-remove"></i> '.lang('delete'), array('onclick' => 'return confirm(\''.lang('Are you sure?').'\')', 'class'=>'btn btn-danger'));
+	return anchor($uri, '<i class="icon-remove"></i> '.lang('delete'), array('onclick' => 'return confirm(\''.lang('Are you sure?').'\')', 'class'=>'btn btn-danger','style'=>'border-radius:50%;'));
 }
 
 function btn_delete_debit($uri)

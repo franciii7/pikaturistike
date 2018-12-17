@@ -8,12 +8,14 @@ class Dashboard extends Admin_Controller {
         $this->load->model('estate_m');
         $this->load->model('option_m');
         
+        
         // Get language for content id to show in administration
         $this->data['content_language_id'] = $this->language_m->get_content_lang();
 	}
     
     public function index() 
     {
+       
         $this->data['pages_nested'] = $this->page_m->get_nested($this->data['content_language_id']);
         $this->data['languages'] = $this->language_m->get_form_dropdown('language');
         //$this->data['estates'] = $this->estate_m->get_last();
@@ -27,8 +29,9 @@ class Dashboard extends Admin_Controller {
         
         $where = array();
         $search_array = array();
-        $where['language_id']  = $this->data['content_language_id'];
-        
+        $lang_id = $this->data['content_language_id'];
+        $where['language_id']  = $lang_id;
+
         // [AGENT_COUNTY_AFFILIATE]
         if($this->session->userdata('type') == 'AGENT_COUNTY_AFFILIATE')
         {
@@ -60,13 +63,17 @@ class Dashboard extends Admin_Controller {
                 $where['(status IS NULL OR status != "HOLD_ADMIN")'] = NULL;
             }
         }
+
         // [/AGENT_COUNTY_AFFILIATE]
         
         $this->data['estates'] = $this->estate_m->get_by($where, false, 5, 'property.id DESC', NULL, array(), NULL, TRUE);
         
         $this->data['estates_all'] = $this->estate_m->get_by($where, false, 100, 'property.id DESC', NULL, array(), NULL, TRUE);
-        
-    	$this->data['subview'] = 'admin/dashboard/index';
+
+        $type_listings = $this->option_m->get_lang(2, FALSE, $lang_id);
+        $this->data['image_gallery_option_2'] = $type_listings->image_gallery;
+        $this->data['option_2_values'] = $type_listings->values_4;
+        $this->data['subview'] = 'admin/dashboard/index';
     	$this->load->view('admin/_layout_main', $this->data);
     }
     

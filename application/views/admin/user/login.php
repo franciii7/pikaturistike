@@ -32,14 +32,14 @@
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url('../../../templates/realsite/assets/img/images/bg-01.jpg');">
 			<div class="wrap-login100">
-        <form action="http://localhost/pikaturistike/index.php/admin/user/login#content" method="post" accept-charset="utf-8" class="login100-form validate-form">
+        <form action="../../../index.php/admin/user/login#content" method="post" accept-charset="utf-8" class="login100-form validate-form">
 					<span class="login100-form-logo">
 						<i class="zmdi zmdi-pin"></i>
 					</span>
 
 					<span class="login100-form-title p-b-34 p-t-27">
-						Log in
-          </span>
+						<?php echo lang('Login')?>
+          			</span>
           
             
 					<div class="wrap-input100 validate-input" data-validate = "Enter username">
@@ -53,19 +53,19 @@
 					</div>
  
 					<div class="contact100-form-checkbox">
-						<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+						<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember">
 						<label class="label-checkbox100" for="ckb1">
-            <?php echo lang('Remember me')?>
+            			<?php echo lang('Remember me')?>
 						</label>
 					</div>
 
 					<div class="container-login100-form-btn">
-            <button type="submit" class="login100-form-btn"><?php echo lang('Sign in')?></button>
+            			<button type="submit" class="login100-form-btn"><?php echo lang('Sign in')?></button>
 					</div>
 
 					<div class="text-center p-t-90">
-            <a class="txt1" href="<?php echo site_url('admin/user/forgetpassword')?>"><?php echo lang_check('Forget password?')?></a>
-          </div>
+            			<a class="txt1" href="<?php echo site_url('admin/user/forgetpassword')?>"><?php echo lang_check('Forget password?')?></a>
+          			</div>
 				</form>
 			</div>
 		</div>
@@ -99,7 +99,7 @@
 	  gtag('js', new Date());
 
 	  gtag('config', 'UA-23581568-13');
-	</script>
+</script>
 
 </body>
 </html>

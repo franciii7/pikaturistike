@@ -72,6 +72,9 @@ class CI_DB_active_record extends CI_DB_driver {
 	 * @param	string
 	 * @return	object
 	 */
+
+
+	 
 	public function select($select = '*', $escape = NULL)
 	{
 		if (is_string($select))
@@ -987,12 +990,13 @@ class CI_DB_active_record extends CI_DB_driver {
 		$query = $this->query($sql);
 		$this->_reset_select();
 
-		if ($query->num_rows() == 0)
+		if (!$query || $query->num_rows() == 0)
 		{
 			return 0;
 		}
-
+		
 		$row = $query->row();
+		
 		return (int) $row->numrows;
 	}
 

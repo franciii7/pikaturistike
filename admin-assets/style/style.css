@@ -28,8 +28,10 @@ select{
 }
 
 input[type="radio"], input[type="checkbox"] {
-    margin: 0px 0 0 !important;
-    margin-right: 5px !important;
+    /* margin: 0px 0 0 !important;
+    margin-right: 5px !important; */
+    margin-left:10px !important;
+    margin-top: 10px !important;
     line-height: 23px !important;
     border:0px !important;
 }
@@ -187,6 +189,7 @@ a.btn{
 }
 
 .btn.btn-info{
+    
 	background: #52b9e9 !important;
 }
 
@@ -203,6 +206,7 @@ a.btn{
 }
 
 .btn.btn-warning{
+    /* border-radius: 50%; */
 	background: #f88529 !important;
 }
 
@@ -969,6 +973,7 @@ form label{
 /* Widget */
 
 .widget {
+  margin-left: 2px;
   margin-top: 10px;
   margin-bottom: 20px; 
   background: #fff;

@@ -312,26 +312,26 @@
                                 </div>
                                 <?php endif; ?> 
                     
-                                <div class="form-group">
-                                  <label class="col-lg-2 control-label"><?php echo lang_check('Word filtering')?></label>
+                                <!--<div class="form-group">
+                                  <label class="col-lg-2 control-label"><?php //echo lang_check('Word filtering')?></label>
                                   <div class="col-lg-10">
-                                    <?php echo form_input('word_filtering', set_value('word_filtering', isset($settings['word_filtering'])?$settings['word_filtering']:''), 'class="form-control" id="inputword_filtering" placeholder="'.lang_check('Word filtering').'"')?>
+                                    <?php //echo form_input('word_filtering', set_value('word_filtering', isset($settings['word_filtering'])?$settings['word_filtering']:''), 'class="form-control" id="inputword_filtering" placeholder="'.lang_check('Word filtering').'"')?>
                                   </div>
                                 </div>
                                 
                                 <div class="form-group">
-                                  <label class="col-lg-2 control-label"><?php echo lang_check('Walkscore enabled')?></label>
+                                  <label class="col-lg-2 control-label"><?php //echo lang_check('Walkscore enabled')?></label>
                                   <div class="col-lg-10">
-                                    <?php echo form_checkbox('walkscore_enabled', '1', set_value('walkscore_enabled', isset($settings['walkscore_enabled'])?$settings['walkscore_enabled']:'0'), 'id="input_walkscore_enabled"')?>
+                                    <?php //echo form_checkbox('walkscore_enabled', '1', set_value('walkscore_enabled', isset($settings['walkscore_enabled'])?$settings['walkscore_enabled']:'0'), 'id="input_walkscore_enabled"')?>
                                   </div>
                                 </div>
                                  
                                 <div class="form-group">
-                                  <label class="col-lg-2 control-label"><?php echo lang_check('Property submission disabled')?></label>
+                                  <label class="col-lg-2 control-label"><?php //echo lang_check('Property submission disabled')?></label>
                                   <div class="col-lg-10">
-                                    <?php echo form_checkbox('property_subm_disabled', '1', set_value('property_subm_disabled', isset($settings['property_subm_disabled'])?$settings['property_subm_disabled']:'0'), 'id="input_property_subm_disabled"')?>
+                                    <?php //echo form_checkbox('property_subm_disabled', '1', set_value('property_subm_disabled', isset($settings['property_subm_disabled'])?$settings['property_subm_disabled']:'0'), 'id="input_property_subm_disabled"')?>
                                   </div>
-                                </div>
+                                </div>-->
                                  
                                 <div class="form-group">
                                   <label class="col-lg-2 control-label"><?php echo lang_check('Page offline')?></label>
@@ -347,41 +347,41 @@
                                   </div>
                                 </div>
                                 
-                                <div class="form-group">
-                                  <label class="col-lg-2 control-label"><?php _l('Enable quick submission')?></label>
+                                <!--<div class="form-group">
+                                  <label class="col-lg-2 control-label"><?php //_l('Enable quick submission')?></label>
                                   <div class="col-lg-10">
-                                    <?php echo form_checkbox('enable_qs', '1', set_value('enable_qs', isset($settings['enable_qs'])?$settings['enable_qs']:'0'), 'id="input_enable_qs"')?>
+                                    <?php //echo form_checkbox('enable_qs', '1', set_value('enable_qs', isset($settings['enable_qs'])?$settings['enable_qs']:'0'), 'id="input_enable_qs"')?>
                                   </div>
                                 </div>
                                 
                                 <div class="form-group">
-                                  <label class="col-lg-2 control-label"><?php _l('Multilanguage on quick submission')?></label>
+                                  <label class="col-lg-2 control-label"><?php //_l('Multilanguage on quick submission')?></label>
                                   <div class="col-lg-10">
-                                    <?php echo form_checkbox('multilang_on_qs', '1', set_value('multilang_on_qs', isset($settings['multilang_on_qs'])?$settings['multilang_on_qs']:'0'), 'id="input_multilang_on_qs"')?>
+                                    <?php //echo form_checkbox('multilang_on_qs', '1', set_value('multilang_on_qs', isset($settings['multilang_on_qs'])?$settings['multilang_on_qs']:'0'), 'id="input_multilang_on_qs"')?>
                                   </div>
                                 </div>
-                               <?php if(file_exists(APPPATH.'libraries/Clickatellapi.php')): ?>
+                               <?php //if(file_exists(APPPATH.'libraries/Clickatellapi.php')): ?>
                                 <div class="form-group">
-                                  <label class="col-lg-2 control-label"><?php echo lang_check('Clickatell api key')?> (<?php echo lang_check('Define only one field api key or appi id')?>)</label>
+                                  <label class="col-lg-2 control-label"><?php //echo lang_check('Clickatell api key')?> (<?php //echo lang_check('Define only one field api key or appi id')?>)</label>
                                   <div class="col-lg-10">
-                                    <?php echo form_input('clickatell_api_key', set_value('clickatell_api_key', isset($settings['clickatell_api_key'])?$settings['clickatell_api_key']:''), 'class="form-control" id="inputclickatell_api_key" placeholder="'.lang_check('Clickatell api key').'"')?>
+                                    <?php //echo form_input('clickatell_api_key', set_value('clickatell_api_key', isset($settings['clickatell_api_key'])?$settings['clickatell_api_key']:''), 'class="form-control" id="inputclickatell_api_key" placeholder="'.lang_check('Clickatell api key').'"')?>
                                   </div>
                                 </div>
-                                <?php endif;?>
-                                <?php if(config_item('mailchimp_enable')!=FALSE): ?>
+                                <?php //endif;?>
+                                <?php //if(config_item('mailchimp_enable')!=FALSE): ?>
                                 <div class="form-group">
-                                  <label class="col-lg-2 control-label" for="inputmailchimp_api_key"><?php echo lang_check('Mailchimp api key')?></label>
+                                  <label class="col-lg-2 control-label" for="inputmailchimp_api_key"><?php //echo lang_check('Mailchimp api key')?></label>
                                   <div class="col-lg-10">
-                                    <?php echo form_input('mailchimp_api_key', set_value('mailchimp_api_key', isset($settings['mailchimp_api_key'])?$settings['mailchimp_api_key']:''), 'class="form-control" id="inputmailchimp_api_key" placeholder="'.lang_check('Mailchimp api key').'"')?>
+                                    <?php //echo form_input('mailchimp_api_key', set_value('mailchimp_api_key', isset($settings['mailchimp_api_key'])?$settings['mailchimp_api_key']:''), 'class="form-control" id="inputmailchimp_api_key" placeholder="'.lang_check('Mailchimp api key').'"')?>
                                   </div>
                                 </div>
                                 <div class="form-group">
-                                  <label class="col-lg-2 control-label" for="inputmailchimp_list_id"><?php echo lang_check('Mailchimp list id')?></label>
+                                  <label class="col-lg-2 control-label" for="inputmailchimp_list_id"><?php //echo lang_check('Mailchimp list id')?></label>
                                   <div class="col-lg-10">
-                                    <?php echo form_input('mailchimp_list_id', set_value('mailchimp_list_id', isset($settings['mailchimp_list_id'])?$settings['mailchimp_list_id']:''), 'class="form-control" id="inputmailchimp_list_id" placeholder="'.lang_check('Mailchimp list id').'"')?>
+                                    <?php //echo form_input('mailchimp_list_id', set_value('mailchimp_list_id', isset($settings['mailchimp_list_id'])?$settings['mailchimp_list_id']:''), 'class="form-control" id="inputmailchimp_list_id" placeholder="'.lang_check('Mailchimp list id').'"')?>
                                   </div>
                                 </div>
-                                <?php endif;?>
+                                <?php //endif;?> -->
                                 <div class="form-group">
                                   <label class="col-lg-2 control-label"><?php echo lang_check('Limit markers on map')?></label>
                                   <div class="col-lg-10">

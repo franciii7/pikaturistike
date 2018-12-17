@@ -721,7 +721,7 @@ class Estate extends Admin_Controller
             $this->sitemap->generate_sitemap();
             
             /* [Email sending] */
-            
+            //var_dump($data); die;
             if(ENVIRONMENT != 'development')
             if( $this->session->userdata('type') == 'AGENT_LIMITED' && 
                 $this->data['settings']['email_alert'] == 1 )

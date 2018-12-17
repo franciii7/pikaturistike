@@ -42,8 +42,8 @@
                         <i class="fa fa-plus"></i>
                     </a><!-- /.header-action -->
                 <?php else: ?>
-                    <a class="header-action" href="{front_login_url}" title="{lang_Login}">
-                        <i class="fa fa-plus"></i>
+                    <a class="header-action hidden-md hidden-lg" href="{front_login_url}" title="{lang_Login}">
+                        <i class="fa fa-user" style="font-size:22px;"></i>
                     </a><!-- /.header-action -->
                 <?php endif; ?>
            <?php endif;?>

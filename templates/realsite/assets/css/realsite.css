@@ -9978,6 +9978,7 @@ body .property-box-excerpt {
     }
     
     .container .properties-sort-main {
+        border-radius: 17px;
         margin:0 ;
         box-sizing: border-box;
     }

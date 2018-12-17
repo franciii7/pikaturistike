@@ -25,6 +25,8 @@
 <link rel="stylesheet" type="text/css" href="assets/css/helpers/bootstrap-datetimepicker.min.css">
 <link rel="stylesheet" type="text/css" href="assets/css/blueimp-gallery.min.css">
 
+
+
 {has_color}
 <link href="assets/css/styles_{color}.css" rel="stylesheet">
 {/has_color}
@@ -1938,6 +1940,7 @@ $(document).ready(function() {
             var myloc = new google.maps.Marker({
                 clickable: false,
                 icon: new google.maps.MarkerImage('assets/img/markers/marker_location.png'),
+                
                 shadow: null,
                 zIndex: 999,
                 map: map

@@ -2,43 +2,239 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4317f0a4-3169-4bf5-9f9a-af9a95303b07" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/pikaturistike.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pikaturistike.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/logs/log-2018-11-23.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin-assets/js/footable/css/footable.core.css" beforeDir="false" afterPath="$PROJECT_DIR$/admin-assets/js/footable/css/footable.core.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin-assets/js/footable/js/footable.js" beforeDir="false" afterPath="$PROJECT_DIR$/admin-assets/js/footable/js/footable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin-assets/style/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/admin-assets/style/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/admin/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/admin/dashboard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/admin/estate.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/admin/estate.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/admin/user.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/admin/user.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/frontend.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/frontend.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/property.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/property.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/helpers/cms_helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/helpers/cms_helper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/language/english/backend_base_lang.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/language/english/backend_base_lang.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/language/shqip/backend_base_lang.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/language/shqip/backend_base_lang.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/libraries/Admin_Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/libraries/Admin_Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/libraries/Frontend_Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/libraries/Frontend_Controller.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/logs/log_time.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/logs/log_time.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/reviews_m.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/reviews_m.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/admin/dashboard/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin/dashboard/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/captcha/1542980631.2475.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/captcha/1542980634.8614.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/captcha/1542980635.7993.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/captcha/1542980636.8079.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/captcha/1542980642.5088.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/captcha/1542980643.242.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/captcha/1542980643.4746.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/captcha/1542980649.7256.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/captcha/1542980650.5036.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/captcha/1542980653.9994.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/captcha/1542980654.8253.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/captcha/1542980725.4821.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/captcha/1542982342.112.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/captcha/1542982354.7454.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/captcha/1542982355.48.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/captcha/1542982360.584.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/captcha/1542982370.2537.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/captcha/1542982371.8379.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/captcha/1542982372.6958.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/captcha/1542982386.7698.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/captcha/1542982387.4263.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/captcha/1542982390.7202.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/captcha/1542982391.6134.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/captcha/1542982394.8349.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/captcha/1542982395.4999.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/captcha/1542982396.1381.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/captcha/1542982401.0947.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/admin/estate/edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin/estate/edit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/admin/estate/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin/estate/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/admin/settings/system.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin/settings/system.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/admin/user/forgetpassword.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin/user/forgetpassword.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/admin/user/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin/user/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/admin/user/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin/user/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/15441036299089152622100529581536.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/37b51d194a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/ambulance.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/bakery.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544194092.7068.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544194241.3017.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544194262.3535.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544194308.0019.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544194358.3133.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544194366.8284.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544194523.0189.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544194544.9657.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544194639.9672.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544194653.7363.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544194654.8312.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544194674.3082.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544194687.5933.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544194711.1212.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544194719.299.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544194736.0357.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544194739.1055.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544194765.2994.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544194771.8656.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544194784.9054.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544194788.1008.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544195005.7237.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544195242.4872.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544195408.7494.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544195804.6045.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544195982.8395.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544196055.1592.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544196132.9935.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544196136.1108.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544196140.2439.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544196143.6627.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544196203.1777.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544196213.3057.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544196217.1251.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544196217.5461.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544197165.4262.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544197225.1524.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544197266.6406.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544197271.7182.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544197277.7193.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544197319.6016.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544197324.3532.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544197327.6554.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544197375.3481.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544197505.2936.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544197563.9035.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544197720.9035.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544197810.0975.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544197878.7769.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544197967.2629.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544198043.2631.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544198063.1323.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544198100.8688.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544198125.1508.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544198186.5221.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544198259.4653.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544198279.9526.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544198301.8023.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544198321.9295.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544198345.5103.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544198407.1846.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544198466.7439.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544198583.9279.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544198593.1506.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544198977.467.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544199035.9534.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544199088.014.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544199220.0488.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544199247.4452.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544199340.0332.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544199369.0677.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544199640.7109.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544199651.2097.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544199687.8528.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544199721.2805.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544199822.398.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544199914.8604.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544199934.5989.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544199956.4152.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544200014.3206.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544200087.0139.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544200138.6244.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544200180.065.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544200188.1624.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544200247.6524.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544200260.4175.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544200273.0389.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544200279.8634.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544200290.9016.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544200298.486.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544200307.5749.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544200350.2677.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544200420.6163.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544200620.5448.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544200660.0881.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544200674.3578.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544200712.3697.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544200754.0767.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544200783.2547.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544200860.3597.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544200870.61.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544200936.2171.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544200943.4192.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544200948.8244.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544200954.8227.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544200957.4184.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544200978.4063.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544200979.7257.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544200996.0612.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/captcha/1544201004.7616.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/cinema.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/coffee.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/d20f83ee69.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/empty.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/hero2x (1).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/hero2x.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/hotel.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/logoturizmi.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/park.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/piazza.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/police.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/restaurant.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/school.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/shopping_center.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/sights.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/stadium.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/strict_cache/1800x600hero2x.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/thumbnail/15441036299089152622100529581536.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/thumbnail/37b51d194a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/thumbnail/ambulance.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/thumbnail/bakery.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/thumbnail/cinema.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/thumbnail/coffee.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/thumbnail/d20f83ee69.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/thumbnail/empty.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/thumbnail/hero2x (1).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/thumbnail/hero2x.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/thumbnail/hotel.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/thumbnail/logoturizmi.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/thumbnail/park.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/thumbnail/piazza.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/thumbnail/police.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/thumbnail/restaurant.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/thumbnail/school.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/thumbnail/shopping_center.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/thumbnail/sights.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/thumbnail/stadium.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/thumbnail/train.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/thumbnail/type_16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/thumbnail/type_17.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/thumbnail/type_18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/thumbnail/type_19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/thumbnail/type_20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/thumbnail/type_21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/thumbnail/type_22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/thumbnail/type_23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/thumbnail/type_24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/thumbnail/type_25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/thumbnail/type_26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/thumbnail/type_27.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/thumbnail/type_28.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/thumbnail/type_29.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/thumbnail/wallpaper.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/thumbnail/zoom.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/train.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/type_16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/type_17.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/type_18.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/type_19.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/type_20.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/type_21.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/type_22.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/type_23.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/type_24.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/type_25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/type_26.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/type_27.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/type_28.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/type_29.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/wallpaper.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/files/zoom.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/sitemap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sitemap.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system/libraries/Profiler.php" beforeDir="false" afterPath="$PROJECT_DIR$/system/libraries/Profiler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system/database/DB_active_rec.php" beforeDir="false" afterPath="$PROJECT_DIR$/system/database/DB_active_rec.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/realsite/assets/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/templates/realsite/assets/css/custom.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/realsite/assets/css/realsite.css" beforeDir="false" afterPath="$PROJECT_DIR$/templates/realsite/assets/css/realsite.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/realsite/assets/css/styles_red.css" beforeDir="false" afterPath="$PROJECT_DIR$/templates/realsite/assets/css/styles_red.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/realsite/assets/img/icons/option_id/32.png" beforeDir="false" afterPath="$PROJECT_DIR$/templates/realsite/assets/img/icons/option_id/32.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/realsite/assets/img/icons/option_id/44.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/realsite/assets/img/icons/option_id/46.png" beforeDir="false" afterPath="$PROJECT_DIR$/templates/realsite/assets/img/icons/option_id/46.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/realsite/assets/img/markers/ambulance.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/realsite/assets/img/markers/empty.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/realsite/assets/img/markers/mosque.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/realsite/assets/img/markers/xhami.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/realsite/language/shqip/frontend_template_lang.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/realsite/language/shqip/frontend_template_lang.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/realsite/myproperties.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/realsite/myproperties.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/realsite/page_homepage-cityguide.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/realsite/page_homepage-cityguide.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/realsite/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/realsite/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/realsite/login_book.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/realsite/login_book.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/realsite/page_fullscreen.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/realsite/page_fullscreen.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/realsite/property.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/realsite/property.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/realsite/widgets/head.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/realsite/widgets/head.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/realsite/widgets/header_mainmenu.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/realsite/widgets/header_mainmenu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/realsite/widgets/property_center_companyroute.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/realsite/widgets/property_center_companyroute.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/realsite/widgets/right_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/realsite/widgets/right_search.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/realsite/widgets/top_mapcityguide.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/realsite/widgets/top_mapcityguide.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/realsite/widgets/top_usermenu.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/realsite/widgets/top_usermenu.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,9 +250,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/admin/dashboard/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="536" column="67" selection-start-line="536" selection-start-column="55" selection-end-line="536" selection-end-column="67" />
+            <state relative-caret-position="136">
+              <caret line="556" column="43" lean-forward="true" selection-start-line="556" selection-start-column="43" selection-end-line="556" selection-end-column="43" />
               <folding>
+                <element signature="e#577#584#1#HTML" expanded="true" />
                 <element signature="e#28#34#0" expanded="true" />
                 <element signature="e#34#40#0" expanded="true" />
                 <element signature="e#31#37#0" expanded="true" />
@@ -70,37 +267,75 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/admin/dashboard.php">
+        <entry file="file://$PROJECT_DIR$/templates/realsite/widgets/top_mapcityguide.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="577">
-              <caret line="64" column="56" selection-start-line="64" selection-start-column="50" selection-end-line="64" selection-end-column="56" />
+            <state relative-caret-position="-646">
+              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+              <folding>
+                <element signature="e#0#6#0" expanded="true" />
+                <element signature="e#59#65#0" expanded="true" />
+                <element signature="e#65#71#0" expanded="true" />
+                <element signature="e#84#90#0" expanded="true" />
+                <element signature="e#90#96#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/models/estate_m.php">
+        <entry file="file://$PROJECT_DIR$/application/controllers/admin/dashboard.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="559">
-              <caret line="174" column="68" lean-forward="true" selection-start-line="174" selection-start-column="68" selection-end-line="174" selection-end-column="68" />
+            <state relative-caret-position="270">
+              <caret line="73" column="43" selection-start-line="73" selection-start-column="21" selection-end-line="73" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/libraries/Admin_Controller.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="763">
+              <caret line="200" column="5" lean-forward="true" selection-start-line="200" selection-start-column="5" selection-end-line="200" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/property.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1397">
+              <caret line="1179" column="33" selection-start-line="1179" selection-start-column="27" selection-end-line="1179" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/libraries/Frontend_Controller.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="890" column="86" selection-start-line="890" selection-start-column="86" selection-end-line="890" selection-end-column="86" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/controllers/admin/user.php">
+        <entry file="file://$PROJECT_DIR$/application/controllers/frontend.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="60" column="12" selection-start-line="60" selection-start-column="12" selection-end-line="60" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/core/MY_Model.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="243" lean-forward="true" selection-start-line="243" selection-end-line="243" />
+            <state relative-caret-position="207">
+              <caret line="4007" lean-forward="true" selection-start-line="4007" selection-end-line="4007" />
+              <folding>
+                <element signature="n#style#0;n#img#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="e#358#364#0" expanded="true" />
+                <element signature="e#364#370#0" expanded="true" />
+                <element signature="e#403#409#0" expanded="true" />
+                <element signature="e#409#415#0" expanded="true" />
+                <element signature="e#437#443#0" expanded="true" />
+                <element signature="e#443#449#0" expanded="true" />
+                <element signature="e#180175#181681#0#PHP" />
+                <element signature="e#182033#182660#0#PHP" />
+                <element signature="e#182289#182660#0#PHP" />
+                <element signature="e#184756#186077#0#PHP" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -109,20 +344,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Edit</find>
-      <find>admin/estate/ed</find>
-      <find>&lt;a</find>
-      <find>$data</find>
-      <find>get_field_from_listing</find>
-      <find>endrit</find>
-      <find>get_by(</find>
-      <find>va</find>
-      <find>$value</find>
-      <find>filter_res</find>
+      <find>options_obj_</find>
+      <find>$json_obj</find>
+      <find>$estate_data</find>
+      <find>$property_id</find>
+      <find>$this-&gt;data['lang_id'];</find>
+      <find>$this-&gt;data['lang_code']</find>
+      <find>lang_code</find>
+      <find>$this-&gt;data['lang_code</find>
+      <find>$this-&gt;data['options']</find>
+      <find>var_dump</find>
+      <find>all_est</find>
+      <find>estate_data_option_2</find>
       <find>estates_all</find>
-      <find>get_by</find>
-      <find>mark-color</find>
-      <find>field_</find>
+      <find>options_obj</find>
+      <find>prov</find>
+      <find>estate_data_option_6</find>
+      <find>all_estate(</find>
+      <find>top_mapcit</find>
+      <find>page_homepage-c</find>
+      <find>icon'</find>
+      <find>$options</find>
+      <find>if(count($estates_all)): foreach($estates_all as $estate):</find>
+      <find>icon</find>
+      <find>_url'</find>
+      <find>options_values_arr_2</find>
+      <find>options_values_arr_</find>
+      <find>get_lang</find>
+      <find>FCPATH</find>
+      <find>$lang_id</find>
+      <find>marker</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -134,9 +385,16 @@
         <option value="$PROJECT_DIR$/application/controllers/files.php" />
         <option value="$PROJECT_DIR$/application/controllers/admin/estate.php" />
         <option value="$PROJECT_DIR$/application/core/MY_Model.php" />
-        <option value="$PROJECT_DIR$/application/views/admin/dashboard/index.php" />
         <option value="$PROJECT_DIR$/application/models/estate_m.php" />
         <option value="$PROJECT_DIR$/application/controllers/admin/user.php" />
+        <option value="$PROJECT_DIR$/templates/realsite/page_fullscreen.php" />
+        <option value="$PROJECT_DIR$/application/controllers/frontend.php" />
+        <option value="$PROJECT_DIR$/application/libraries/Frontend_Controller.php" />
+        <option value="$PROJECT_DIR$/application/controllers/property.php" />
+        <option value="$PROJECT_DIR$/application/libraries/Admin_Controller.php" />
+        <option value="$PROJECT_DIR$/templates/realsite/widgets/top_mapcityguide.php" />
+        <option value="$PROJECT_DIR$/application/controllers/admin/dashboard.php" />
+        <option value="$PROJECT_DIR$/application/views/admin/dashboard/index.php" />
       </list>
     </option>
   </component>
@@ -163,6 +421,14 @@
       <path value="$PROJECT_DIR$/vendor/league/oauth2-facebook" />
       <path value="$PROJECT_DIR$/vendor/omnipay/stripe" />
       <path value="$PROJECT_DIR$/vendor/omnipay/paypal" />
+      <path value="$PROJECT_DIR$/vendor/bootstrap/css" />
+      <path value="$PROJECT_DIR$/vendor/bootstrap/js" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php54" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php55" />
+      <path value="$PROJECT_DIR$/vendor/ircmaxell/password-compat" />
+      <path value="$PROJECT_DIR$/vendor/omnipay/payu" />
+      <path value="$PROJECT_DIR$/vendor/animsition/css" />
+      <path value="$PROJECT_DIR$/vendor/animsition/js" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
@@ -176,7 +442,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -193,12 +458,13 @@
               <item name="pikaturistike" type="b2602c69:ProjectViewProjectNode" />
               <item name="pikaturistike" type="462c0819:PsiDirectoryNode" />
               <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="logs" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -244,28 +510,40 @@
       <workItem from="1542981356361" duration="670000" />
       <workItem from="1542982293258" duration="925000" />
       <workItem from="1543063873904" duration="6901000" />
+      <workItem from="1544889174709" duration="4876000" />
+      <workItem from="1545036586102" duration="14103000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8496000" />
+    <option name="totallyTimeSpent" value="27475000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2096577" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12713936" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32922733" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32922733" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39977604" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32922733" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Version Control" order="9" visible="true" weight="0.32922733" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -277,17 +555,27 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/application/controllers/admin/estate.php</url>
-          <line>1225</line>
+          <line>1233</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/application/controllers/admin/estate.php</url>
-          <line>343</line>
+          <line>346</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
@@ -298,22 +586,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="407">
           <caret line="456" selection-start-line="456" selection-end-line="456" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/frontend.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="861" column="58" selection-start-line="861" selection-start-column="58" selection-end-line="861" selection-end-column="58" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#358#364#0" expanded="true" />
-            <element signature="e#364#370#0" expanded="true" />
-            <element signature="e#403#409#0" expanded="true" />
-            <element signature="e#409#415#0" expanded="true" />
-            <element signature="e#437#443#0" expanded="true" />
-            <element signature="e#443#449#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -340,18 +612,137 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/logs/log-2018-11-23.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/core/MY_Model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="243" lean-forward="true" selection-start-line="243" selection-end-line="243" />
+        <state relative-caret-position="4131">
+          <caret line="243" selection-start-line="243" selection-end-line="243" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/admin/user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="55" column="12" selection-start-line="55" selection-start-column="12" selection-end-line="55" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/estate_m.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="559">
+          <caret line="174" column="68" selection-start-line="174" selection-start-column="68" selection-end-line="174" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/libraries/Frontuser_Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="696">
+          <caret line="618" column="8" lean-forward="true" selection-start-line="618" selection-start-column="8" selection-end-line="618" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/treefield.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="487" column="52" lean-forward="true" selection-start-line="487" selection-start-column="52" selection-end-line="487" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/core/MY_Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/realsite/page_fullscreen.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="112" column="52" selection-start-line="112" selection-start-column="31" selection-end-line="112" selection-end-column="52" />
+          <folding>
+            <element signature="e#0#6#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/realsite/page_homepage-cityguide.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="19" lean-forward="true" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/realsite/widgets/property_center_companyroute.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="38" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/libraries/Admin_Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="763">
+          <caret line="200" column="5" lean-forward="true" selection-start-line="200" selection-start-column="5" selection-end-line="200" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/option_m.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="263" column="28" selection-start-line="263" selection-start-column="20" selection-end-line="263" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/property.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1397">
+          <caret line="1179" column="33" selection-start-line="1179" selection-start-column="27" selection-end-line="1179" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/libraries/Frontend_Controller.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="890" column="86" selection-start-line="890" selection-start-column="86" selection-end-line="890" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="198" column="12" selection-start-line="198" selection-start-column="12" selection-end-line="198" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/admin/dashboard.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="73" column="43" selection-start-line="73" selection-start-column="21" selection-end-line="73" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/realsite/widgets/top_mapcityguide.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-646">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <element signature="e#0#6#0" expanded="true" />
+            <element signature="e#59#65#0" expanded="true" />
+            <element signature="e#65#71#0" expanded="true" />
+            <element signature="e#84#90#0" expanded="true" />
+            <element signature="e#90#96#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/admin/dashboard/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="536" column="67" selection-start-line="536" selection-start-column="55" selection-end-line="536" selection-end-column="67" />
+        <state relative-caret-position="136">
+          <caret line="556" column="43" lean-forward="true" selection-start-line="556" selection-start-column="43" selection-end-line="556" selection-end-column="43" />
           <folding>
+            <element signature="e#577#584#1#HTML" expanded="true" />
             <element signature="e#28#34#0" expanded="true" />
             <element signature="e#34#40#0" expanded="true" />
             <element signature="e#31#37#0" expanded="true" />
@@ -363,27 +754,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/admin/dashboard.php">
+    <entry file="file://$PROJECT_DIR$/application/controllers/frontend.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="577">
-          <caret line="64" column="56" selection-start-line="64" selection-start-column="50" selection-end-line="64" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/logs/log-2018-11-23.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/estate_m.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="559">
-          <caret line="174" column="68" lean-forward="true" selection-start-line="174" selection-start-column="68" selection-end-line="174" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/admin/user.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="60" column="12" selection-start-line="60" selection-start-column="12" selection-end-line="60" selection-end-column="12" />
+        <state relative-caret-position="207">
+          <caret line="4007" lean-forward="true" selection-start-line="4007" selection-end-line="4007" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#358#364#0" expanded="true" />
+            <element signature="e#364#370#0" expanded="true" />
+            <element signature="e#403#409#0" expanded="true" />
+            <element signature="e#409#415#0" expanded="true" />
+            <element signature="e#437#443#0" expanded="true" />
+            <element signature="e#443#449#0" expanded="true" />
+            <element signature="e#180175#181681#0#PHP" />
+            <element signature="e#182033#182660#0#PHP" />
+            <element signature="e#182289#182660#0#PHP" />
+            <element signature="e#184756#186077#0#PHP" />
+          </folding>
         </state>
       </provider>
     </entry>

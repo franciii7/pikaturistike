@@ -563,12 +563,24 @@ $(function () {
                             {
                                 if($value != '' && $value != 'empty')
                                 {
-                                    if(file_exists(FCPATH.'admin-assets/img/markers/'.$value.'.png'))
-                                        $icon_url = base_url('admin-assets/img/markers/'.$value.'.png');
-                                   if(file_exists(FCPATH.'templates/'.$settings_template.'/assets/img/markers/'.$value.'.png'))
-                                    $icon_url = base_url('templates/'.$settings_template.'/assets/img/markers/'.$value.'.png');
-                                   elseif(file_exists(FCPATH.'templates/'.$settings_template.'/assets/img/icons/'.$value.'.png'))
-                                    $icon_url = base_url('templates/'.$settings_template.'/assets/img/icons/'.$value.'.png');
+                                    if(config_db_item('field_file_upload_enabled') === TRUE)
+                                    {
+                                        // Get selected type index
+                                        $image_index = array_search( $value,explode(',', $option_2_values) );
+
+                                        // Explode images
+                                        $images = explode(',', $image_gallery_option_2);
+
+                                        // set if image exists
+                                        if(!empty($images[$image_index]))
+                                        {
+                                            $image_filename = 'files/'.$images[$image_index];
+
+                                            if(file_exists(FCPATH.$image_filename))
+                                                $icon_url = base_url($image_filename);
+                                        }
+                                    }
+
                                 }
                             }
                         }
