@@ -464,6 +464,7 @@ class User extends Admin_Controller
     
     public function delete($id, $redirect = TRUE)
 	{
+
         if($this->config->item('app_type') == 'demo')
         {
             $this->session->set_flashdata('error', 

@@ -279,3 +279,66 @@ ERROR - 2018-12-17 15:02:11 --> Severity: Warning  --> array_search() expects pa
 ERROR - 2018-12-17 15:02:11 --> Severity: Warning  --> array_search() expects parameter 2 to be array, string given C:\xampp\htdocs\pikaturistike\application\views\admin\dashboard\index.php 569
 ERROR - 2018-12-17 15:02:11 --> Severity: Warning  --> array_search() expects parameter 2 to be array, string given C:\xampp\htdocs\pikaturistike\application\views\admin\dashboard\index.php 569
 ERROR - 2018-12-17 15:02:11 --> Severity: Warning  --> array_search() expects parameter 2 to be array, string given C:\xampp\htdocs\pikaturistike\application\views\admin\dashboard\index.php 569
+ERROR - 2018-12-17 15:06:44 --> Severity: Notice  --> Undefined offset: 0 C:\xampp\htdocs\pikaturistike\application\views\admin\user\index.php 111
+ERROR - 2018-12-17 15:06:44 --> Severity: Notice  --> Undefined offset: 0 C:\xampp\htdocs\pikaturistike\application\views\admin\user\index.php 111
+ERROR - 2018-12-17 15:09:17 --> 404 Page Not Found --> http://localhost/pikaturistike/index.php/admin/forms/assets/img/ajax-loader.gif
+ERROR - 2018-12-17 15:27:15 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:27:15 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:27:15 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:27:15 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:27:15 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:27:15 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:27:15 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:27:15 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:27:15 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:27:15 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:27:15 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:27:15 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:27:15 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:27:15 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:27:15 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:27:15 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:27:15 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:27:15 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:27:15 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:27:15 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:27:17 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:27:17 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:27:17 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:27:17 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:27:17 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:27:17 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:27:17 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:27:17 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:27:17 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:27:17 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:27:17 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:27:17 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:27:17 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:27:17 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:27:17 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:27:17 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:27:17 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:27:17 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:27:17 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:27:17 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:29:25 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:29:25 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:29:25 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:29:25 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:29:25 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:29:25 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:29:25 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:29:25 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:29:25 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:29:25 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:29:25 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:29:25 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:29:25 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:29:25 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:29:25 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:29:25 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:29:25 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:29:25 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:29:25 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254
+ERROR - 2018-12-17 15:29:25 --> Severity: Notice  --> Trying to get property of non-object C:\xampp\htdocs\pikaturistike\application\views\admin\estate\edit.php 254

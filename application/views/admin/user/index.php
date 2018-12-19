@@ -132,9 +132,10 @@
                             </td>
                             <?php if($this->session->userdata('type') != 'AGENT_ADMIN'): ?>
                             <td>
-                              <button class="btn btn-danger" data-toggle="modal" data-target="#delete" style="border-radius:50%;">
-                                <i class="icon-remove"></i> 
-                              </button>
+                                <button class="btn btn-danger" data-toggle="modal"
+                                        data-userId="<?php echo $user->id ?>" data-target="#delete">
+                                    <i class="icon-remove"></i>
+                                </button>
                             </td>
                             <?php endif;?> 
                             <?php if(check_acl('user/delete_multiple')):?>
@@ -162,31 +163,46 @@
       </div>
 </div>
 
+    <script>
+        $('document').ready(function () {
+            $('#delete').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget);
+                var us_Id = button.data('userid');
+                var modal = $(this);
+                modal.find('#us_Id').val(us_Id);
+                var $modalForm = modal.find('form');
+                var formAction = $modalForm.attr('action');
+                $modalForm.attr('action', formAction + us_Id);
+            });
+
+        })
 
 
+    </script>
 
+    <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
 
-<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <h4 class="modal-title" id="myModalLabel">Delete</h4>
-      </div>
-      <form action="http://localhost/pikaturistike/index.php/admin/user/delete/<?php echo $user->id?>" method="post">
-        
-      
-      <div class="modal-body">
-        Deshironi te fshini perdoruesin?
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Anullo</button>
-        <button type="submit" class="btn btn-primary">Konfirmo</button>
-      </div>
-      </form>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">Delete</h4>
+                </div>
+                <form action="http://localhost/pikaturistike/index.php/admin/user/delete/"
+                      method="post">
+
+                    <input type="hidden" name="user_Id" id="us_Id" value=""/>
+                    <div class="modal-body">
+                        Deshironi te fshini vendndodhjen?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Anullo</button>
+                        <button type="submit" class="btn btn-primary">Konfirmo</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
+

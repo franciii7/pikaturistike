@@ -639,7 +639,7 @@ function btn_view_sent($uri)
 
 function btn_edit($uri)
 {
-	return anchor($uri, '<i class="icon-edit"></i> '.lang('edit'), array('class'=>'btn btn-primary', 'style'=>'border-radius:50%;'));
+	return anchor($uri, '<i class="icon-edit"></i> '.lang('edit'), array('class'=>'btn btn-primary',));
 }
 
 function btn_edit_invoice($uri)

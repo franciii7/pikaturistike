@@ -252,8 +252,8 @@
                                               <?php endif; ?>
                                             </div>
                                         <?php elseif($val_option->type == 'DROPDOWN'):?>
-                                            <div class="form-group <?php echo (!$val_option->is_frontend && $this->session->userdata('type') == 'AGENT_LIMITED'?' hidden':'') ?>">
-                                              <label class="col-lg-3 control-label"><?php echo $required_notice.$val_option->option?>  <?php if(!empty($options_lang[$key][$key_option]->hint)):?><i class="icon-question-sign hint" data-hint="<?php echo $options_lang[$key][$key_option]->hint;?>"></i><?php endif;?></label>
+                                            <div class="form-group <?php echo (!$val_option->is_frontend && $this->session->userdata('type') == 'AGENT_LIMITED'?' hidden':'') ?> <?php echo($val_option->id == 6)? 'hidden' : '' ?>">
+                                            <label class="col-lg-3 control-label"><?php echo $required_notice.$val_option->option?>  <?php if(!empty($options_lang[$key][$key_option]->hint)):?><i class="icon-question-sign hint" data-hint="<?php echo $options_lang[$key][$key_option]->hint;?>"></i><?php endif;?></label>
                                               <div class="col-lg-9">
                                                 <?php
                                                 if(isset($options_lang[$key][$key_option]))
@@ -1073,7 +1073,7 @@ $(function () {
 <script language="javascript">
     
     /* [START] Dependent fields */
-    $(document).ready(function(){
+$(document).ready(function(){
         //console.log('Dependent fields loading');
         <?php 
         // Fetch dependent fields

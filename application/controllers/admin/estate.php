@@ -984,6 +984,7 @@ class Estate extends Admin_Controller
     
     public function delete($id, $redirect = TRUE)
 	{
+
         if($this->config->item('app_type') == 'demo')
         {
             $this->session->set_flashdata('error', 
@@ -1231,7 +1232,7 @@ class Estate extends Admin_Controller
 	    if($id)
         {
             $this->data['option'] = $this->option_m->get_lang($id, FALSE, $this->data['content_language_id']);
-            count($this->data['option']) || $this->data['errors'][] = 'Could not be found';
+            count($this->data['option']) || $this->data['errors'] = 'Could not be found';
             
             // Fetch file repository
             $repository_id = $this->data['option']->repository_id;

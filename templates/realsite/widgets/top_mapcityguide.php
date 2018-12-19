@@ -57,8 +57,8 @@ function onLocationFound(e) {
                 <?php endif; ?>
                 zoom: {settings_zoom}+1,
                 scrollWheelZoom: scrollWheelEnabled,
-                //dragging: !L.Browser.mobile,
-                //tap: !L.Browser.mobile
+                dragging: !L.Browser.mobile,
+                tap: !L.Browser.mobile
             });     
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
